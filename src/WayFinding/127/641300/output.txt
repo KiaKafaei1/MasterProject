@@ -1,0 +1,8 @@
+Application: Autodesk Revit 2017 (ENU)
+Schema: IFC2X3
+Scale: 0,001
+Area scale: 1
+#elements: 431
+#polygons: 32238
+Translation: -75047.4765783149 40.6400000000093 -153051.936251372
+Bounding box: <boundingbox center="-75059.24 43.13 -153045.03" size="65.39 15.86 45.83" rotation="0"/>

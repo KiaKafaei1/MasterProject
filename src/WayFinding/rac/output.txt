@@ -1,0 +1,8 @@
+Application: Autodesk Revit 2019 (ENU)
+Schema: IFC2X3
+Scale: 0,001
+Area scale: 1
+#elements: 5668
+#polygons: 326369
+Translation: -107.474273995904 9.753599609375 53.3988604949382
+Bounding box: <boundingbox center="52.06 5.33 -22.48" size="319.07 14.31 151.76" rotation="0"/>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Scene>
+  <Shape name="gqoKI802Gls8HBh-OC6kcg">
+    <Material name="Material1">
+      <MaterialParams diffuse="88 88 88" ambient="50 50 50" emmision="0 0 0" specular="0 0 0" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="0" entries="16596" format="1i16" />
+      <PolygonIds offset="33192" entries="5532" format="1i32" />
+      <Coordinates offset="55320" entries="3804" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="#10371:Concrete - Cast-in-Place Concrete fugeudst?bning">
+    <Material name="Material1">
+      <MaterialParams diffuse="153 153 153" ambient="87 87 87" emmision="0 0 0" specular="109 109 109" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="100968" entries="900" format="1i16" />
+      <PolygonIds offset="102768" entries="300" format="1i32" />
+      <Coordinates offset="103968" entries="176" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="#12069:(AL) Framing-Steel-355">
+    <Material name="Material1">
+      <MaterialParams diffuse="172 172 172" ambient="98 98 98" emmision="0 0 0" specular="123 123 123" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="106080" entries="57936" format="1i16" />
+      <PolygonIds offset="221952" entries="19312" format="1i32" />
+      <Coordinates offset="299200" entries="10750" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="#1294:(AL) Wall-ConcPC">
+    <Material name="Material1">
+      <MaterialParams diffuse="138 130 130" ambient="79 74 74" emmision="0 0 0" specular="99 93 93" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="428200" entries="8856" format="1i16" />
+      <PolygonIds offset="445912" entries="2952" format="1i32" />
+      <Coordinates offset="457720" entries="2120" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="#1999:(AL) Slab-ConcCIS">
+    <Material name="Material1">
+      <MaterialParams diffuse="134 134 134" ambient="76 76 76" emmision="0 0 0" specular="96 96 96" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="483160" entries="8790" format="1i16" />
+      <PolygonIds offset="500740" entries="2930" format="1i32" />
+      <Coordinates offset="512460" entries="1919" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="#11454:(AL) Framing-ConcPC">
+    <Material name="Material1">
+      <MaterialParams diffuse="134 130 130" ambient="76 74 74" emmision="0 0 0" specular="96 93 93" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="535488" entries="3636" format="1i16" />
+      <PolygonIds offset="542760" entries="1212" format="1i32" />
+      <Coordinates offset="547608" entries="776" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Stream file="data.b00" />
+</Scene>

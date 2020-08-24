@@ -1,0 +1,64 @@
+DaluxWayfindingFormat - Artificial development data
+
+#rooms have the following format
+#rstart ROOMNAME								   								Room
+#STARTX STARTY STARTZ STOPX STOPY STOPZ       									Line segments (belong to room, multiples)
+#rend
+#
+#dNUM DOORNAME ROOMNAME1 ROOMNAME2 STARTX STARTY STARTZ STOPX STOPY STOPZ 		Door
+#
+#sstart STAIRSNAME																Stairs
+#ROOMNAME STARTX STARTY STARTZ STOPX STOPY STOPZ 								Landings (belong to stairs, multiple)
+#sstop
+#
+#estart ELEVATORNAME															Elevator
+#ROOMNAME STARTX STARTY STARTZ STOPX STOPY STOPZ 								Stops (belong to elevator, multiple)
+#estop
+
+rstart room1
+12.0 14.0 0.0 12.0 7.0 0.0
+12.0 7.0 0.0 20.0 7.0 0.0
+20.0 7.0 0.0 20.0 14.0 0.0
+20.0 14.0 0.0 12.0 14.0 0.0
+12.0 14.0 0.0 12.0 14.0 4.0
+12.0 7.0 0.0 12.0 7.0 4.0 
+20.0 7.0 0.0 20.0 7.0 4.0 
+20.0 14.0 0.0 20.0 14.0 4.0
+12.0 14.0 4.0 12.0 7.0 4.0
+12.0 7.0 4.0 20.0 7.0 4.0
+20.0 7.0 4.0 20.0 14.0 4.0
+20.0 14.0 4.0 12.0 14.0 4.0
+rstop
+
+rstart room2
+20.0 14.0 0.0 20.0 21.0 0.0
+20.0 21.0 0.0 1.0 21.0 0.0S
+1.0 21.0 0.0 1.0 14.0 0.0
+1.0 14.0 0.0 20.0 14.0 0.0
+20.0 14.0 0.0 20.0 14.0 4.0
+20.0 21.0 0.0 20.0 21.0 4.0
+1.0 21.0 0.0 1.0 21.0 4.0
+1.0 14.0 0.0 1.0 14.0 4.0
+20.0 14.0 4.0 20.0 21.0 4.0
+20.0 21.0 4.0 1.0 21.0 4.0
+1.0 21.0 4.0 1.0 14.0 4.0
+1.0 14.0 4.0 20.0 14.0 4.0
+rstop
+
+rstart room3
+1.0 14.0 0.0 1.0 7.0 0.0
+1.0 7.0 0.0 6.0 7.0 0.0
+6.0 7.0 0.0 6.0 14.0 0.0
+6.0 14.0 0.0 1.0 14.0 0.0
+1.0 14.0 0.0 1.0 14.0 4.0
+1.0 7.0 0.0 1.0 7.0 4.0
+6.0 7.0 0.0 6.0 7.0 4.0
+6.0 14.0 0.0 6.0 14.0 4.0
+1.0 14.0 0.0 1.0 7.0 4.0
+1.0 7.0 0.0 6.0 7.0 4.0
+6.0 7.0 0.0 6.0 14.0 4.0
+6.0 14.0 0.0 1.0 14.0 4.0
+rstop
+
+d1 door1 room1 room2 14.0 14.0 0.0 16.0 16.0 0.0
+d1 door2 room2 room3 2.5 14.0 0.0 4.5 14.0 0.0

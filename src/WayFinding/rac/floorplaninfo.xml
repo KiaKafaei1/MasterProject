@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <elements>
+    <door mid="279" guid="2UMN_OQKrAshZl3dHPuZbj" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="52.8488 1.2439 7.6" facing="1 0 0" />
+    </door>
+    <door mid="298" guid="2UMN_OQKrAshZl3dHPuj56" minheight="7.6" maxheight="9.734">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="8.3237 6.71965 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="336" guid="2UMN_OQKrAshZl3dHPuj5j" minheight="7.6" maxheight="9.734">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="34.278399 45.958352 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="348" guid="2UMN_OQKrAshZl3dHPuZeY" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="7.7547 32.4498 7.6" facing="-1 0 0" />
+    </door>
+    <door mid="349" guid="2UMN_OQKrAshZl3dHPuZfo" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="7.7547 25.1648 7.6" facing="-1 0 0" />
+    </door>
+    <door mid="350" guid="2UMN_OQKrAshZl3dHPuZgG" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="7.7547 19.0498 7.6" facing="-1 0 0" />
+    </door>
+    <door mid="351" guid="2UMN_OQKrAshZl3dHPuZlc" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="7.7547 33.7648 7.6" facing="-1 0 0" />
+    </door>
+    <door mid="352" guid="2UMN_OQKrAshZl3dHPuZq9" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="7.7547 7.78005 7.6" facing="-1 0 0" />
+    </door>
+    <door mid="353" guid="2UMN_OQKrAshZl3dHPuZqr" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="7.7547 17.78005 7.6" facing="-1 0 0" />
+    </door>
+    <door mid="355" guid="2UMN_OQKrAshZl3dHPuj5g" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="30.5146 44.821102 7.6" facing="0 1 0" />
+    </door>
+    <door mid="356" guid="2UMN_OQKrAshZl3dHPuZ$p" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="24.0996 44.821102 7.6" facing="0 1 0" />
+    </door>
+    <door mid="357" guid="2UMN_OQKrAshZl3dHPuZ_b" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="11.0501 44.821102 7.6" facing="0 1 0" />
+    </door>
+    <door mid="358" guid="2UMN_OQKrAshZl3dHPuZp8" minheight="7.6" maxheight="9.81">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.83" origin="7.88545 44.821102 7.6" facing="0 1 0" />
+    </door>
+    <door mid="359" guid="2UMN_OQKrAshZl3dHPuZuz" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="25.4146 44.821102 7.6" facing="0 1 0" />
+    </door>
+    <door mid="360" guid="2UMN_OQKrAshZl3dHPuZzc" minheight="7.6" maxheight="9.81">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.73" origin="18.44555 44.959602 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="362" guid="2UMN_OQKrAshZl3dHPuj6w" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="12.8562 7.7039 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="363" guid="2UMN_OQKrAshZl3dHPuj6x" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="14.1712 7.7039 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="366" guid="2UMN_OQKrAshZl3dHPuiO5" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="32.03305 7.7039 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="367" guid="2UMN_OQKrAshZl3dHPuiOp" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="23.4638 7.7039 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="368" guid="2UMN_OQKrAshZl3dHPuiP9" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="38.71805 7.7039 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="369" guid="2UMN_OQKrAshZl3dHPuiQN" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="40.03305 7.7039 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="370" guid="2UMN_OQKrAshZl3dHPuiR$" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="44.71805 7.7039 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="371" guid="2UMN_OQKrAshZl3dHPuiR1" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="46.03305 7.7039 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="372" guid="2UMN_OQKrAshZl3dHPuZah" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="52.71805 7.7039 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="373" guid="2UMN_OQKrAshZl3dHPuZch" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="62.531578 7.7039 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="397" guid="2UMN_OQKrAshZl3dHPuj6l" minheight="7.6" maxheight="9.734">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="63.439078 6.71965 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="410" guid="2UMN_OQKrAshZl3dHPuj6_" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="21.7488 5.3889 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="411" guid="2UMN_OQKrAshZl3dHPuj6z" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="17.4862 5.3889 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="418" guid="2UMN_OQKrAshZl3dHPuZjw" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="1.3197 40.265351 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="426" guid="2UMN_OQKrAshZl3dHPuZrI" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="1.5197 8.9648 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="430" guid="2UMN_OQKrAshZl3dHPuZtI" minheight="7.6" maxheight="9.81">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="1.78545 28.03405 7.6" facing="0 -1 0" />
+    </door>
+    <door mid="632" guid="2UMN_OQKrAshZl3dHPuiwF" minheight="3.8" maxheight="6.01">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.73" origin="18.6646 45.112602 3.8" facing="0 -1 0" />
+    </door>
+    <door mid="634" guid="2ovTiHReP0BvpAnpUyR4Qa" minheight="3.8" maxheight="5.934">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="8.588017 40.308601 3.8" facing="0 -1 0" />
+    </door>
+    <door mid="694" guid="2UMN_OQKrAshZl3dHPujOW" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="7.7547 11.09555 3.8" facing="-1 0 0" />
+    </door>
+    <door mid="695" guid="2UMN_OQKrAshZl3dHPujP0" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="7.7547 23.8498 3.8" facing="-1 0 0" />
+    </door>
+    <door mid="696" guid="2UMN_OQKrAshZl3dHPujQC" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="7.7547 25.1648 3.8" facing="-1 0 0" />
+    </door>
+    <door mid="697" guid="2UMN_OQKrAshZl3dHPujR8" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="7.7547 32.1498 3.8" facing="-1 0 0" />
+    </door>
+    <door mid="698" guid="2UMN_OQKrAshZl3dHPujV_" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="7.7547 9.40465 3.8" facing="-1 0 0" />
+    </door>
+    <door mid="724" guid="2UMN_OQKrAshZl3dHPui_G" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="20.0996 47.174102 3.8" facing="0 1 0" />
+    </door>
+    <door mid="725" guid="2UMN_OQKrAshZl3dHPuivY" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="14.146501 47.174102 3.8" facing="0 1 0" />
+    </door>
+    <door mid="729" guid="2UMN_OQKrAshZl3dHPuiuq" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="21.28385 49.693352 3.8" facing="-1 0 0" />
+    </door>
+    <door mid="732" guid="2UMN_OQKrAshZl3dHPuiy6" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="25.2996 44.974102 3.8" facing="0 1 0" />
+    </door>
+    <door mid="758" guid="2UMN_OQKrAshZl3dHPuj4b" minheight="3.8" maxheight="5.934">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="63.439078 6.71965 3.8" facing="0 -1 0" />
+    </door>
+    <door mid="777" guid="2UMN_OQKrAshZl3dHPuj9v" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="60.03305 7.7039 3.8" facing="0 -1 0" />
+    </door>
+    <door mid="778" guid="2UMN_OQKrAshZl3dHPujA7" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="50.11805 7.7039 3.8" facing="0 -1 0" />
+    </door>
+    <door mid="779" guid="2UMN_OQKrAshZl3dHPujAr" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="58.71805 7.7039 3.8" facing="0 -1 0" />
+    </door>
+    <door mid="780" guid="2UMN_OQKrAshZl3dHPujBN" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="46.03305 7.7039 3.8" facing="0 -1 0" />
+    </door>
+    <door mid="781" guid="2UMN_OQKrAshZl3dHPujKb" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="44.71805 7.7039 3.8" facing="0 -1 0" />
+    </door>
+    <door mid="782" guid="2UMN_OQKrAshZl3dHPujLJ" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="40.71805 7.7039 3.8" facing="0 -1 0" />
+    </door>
+    <door mid="783" guid="2UMN_OQKrAshZl3dHPujMb" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="32.03305 7.7039 3.8" facing="0 -1 0" />
+    </door>
+    <door mid="784" guid="2UMN_OQKrAshZl3dHPujNb" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="23.2638 7.7039 3.8" facing="0 -1 0" />
+    </door>
+    <door mid="798" guid="2UMN_OQKrAshZl3dHPuiaC" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="7.48545 40.377851 3.8" facing="0 -1 0" />
+    </door>
+    <door mid="803" guid="2UMN_OQKrAshZl3dHPuj4p" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="17.4862 5.3889 3.8" facing="0 -1 0" />
+    </door>
+    <door mid="804" guid="2UMN_OQKrAshZl3dHPuj4q" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="21.7488 5.3889 3.8" facing="0 -1 0" />
+    </door>
+    <door mid="810" guid="2ovTiHReP0BvpAnpUyR5bZ" minheight="3.8" maxheight="5.934">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="7.68545 44.359477 3.8" facing="-1 0 0" />
+    </door>
+    <door mid="854" guid="2UMN_OQKrAshZl3dHPujxS" minheight="3.8" maxheight="5.934">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="8.3237 6.71965 3.8" facing="0 -1 0" />
+    </door>
+    <door mid="877" guid="2UMN_OQKrAshZl3dHPujxW" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="30.5146 44.821102 3.8" facing="0 1 0" />
+    </door>
+    <door mid="879" guid="2UMN_OQKrAshZl3dHPuj4m" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="12.8562 7.7039 3.8" facing="0 -1 0" />
+    </door>
+    <door mid="880" guid="2UMN_OQKrAshZl3dHPuj4n" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="14.1712 7.7039 3.8" facing="0 -1 0" />
+    </door>
+    <door mid="883" guid="2UMN_OQKrAshZl3dHPuim7" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="29.2146 47.174102 3.8" facing="0 1 0" />
+    </door>
+    <door mid="884" guid="2UMN_OQKrAshZl3dHPuip0" minheight="3.8" maxheight="6.01">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="28.0996 47.174102 3.8" facing="0 1 0" />
+    </door>
+    <door mid="917" guid="2UMN_OQKrAshZl3dHPujxZ" minheight="3.8" maxheight="5.934">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="34.278399 45.958352 3.8" facing="0 -1 0" />
+    </door>
+    <door mid="1412" guid="2UMN_OQKrAshZl3dHPukU_" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="65.571578 6.51965 0" facing="1 0 0" />
+    </door>
+    <door mid="2198" guid="0H1nVTTAv6LhM6_nm3wfNy" minheight="0" maxheight="2.134">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.83" origin="18.960345 21.945601 0" facing="0 -1 0" />
+    </door>
+    <door mid="3360" guid="2UMN_OQKrAshZl3dHPul2H" minheight="0" maxheight="2.21">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.73" origin="0.1862 28.551 0" facing="0 1 0" />
+    </door>
+    <door mid="3363" guid="0OCjL9Oi14tu4iiPw9P_IQ" minheight="0" maxheight="2.21">
+      <definition ifctype="DOUBLE_SWING_RIGHT" width="0.915" origin="17.49385 52.109102 0" facing="-1 0 0" />
+    </door>
+    <door mid="3367" guid="07hc1aZW98debjzrL5HoDL" minheight="0" maxheight="2.134">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.83" origin="5.1162 39.794 0" facing="-1 0 0" />
+    </door>
+    <door mid="3455" guid="3FZFp0nq9AAhRAecLpGs5a" minheight="0" maxheight="2.134">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.83" origin="5.1162 37.914 0" facing="-1 0 0" />
+    </door>
+    <door mid="3470" guid="0OCjL9Oi14tu4iiPw9P_Bc" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="30.5146 44.821102 0" facing="0 1 0" />
+    </door>
+    <door mid="3471" guid="0OCjL9Oi14tu4iiPw9P_Gz" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="23.1096 44.821102 0" facing="0 1 0" />
+    </door>
+    <door mid="3472" guid="0OCjL9Oi14tu4iiPw9P_Lo" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="29.3996 44.821102 0" facing="0 1 0" />
+    </door>
+    <door mid="3473" guid="0OCjL9Oi14tu4iiPw9P_M$" minheight="0" maxheight="2.21">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.83" origin="24.4296 44.821102 0" facing="0 1 0" />
+    </door>
+    <door mid="3475" guid="0OCjL9Oi14tu4iiPw9P_Hx" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="20.3171 47.174102 0" facing="0 1 0" />
+    </door>
+    <door mid="3477" guid="0OCjL9Oi14tu4iiPw9P_84" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="30.3146 50.593352 0" facing="0 -1 0" />
+    </door>
+    <door mid="3481" guid="0OCjL9Oi14tu4iiPw9P_9M" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="30.34535 48.258352 0" facing="1 0 0" />
+    </door>
+    <door mid="3484" guid="2UMN_OQKrAshZl3dHPukeA" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="12.8562 7.7039 0" facing="0 -1 0" />
+    </door>
+    <door mid="3485" guid="2UMN_OQKrAshZl3dHPukgi" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="14.1712 7.7039 0" facing="0 -1 0" />
+    </door>
+    <door mid="3487" guid="0OCjL9Oi14tu4iiPw9P_FW" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="36.410899 47.167901 0" facing="1 0 0" />
+    </door>
+    <door mid="4536" guid="2UMN_OQKrAshZl3dHPukaQ" minheight="0" maxheight="2.134">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="8.3237 6.71965 0" facing="0 -1 0" />
+    </door>
+    <door mid="4561" guid="2UMN_OQKrAshZl3dHPukqU" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="17.4862 5.3889 0" facing="0 -1 0" />
+    </door>
+    <door mid="4562" guid="2UMN_OQKrAshZl3dHPukr0" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="21.7488 5.3889 0" facing="0 -1 0" />
+    </door>
+    <door mid="4628" guid="2UMN_OQKrAshZl3dHPukSe" minheight="0" maxheight="2.134">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="63.439078 6.71965 0" facing="0 -1 0" />
+    </door>
+    <door mid="4660" guid="2UMN_OQKrAshZl3dHPuk98" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="58.03305 7.7039 0" facing="0 -1 0" />
+    </door>
+    <door mid="4661" guid="2UMN_OQKrAshZl3dHPukAQ" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="56.71805 7.7039 0" facing="0 -1 0" />
+    </door>
+    <door mid="4662" guid="2UMN_OQKrAshZl3dHPukBf" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="52.03305 7.7039 0" facing="0 -1 0" />
+    </door>
+    <door mid="4663" guid="2UMN_OQKrAshZl3dHPukGI" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="32.71805 7.7039 0" facing="0 -1 0" />
+    </door>
+    <door mid="4664" guid="2UMN_OQKrAshZl3dHPukHo" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="23.3638 7.7039 0" facing="0 -1 0" />
+    </door>
+    <door mid="4665" guid="2UMN_OQKrAshZl3dHPukLR" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="50.71805 7.7039 0" facing="0 -1 0" />
+    </door>
+    <door mid="4666" guid="2UMN_OQKrAshZl3dHPukMe" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="40.03305 7.7039 0" facing="0 -1 0" />
+    </door>
+    <door mid="4667" guid="2UMN_OQKrAshZl3dHPukNq" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="38.71805 7.7039 0" facing="0 -1 0" />
+    </door>
+    <door mid="4668" guid="2UMN_OQKrAshZl3dHPukNU" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="34.03305 7.7039 0" facing="0 -1 0" />
+    </door>
+    <door mid="5050" guid="2UMN_OQKrAshZl3dHPulCY" minheight="0" maxheight="2.21">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.73" origin="2.17395 25.0648 0" facing="-1 0 0" />
+    </door>
+    <door mid="5052" guid="2UMN_OQKrAshZl3dHPulEv" minheight="0" maxheight="2.21">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.73" origin="6.735129 26.7948 0" facing="1 0 0" />
+    </door>
+    <door mid="5055" guid="2UMN_OQKrAshZl3dHPulAD" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="7.7547 15.09555 0" facing="-1 0 0" />
+    </door>
+    <door mid="5056" guid="2UMN_OQKrAshZl3dHPulAp" minheight="0" maxheight="2.21">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.915" origin="7.7547 19.09555 0" facing="-1 0 0" />
+    </door>
+    <door mid="5057" guid="2UMN_OQKrAshZl3dHPulK8" minheight="0" maxheight="2.21">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.83" origin="7.7547 12.86555 0" facing="-1 0 0" />
+    </door>
+    <door mid="5386" guid="3O2nkpovb3Z9uJgH09FwmW" minheight="0" maxheight="2.134">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.83" origin="11.908836 44.890352 0" facing="0 -1 0" />
+    </door>
+    <door mid="5396" guid="2UMN_OQKrAshZl3dHPulXA" minheight="0" maxheight="2.134">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.915" origin="34.278399 45.958352 0" facing="0 -1 0" />
+    </door>
+    <door mid="5456" guid="3FZFp0nq9AAhRAecLpGfve" minheight="0" maxheight="2.134">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.83" origin="7.68545 39.794 0" facing="-1 0 0" />
+    </door>
+    <door mid="5550" guid="3FZFp0nq9AAhRAecLpGfxs" minheight="0" maxheight="2.134">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.83" origin="7.68545 37.914 0" facing="-1 0 0" />
+    </door>
+  </elements>
+</root>

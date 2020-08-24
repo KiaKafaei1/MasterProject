@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <elements>
+    <door mid="109" guid="0O7Qb7saD8jRtgzqx9tewi" minheight="40.86" maxheight="42.985">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.06" origin="-75050.414449 153038.655952 40.86" facing="0.267734 0.963493 0" />
+    </door>
+    <door mid="113" guid="0O7Qb7saD8jRtgzqx9teXf" minheight="40.86" maxheight="42.985">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="2.26" origin="-75062.554457 153042.029406 40.86" facing="0.267734 0.963493 0" />
+    </door>
+    <door mid="136" guid="18FuXJX3X62wd2TqbNDUgu" minheight="40.86" maxheight="42.985">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="2.26" origin="-75065.107713 153042.738903 40.86" facing="0.267734 0.963493 0" />
+    </door>
+    <door mid="137" guid="18FuXJX3X62wd2TqbNDUGw" minheight="40.86" maxheight="42.985">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.31" origin="-75072.50252 153044.793765 40.86" facing="0.267734 0.963493 0" />
+    </door>
+    <door mid="186" guid="18FuXJX3X62wd2TqbNDV32" minheight="40.86" maxheight="43.31">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="2.51" origin="-75036.082495 153034.673401 40.86" facing="0.267734 0.963493 0" />
+    </door>
+    <door mid="248" guid="3$mRkKA6rBSRmhpylGc1pN" minheight="40.86" maxheight="42.985">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="1.06" origin="-75051.811514 153039.044167 40.86" facing="-0.267734 -0.963493 0" />
+    </door>
+    <door mid="288" guid="19cn8kf9X8JwapRDuMnB0h" minheight="45.86" maxheight="47.95">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75073.621522 153056.360635 45.86" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="289" guid="19cn8kf9X8JwapRDuMnB0t" minheight="45.86" maxheight="47.95">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75073.234645 153057.752882 45.86" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="290" guid="19cn8kf9X8JwapRDuMnB6h" minheight="45.86" maxheight="47.95">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75075.950812 153047.978248 45.86" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="291" guid="19cn8kf9X8JwapRDuMnB6V" minheight="45.86" maxheight="47.95">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75075.442116 153049.808884 45.86" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="315" guid="0u91Y0K3X8hPDwNKiEiIHl" minheight="40.81" maxheight="43.335">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.17" origin="-75026.917589 153045.805025 40.81" facing="0.963493 -0.267734 0" />
+    </door>
+    <door mid="316" guid="0u91Y0K3X8hPDwNKiEiIIv" minheight="40.81" maxheight="43.335">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="1.17" origin="-75029.785026 153035.486018 40.81" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="352" guid="1h5D88r2rCDu1OyPJexEeJ" minheight="40.81" maxheight="43.31">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="2.5475" origin="-75082.711506 153041.823345 40.81" facing="0.963493 -0.267734 0" />
+    </door>
+    <door mid="441" guid="1jg0c7OAr4$wiOk9cQMe4h" minheight="40.81" maxheight="43.275">
+      <definition ifctype="NOTDEFINED" width="2.5" origin="-75072.90128 153036.635672 40.81" facing="0.267734 0.963493 0" />
+    </door>
+    <door mid="455" guid="1jg0c7OAr4$wiOk9cQMe4O" minheight="40.81" maxheight="43.275">
+      <definition ifctype="NOTDEFINED" width="2.5" origin="-75068.276515 153035.350547 40.81" facing="0.267734 0.963493 0" />
+    </door>
+    <door mid="467" guid="1jg0c7OAr4$wiOk9cQMe4w" minheight="40.81" maxheight="43.275">
+      <definition ifctype="NOTDEFINED" width="2.5" origin="-75077.526045 153037.920798 40.81" facing="0.267734 0.963493 0" />
+    </door>
+    <door mid="483" guid="1jg0c7OAr4$wiOk9cQMe5D" minheight="40.81" maxheight="43.275">
+      <definition ifctype="NOTDEFINED" width="2.5" origin="-75082.150811 153039.205923 40.81" facing="0.267734 0.963493 0" />
+    </door>
+    <door mid="948" guid="0zYlmyhpnELANr$APTNm$a" minheight="40.81" maxheight="43.275">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="2.5375" origin="-75032.037569 153027.742118 40.81" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="950" guid="0zYlmyhpnELANr$APTNm_H" minheight="40.81" maxheight="43.275">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="2.575" origin="-75031.379946 153030.108697 40.81" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1119" guid="3dbDkC8p99YPlxBwmU1_1x" minheight="40.87" maxheight="43.275">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="2.5375" origin="-75084.746402 153042.388801 40.87" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1504" guid="1jg0c7OAr4$wiOk9cQMeMS" minheight="40.87" maxheight="43.275">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="2.5" origin="-75032.321628 153048.207584 40.87" facing="-0.267734 -0.963493 0" />
+    </door>
+    <door mid="1508" guid="1jg0c7OAr4$wiOk9cQMeMv" minheight="40.87" maxheight="43.275">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="2.5" origin="-75050.820689 153053.348086 40.87" facing="-0.267734 -0.963493 0" />
+    </door>
+    <door mid="1526" guid="1jg0c7OAr4$wiOk9cQMeNE" minheight="40.87" maxheight="43.275">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="2.5" origin="-75062.382602 153056.5609 40.87" facing="-0.267734 -0.963493 0" />
+    </door>
+    <door mid="1573" guid="0jhbjdC1z2ox5VIQJWEZ9a" minheight="45.86" maxheight="47.95">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="1.01" origin="-75028.956703 153046.497237 45.86" facing="0.963493 -0.267734 0" />
+    </door>
+    <door mid="1574" guid="0jhbjdC1z2ox5VIQJWEZAy" minheight="45.86" maxheight="47.95">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75031.748103 153036.451862 45.86" facing="0.963493 -0.267734 0" />
+    </door>
+    <door mid="1576" guid="19cn8kf9X8JwapRDuMnB1x" minheight="45.86" maxheight="47.95">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75077.979847 153059.071474 45.86" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1590" guid="1O0aURJEr9tBDYbiJ809cf" minheight="40.81" maxheight="43.335">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="1.15" origin="-75079.916151 153060.133667 40.81" facing="0.963493 -0.267734 0" />
+    </door>
+    <door mid="1604" guid="1O0aURJEr9tBDYbiJ809YL" minheight="40.81" maxheight="43.335">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.15" origin="-75082.680777 153050.184641 40.81" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1615" guid="0zgy1C8y1AjPE$BNbUZbMK" minheight="45.86" maxheight="47.95">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="2.71" origin="-75040.100241 153011.341299 45.86" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1617" guid="2XtSrnPeH4lQKIahYcgPeX" minheight="40.81" maxheight="42.9">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.91" origin="-75057.357897 153029.860068 40.81" facing="0.963493 -0.267734 0" />
+    </door>
+    <door mid="1635" guid="20QrqQepH3zxV2dgIdaaVQ" minheight="40.86" maxheight="43.01">
+      <definition ifctype="NOTDEFINED" width="2.3" origin="-75050.472537 153032.86302 40.86" facing="0.963493 -0.267734 0" />
+    </door>
+    <door mid="1638" guid="3KWVWEssP2APTDWG5s_vj6" minheight="44.935" maxheight="47.135">
+      <definition ifctype="NOTDEFINED" width="2.3" origin="-75050.472537 153032.86302 44.935" facing="0.963493 -0.267734 0" />
+    </door>
+    <door mid="1708" guid="25_xOGwLP0HeVdzZi74eZt" minheight="40.86" maxheight="43.31">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="2.4475" origin="-75034.073429 153028.307841 40.86" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1783" guid="2lMsQCaQTB0QK1x0v4CSfP" minheight="40.81" maxheight="42.9">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.51" origin="-75047.82566 153051.501811 40.81" facing="0.963493 -0.267734 0" />
+    </door>
+    <door mid="1796" guid="2lMsQCaQTB0QK1x0v4CSYU" minheight="40.81" maxheight="42.9">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.51" origin="-75060.543764 153055.035906 40.81" facing="0.963493 -0.267734 0" />
+    </door>
+    <door mid="1807" guid="2UYSE7vXzFDeFPyt_TPvDz" minheight="40.81" maxheight="42.9">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75082.28548 153048.903018 40.81" facing="0.267734 0.963493 0" />
+    </door>
+    <door mid="1818" guid="2VgZ7G4I52WAQUKznr5Wpe" minheight="40.81" maxheight="42.9">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.91" origin="-75077.45693 153048.487582 40.81" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1819" guid="2VgZ7G4I52WAQUKznr5Wpl" minheight="40.81" maxheight="42.9">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.91" origin="-75076.948234 153050.318218 40.81" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1821" guid="2VgZ7G4I52WAQUKznr5Ws5" minheight="40.81" maxheight="42.9">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="1.01" origin="-75074.099208 153056.975993 40.81" facing="-0.267734 -0.963493 0" />
+    </door>
+    <door mid="1823" guid="2VgZ7G4I52WAQUKznr5Wq0" minheight="40.81" maxheight="42.9">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.91" origin="-75077.499446 153051.742805 40.81" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1824" guid="2VgZ7G4I52WAQUKznr5Wsh" minheight="40.81" maxheight="42.9">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.91" origin="-75076.531586 153055.225831 40.81" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1825" guid="2VgZ7G4I52WAQUKznr5Wsy" minheight="40.81" maxheight="42.9">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.91" origin="-75076.212313 153056.374796 40.81" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1826" guid="2VgZ7G4I52WAQUKznr5Wt2" minheight="40.81" maxheight="42.9">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.91" origin="-75076.854206 153054.064822 40.81" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1827" guid="2VgZ7G4I52WAQUKznr5Wtd" minheight="40.81" maxheight="42.9">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.91" origin="-75077.176826 153052.903813 40.81" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1829" guid="2ofwXb76b4k9lA1KMuYSno" minheight="40.81" maxheight="42.9">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75076.506802 153051.243823 40.81" facing="0.267734 0.963493 0" />
+    </door>
+    <door mid="1833" guid="2XtSrnPeH4lQKIahYcgPiq" minheight="44.935" maxheight="47.111">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75050.764824 153026.979722 44.935" facing="-0.267734 -0.963493 0" />
+    </door>
+    <door mid="1834" guid="2Z5d3AZF9C0eBHJGpsJsj1" minheight="40.81" maxheight="42.986">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75050.764824 153026.979722 40.81" facing="-0.267734 -0.963493 0" />
+    </door>
+    <door mid="1844" guid="3OhYWIggTACPQPMhQVqLIG" minheight="45.86" maxheight="47.95">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75032.517572 153033.682784 45.86" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1847" guid="36Tvw7ASrFghkBATWgs92C" minheight="40.81" maxheight="42.9">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="1.01" origin="-75031.497005 153032.402815 40.81" facing="-0.267734 -0.963493 0" />
+    </door>
+    <door mid="1894" guid="3wb5$I0zn6mvaSe2vg8Ccy" minheight="45.86" maxheight="47.95">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.71" origin="-75080.679385 153048.236166 45.86" facing="0.267734 0.963493 0" />
+    </door>
+    <door mid="1901" guid="31EC1pYL96R93DgPwb_2xF" minheight="45.86" maxheight="47.95">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75076.289797 153053.518776 45.86" facing="0.267734 0.963493 0" />
+    </door>
+    <door mid="1903" guid="31EC1pYL96R93DgPwb_2qj" minheight="45.86" maxheight="47.95">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.91" origin="-75076.901729 153053.893802 45.86" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1904" guid="31EC1pYL96R93DgPwb_2rw" minheight="45.86" maxheight="47.95">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.91" origin="-75076.595173 153054.997001 45.86" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1905" guid="31EC1pYL96R93DgPwb_2wH" minheight="45.86" maxheight="47.95">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.91" origin="-75076.288617 153056.100201 45.86" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1906" guid="31EC1pYL96R93DgPwb_2wm" minheight="45.86" maxheight="47.95">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.91" origin="-75075.982061 153057.2034 45.86" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1952" guid="31EC1pYL96R93DgPwb_2ui" minheight="45.86" maxheight="47.948">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="1.01" origin="-75071.138283 153053.923825 45.86" facing="0.267734 0.963493 0" />
+    </door>
+    <door mid="1958" guid="31EC1pYL96R93DgPwb_2ve" minheight="45.86" maxheight="47.948">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75065.914694 153048.061264 45.86" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="1961" guid="31EC1pYL96R93DgPwb_2$G" minheight="45.86" maxheight="47.948">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="2.01" origin="-75050.539824 153041.734383 45.86" facing="0.963493 -0.267734 0" />
+    </door>
+    <door mid="1963" guid="0IdklinfPFfObsYfuAwfRO" minheight="45.86" maxheight="47.948">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="1.01" origin="-75061.508432 153049.637085 45.86" facing="0.267734 0.963493 0" />
+    </door>
+    <door mid="1968" guid="0IdklinfPFfObsYfuAwfQ7" minheight="45.86" maxheight="47.948">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75054.838172 153047.783559 45.86" facing="0.267734 0.963493 0" />
+    </door>
+    <door mid="1978" guid="31EC1pYL96R93DgPwb_2_B" minheight="45.86" maxheight="47.948">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="1.01" origin="-75057.611285 153045.494448 45.86" facing="-0.267734 -0.963493 0" />
+    </door>
+    <door mid="2175" guid="3i7XeH07z80xgHCLlQ3XqF" minheight="45.86" maxheight="47.948">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75071.310483 153051.389923 45.86" facing="-0.267734 -0.963493 0" />
+    </door>
+    <door mid="2206" guid="3yDaP8YUL8bOUKSieFIyxq" minheight="37.07" maxheight="39.16">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.61" origin="-75056.135587 153034.860122 37.07" facing="0.963493 -0.267734 0" />
+    </door>
+    <door mid="2239" guid="0ss0V06rz5vwTm8SnLzNgV" minheight="37.07" maxheight="39.16">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.91" origin="-75050.321537 153026.856542 37.07" facing="-0.267734 -0.963493 0" />
+    </door>
+    <door mid="2243" guid="0ss0V06rz5vwTm8SnLzNgn" minheight="37.07" maxheight="39.16">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75055.077102 153031.611403 37.07" facing="-0.265707 -0.964054 0" />
+    </door>
+    <door mid="2244" guid="0XBzueC2LD$v_y_jYdVucE" minheight="40.81" maxheight="42.986">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75049.874372 153030.189222 40.81" facing="-0.265707 -0.964054 0" />
+    </door>
+    <door mid="2245" guid="0XBzueC2LD$v_y_jYdVudG" minheight="40.81" maxheight="43.3">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="2.45" origin="-75045.705133 153029.049548 40.81" facing="-0.265707 -0.964054 0" />
+    </door>
+    <door mid="2247" guid="2XtSrnPeH4lQKIahYcgPhH" minheight="44.935" maxheight="47.111">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75049.874287 153030.189198 44.935" facing="-0.265707 -0.964054 0" />
+    </door>
+    <door mid="2251" guid="1$np1KZ9z4kARJG9ZXur6j" minheight="37.07" maxheight="39.16">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.61" origin="-75061.697032 153036.920325 37.07" facing="0.267734 0.963493 0" />
+    </door>
+    <door mid="2252" guid="2a9OifiIvCieRlKKIHy4_g" minheight="37.07" maxheight="39.16">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.61" origin="-75057.650363 153035.79584 37.07" facing="0.267734 0.963493 0" />
+    </door>
+    <door mid="2257" guid="3yDaP8YUL8bOUKSieFIyNI" minheight="37.07" maxheight="39.16">
+      <definition ifctype="SINGLE_SWING_LEFT" width="1.01" origin="-75080.558121 153049.886447 37.07" facing="0.963493 -0.267734 0" />
+    </door>
+    <door mid="2266" guid="3yDaP8YUL8bOUKSieFIy8c" minheight="37.07" maxheight="39.16">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.61" origin="-75069.746256 153036.971239 37.07" facing="-0.963493 0.267734 0" />
+    </door>
+    <door mid="2272" guid="1kyEdCetzDXRSPZbs3sbkX" minheight="45.86" maxheight="48.06">
+      <definition ifctype="NOTDEFINED" width="2.3" origin="-75053.767682 153033.778672 45.86" facing="0.963493 -0.267734 0" />
+    </door>
+    <door mid="2332" guid="3DUddbv8rC8wXu2F4QKc4U" minheight="37.07" maxheight="39.16">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.41" origin="-75089.115743 153044.366084 37.07" facing="-0.963493 0.267734 0" />
+    </door>
+  </elements>
+</root>

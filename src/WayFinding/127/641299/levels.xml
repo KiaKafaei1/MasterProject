@@ -1,0 +1,2024 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Application="Autodesk Revit 2017 (ENU)" ElevationOffset="0">
+  <Building name="" guid="1GhdLWvkj0S9iDxs7rxjHR" unitscale="0.001" areaunitscale="1" elevation="-8.662937E-12">
+    <Floor name="Niveau 00" guid="1GhdLWvkj0S9iDxs4A4IgT" elevation="40810">
+      <Room name=" Depot (00.15)" guid="04rA7cLpfERPSOKiQ7qMEy" longName="Depot">
+        <Area area="2994600" height="2500" wallarea="17629999.9845309">
+          <Point2D x="-7.503222E+07" y="1.530348E+08" />
+          <Point2D x="-7.503278E+07" y="1.530328E+08" />
+          <Point2D x="-7.50314E+07" y="1.530324E+08" />
+          <Point2D x="-7.503084E+07" y="1.530344E+08" />
+        </Area>
+        <Property name="Reference" value="Depot 00.15" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Holdrum (00.12)" guid="2lMsQCaQTB0QK1x0v4CSiL" longName="Holdrum">
+        <Area area="1.770948E+08" height="4600" wallarea="244950000.028985">
+          <Point2D x="-7.507286E+07" y="1.530591E+08" />
+          <Point2D x="-7.507653E+07" y="1.530459E+08" />
+          <Point2D x="-7.506404E+07" y="1.530424E+08" />
+          <Point2D x="-7.506038E+07" y="1.530556E+08" />
+        </Area>
+        <Property name="Reference" value="Holdrum 00.12" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Holdrum (00.13)" guid="2lMsQCaQTB0QK1x0v4CSiM" longName="Holdrum">
+        <Area area="1.744292E+08" height="4600" wallarea="243156000.028758">
+          <Point2D x="-7.505996E+07" y="1.530555E+08" />
+          <Point2D x="-7.506362E+07" y="1.530423E+08" />
+          <Point2D x="-7.505133E+07" y="1.530389E+08" />
+          <Point2D x="-7.504766E+07" y="1.530521E+08" />
+        </Area>
+        <Property name="Reference" value="Holdrum 00.13" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Malkestation (00.69)" guid="2lMsQCaQTB0QK1x0v4CSiR" longName="Malkestation">
+        <Area area="2.580896E+08" height="4600" wallarea="299460000.028688">
+          <Point2D x="-7.503271E+07" y="1.530337E+08" />
+          <Point2D x="-7.502905E+07" y="1.530469E+08" />
+          <Point2D x="-7.504724E+07" y="1.53052E+08" />
+          <Point2D x="-7.50509E+07" y="1.530388E+08" />
+        </Area>
+        <Property name="Reference" value="Malkestation 00.69" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="linoleum" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Area (1)" guid="3lP15vjrDBPhY5ehllAI10" longName="Area">
+        <Area area="1.11587E+09" height="1" wallarea="155886.197390221">
+          <Point2D x="-7.503579E+07" y="1.530267E+08" />
+          <Point2D x="-7.503294E+07" y="1.530259E+08" />
+          <Point2D x="-7.503122E+07" y="1.530321E+08" />
+          <Point2D x="-7.503146E+07" y="1.530322E+08" />
+          <Point2D x="-7.503084E+07" y="1.530344E+08" />
+          <Point2D x="-7.503241E+07" y="1.530348E+08" />
+          <Point2D x="-7.502905E+07" y="1.530469E+08" />
+          <Point2D x="-7.503129E+07" y="1.530475E+08" />
+          <Point2D x="-7.50312E+07" y="1.530478E+08" />
+          <Point2D x="-7.503346E+07" y="1.530485E+08" />
+          <Point2D x="-7.503355E+07" y="1.530482E+08" />
+          <Point2D x="-7.503591E+07" y="1.530488E+08" />
+          <Point2D x="-7.503582E+07" y="1.530491E+08" />
+          <Point2D x="-7.504271E+07" y="1.530511E+08" />
+          <Point2D x="-7.504281E+07" y="1.530507E+08" />
+          <Point2D x="-7.504517E+07" y="1.530514E+08" />
+          <Point2D x="-7.504507E+07" y="1.530517E+08" />
+          <Point2D x="-7.504734E+07" y="1.530523E+08" />
+          <Point2D x="-7.504743E+07" y="1.53052E+08" />
+          <Point2D x="-7.504979E+07" y="1.530527E+08" />
+          <Point2D x="-7.50497E+07" y="1.53053E+08" />
+          <Point2D x="-7.505428E+07" y="1.530543E+08" />
+          <Point2D x="-7.505437E+07" y="1.530539E+08" />
+          <Point2D x="-7.505673E+07" y="1.530546E+08" />
+          <Point2D x="-7.505664E+07" y="1.530549E+08" />
+          <Point2D x="-7.50589E+07" y="1.530556E+08" />
+          <Point2D x="-7.505899E+07" y="1.530552E+08" />
+          <Point2D x="-7.506135E+07" y="1.530559E+08" />
+          <Point2D x="-7.506126E+07" y="1.530562E+08" />
+          <Point2D x="-7.506584E+07" y="1.530575E+08" />
+          <Point2D x="-7.506593E+07" y="1.530572E+08" />
+          <Point2D x="-7.506829E+07" y="1.530578E+08" />
+          <Point2D x="-7.50682E+07" y="1.530581E+08" />
+          <Point2D x="-7.507278E+07" y="1.530594E+08" />
+          <Point2D x="-7.507294E+07" y="1.530588E+08" />
+          <Point2D x="-7.507749E+07" y="1.530601E+08" />
+          <Point2D x="-7.508078E+07" y="1.530483E+08" />
+          <Point2D x="-7.508234E+07" y="1.530487E+08" />
+          <Point2D x="-7.508295E+07" y="1.530465E+08" />
+          <Point2D x="-7.508319E+07" y="1.530466E+08" />
+          <Point2D x="-7.508492E+07" y="1.530404E+08" />
+          <Point2D x="-7.505666E+07" y="1.530325E+08" />
+          <Point2D x="-7.505678E+07" y="1.530321E+08" />
+          <Point2D x="-7.50359E+07" y="1.530264E+08" />
+        </Area>
+        <Property name="Reference" value="Area 1" />
+        <Property name="Category" value="Areas" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+    </Floor>
+    <Floor name="Niveau 01" guid="1GhdLWvkj0S9iDxs4A4jno" elevation="45860">
+      <Room name=" Grupperum (01.11)" guid="0IdklinfPFfObsYfuAwfM_" longName="Grupperum">
+        <Area area="1.833882E+07" height="4450" wallarea="76290799.9998485">
+          <Point2D x="-7.506997E+07" y="1.530584E+08" />
+          <Point2D x="-7.507117E+07" y="1.530541E+08" />
+          <Point2D x="-7.506721E+07" y="1.53053E+08" />
+          <Point2D x="-7.506601E+07" y="1.530573E+08" />
+        </Area>
+        <Property name="Reference" value="Grupperum 01.11" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Grupperum (01.17)" guid="0IdklinfPFfObsYfuAwfM0" longName="Grupperum">
+        <Area area="2.44693E+07" height="4450" wallarea="95585999.9999629">
+          <Point2D x="-7.506269E+07" y="1.530422E+08" />
+          <Point2D x="-7.506302E+07" y="1.53041E+08" />
+          <Point2D x="-7.50581E+07" y="1.530396E+08" />
+          <Point2D x="-7.505778E+07" y="1.530408E+08" />
+          <Point2D x="-7.505776E+07" y="1.530408E+08" />
+          <Point2D x="-7.505774E+07" y="1.530409E+08" />
+          <Point2D x="-7.50587E+07" y="1.530412E+08" />
+          <Point2D x="-7.505762E+07" y="1.530451E+08" />
+          <Point2D x="-7.505755E+07" y="1.530453E+08" />
+          <Point2D x="-7.506151E+07" y="1.530464E+08" />
+        </Area>
+        <Property name="Reference" value="Grupperum 01.17" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Grupperum (01.16)" guid="0IdklinfPFfObsYfuAwfM3" longName="Grupperum">
+        <Area area="4.522133E+07" height="4450" wallarea="130910100.000021">
+          <Point2D x="-7.505374E+07" y="1.530476E+08" />
+          <Point2D x="-7.505213E+07" y="1.530535E+08" />
+          <Point2D x="-7.505993E+07" y="1.530556E+08" />
+          <Point2D x="-7.506117E+07" y="1.530512E+08" />
+          <Point2D x="-7.506154E+07" y="1.530498E+08" />
+          <Point2D x="-7.506042E+07" y="1.530495E+08" />
+          <Point2D x="-7.506026E+07" y="1.530501E+08" />
+          <Point2D x="-7.50547E+07" y="1.530485E+08" />
+          <Point2D x="-7.505486E+07" y="1.53048E+08" />
+        </Area>
+        <Property name="Reference" value="Grupperum 01.16" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Holdrum (01.19)" guid="0IdklinfPFfObsYfuAwfM5" longName="Holdrum">
+        <Area area="2.715248E+08" height="4450" wallarea="302657850.028309">
+          <Point2D x="-7.503238E+07" y="1.530349E+08" />
+          <Point2D x="-7.502902E+07" y="1.53047E+08" />
+          <Point2D x="-7.504721E+07" y="1.530521E+08" />
+          <Point2D x="-7.504886E+07" y="1.530461E+08" />
+          <Point2D x="-7.505006E+07" y="1.530418E+08" />
+          <Point2D x="-7.505073E+07" y="1.530394E+08" />
+          <Point2D x="-7.50515E+07" y="1.530396E+08" />
+          <Point2D x="-7.505164E+07" y="1.530391E+08" />
+          <Point2D x="-7.505181E+07" y="1.530385E+08" />
+          <Point2D x="-7.503286E+07" y="1.530332E+08" />
+        </Area>
+        <Property name="Reference" value="Holdrum 01.19" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Elevator (01.23)" guid="1PIJQDo9v4GPE1u5xwXoIT" longName="Elevator">
+        <Area area="7968000" height="5049.99999999997" wallarea="57772000.0011872">
+          <Point2D x="-7.505025E+07" y="1.53034E+08" />
+          <Point2D x="-7.505345E+07" y="1.530349E+08" />
+          <Point2D x="-7.505409E+07" y="1.530326E+08" />
+          <Point2D x="-7.505089E+07" y="1.530317E+08" />
+        </Area>
+        <Property name="Reference" value="Elevator 01.23" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Grupperum (01.12)" guid="1xPzBDBlnAJ91olUEnV9mS" longName="Grupperum">
+        <Area area="6.891169E+07" height="4450" wallarea="149898250.000133">
+          <Point2D x="-7.50724E+07" y="1.530515E+08" />
+          <Point2D x="-7.507503E+07" y="1.53042E+08" />
+          <Point2D x="-7.506829E+07" y="1.530402E+08" />
+          <Point2D x="-7.506566E+07" y="1.530496E+08" />
+        </Area>
+        <Property name="Reference" value="Grupperum 01.12" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Gruppe-/projektområde (01.13)" guid="2SFwF15xj579dr7B11ojDP" longName="Gruppe-/projektområde">
+        <Area area="2.642556E+07" height="4450" wallarea="91999299.9998769">
+          <Point2D x="-7.506585E+07" y="1.530573E+08" />
+          <Point2D x="-7.506709E+07" y="1.530528E+08" />
+          <Point2D x="-7.506159E+07" y="1.530513E+08" />
+          <Point2D x="-7.506035E+07" y="1.530557E+08" />
+        </Area>
+        <Property name="Reference" value="Gruppe-/projektområde 01.13" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Gang (01.01)" guid="2SFwF15xj579dr7B11ojFs" longName="Gang">
+        <Area area="5882500" height="2499.99999999999" wallarea="29124999.9998693">
+          <Point2D x="-7.507347E+07" y="1.530576E+08" />
+          <Point2D x="-7.507313E+07" y="1.530589E+08" />
+          <Point2D x="-7.507749E+07" y="1.530601E+08" />
+          <Point2D x="-7.507783E+07" y="1.530588E+08" />
+        </Area>
+        <Property name="Reference" value="Gang 01.01" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Træ" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Lounge (01.18)" guid="2SFwF15xj579dr7B11ojHV" longName="Lounge">
+        <Area area="2.455048E+07" height="4450" wallarea="90370600.0001903">
+          <Point2D x="-7.505196E+07" y="1.530534E+08" />
+          <Point2D x="-7.505362E+07" y="1.530474E+08" />
+          <Point2D x="-7.504979E+07" y="1.530464E+08" />
+          <Point2D x="-7.504814E+07" y="1.530523E+08" />
+        </Area>
+        <Property name="Reference" value="Lounge 01.18" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Træ" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Gruppe-/projektrum (01.15)" guid="2SFwF15xj579dr7B11ojJ7" longName="Gruppe-/projektrum">
+        <Area area="2.060883E+07" height="4450" wallarea="80807549.9977899">
+          <Point2D x="-7.506598E+07" y="1.530478E+08" />
+          <Point2D x="-7.50672E+07" y="1.530434E+08" />
+          <Point2D x="-7.506285E+07" y="1.530422E+08" />
+          <Point2D x="-7.506163E+07" y="1.530466E+08" />
+        </Area>
+        <Property name="Reference" value="Gruppe-/projektrum 01.15" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Gang (01.14)" guid="2SFwF15xj579dr7B11ojLI" longName="Gang">
+        <Area area="1.340568E+08" height="4450" wallarea="472301624.619952">
+          <Point2D x="-7.507288E+07" y="1.53059E+08" />
+          <Point2D x="-7.507648E+07" y="1.530461E+08" />
+          <Point2D x="-7.507486E+07" y="1.530456E+08" />
+          <Point2D x="-7.507312E+07" y="1.530519E+08" />
+          <Point2D x="-7.506544E+07" y="1.530498E+08" />
+          <Point2D x="-7.506598E+07" y="1.530478E+08" />
+          <Point2D x="-7.505638E+07" y="1.530452E+08" />
+          <Point2D x="-7.505651E+07" y="1.530447E+08" />
+          <Point2D x="-7.505747E+07" y="1.530449E+08" />
+          <Point2D x="-7.50585E+07" y="1.530413E+08" />
+          <Point2D x="-7.505753E+07" y="1.53041E+08" />
+          <Point2D x="-7.505762E+07" y="1.530407E+08" />
+          <Point2D x="-7.505181E+07" y="1.530392E+08" />
+          <Point2D x="-7.505161E+07" y="1.530398E+08" />
+          <Point2D x="-7.50511E+07" y="1.530397E+08" />
+          <Point2D x="-7.505051E+07" y="1.530418E+08" />
+          <Point2D x="-7.505102E+07" y="1.53042E+08" />
+          <Point2D x="-7.504979E+07" y="1.530464E+08" />
+          <Point2D x="-7.506201E+07" y="1.530498E+08" />
+          <Point2D x="-7.506159E+07" y="1.530513E+08" />
+          <Point2D x="-7.507187E+07" y="1.530541E+08" />
+          <Point2D x="-7.507182E+07" y="1.530543E+08" />
+          <Point2D x="-7.507133E+07" y="1.530542E+08" />
+          <Point2D x="-7.507041E+07" y="1.530575E+08" />
+          <Point2D x="-7.507098E+07" y="1.530576E+08" />
+          <Point2D x="-7.507071E+07" y="1.530586E+08" />
+          <Point2D x="-7.507283E+07" y="1.530592E+08" />
+          <Point2D x="-7.507277E+07" y="1.530594E+08" />
+          <Point2D x="-7.507744E+07" y="1.530608E+08" />
+          <Point2D x="-7.507754E+07" y="1.530604E+08" />
+          <Point2D x="-7.50776E+07" y="1.530604E+08" />
+          <Point2D x="-7.507762E+07" y="1.530604E+08" />
+        </Area>
+        <Property name="Reference" value="Gang 01.14" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Træ" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Balkon (01.22)" guid="2SFwF15xj579dr7B11ojSb" longName="Balkon">
+        <Area area="1.275365E+07" height="4450" wallarea="79079956.2349533">
+          <Point2D x="-7.505224E+07" y="1.530393E+08" />
+          <Point2D x="-7.505398E+07" y="1.530397E+08" />
+          <Point2D x="-7.505588E+07" y="1.530329E+08" />
+          <Point2D x="-7.505414E+07" y="1.530324E+08" />
+          <Point2D x="-7.505411E+07" y="1.530325E+08" />
+          <Point2D x="-7.505342E+07" y="1.53035E+08" />
+          <Point2D x="-7.505342E+07" y="1.530351E+08" />
+          <Point2D x="-7.505307E+07" y="1.530363E+08" />
+        </Area>
+        <Property name="Reference" value="Balkon 01.22" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Balkon (01.21)" guid="2SFwF15xj579dr7B11ojSc" longName="Balkon">
+        <Area area="1.899666E+07" height="4125" wallarea="95650500.000505">
+          <Point2D x="-7.505339E+07" y="1.530351E+08" />
+          <Point2D x="-7.505307E+07" y="1.530363E+08" />
+          <Point2D x="-7.50467E+07" y="1.530345E+08" />
+          <Point2D x="-7.504777E+07" y="1.530307E+08" />
+          <Point2D x="-7.504879E+07" y="1.530309E+08" />
+          <Point2D x="-7.504906E+07" y="1.5303E+08" />
+          <Point2D x="-7.50498E+07" y="1.530302E+08" />
+          <Point2D x="-7.50498E+07" y="1.530302E+08" />
+          <Point2D x="-7.505091E+07" y="1.530305E+08" />
+          <Point2D x="-7.505091E+07" y="1.530305E+08" />
+          <Point2D x="-7.50511E+07" y="1.530306E+08" />
+          <Point2D x="-7.505082E+07" y="1.530316E+08" />
+          <Point2D x="-7.505079E+07" y="1.530317E+08" />
+          <Point2D x="-7.505015E+07" y="1.53034E+08" />
+          <Point2D x="-7.505025E+07" y="1.53034E+08" />
+          <Point2D x="-7.505019E+07" y="1.530342E+08" />
+        </Area>
+        <Property name="Reference" value="Balkon 01.21" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Depot (02.20)" guid="2SPeU6a5H8LhwdEHwfUwAW" longName="Depot">
+        <Area area="2994600" height="2500" wallarea="17629999.984505">
+          <Point2D x="-7.503222E+07" y="1.530348E+08" />
+          <Point2D x="-7.503278E+07" y="1.530328E+08" />
+          <Point2D x="-7.50314E+07" y="1.530324E+08" />
+          <Point2D x="-7.503084E+07" y="1.530344E+08" />
+        </Area>
+        <Property name="Reference" value="Depot 02.20" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Forrum (01.06)" guid="3HzoMrZfnCwACXv$x4cjP_" longName="Forrum">
+        <Area area="1.012618E+07" height="2499.99999999999" wallarea="33587500.0160517">
+          <Point2D x="-7.507382E+07" y="1.530564E+08" />
+          <Point2D x="-7.507382E+07" y="1.530564E+08" />
+          <Point2D x="-7.507354E+07" y="1.530574E+08" />
+          <Point2D x="-7.507355E+07" y="1.530574E+08" />
+          <Point2D x="-7.507352E+07" y="1.530575E+08" />
+          <Point2D x="-7.507573E+07" y="1.530581E+08" />
+          <Point2D x="-7.507602E+07" y="1.530571E+08" />
+          <Point2D x="-7.507632E+07" y="1.53056E+08" />
+          <Point2D x="-7.507662E+07" y="1.530549E+08" />
+          <Point2D x="-7.507691E+07" y="1.530539E+08" />
+          <Point2D x="-7.507485E+07" y="1.530533E+08" />
+          <Point2D x="-7.50747E+07" y="1.530532E+08" />
+        </Area>
+        <Property name="Reference" value="Forrum 01.06" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="linoleum" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" WC (01.03)" guid="3HzoMrZfnCwACXv$x4cjPf" longName="WC">
+        <Area area="1871800" height="2499.99999999999" wallarea="14449999.9997006">
+          <Point2D x="-7.507646E+07" y="1.530561E+08" />
+          <Point2D x="-7.507619E+07" y="1.530571E+08" />
+          <Point2D x="-7.507803E+07" y="1.530576E+08" />
+          <Point2D x="-7.50783E+07" y="1.530566E+08" />
+        </Area>
+        <Property name="Reference" value="WC 01.03" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="linoleum" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" WC (01.02)" guid="3HzoMrZfnCwACXv$x4cjPg" longName="WC">
+        <Area area="1871800" height="2499.99999999999" wallarea="14449999.9997006">
+          <Point2D x="-7.507589E+07" y="1.530582E+08" />
+          <Point2D x="-7.507773E+07" y="1.530587E+08" />
+          <Point2D x="-7.507799E+07" y="1.530577E+08" />
+          <Point2D x="-7.507615E+07" y="1.530572E+08" />
+        </Area>
+        <Property name="Reference" value="WC 01.02" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="linoleum" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" WC (01.05)" guid="3HzoMrZfnCwACXv$x4cjPp" longName="WC">
+        <Area area="1876575" height="2499.99999999999" wallarea="14462500.0159965">
+          <Point2D x="-7.507707E+07" y="1.530539E+08" />
+          <Point2D x="-7.507681E+07" y="1.530548E+08" />
+          <Point2D x="-7.507865E+07" y="1.530554E+08" />
+          <Point2D x="-7.507891E+07" y="1.530544E+08" />
+        </Area>
+        <Property name="Reference" value="WC 01.05" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="linoleum" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" WC (01.04)" guid="3HzoMrZfnCwACXv$x4cjPq" longName="WC">
+        <Area area="1871800" height="2499.99999999999" wallarea="14449999.9997006">
+          <Point2D x="-7.507676E+07" y="1.53055E+08" />
+          <Point2D x="-7.50765E+07" y="1.53056E+08" />
+          <Point2D x="-7.507834E+07" y="1.530565E+08" />
+          <Point2D x="-7.50786E+07" y="1.530555E+08" />
+        </Area>
+        <Property name="Reference" value="WC 01.04" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="linoleum" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" X-felt (01.08)" guid="3HzoMrZfnCwACXv$x4cjPu" longName="X-felt">
+        <Area area="7862188" height="2499.99999999999" wallarea="31312500.0008842">
+          <Point2D x="-7.507581E+07" y="1.530492E+08" />
+          <Point2D x="-7.507534E+07" y="1.530509E+08" />
+          <Point2D x="-7.50797E+07" y="1.530521E+08" />
+          <Point2D x="-7.508017E+07" y="1.530504E+08" />
+        </Area>
+        <Property name="Reference" value="X-felt 01.08" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" HC WC (01.07)" guid="3HzoMrZfnCwACXv$x4cjPz" longName="HC WC">
+        <Area area="9460500" height="2499.99999999999" wallarea="33024999.9998501">
+          <Point2D x="-7.507475E+07" y="1.530531E+08" />
+          <Point2D x="-7.507909E+07" y="1.530543E+08" />
+          <Point2D x="-7.507965E+07" y="1.530523E+08" />
+          <Point2D x="-7.507531E+07" y="1.530511E+08" />
+        </Area>
+        <Property name="Reference" value="HC WC 01.07" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="linoleum" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Skakt (01.10)" guid="3HzoMrZfnCwACXv$x4cjU2" longName="Skakt">
+        <Area area="7274544" height="2500" wallarea="27933195.5472086">
+          <Point2D x="-7.508234E+07" y="1.530487E+08" />
+          <Point2D x="-7.50829E+07" y="1.530467E+08" />
+          <Point2D x="-7.50795E+07" y="1.530458E+08" />
+          <Point2D x="-7.507895E+07" y="1.530478E+08" />
+          <Point2D x="-7.508078E+07" y="1.530483E+08" />
+          <Point2D x="-7.508078E+07" y="1.530483E+08" />
+          <Point2D x="-7.508087E+07" y="1.530483E+08" />
+        </Area>
+        <Property name="Reference" value="Skakt 01.10" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Print (01.09)" guid="3HzoMrZfnCwACXv$x4cjU7" longName="Print">
+        <Area area="1.446418E+07" height="2499.99999999999" wallarea="43574999.9826779">
+          <Point2D x="-7.507667E+07" y="1.530461E+08" />
+          <Point2D x="-7.507585E+07" y="1.530491E+08" />
+          <Point2D x="-7.508021E+07" y="1.530503E+08" />
+          <Point2D x="-7.508074E+07" y="1.530484E+08" />
+          <Point2D x="-7.507878E+07" y="1.530479E+08" />
+          <Point2D x="-7.507937E+07" y="1.530457E+08" />
+          <Point2D x="-7.507697E+07" y="1.530451E+08" />
+        </Area>
+        <Property name="Reference" value="Print 01.09" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="linoleum" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Area (2)" guid="3lP15vjrDBPhY5ehllAIPl" longName="Area">
+        <Area area="8.548637E+08" height="5000" wallarea="1003440248.0884">
+          <Point2D x="-7.508281E+07" y="1.530494E+08" />
+          <Point2D x="-7.508356E+07" y="1.530467E+08" />
+          <Point2D x="-7.507683E+07" y="1.530448E+08" />
+          <Point2D x="-7.507653E+07" y="1.530459E+08" />
+          <Point2D x="-7.507489E+07" y="1.530455E+08" />
+          <Point2D x="-7.507582E+07" y="1.530421E+08" />
+          <Point2D x="-7.506816E+07" y="1.5304E+08" />
+          <Point2D x="-7.506723E+07" y="1.530433E+08" />
+          <Point2D x="-7.506288E+07" y="1.530421E+08" />
+          <Point2D x="-7.506322E+07" y="1.530409E+08" />
+          <Point2D x="-7.505798E+07" y="1.530394E+08" />
+          <Point2D x="-7.505762E+07" y="1.530407E+08" />
+          <Point2D x="-7.505405E+07" y="1.530397E+08" />
+          <Point2D x="-7.505518E+07" y="1.530356E+08" />
+          <Point2D x="-7.506472E+07" y="1.530383E+08" />
+          <Point2D x="-7.506547E+07" y="1.530356E+08" />
+          <Point2D x="-7.50509E+07" y="1.530315E+08" />
+          <Point2D x="-7.505115E+07" y="1.530306E+08" />
+          <Point2D x="-7.5049E+07" y="1.5303E+08" />
+          <Point2D x="-7.504876E+07" y="1.530309E+08" />
+          <Point2D x="-7.504773E+07" y="1.530306E+08" />
+          <Point2D x="-7.504661E+07" y="1.530346E+08" />
+          <Point2D x="-7.505299E+07" y="1.530364E+08" />
+          <Point2D x="-7.505222E+07" y="1.530392E+08" />
+          <Point2D x="-7.505183E+07" y="1.530391E+08" />
+          <Point2D x="-7.505202E+07" y="1.530384E+08" />
+          <Point2D x="-7.50329E+07" y="1.530331E+08" />
+          <Point2D x="-7.503302E+07" y="1.530326E+08" />
+          <Point2D x="-7.503086E+07" y="1.53032E+08" />
+          <Point2D x="-7.50301E+07" y="1.530347E+08" />
+          <Point2D x="-7.503179E+07" y="1.530352E+08" />
+          <Point2D x="-7.502847E+07" y="1.530471E+08" />
+          <Point2D x="-7.50778E+07" y="1.530608E+08" />
+          <Point2D x="-7.508112E+07" y="1.530489E+08" />
+        </Area>
+        <Property name="Reference" value="Area 2" />
+        <Property name="Category" value="Areas" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+    </Floor>
+    <Floor name="Tagplan" guid="1GhdLWvkj0S9iDxs4A5GPK" elevation="50860" />
+    <Floor name="Niveau -01" guid="1GhdLWvkj0S9iDxs4A5RzJ" elevation="37069.9999999998">
+      <Room name=" Sprinklerrum (-01.01)" guid="0fnYelIAT2Le0iADQP$x4w" longName="Sprinklerrum">
+        <Area area="1.649038E+07" height="3240.00000000019" wallarea="52876799.9997719">
+          <Point2D x="-7.507638E+07" y="1.530473E+08" />
+          <Point2D x="-7.50754E+07" y="1.530508E+08" />
+          <Point2D x="-7.507971E+07" y="1.53052E+08" />
+          <Point2D x="-7.50807E+07" y="1.530485E+08" />
+        </Area>
+        <Property name="Reference" value="Sprinklerrum -01.01" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Gang (-01.07)" guid="0fnYelIAT2Le0iADQP$x6$" longName="Gang">
+        <Area area="3.593464E+07" height="3240.00000000019" wallarea="105662835.602263">
+          <Point2D x="-7.506918E+07" y="1.53039E+08" />
+          <Point2D x="-7.506989E+07" y="1.530365E+08" />
+          <Point2D x="-7.50567E+07" y="1.530328E+08" />
+          <Point2D x="-7.5056E+07" y="1.530353E+08" />
+        </Area>
+        <Property name="Reference" value="Gang -01.07" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Træ" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Skakt (-01.03)" guid="0fnYelIAT2Le0iADQP$x6p" longName="Skakt">
+        <Area area="7352100" height="3240.00000000019" wallarea="36294479.9990163">
+          <Point2D x="-7.507894E+07" y="1.530478E+08" />
+          <Point2D x="-7.508231E+07" y="1.530487E+08" />
+          <Point2D x="-7.508288E+07" y="1.530467E+08" />
+          <Point2D x="-7.50795E+07" y="1.530457E+08" />
+        </Area>
+        <Property name="Reference" value="Skakt -01.03" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Depot (-01.05)" guid="0fnYelIAT2Le0iADQP$x6r" longName="Depot">
+        <Area area="4.542892E+07" height="3240.00000000019" wallarea="92320560.0000349">
+          <Point2D x="-7.505874E+07" y="1.530414E+08" />
+          <Point2D x="-7.506782E+07" y="1.530439E+08" />
+          <Point2D x="-7.506911E+07" y="1.530392E+08" />
+          <Point2D x="-7.506003E+07" y="1.530367E+08" />
+        </Area>
+        <Property name="Reference" value="Depot -01.05" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Teknik (-01.04)" guid="0fnYelIAT2Le0iADQP$x6s" longName="Teknik">
+        <Area area="1.154531E+08" voidarea="75000" height="3240.00000000019" wallarea="153220026.723453">
+          <Point2D x="-7.506806E+07" y="1.53044E+08" />
+          <Point2D x="-7.507644E+07" y="1.530471E+08" />
+          <Point2D x="-7.507894E+07" y="1.530478E+08" />
+          <Point2D x="-7.507956E+07" y="1.530456E+08" />
+          <Point2D x="-7.508293E+07" y="1.530465E+08" />
+          <Point2D x="-7.508354E+07" y="1.530443E+08" />
+          <Point2D x="-7.508354E+07" y="1.530443E+08" />
+          <Point2D x="-7.508392E+07" y="1.530429E+08" />
+          <Point2D x="-7.508396E+07" y="1.530428E+08" />
+          <Point2D x="-7.508458E+07" y="1.530406E+08" />
+          <Point2D x="-7.507013E+07" y="1.530365E+08" />
+          <Point2D x="-7.506939E+07" y="1.530392E+08" />
+        </Area>
+        <Property name="Reference" value="Teknik -01.04" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Rengøring (-01.06)" guid="0fnYelIAT2Le0iADQP$x6u" longName="Rengøring">
+        <Area area="1.9272E+07" height="3240.00000000019" wallarea="57140640.0000752">
+          <Point2D x="-7.505594E+07" y="1.530356E+08" />
+          <Point2D x="-7.505465E+07" y="1.530402E+08" />
+          <Point2D x="-7.50585E+07" y="1.530413E+08" />
+          <Point2D x="-7.505979E+07" y="1.530367E+08" />
+        </Area>
+        <Property name="Reference" value="Rengøring -01.06" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Forrum (-01.08)" guid="0fnYelIAT2Le0iADQP$x7x" longName="Forrum">
+        <Area area="6449562" height="3240.00000000019" wallarea="33981097.8008559">
+          <Point2D x="-7.50547E+07" y="1.530328E+08" />
+          <Point2D x="-7.505409E+07" y="1.530326E+08" />
+          <Point2D x="-7.505345E+07" y="1.530349E+08" />
+          <Point2D x="-7.505568E+07" y="1.530356E+08" />
+          <Point2D x="-7.505573E+07" y="1.530354E+08" />
+          <Point2D x="-7.505646E+07" y="1.530327E+08" />
+          <Point2D x="-7.505602E+07" y="1.530326E+08" />
+          <Point2D x="-7.505588E+07" y="1.530326E+08" />
+          <Point2D x="-7.505485E+07" y="1.530323E+08" />
+        </Area>
+        <Property name="Reference" value="Forrum -01.08" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="linoleum" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Area (3)" guid="3lP15vjrDBPhY5ehllAILn" longName="Area">
+        <Area area="3.154657E+08" height="8790.00000000016" wallarea="963070046.09794">
+          <Point2D x="-7.505409E+07" y="1.530405E+08" />
+          <Point2D x="-7.507609E+07" y="1.530466E+08" />
+          <Point2D x="-7.507474E+07" y="1.530515E+08" />
+          <Point2D x="-7.507992E+07" y="1.530529E+08" />
+          <Point2D x="-7.508107E+07" y="1.530488E+08" />
+          <Point2D x="-7.508264E+07" y="1.530492E+08" />
+          <Point2D x="-7.508385E+07" y="1.530448E+08" />
+          <Point2D x="-7.50839E+07" y="1.530447E+08" />
+          <Point2D x="-7.508899E+07" y="1.530461E+08" />
+          <Point2D x="-7.508951E+07" y="1.530442E+08" />
+          <Point2D x="-7.508442E+07" y="1.530428E+08" />
+          <Point2D x="-7.508448E+07" y="1.530426E+08" />
+          <Point2D x="-7.508514E+07" y="1.530402E+08" />
+          <Point2D x="-7.505646E+07" y="1.530323E+08" />
+          <Point2D x="-7.505654E+07" y="1.53032E+08" />
+          <Point2D x="-7.505461E+07" y="1.530315E+08" />
+          <Point2D x="-7.505439E+07" y="1.530322E+08" />
+          <Point2D x="-7.505067E+07" y="1.530312E+08" />
+          <Point2D x="-7.504979E+07" y="1.530344E+08" />
+          <Point2D x="-7.505537E+07" y="1.530359E+08" />
+        </Area>
+        <Property name="Reference" value="Area 3" />
+        <Property name="Category" value="Areas" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Tunnel (-01.02)" guid="3luAiOQonEUh2n2LrdmoMN" longName="Tunnel">
+        <Area area="7816752" height="3740.00000000019" wallarea="51169798.567982">
+          <Point2D x="-7.508393E+07" y="1.530429E+08" />
+          <Point2D x="-7.508354E+07" y="1.530443E+08" />
+          <Point2D x="-7.508874E+07" y="1.530457E+08" />
+          <Point2D x="-7.508912E+07" y="1.530444E+08" />
+        </Area>
+        <Property name="Reference" value="Tunnel -01.02" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Træ" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Elevator (-01.09)" guid="3vX$GiC9DCVeMguNgEMsm3" longName="Elevator">
+        <Area area="7968000" height="3740.00000000019" wallarea="42785600.0002671">
+          <Point2D x="-7.505409E+07" y="1.530326E+08" />
+          <Point2D x="-7.505089E+07" y="1.530317E+08" />
+          <Point2D x="-7.505025E+07" y="1.53034E+08" />
+          <Point2D x="-7.505345E+07" y="1.530349E+08" />
+        </Area>
+        <Property name="Reference" value="Elevator -01.09" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+    </Floor>
+    <Floor name="Dummy" guid="0" elevation="0">
+      <Room name=" Depot (00.15)" guid="04rA7cLpfERPSOKiQ7qMEy" longName="Depot">
+        <Area area="2994600" height="2500" wallarea="17629999.9845309">
+          <Point2D x="-7.503222E+07" y="1.530348E+08" />
+          <Point2D x="-7.503278E+07" y="1.530328E+08" />
+          <Point2D x="-7.50314E+07" y="1.530324E+08" />
+          <Point2D x="-7.503084E+07" y="1.530344E+08" />
+        </Area>
+        <Property name="Reference" value="Depot 00.15" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Holdrum (00.12)" guid="2lMsQCaQTB0QK1x0v4CSiL" longName="Holdrum">
+        <Area area="1.770948E+08" height="4600" wallarea="244950000.028985">
+          <Point2D x="-7.507286E+07" y="1.530591E+08" />
+          <Point2D x="-7.507653E+07" y="1.530459E+08" />
+          <Point2D x="-7.506404E+07" y="1.530424E+08" />
+          <Point2D x="-7.506038E+07" y="1.530556E+08" />
+        </Area>
+        <Property name="Reference" value="Holdrum 00.12" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Holdrum (00.13)" guid="2lMsQCaQTB0QK1x0v4CSiM" longName="Holdrum">
+        <Area area="1.744292E+08" height="4600" wallarea="243156000.028758">
+          <Point2D x="-7.505996E+07" y="1.530555E+08" />
+          <Point2D x="-7.506362E+07" y="1.530423E+08" />
+          <Point2D x="-7.505133E+07" y="1.530389E+08" />
+          <Point2D x="-7.504766E+07" y="1.530521E+08" />
+        </Area>
+        <Property name="Reference" value="Holdrum 00.13" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Malkestation (00.69)" guid="2lMsQCaQTB0QK1x0v4CSiR" longName="Malkestation">
+        <Area area="2.580896E+08" height="4600" wallarea="299460000.028688">
+          <Point2D x="-7.503271E+07" y="1.530337E+08" />
+          <Point2D x="-7.502905E+07" y="1.530469E+08" />
+          <Point2D x="-7.504724E+07" y="1.53052E+08" />
+          <Point2D x="-7.50509E+07" y="1.530388E+08" />
+        </Area>
+        <Property name="Reference" value="Malkestation 00.69" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="linoleum" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Area (1)" guid="3lP15vjrDBPhY5ehllAI10" longName="Area">
+        <Area area="1.11587E+09" height="1" wallarea="155886.197390221">
+          <Point2D x="-7.503579E+07" y="1.530267E+08" />
+          <Point2D x="-7.503294E+07" y="1.530259E+08" />
+          <Point2D x="-7.503122E+07" y="1.530321E+08" />
+          <Point2D x="-7.503146E+07" y="1.530322E+08" />
+          <Point2D x="-7.503084E+07" y="1.530344E+08" />
+          <Point2D x="-7.503241E+07" y="1.530348E+08" />
+          <Point2D x="-7.502905E+07" y="1.530469E+08" />
+          <Point2D x="-7.503129E+07" y="1.530475E+08" />
+          <Point2D x="-7.50312E+07" y="1.530478E+08" />
+          <Point2D x="-7.503346E+07" y="1.530485E+08" />
+          <Point2D x="-7.503355E+07" y="1.530482E+08" />
+          <Point2D x="-7.503591E+07" y="1.530488E+08" />
+          <Point2D x="-7.503582E+07" y="1.530491E+08" />
+          <Point2D x="-7.504271E+07" y="1.530511E+08" />
+          <Point2D x="-7.504281E+07" y="1.530507E+08" />
+          <Point2D x="-7.504517E+07" y="1.530514E+08" />
+          <Point2D x="-7.504507E+07" y="1.530517E+08" />
+          <Point2D x="-7.504734E+07" y="1.530523E+08" />
+          <Point2D x="-7.504743E+07" y="1.53052E+08" />
+          <Point2D x="-7.504979E+07" y="1.530527E+08" />
+          <Point2D x="-7.50497E+07" y="1.53053E+08" />
+          <Point2D x="-7.505428E+07" y="1.530543E+08" />
+          <Point2D x="-7.505437E+07" y="1.530539E+08" />
+          <Point2D x="-7.505673E+07" y="1.530546E+08" />
+          <Point2D x="-7.505664E+07" y="1.530549E+08" />
+          <Point2D x="-7.50589E+07" y="1.530556E+08" />
+          <Point2D x="-7.505899E+07" y="1.530552E+08" />
+          <Point2D x="-7.506135E+07" y="1.530559E+08" />
+          <Point2D x="-7.506126E+07" y="1.530562E+08" />
+          <Point2D x="-7.506584E+07" y="1.530575E+08" />
+          <Point2D x="-7.506593E+07" y="1.530572E+08" />
+          <Point2D x="-7.506829E+07" y="1.530578E+08" />
+          <Point2D x="-7.50682E+07" y="1.530581E+08" />
+          <Point2D x="-7.507278E+07" y="1.530594E+08" />
+          <Point2D x="-7.507294E+07" y="1.530588E+08" />
+          <Point2D x="-7.507749E+07" y="1.530601E+08" />
+          <Point2D x="-7.508078E+07" y="1.530483E+08" />
+          <Point2D x="-7.508234E+07" y="1.530487E+08" />
+          <Point2D x="-7.508295E+07" y="1.530465E+08" />
+          <Point2D x="-7.508319E+07" y="1.530466E+08" />
+          <Point2D x="-7.508492E+07" y="1.530404E+08" />
+          <Point2D x="-7.505666E+07" y="1.530325E+08" />
+          <Point2D x="-7.505678E+07" y="1.530321E+08" />
+          <Point2D x="-7.50359E+07" y="1.530264E+08" />
+        </Area>
+        <Property name="Reference" value="Area 1" />
+        <Property name="Category" value="Areas" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Grupperum (01.11)" guid="0IdklinfPFfObsYfuAwfM_" longName="Grupperum">
+        <Area area="1.833882E+07" height="4450" wallarea="76290799.9998485">
+          <Point2D x="-7.506997E+07" y="1.530584E+08" />
+          <Point2D x="-7.507117E+07" y="1.530541E+08" />
+          <Point2D x="-7.506721E+07" y="1.53053E+08" />
+          <Point2D x="-7.506601E+07" y="1.530573E+08" />
+        </Area>
+        <Property name="Reference" value="Grupperum 01.11" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Grupperum (01.17)" guid="0IdklinfPFfObsYfuAwfM0" longName="Grupperum">
+        <Area area="2.44693E+07" height="4450" wallarea="95585999.9999629">
+          <Point2D x="-7.506269E+07" y="1.530422E+08" />
+          <Point2D x="-7.506302E+07" y="1.53041E+08" />
+          <Point2D x="-7.50581E+07" y="1.530396E+08" />
+          <Point2D x="-7.505778E+07" y="1.530408E+08" />
+          <Point2D x="-7.505776E+07" y="1.530408E+08" />
+          <Point2D x="-7.505774E+07" y="1.530409E+08" />
+          <Point2D x="-7.50587E+07" y="1.530412E+08" />
+          <Point2D x="-7.505762E+07" y="1.530451E+08" />
+          <Point2D x="-7.505755E+07" y="1.530453E+08" />
+          <Point2D x="-7.506151E+07" y="1.530464E+08" />
+        </Area>
+        <Property name="Reference" value="Grupperum 01.17" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Grupperum (01.16)" guid="0IdklinfPFfObsYfuAwfM3" longName="Grupperum">
+        <Area area="4.522133E+07" height="4450" wallarea="130910100.000021">
+          <Point2D x="-7.505374E+07" y="1.530476E+08" />
+          <Point2D x="-7.505213E+07" y="1.530535E+08" />
+          <Point2D x="-7.505993E+07" y="1.530556E+08" />
+          <Point2D x="-7.506117E+07" y="1.530512E+08" />
+          <Point2D x="-7.506154E+07" y="1.530498E+08" />
+          <Point2D x="-7.506042E+07" y="1.530495E+08" />
+          <Point2D x="-7.506026E+07" y="1.530501E+08" />
+          <Point2D x="-7.50547E+07" y="1.530485E+08" />
+          <Point2D x="-7.505486E+07" y="1.53048E+08" />
+        </Area>
+        <Property name="Reference" value="Grupperum 01.16" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Holdrum (01.19)" guid="0IdklinfPFfObsYfuAwfM5" longName="Holdrum">
+        <Area area="2.715248E+08" height="4450" wallarea="302657850.028309">
+          <Point2D x="-7.503238E+07" y="1.530349E+08" />
+          <Point2D x="-7.502902E+07" y="1.53047E+08" />
+          <Point2D x="-7.504721E+07" y="1.530521E+08" />
+          <Point2D x="-7.504886E+07" y="1.530461E+08" />
+          <Point2D x="-7.505006E+07" y="1.530418E+08" />
+          <Point2D x="-7.505073E+07" y="1.530394E+08" />
+          <Point2D x="-7.50515E+07" y="1.530396E+08" />
+          <Point2D x="-7.505164E+07" y="1.530391E+08" />
+          <Point2D x="-7.505181E+07" y="1.530385E+08" />
+          <Point2D x="-7.503286E+07" y="1.530332E+08" />
+        </Area>
+        <Property name="Reference" value="Holdrum 01.19" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Elevator (01.23)" guid="1PIJQDo9v4GPE1u5xwXoIT" longName="Elevator">
+        <Area area="7968000" height="5049.99999999997" wallarea="57772000.0011872">
+          <Point2D x="-7.505025E+07" y="1.53034E+08" />
+          <Point2D x="-7.505345E+07" y="1.530349E+08" />
+          <Point2D x="-7.505409E+07" y="1.530326E+08" />
+          <Point2D x="-7.505089E+07" y="1.530317E+08" />
+        </Area>
+        <Property name="Reference" value="Elevator 01.23" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Grupperum (01.12)" guid="1xPzBDBlnAJ91olUEnV9mS" longName="Grupperum">
+        <Area area="6.891169E+07" height="4450" wallarea="149898250.000133">
+          <Point2D x="-7.50724E+07" y="1.530515E+08" />
+          <Point2D x="-7.507503E+07" y="1.53042E+08" />
+          <Point2D x="-7.506829E+07" y="1.530402E+08" />
+          <Point2D x="-7.506566E+07" y="1.530496E+08" />
+        </Area>
+        <Property name="Reference" value="Grupperum 01.12" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Gruppe-/projektområde (01.13)" guid="2SFwF15xj579dr7B11ojDP" longName="Gruppe-/projektområde">
+        <Area area="2.642556E+07" height="4450" wallarea="91999299.9998769">
+          <Point2D x="-7.506585E+07" y="1.530573E+08" />
+          <Point2D x="-7.506709E+07" y="1.530528E+08" />
+          <Point2D x="-7.506159E+07" y="1.530513E+08" />
+          <Point2D x="-7.506035E+07" y="1.530557E+08" />
+        </Area>
+        <Property name="Reference" value="Gruppe-/projektområde 01.13" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Gang (01.01)" guid="2SFwF15xj579dr7B11ojFs" longName="Gang">
+        <Area area="5882500" height="2499.99999999999" wallarea="29124999.9998693">
+          <Point2D x="-7.507347E+07" y="1.530576E+08" />
+          <Point2D x="-7.507313E+07" y="1.530589E+08" />
+          <Point2D x="-7.507749E+07" y="1.530601E+08" />
+          <Point2D x="-7.507783E+07" y="1.530588E+08" />
+        </Area>
+        <Property name="Reference" value="Gang 01.01" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Træ" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Lounge (01.18)" guid="2SFwF15xj579dr7B11ojHV" longName="Lounge">
+        <Area area="2.455048E+07" height="4450" wallarea="90370600.0001903">
+          <Point2D x="-7.505196E+07" y="1.530534E+08" />
+          <Point2D x="-7.505362E+07" y="1.530474E+08" />
+          <Point2D x="-7.504979E+07" y="1.530464E+08" />
+          <Point2D x="-7.504814E+07" y="1.530523E+08" />
+        </Area>
+        <Property name="Reference" value="Lounge 01.18" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Træ" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Gruppe-/projektrum (01.15)" guid="2SFwF15xj579dr7B11ojJ7" longName="Gruppe-/projektrum">
+        <Area area="2.060883E+07" height="4450" wallarea="80807549.9977899">
+          <Point2D x="-7.506598E+07" y="1.530478E+08" />
+          <Point2D x="-7.50672E+07" y="1.530434E+08" />
+          <Point2D x="-7.506285E+07" y="1.530422E+08" />
+          <Point2D x="-7.506163E+07" y="1.530466E+08" />
+        </Area>
+        <Property name="Reference" value="Gruppe-/projektrum 01.15" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Gang (01.14)" guid="2SFwF15xj579dr7B11ojLI" longName="Gang">
+        <Area area="1.340568E+08" height="4450" wallarea="472301624.619952">
+          <Point2D x="-7.507288E+07" y="1.53059E+08" />
+          <Point2D x="-7.507648E+07" y="1.530461E+08" />
+          <Point2D x="-7.507486E+07" y="1.530456E+08" />
+          <Point2D x="-7.507312E+07" y="1.530519E+08" />
+          <Point2D x="-7.506544E+07" y="1.530498E+08" />
+          <Point2D x="-7.506598E+07" y="1.530478E+08" />
+          <Point2D x="-7.505638E+07" y="1.530452E+08" />
+          <Point2D x="-7.505651E+07" y="1.530447E+08" />
+          <Point2D x="-7.505747E+07" y="1.530449E+08" />
+          <Point2D x="-7.50585E+07" y="1.530413E+08" />
+          <Point2D x="-7.505753E+07" y="1.53041E+08" />
+          <Point2D x="-7.505762E+07" y="1.530407E+08" />
+          <Point2D x="-7.505181E+07" y="1.530392E+08" />
+          <Point2D x="-7.505161E+07" y="1.530398E+08" />
+          <Point2D x="-7.50511E+07" y="1.530397E+08" />
+          <Point2D x="-7.505051E+07" y="1.530418E+08" />
+          <Point2D x="-7.505102E+07" y="1.53042E+08" />
+          <Point2D x="-7.504979E+07" y="1.530464E+08" />
+          <Point2D x="-7.506201E+07" y="1.530498E+08" />
+          <Point2D x="-7.506159E+07" y="1.530513E+08" />
+          <Point2D x="-7.507187E+07" y="1.530541E+08" />
+          <Point2D x="-7.507182E+07" y="1.530543E+08" />
+          <Point2D x="-7.507133E+07" y="1.530542E+08" />
+          <Point2D x="-7.507041E+07" y="1.530575E+08" />
+          <Point2D x="-7.507098E+07" y="1.530576E+08" />
+          <Point2D x="-7.507071E+07" y="1.530586E+08" />
+          <Point2D x="-7.507283E+07" y="1.530592E+08" />
+          <Point2D x="-7.507277E+07" y="1.530594E+08" />
+          <Point2D x="-7.507744E+07" y="1.530608E+08" />
+          <Point2D x="-7.507754E+07" y="1.530604E+08" />
+          <Point2D x="-7.50776E+07" y="1.530604E+08" />
+          <Point2D x="-7.507762E+07" y="1.530604E+08" />
+        </Area>
+        <Property name="Reference" value="Gang 01.14" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Træ" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Balkon (01.22)" guid="2SFwF15xj579dr7B11ojSb" longName="Balkon">
+        <Area area="1.275365E+07" height="4450" wallarea="79079956.2349533">
+          <Point2D x="-7.505224E+07" y="1.530393E+08" />
+          <Point2D x="-7.505398E+07" y="1.530397E+08" />
+          <Point2D x="-7.505588E+07" y="1.530329E+08" />
+          <Point2D x="-7.505414E+07" y="1.530324E+08" />
+          <Point2D x="-7.505411E+07" y="1.530325E+08" />
+          <Point2D x="-7.505342E+07" y="1.53035E+08" />
+          <Point2D x="-7.505342E+07" y="1.530351E+08" />
+          <Point2D x="-7.505307E+07" y="1.530363E+08" />
+        </Area>
+        <Property name="Reference" value="Balkon 01.22" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Balkon (01.21)" guid="2SFwF15xj579dr7B11ojSc" longName="Balkon">
+        <Area area="1.899666E+07" height="4125" wallarea="95650500.000505">
+          <Point2D x="-7.505339E+07" y="1.530351E+08" />
+          <Point2D x="-7.505307E+07" y="1.530363E+08" />
+          <Point2D x="-7.50467E+07" y="1.530345E+08" />
+          <Point2D x="-7.504777E+07" y="1.530307E+08" />
+          <Point2D x="-7.504879E+07" y="1.530309E+08" />
+          <Point2D x="-7.504906E+07" y="1.5303E+08" />
+          <Point2D x="-7.50498E+07" y="1.530302E+08" />
+          <Point2D x="-7.50498E+07" y="1.530302E+08" />
+          <Point2D x="-7.505091E+07" y="1.530305E+08" />
+          <Point2D x="-7.505091E+07" y="1.530305E+08" />
+          <Point2D x="-7.50511E+07" y="1.530306E+08" />
+          <Point2D x="-7.505082E+07" y="1.530316E+08" />
+          <Point2D x="-7.505079E+07" y="1.530317E+08" />
+          <Point2D x="-7.505015E+07" y="1.53034E+08" />
+          <Point2D x="-7.505025E+07" y="1.53034E+08" />
+          <Point2D x="-7.505019E+07" y="1.530342E+08" />
+        </Area>
+        <Property name="Reference" value="Balkon 01.21" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Depot (02.20)" guid="2SPeU6a5H8LhwdEHwfUwAW" longName="Depot">
+        <Area area="2994600" height="2500" wallarea="17629999.984505">
+          <Point2D x="-7.503222E+07" y="1.530348E+08" />
+          <Point2D x="-7.503278E+07" y="1.530328E+08" />
+          <Point2D x="-7.50314E+07" y="1.530324E+08" />
+          <Point2D x="-7.503084E+07" y="1.530344E+08" />
+        </Area>
+        <Property name="Reference" value="Depot 02.20" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Forrum (01.06)" guid="3HzoMrZfnCwACXv$x4cjP_" longName="Forrum">
+        <Area area="1.012618E+07" height="2499.99999999999" wallarea="33587500.0160517">
+          <Point2D x="-7.507382E+07" y="1.530564E+08" />
+          <Point2D x="-7.507382E+07" y="1.530564E+08" />
+          <Point2D x="-7.507354E+07" y="1.530574E+08" />
+          <Point2D x="-7.507355E+07" y="1.530574E+08" />
+          <Point2D x="-7.507352E+07" y="1.530575E+08" />
+          <Point2D x="-7.507573E+07" y="1.530581E+08" />
+          <Point2D x="-7.507602E+07" y="1.530571E+08" />
+          <Point2D x="-7.507632E+07" y="1.53056E+08" />
+          <Point2D x="-7.507662E+07" y="1.530549E+08" />
+          <Point2D x="-7.507691E+07" y="1.530539E+08" />
+          <Point2D x="-7.507485E+07" y="1.530533E+08" />
+          <Point2D x="-7.50747E+07" y="1.530532E+08" />
+        </Area>
+        <Property name="Reference" value="Forrum 01.06" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="linoleum" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" WC (01.03)" guid="3HzoMrZfnCwACXv$x4cjPf" longName="WC">
+        <Area area="1871800" height="2499.99999999999" wallarea="14449999.9997006">
+          <Point2D x="-7.507646E+07" y="1.530561E+08" />
+          <Point2D x="-7.507619E+07" y="1.530571E+08" />
+          <Point2D x="-7.507803E+07" y="1.530576E+08" />
+          <Point2D x="-7.50783E+07" y="1.530566E+08" />
+        </Area>
+        <Property name="Reference" value="WC 01.03" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="linoleum" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" WC (01.02)" guid="3HzoMrZfnCwACXv$x4cjPg" longName="WC">
+        <Area area="1871800" height="2499.99999999999" wallarea="14449999.9997006">
+          <Point2D x="-7.507589E+07" y="1.530582E+08" />
+          <Point2D x="-7.507773E+07" y="1.530587E+08" />
+          <Point2D x="-7.507799E+07" y="1.530577E+08" />
+          <Point2D x="-7.507615E+07" y="1.530572E+08" />
+        </Area>
+        <Property name="Reference" value="WC 01.02" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="linoleum" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" WC (01.05)" guid="3HzoMrZfnCwACXv$x4cjPp" longName="WC">
+        <Area area="1876575" height="2499.99999999999" wallarea="14462500.0159965">
+          <Point2D x="-7.507707E+07" y="1.530539E+08" />
+          <Point2D x="-7.507681E+07" y="1.530548E+08" />
+          <Point2D x="-7.507865E+07" y="1.530554E+08" />
+          <Point2D x="-7.507891E+07" y="1.530544E+08" />
+        </Area>
+        <Property name="Reference" value="WC 01.05" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="linoleum" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" WC (01.04)" guid="3HzoMrZfnCwACXv$x4cjPq" longName="WC">
+        <Area area="1871800" height="2499.99999999999" wallarea="14449999.9997006">
+          <Point2D x="-7.507676E+07" y="1.53055E+08" />
+          <Point2D x="-7.50765E+07" y="1.53056E+08" />
+          <Point2D x="-7.507834E+07" y="1.530565E+08" />
+          <Point2D x="-7.50786E+07" y="1.530555E+08" />
+        </Area>
+        <Property name="Reference" value="WC 01.04" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="linoleum" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" X-felt (01.08)" guid="3HzoMrZfnCwACXv$x4cjPu" longName="X-felt">
+        <Area area="7862188" height="2499.99999999999" wallarea="31312500.0008842">
+          <Point2D x="-7.507581E+07" y="1.530492E+08" />
+          <Point2D x="-7.507534E+07" y="1.530509E+08" />
+          <Point2D x="-7.50797E+07" y="1.530521E+08" />
+          <Point2D x="-7.508017E+07" y="1.530504E+08" />
+        </Area>
+        <Property name="Reference" value="X-felt 01.08" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" HC WC (01.07)" guid="3HzoMrZfnCwACXv$x4cjPz" longName="HC WC">
+        <Area area="9460500" height="2499.99999999999" wallarea="33024999.9998501">
+          <Point2D x="-7.507475E+07" y="1.530531E+08" />
+          <Point2D x="-7.507909E+07" y="1.530543E+08" />
+          <Point2D x="-7.507965E+07" y="1.530523E+08" />
+          <Point2D x="-7.507531E+07" y="1.530511E+08" />
+        </Area>
+        <Property name="Reference" value="HC WC 01.07" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="linoleum" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Skakt (01.10)" guid="3HzoMrZfnCwACXv$x4cjU2" longName="Skakt">
+        <Area area="7274544" height="2500" wallarea="27933195.5472086">
+          <Point2D x="-7.508234E+07" y="1.530487E+08" />
+          <Point2D x="-7.50829E+07" y="1.530467E+08" />
+          <Point2D x="-7.50795E+07" y="1.530458E+08" />
+          <Point2D x="-7.507895E+07" y="1.530478E+08" />
+          <Point2D x="-7.508078E+07" y="1.530483E+08" />
+          <Point2D x="-7.508078E+07" y="1.530483E+08" />
+          <Point2D x="-7.508087E+07" y="1.530483E+08" />
+        </Area>
+        <Property name="Reference" value="Skakt 01.10" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Print (01.09)" guid="3HzoMrZfnCwACXv$x4cjU7" longName="Print">
+        <Area area="1.446418E+07" height="2499.99999999999" wallarea="43574999.9826779">
+          <Point2D x="-7.507667E+07" y="1.530461E+08" />
+          <Point2D x="-7.507585E+07" y="1.530491E+08" />
+          <Point2D x="-7.508021E+07" y="1.530503E+08" />
+          <Point2D x="-7.508074E+07" y="1.530484E+08" />
+          <Point2D x="-7.507878E+07" y="1.530479E+08" />
+          <Point2D x="-7.507937E+07" y="1.530457E+08" />
+          <Point2D x="-7.507697E+07" y="1.530451E+08" />
+        </Area>
+        <Property name="Reference" value="Print 01.09" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="linoleum" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Area (2)" guid="3lP15vjrDBPhY5ehllAIPl" longName="Area">
+        <Area area="8.548637E+08" height="5000" wallarea="1003440248.0884">
+          <Point2D x="-7.508281E+07" y="1.530494E+08" />
+          <Point2D x="-7.508356E+07" y="1.530467E+08" />
+          <Point2D x="-7.507683E+07" y="1.530448E+08" />
+          <Point2D x="-7.507653E+07" y="1.530459E+08" />
+          <Point2D x="-7.507489E+07" y="1.530455E+08" />
+          <Point2D x="-7.507582E+07" y="1.530421E+08" />
+          <Point2D x="-7.506816E+07" y="1.5304E+08" />
+          <Point2D x="-7.506723E+07" y="1.530433E+08" />
+          <Point2D x="-7.506288E+07" y="1.530421E+08" />
+          <Point2D x="-7.506322E+07" y="1.530409E+08" />
+          <Point2D x="-7.505798E+07" y="1.530394E+08" />
+          <Point2D x="-7.505762E+07" y="1.530407E+08" />
+          <Point2D x="-7.505405E+07" y="1.530397E+08" />
+          <Point2D x="-7.505518E+07" y="1.530356E+08" />
+          <Point2D x="-7.506472E+07" y="1.530383E+08" />
+          <Point2D x="-7.506547E+07" y="1.530356E+08" />
+          <Point2D x="-7.50509E+07" y="1.530315E+08" />
+          <Point2D x="-7.505115E+07" y="1.530306E+08" />
+          <Point2D x="-7.5049E+07" y="1.5303E+08" />
+          <Point2D x="-7.504876E+07" y="1.530309E+08" />
+          <Point2D x="-7.504773E+07" y="1.530306E+08" />
+          <Point2D x="-7.504661E+07" y="1.530346E+08" />
+          <Point2D x="-7.505299E+07" y="1.530364E+08" />
+          <Point2D x="-7.505222E+07" y="1.530392E+08" />
+          <Point2D x="-7.505183E+07" y="1.530391E+08" />
+          <Point2D x="-7.505202E+07" y="1.530384E+08" />
+          <Point2D x="-7.50329E+07" y="1.530331E+08" />
+          <Point2D x="-7.503302E+07" y="1.530326E+08" />
+          <Point2D x="-7.503086E+07" y="1.53032E+08" />
+          <Point2D x="-7.50301E+07" y="1.530347E+08" />
+          <Point2D x="-7.503179E+07" y="1.530352E+08" />
+          <Point2D x="-7.502847E+07" y="1.530471E+08" />
+          <Point2D x="-7.50778E+07" y="1.530608E+08" />
+          <Point2D x="-7.508112E+07" y="1.530489E+08" />
+        </Area>
+        <Property name="Reference" value="Area 2" />
+        <Property name="Category" value="Areas" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Sprinklerrum (-01.01)" guid="0fnYelIAT2Le0iADQP$x4w" longName="Sprinklerrum">
+        <Area area="1.649038E+07" height="3240.00000000019" wallarea="52876799.9997719">
+          <Point2D x="-7.507638E+07" y="1.530473E+08" />
+          <Point2D x="-7.50754E+07" y="1.530508E+08" />
+          <Point2D x="-7.507971E+07" y="1.53052E+08" />
+          <Point2D x="-7.50807E+07" y="1.530485E+08" />
+        </Area>
+        <Property name="Reference" value="Sprinklerrum -01.01" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Gang (-01.07)" guid="0fnYelIAT2Le0iADQP$x6$" longName="Gang">
+        <Area area="3.593464E+07" height="3240.00000000019" wallarea="105662835.602263">
+          <Point2D x="-7.506918E+07" y="1.53039E+08" />
+          <Point2D x="-7.506989E+07" y="1.530365E+08" />
+          <Point2D x="-7.50567E+07" y="1.530328E+08" />
+          <Point2D x="-7.5056E+07" y="1.530353E+08" />
+        </Area>
+        <Property name="Reference" value="Gang -01.07" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Træ" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Skakt (-01.03)" guid="0fnYelIAT2Le0iADQP$x6p" longName="Skakt">
+        <Area area="7352100" height="3240.00000000019" wallarea="36294479.9990163">
+          <Point2D x="-7.507894E+07" y="1.530478E+08" />
+          <Point2D x="-7.508231E+07" y="1.530487E+08" />
+          <Point2D x="-7.508288E+07" y="1.530467E+08" />
+          <Point2D x="-7.50795E+07" y="1.530457E+08" />
+        </Area>
+        <Property name="Reference" value="Skakt -01.03" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Depot (-01.05)" guid="0fnYelIAT2Le0iADQP$x6r" longName="Depot">
+        <Area area="4.542892E+07" height="3240.00000000019" wallarea="92320560.0000349">
+          <Point2D x="-7.505874E+07" y="1.530414E+08" />
+          <Point2D x="-7.506782E+07" y="1.530439E+08" />
+          <Point2D x="-7.506911E+07" y="1.530392E+08" />
+          <Point2D x="-7.506003E+07" y="1.530367E+08" />
+        </Area>
+        <Property name="Reference" value="Depot -01.05" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Teknik (-01.04)" guid="0fnYelIAT2Le0iADQP$x6s" longName="Teknik">
+        <Area area="1.154531E+08" voidarea="75000" height="3240.00000000019" wallarea="153220026.723453">
+          <Point2D x="-7.506806E+07" y="1.53044E+08" />
+          <Point2D x="-7.507644E+07" y="1.530471E+08" />
+          <Point2D x="-7.507894E+07" y="1.530478E+08" />
+          <Point2D x="-7.507956E+07" y="1.530456E+08" />
+          <Point2D x="-7.508293E+07" y="1.530465E+08" />
+          <Point2D x="-7.508354E+07" y="1.530443E+08" />
+          <Point2D x="-7.508354E+07" y="1.530443E+08" />
+          <Point2D x="-7.508392E+07" y="1.530429E+08" />
+          <Point2D x="-7.508396E+07" y="1.530428E+08" />
+          <Point2D x="-7.508458E+07" y="1.530406E+08" />
+          <Point2D x="-7.507013E+07" y="1.530365E+08" />
+          <Point2D x="-7.506939E+07" y="1.530392E+08" />
+        </Area>
+        <Property name="Reference" value="Teknik -01.04" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Rengøring (-01.06)" guid="0fnYelIAT2Le0iADQP$x6u" longName="Rengøring">
+        <Area area="1.9272E+07" height="3240.00000000019" wallarea="57140640.0000752">
+          <Point2D x="-7.505594E+07" y="1.530356E+08" />
+          <Point2D x="-7.505465E+07" y="1.530402E+08" />
+          <Point2D x="-7.50585E+07" y="1.530413E+08" />
+          <Point2D x="-7.505979E+07" y="1.530367E+08" />
+        </Area>
+        <Property name="Reference" value="Rengøring -01.06" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Beton" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Forrum (-01.08)" guid="0fnYelIAT2Le0iADQP$x7x" longName="Forrum">
+        <Area area="6449562" height="3240.00000000019" wallarea="33981097.8008559">
+          <Point2D x="-7.50547E+07" y="1.530328E+08" />
+          <Point2D x="-7.505409E+07" y="1.530326E+08" />
+          <Point2D x="-7.505345E+07" y="1.530349E+08" />
+          <Point2D x="-7.505568E+07" y="1.530356E+08" />
+          <Point2D x="-7.505573E+07" y="1.530354E+08" />
+          <Point2D x="-7.505646E+07" y="1.530327E+08" />
+          <Point2D x="-7.505602E+07" y="1.530326E+08" />
+          <Point2D x="-7.505588E+07" y="1.530326E+08" />
+          <Point2D x="-7.505485E+07" y="1.530323E+08" />
+        </Area>
+        <Property name="Reference" value="Forrum -01.08" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="linoleum" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Area (3)" guid="3lP15vjrDBPhY5ehllAILn" longName="Area">
+        <Area area="3.154657E+08" height="8790.00000000016" wallarea="963070046.09794">
+          <Point2D x="-7.505409E+07" y="1.530405E+08" />
+          <Point2D x="-7.507609E+07" y="1.530466E+08" />
+          <Point2D x="-7.507474E+07" y="1.530515E+08" />
+          <Point2D x="-7.507992E+07" y="1.530529E+08" />
+          <Point2D x="-7.508107E+07" y="1.530488E+08" />
+          <Point2D x="-7.508264E+07" y="1.530492E+08" />
+          <Point2D x="-7.508385E+07" y="1.530448E+08" />
+          <Point2D x="-7.50839E+07" y="1.530447E+08" />
+          <Point2D x="-7.508899E+07" y="1.530461E+08" />
+          <Point2D x="-7.508951E+07" y="1.530442E+08" />
+          <Point2D x="-7.508442E+07" y="1.530428E+08" />
+          <Point2D x="-7.508448E+07" y="1.530426E+08" />
+          <Point2D x="-7.508514E+07" y="1.530402E+08" />
+          <Point2D x="-7.505646E+07" y="1.530323E+08" />
+          <Point2D x="-7.505654E+07" y="1.53032E+08" />
+          <Point2D x="-7.505461E+07" y="1.530315E+08" />
+          <Point2D x="-7.505439E+07" y="1.530322E+08" />
+          <Point2D x="-7.505067E+07" y="1.530312E+08" />
+          <Point2D x="-7.504979E+07" y="1.530344E+08" />
+          <Point2D x="-7.505537E+07" y="1.530359E+08" />
+        </Area>
+        <Property name="Reference" value="Area 3" />
+        <Property name="Category" value="Areas" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Tunnel (-01.02)" guid="3luAiOQonEUh2n2LrdmoMN" longName="Tunnel">
+        <Area area="7816752" height="3740.00000000019" wallarea="51169798.567982">
+          <Point2D x="-7.508393E+07" y="1.530429E+08" />
+          <Point2D x="-7.508354E+07" y="1.530443E+08" />
+          <Point2D x="-7.508874E+07" y="1.530457E+08" />
+          <Point2D x="-7.508912E+07" y="1.530444E+08" />
+        </Area>
+        <Property name="Reference" value="Tunnel -01.02" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Træ" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+      <Room name=" Elevator (-01.09)" guid="3vX$GiC9DCVeMguNgEMsm3" longName="Elevator">
+        <Area area="7968000" height="3740.00000000019" wallarea="42785600.0002671">
+          <Point2D x="-7.505409E+07" y="1.530326E+08" />
+          <Point2D x="-7.505089E+07" y="1.530317E+08" />
+          <Point2D x="-7.505025E+07" y="1.53034E+08" />
+          <Point2D x="-7.505345E+07" y="1.530349E+08" />
+        </Area>
+        <Property name="Reference" value="Elevator -01.09" />
+        <Property name="Category" value="Rooms" />
+        <Property name="FloorCovering" value="Tæppe" />
+        <Property name="Layer" value="A-AREA-____-OTLN" />
+      </Room>
+    </Floor>
+    <Opening name="Basic Wall:Exterior - 200mm Concrete xxdB:361040 (Opening)" guid="00PWrxKvH8dPBDbAfNrnYU">
+      <Area area="1020100" height="3048.00000001085" wallarea="12313920.0000515">
+        <Point3D x="-7.508085E+07" y="1.530501E+08" z="46660" />
+        <Point3D x="-7.508085E+07" y="1.530501E+08" z="47670" />
+        <Point3D x="-7.508182E+07" y="1.530504E+08" z="47670" />
+        <Point3D x="-7.508182E+07" y="1.530504E+08" z="46660" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Exterior - 200mm Concrete xxdB:361040 (Opening)" guid="01HcU84gP44eUIz7xbV9Jt">
+      <Area area="2121000" height="3048.00000001085" wallarea="18958560.0000869">
+        <Point3D x="-7.50809E+07" y="1.530501E+08" z="40810" />
+        <Point3D x="-7.50809E+07" y="1.530501E+08" z="42910" />
+        <Point3D x="-7.508188E+07" y="1.530504E+08" z="42910" />
+        <Point3D x="-7.508188E+07" y="1.530504E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Exterior - 200mm Concrete xxdB:292478 (Opening)" guid="02GQP$$T50j8Jx4ZlUiV23">
+      <Area area="2121000" height="3047.9999999925" wallarea="18958559.9999728">
+        <Point3D x="-7.507918E+07" y="1.530604E+08" z="45860" />
+        <Point3D x="-7.507918E+07" y="1.530604E+08" z="47960" />
+        <Point3D x="-7.507945E+07" y="1.530595E+08" z="47960" />
+        <Point3D x="-7.507945E+07" y="1.530595E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Ext. Single-Flush:10x21M:278264:1 (Opening)" guid="19cn8kf9X8JwapRCqMnB0h">
+      <Area area="2121000" height="200.000000006052" wallarea="1244000.00004051">
+        <Point3D x="-7.507362E+07" y="1.530564E+08" z="45860" />
+        <Point3D x="-7.507362E+07" y="1.530564E+08" z="47960" />
+        <Point3D x="-7.507335E+07" y="1.530573E+08" z="47960" />
+        <Point3D x="-7.507335E+07" y="1.530573E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Ext. Single-Flush:10x21M:278244:1 (Opening)" guid="19cn8kf9X8JwapRCqMnB0t">
+      <Area area="2121000" height="200.000000006052" wallarea="1244000.00004051">
+        <Point3D x="-7.507323E+07" y="1.530578E+08" z="45860" />
+        <Point3D x="-7.507323E+07" y="1.530578E+08" z="47960" />
+        <Point3D x="-7.507297E+07" y="1.530587E+08" z="47960" />
+        <Point3D x="-7.507297E+07" y="1.530587E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Ext. Single-Flush:10x21M:278392:1 (Opening)" guid="19cn8kf9X8JwapRCqMnB6h">
+      <Area area="2121000" height="200.000000006052" wallarea="1244000.00004051">
+        <Point3D x="-7.507595E+07" y="1.53048E+08" z="45860" />
+        <Point3D x="-7.507595E+07" y="1.53048E+08" z="47960" />
+        <Point3D x="-7.507568E+07" y="1.530489E+08" z="47960" />
+        <Point3D x="-7.507568E+07" y="1.530489E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Ext. Single-Flush:10x21M:278348:1 (Opening)" guid="19cn8kf9X8JwapRCqMnB6V">
+      <Area area="2121000" height="200.000000006052" wallarea="1244000.00004051">
+        <Point3D x="-7.507544E+07" y="1.530498E+08" z="45860" />
+        <Point3D x="-7.507544E+07" y="1.530498E+08" z="47960" />
+        <Point3D x="-7.507517E+07" y="1.530508E+08" z="47960" />
+        <Point3D x="-7.507517E+07" y="1.530508E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Exterior - (202) 200mm Concrete:291631 (Opening)" guid="00PWrxKvH8dPBDbAfNrnxN">
+      <Area area="420000" height="1010.0000000032" wallarea="4645999.99996892">
+        <Point3D x="-7.508234E+07" y="1.530487E+08" z="42910" />
+        <Point3D x="-7.508234E+07" y="1.530487E+08" z="40810" />
+        <Point3D x="-7.508229E+07" y="1.530489E+08" z="40810" />
+        <Point3D x="-7.508229E+07" y="1.530489E+08" z="42910" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Exterior - (202) 250mm Concrete:292148 (Opening)" guid="36Tvw7ASrFghkBATWgsA$3">
+      <Area area="2730000" height="3048.00000001085" wallarea="20726400.0001238">
+        <Point3D x="-7.507873E+07" y="1.53044E+08" z="40810" />
+        <Point3D x="-7.507873E+07" y="1.53044E+08" z="42910" />
+        <Point3D x="-7.507747E+07" y="1.530436E+08" z="42910" />
+        <Point3D x="-7.507747E+07" y="1.530436E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="Ext. Single-Flush:10x21M:278944:1 (Opening)" guid="0jhbjdC1z2ox5VIRVWEZ9a">
+      <Area area="2121000" height="296.000000000918" wallarea="1841120.00000995">
+        <Point3D x="-7.502896E+07" y="1.530465E+08" z="45860" />
+        <Point3D x="-7.502896E+07" y="1.530465E+08" z="47960" />
+        <Point3D x="-7.502922E+07" y="1.530455E+08" z="47960" />
+        <Point3D x="-7.502922E+07" y="1.530455E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Ext. Single-Flush:10x21M:278904:1 (Opening)" guid="0jhbjdC1z2ox5VIRVWEZAy">
+      <Area area="2121000" height="296.000000000918" wallarea="1841120.00000995">
+        <Point3D x="-7.503175E+07" y="1.530364E+08" z="45860" />
+        <Point3D x="-7.503175E+07" y="1.530364E+08" z="47960" />
+        <Point3D x="-7.503202E+07" y="1.530355E+08" z="47960" />
+        <Point3D x="-7.503202E+07" y="1.530355E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Ext. Single-Flush:10x21M:278184:1 (Opening)" guid="19cn8kf9X8JwapRCqMnB1x">
+      <Area area="2121000" height="296.000000000918" wallarea="1841120.00000995">
+        <Point3D x="-7.507798E+07" y="1.530591E+08" z="45860" />
+        <Point3D x="-7.507798E+07" y="1.530591E+08" z="47960" />
+        <Point3D x="-7.507771E+07" y="1.5306E+08" z="47960" />
+        <Point3D x="-7.507771E+07" y="1.5306E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Double-Flush asym:27x21M - Existing:729589:1 (Opening)" guid="0zgy1C8y1AjPE$BMfUZbMK">
+      <Area area="5691000" height="399.999999997746" wallarea="3847999.99997417">
+        <Point3D x="-7.50401E+07" y="1.530113E+08" z="45860" />
+        <Point3D x="-7.50401E+07" y="1.530113E+08" z="47960" />
+        <Point3D x="-7.503938E+07" y="1.53014E+08" z="47960" />
+        <Point3D x="-7.503938E+07" y="1.53014E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:9x21M - existing:586271:1 (Opening)" guid="2XtSrnPeH4lQKIagkcgPeX">
+      <Area area="1911000" height="399.999999997746" wallarea="2407999.99997507">
+        <Point3D x="-7.505736E+07" y="1.530299E+08" z="40810" />
+        <Point3D x="-7.505736E+07" y="1.530299E+08" z="42910" />
+        <Point3D x="-7.50576E+07" y="1.53029E+08" z="42910" />
+        <Point3D x="-7.50576E+07" y="1.53029E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Double-Flush:15x21M:342616:1 (Opening)" guid="2lMsQCaQTB0QK1x1r4CSfP">
+      <Area area="3171000" height="439.999999996406" wallarea="3176799.99998104">
+        <Point3D x="-7.504782E+07" y="1.530515E+08" z="40810" />
+        <Point3D x="-7.504782E+07" y="1.530515E+08" z="42910" />
+        <Point3D x="-7.504823E+07" y="1.5305E+08" z="42910" />
+        <Point3D x="-7.504823E+07" y="1.5305E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Double-Flush:15x21M:342175:1 (Opening)" guid="2lMsQCaQTB0QK1x1r4CSYU">
+      <Area area="3171000" height="439.999999996406" wallarea="3176799.99998104">
+        <Point3D x="-7.506054E+07" y="1.53055E+08" z="40810" />
+        <Point3D x="-7.506054E+07" y="1.53055E+08" z="42910" />
+        <Point3D x="-7.506095E+07" y="1.530536E+08" z="42910" />
+        <Point3D x="-7.506095E+07" y="1.530536E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="Fixed:10x10M:364535:1 (Opening)" guid="2UYSE7vXzFDeFPysoTPvDy">
+      <Area area="1020100" height="296.000000015275" wallarea="1195840.00006361">
+        <Point3D x="-7.508223E+07" y="1.530489E+08" z="46660" />
+        <Point3D x="-7.508223E+07" y="1.530489E+08" z="47670" />
+        <Point3D x="-7.508126E+07" y="1.530486E+08" z="47670" />
+        <Point3D x="-7.508126E+07" y="1.530486E+08" z="46660" />
+      </Area>
+    </Opening>
+    <Opening name="Ext. Single-Flush:10x21M:364534:1 (Opening)" guid="2UYSE7vXzFDeFPysoTPvDz">
+      <Area area="2121000" height="296.000000015275" wallarea="1841120.00009689">
+        <Point3D x="-7.508229E+07" y="1.530489E+08" z="40810" />
+        <Point3D x="-7.508229E+07" y="1.530489E+08" z="42910" />
+        <Point3D x="-7.508131E+07" y="1.530486E+08" z="42910" />
+        <Point3D x="-7.508131E+07" y="1.530486E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:9x21M:341379:1 (Opening)" guid="2VgZ7G4I52WAQUKyzr5Wpe">
+      <Area area="1911000" height="145.000000002515" wallarea="872900.000011021">
+        <Point3D x="-7.507746E+07" y="1.530485E+08" z="40810" />
+        <Point3D x="-7.507746E+07" y="1.530485E+08" z="42910" />
+        <Point3D x="-7.507722E+07" y="1.530494E+08" z="42910" />
+        <Point3D x="-7.507722E+07" y="1.530494E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:9x21M:341380:1 (Opening)" guid="2VgZ7G4I52WAQUKyzr5Wpl">
+      <Area area="1911000" height="145.000000002515" wallarea="872900.000011021">
+        <Point3D x="-7.507695E+07" y="1.530503E+08" z="40810" />
+        <Point3D x="-7.507695E+07" y="1.530503E+08" z="42910" />
+        <Point3D x="-7.50767E+07" y="1.530512E+08" z="42910" />
+        <Point3D x="-7.50767E+07" y="1.530512E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:10x21M:341230:1 (Opening)" guid="2VgZ7G4I52WAQUKyzr5Ws5">
+      <Area area="2121000" height="165.000000012212" wallarea="1026300.00007701">
+        <Point3D x="-7.50741E+07" y="1.53057E+08" z="40810" />
+        <Point3D x="-7.50741E+07" y="1.53057E+08" z="42910" />
+        <Point3D x="-7.507507E+07" y="1.530572E+08" z="42910" />
+        <Point3D x="-7.507507E+07" y="1.530572E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:9x21M:341099:1 (Opening)" guid="2VgZ7G4I52WAQUKyzr5Wq0">
+      <Area area="1911000" height="164.999999997855" wallarea="993299.9999824">
+        <Point3D x="-7.50775E+07" y="1.530517E+08" z="40810" />
+        <Point3D x="-7.50775E+07" y="1.530517E+08" z="42910" />
+        <Point3D x="-7.507726E+07" y="1.530526E+08" z="42910" />
+        <Point3D x="-7.507726E+07" y="1.530526E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:9x21M:341184:1 (Opening)" guid="2VgZ7G4I52WAQUKyzr5Wsh">
+      <Area area="1911000" height="164.999999997855" wallarea="993299.9999824">
+        <Point3D x="-7.507653E+07" y="1.530552E+08" z="40810" />
+        <Point3D x="-7.507653E+07" y="1.530552E+08" z="42910" />
+        <Point3D x="-7.507629E+07" y="1.530561E+08" z="42910" />
+        <Point3D x="-7.507629E+07" y="1.530561E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:9x21M:341207:1 (Opening)" guid="2VgZ7G4I52WAQUKyzr5Wsy">
+      <Area area="1911000" height="164.999999997855" wallarea="993299.9999824">
+        <Point3D x="-7.507622E+07" y="1.530564E+08" z="40810" />
+        <Point3D x="-7.507622E+07" y="1.530564E+08" z="42910" />
+        <Point3D x="-7.507597E+07" y="1.530572E+08" z="42910" />
+        <Point3D x="-7.507597E+07" y="1.530572E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:9x21M:341161:1 (Opening)" guid="2VgZ7G4I52WAQUKyzr5Wt2">
+      <Area area="1911000" height="164.999999997855" wallarea="993299.9999824">
+        <Point3D x="-7.507686E+07" y="1.530541E+08" z="40810" />
+        <Point3D x="-7.507686E+07" y="1.530541E+08" z="42910" />
+        <Point3D x="-7.507661E+07" y="1.530549E+08" z="42910" />
+        <Point3D x="-7.507661E+07" y="1.530549E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:9x21M:341132:1 (Opening)" guid="2VgZ7G4I52WAQUKyzr5Wtd">
+      <Area area="1911000" height="164.999999997855" wallarea="993299.9999824">
+        <Point3D x="-7.507718E+07" y="1.530529E+08" z="40810" />
+        <Point3D x="-7.507718E+07" y="1.530529E+08" z="42910" />
+        <Point3D x="-7.507694E+07" y="1.530538E+08" z="42910" />
+        <Point3D x="-7.507694E+07" y="1.530538E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:10x21M:350840:1 (Opening)" guid="2ofwXb76b4k9lA1LQuYSno">
+      <Area area="2121000" height="155.000000010552" wallarea="964100.000066623">
+        <Point3D x="-7.50765E+07" y="1.530512E+08" z="40810" />
+        <Point3D x="-7.50765E+07" y="1.530512E+08" z="42910" />
+        <Point3D x="-7.507554E+07" y="1.53051E+08" z="42910" />
+        <Point3D x="-7.507554E+07" y="1.53051E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="M_Single-Glass 1:1010 x 2100mm:586506:1 (Opening)" guid="2XtSrnPeH4lQKIagkcgPiq">
+      <Area area="2121000" height="200.000000006052" wallarea="1244000.00003892">
+        <Point3D x="-7.505174E+07" y="1.530272E+08" z="44935" />
+        <Point3D x="-7.505077E+07" y="1.53027E+08" z="44935" />
+        <Point3D x="-7.505077E+07" y="1.53027E+08" z="47035" />
+        <Point3D x="-7.505174E+07" y="1.530272E+08" z="47035" />
+      </Area>
+    </Opening>
+    <Opening name="M_Single-Glass 1:1010 x 2100mm:570636:1 (Opening)" guid="2Z5d3AZF9C0eBHJH$sJsj1">
+      <Area area="2121000" height="200.000000006052" wallarea="1244000.00003892">
+        <Point3D x="-7.505174E+07" y="1.530272E+08" z="40810" />
+        <Point3D x="-7.505077E+07" y="1.53027E+08" z="40810" />
+        <Point3D x="-7.505077E+07" y="1.53027E+08" z="42910" />
+        <Point3D x="-7.505174E+07" y="1.530272E+08" z="42910" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Exterior - (203) 200mm Concrete:290017 (Opening)" guid="2lS_Ok3F97UfgGuPQXEGkj">
+      <Area area="2121000" height="3047.9999999925" wallarea="18958559.9999728">
+        <Point3D x="-7.503322E+07" y="1.530369E+08" z="45860" />
+        <Point3D x="-7.503322E+07" y="1.530369E+08" z="47960" />
+        <Point3D x="-7.503349E+07" y="1.530359E+08" z="47960" />
+        <Point3D x="-7.503349E+07" y="1.530359E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Exterior - (203) 200mm Concrete:290017 (Opening)" guid="2lS_Ok3F97UfgGuPQXEGWQ">
+      <Area area="2121000" height="3047.9999999925" wallarea="18958559.9999728">
+        <Point3D x="-7.503042E+07" y="1.530469E+08" z="45860" />
+        <Point3D x="-7.503042E+07" y="1.530469E+08" z="47960" />
+        <Point3D x="-7.50307E+07" y="1.530459E+08" z="47960" />
+        <Point3D x="-7.50307E+07" y="1.530459E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:10x21M:307804:1 (Opening)" guid="3OhYWIggTACPQPMgMVqLIG">
+      <Area area="2121000" height="200.000000006052" wallarea="1244000.00004051">
+        <Point3D x="-7.503252E+07" y="1.530337E+08" z="45860" />
+        <Point3D x="-7.503252E+07" y="1.530337E+08" z="47960" />
+        <Point3D x="-7.503225E+07" y="1.530347E+08" z="47960" />
+        <Point3D x="-7.503225E+07" y="1.530347E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Ext. Single-Flush:10x21M:335925:1 (Opening)" guid="36Tvw7ASrFghkBASigs92C">
+      <Area area="2121000" height="200.000000006052" wallarea="1244000.00003892">
+        <Point3D x="-7.50315E+07" y="1.530324E+08" z="40810" />
+        <Point3D x="-7.50315E+07" y="1.530324E+08" z="42910" />
+        <Point3D x="-7.503247E+07" y="1.530327E+08" z="42910" />
+        <Point3D x="-7.503247E+07" y="1.530327E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:Suspended - 170mm Concrete / Polystyrene:368278:2 (Opening)" guid="04rA7cLpfERPSOKiQ7qMFV">
+      <Area area="9296000" height="169.999999999993" wallarea="2080800.00002583">
+        <Point3D x="-7.505019E+07" y="1.530342E+08" z="40810" />
+        <Point3D x="-7.505094E+07" y="1.530315E+08" z="40810" />
+        <Point3D x="-7.505414E+07" y="1.530324E+08" z="40810" />
+        <Point3D x="-7.505339E+07" y="1.530351E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Interior - (322) 170 mm Drywall/Plywood:1123462 (Opening)" guid="0v5m5kdWPA2wrCCWa1PF3W">
+      <Area area="7476000" height="169.999999994695" wallarea="1924399.99994653">
+        <Point3D x="-7.507096E+07" y="1.530577E+08" z="45860" />
+        <Point3D x="-7.507096E+07" y="1.530577E+08" z="47960" />
+        <Point3D x="-7.507191E+07" y="1.530543E+08" z="47960" />
+        <Point3D x="-7.507191E+07" y="1.530543E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Interior - (322) 170 mm Drywall/Plywood:1123462 (Opening)" guid="0qZd$Jad5CtOjRAX5D7h5m">
+      <Area area="2920275" height="169.999999994695" wallarea="2359430.0009914">
+        <Point3D x="-7.507472E+07" y="1.530455E+08" z="45410" />
+        <Point3D x="-7.507472E+07" y="1.530455E+08" z="45860" />
+        <Point3D x="-7.507298E+07" y="1.530518E+08" z="45860" />
+        <Point3D x="-7.507298E+07" y="1.530518E+08" z="45410" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Interior - (322) 170 mm Drywall/Plywood:1123462 (Opening)" guid="2wRLVwWWDBgB7Gam$1ue4O">
+      <Area area="1.068E+07" height="169.999999994695" wallarea="2645199.99991193">
+        <Point3D x="-7.507304E+07" y="1.530516E+08" z="47960" />
+        <Point3D x="-7.507304E+07" y="1.530516E+08" z="46180" />
+        <Point3D x="-7.507465E+07" y="1.530458E+08" z="46180" />
+        <Point3D x="-7.507465E+07" y="1.530458E+08" z="47960" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:7x21M:692661:1 (Opening)" guid="3wb5$I0zn6mvaSe3rg8Ccy">
+      <Area area="1491000" height="145.000000012882" wallarea="814900.000071847">
+        <Point3D x="-7.508068E+07" y="1.530482E+08" z="45860" />
+        <Point3D x="-7.508068E+07" y="1.530482E+08" z="47960" />
+        <Point3D x="-7.507999E+07" y="1.53048E+08" z="47960" />
+        <Point3D x="-7.507999E+07" y="1.53048E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:10x21M:349779:1 (Opening)" guid="31EC1pYL96R93DgOsb_2xF">
+      <Area area="2121000" height="165.000000012212" wallarea="1026300.00007701">
+        <Point3D x="-7.507629E+07" y="1.530535E+08" z="45860" />
+        <Point3D x="-7.507629E+07" y="1.530535E+08" z="47960" />
+        <Point3D x="-7.507532E+07" y="1.530532E+08" z="47960" />
+        <Point3D x="-7.507532E+07" y="1.530532E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:9x21M:349617:1 (Opening)" guid="31EC1pYL96R93DgOsb_2qj">
+      <Area area="1911000" height="164.999999997855" wallarea="993299.9999824">
+        <Point3D x="-7.50769E+07" y="1.530539E+08" z="45860" />
+        <Point3D x="-7.50769E+07" y="1.530539E+08" z="47960" />
+        <Point3D x="-7.507666E+07" y="1.530548E+08" z="47960" />
+        <Point3D x="-7.507666E+07" y="1.530548E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:9x21M:349670:1 (Opening)" guid="31EC1pYL96R93DgOsb_2rw">
+      <Area area="1911000" height="164.999999997855" wallarea="993299.9999824">
+        <Point3D x="-7.507659E+07" y="1.53055E+08" z="45860" />
+        <Point3D x="-7.507659E+07" y="1.53055E+08" z="47960" />
+        <Point3D x="-7.507635E+07" y="1.530559E+08" z="47960" />
+        <Point3D x="-7.507635E+07" y="1.530559E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:9x21M:349709:1 (Opening)" guid="31EC1pYL96R93DgOsb_2wH">
+      <Area area="1911000" height="164.999999997855" wallarea="993299.9999824">
+        <Point3D x="-7.507629E+07" y="1.530561E+08" z="45860" />
+        <Point3D x="-7.507629E+07" y="1.530561E+08" z="47960" />
+        <Point3D x="-7.507605E+07" y="1.53057E+08" z="47960" />
+        <Point3D x="-7.507605E+07" y="1.53057E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:9x21M:349740:1 (Opening)" guid="31EC1pYL96R93DgOsb_2wm">
+      <Area area="1911000" height="164.999999997855" wallarea="993299.9999824">
+        <Point3D x="-7.507598E+07" y="1.530572E+08" z="45860" />
+        <Point3D x="-7.507598E+07" y="1.530572E+08" z="47960" />
+        <Point3D x="-7.507574E+07" y="1.530581E+08" z="47960" />
+        <Point3D x="-7.507574E+07" y="1.530581E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Interior - (322) 170 mm Drywall/Plywood:1123462 (Opening)" guid="37EP_jfeT268GQLk5JruUc">
+      <Area area="9256000" height="170.000000009052" wallarea="2373200.00013214">
+        <Point3D x="-7.506015E+07" y="1.530494E+08" z="47960" />
+        <Point3D x="-7.506015E+07" y="1.530494E+08" z="46180" />
+        <Point3D x="-7.505514E+07" y="1.53048E+08" z="46180" />
+        <Point3D x="-7.505514E+07" y="1.53048E+08" z="47960" />
+      </Area>
+    </Opening>
+    <Opening name="Fixed:12x12M:379868:1 (Opening)" guid="0yem0lxtf7PhYMTaZ2BaCZ">
+      <Area area="1440000" height="169.999999994695" wallarea="815999.999979832">
+        <Point3D x="-7.506677E+07" y="1.530546E+08" z="47060" />
+        <Point3D x="-7.506677E+07" y="1.530546E+08" z="48260" />
+        <Point3D x="-7.506709E+07" y="1.530534E+08" z="48260" />
+        <Point3D x="-7.506709E+07" y="1.530534E+08" z="47060" />
+      </Area>
+    </Opening>
+    <Opening name="Ext. Single-Flush out - Glass:10x21M:349872:1 (Opening)" guid="31EC1pYL96R93DgOsb_2ui">
+      <Area area="2121000" height="170.000000009052" wallarea="1057400.00005739">
+        <Point3D x="-7.507114E+07" y="1.530539E+08" z="45860" />
+        <Point3D x="-7.507114E+07" y="1.530539E+08" z="47960" />
+        <Point3D x="-7.507017E+07" y="1.530536E+08" z="47960" />
+        <Point3D x="-7.507017E+07" y="1.530536E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Fixed:12x12M:379794:1 (Opening)" guid="0yem0lxtf7PhYMTaZ2BaDj">
+      <Area area="1440000" height="169.999999994695" wallarea="815999.999979832">
+        <Point3D x="-7.505314E+07" y="1.530498E+08" z="47060" />
+        <Point3D x="-7.505314E+07" y="1.530498E+08" z="48260" />
+        <Point3D x="-7.505346E+07" y="1.530486E+08" z="48260" />
+        <Point3D x="-7.505346E+07" y="1.530486E+08" z="47060" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Interior - (322) 170 mm Drywall/Plywood:1123462 (Opening)" guid="0TzKOxx$5B_uCI6AdPK$aG">
+      <Area area="2920275" height="169.999999994695" wallarea="2359429.99991963">
+        <Point3D x="-7.506563E+07" y="1.530497E+08" z="45410" />
+        <Point3D x="-7.506563E+07" y="1.530497E+08" z="45860" />
+        <Point3D x="-7.506737E+07" y="1.530435E+08" z="45860" />
+        <Point3D x="-7.506737E+07" y="1.530435E+08" z="45410" />
+      </Area>
+    </Opening>
+    <Opening name="Fixed:12x12M:379432:1 (Opening)" guid="0yem0lxtf7PhYMTaZ2BaBN">
+      <Area area="1440000" height="169.999999994695" wallarea="815999.999979832">
+        <Point3D x="-7.506784E+07" y="1.530418E+08" z="47060" />
+        <Point3D x="-7.506784E+07" y="1.530418E+08" z="48260" />
+        <Point3D x="-7.506817E+07" y="1.530406E+08" z="48260" />
+        <Point3D x="-7.506817E+07" y="1.530406E+08" z="47060" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Interior - (322) 170 mm Drywall/Plywood:1123462 (Opening)" guid="1bmJRyf5b5aRgU5YL76P$5">
+      <Area area="326250" height="169.999999994695" wallarea="1554649.99994459">
+        <Point3D x="-7.506833E+07" y="1.5304E+08" z="50360" />
+        <Point3D x="-7.506833E+07" y="1.5304E+08" z="45860" />
+        <Point3D x="-7.506831E+07" y="1.530401E+08" z="45860" />
+        <Point3D x="-7.506831E+07" y="1.530401E+08" z="50360" />
+      </Area>
+    </Opening>
+    <Opening name="Ext. Single-Flush out - Glass:10x21M:349940:1 (Opening)" guid="31EC1pYL96R93DgOsb_2ve">
+      <Area area="2121000" height="169.999999994695" wallarea="1057399.99996944">
+        <Point3D x="-7.506591E+07" y="1.530481E+08" z="45860" />
+        <Point3D x="-7.506591E+07" y="1.530481E+08" z="47960" />
+        <Point3D x="-7.506565E+07" y="1.53049E+08" z="47960" />
+        <Point3D x="-7.506565E+07" y="1.53049E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Ext. Double-Flush in - Glass:15x20M:350028:1 (Opening)" guid="31EC1pYL96R93DgOsb_2$G">
+      <Area area="4221000" height="439.999999996406" wallarea="3616799.99998163">
+        <Point3D x="-7.505066E+07" y="1.530397E+08" z="45860" />
+        <Point3D x="-7.505066E+07" y="1.530397E+08" z="47960" />
+        <Point3D x="-7.505011E+07" y="1.530416E+08" z="47960" />
+        <Point3D x="-7.505011E+07" y="1.530416E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Ext. Single-Flush out - Glass:10x21M:347963:1 (Opening)" guid="0IdklinfPFfObsYeqAwfRO">
+      <Area area="2121000" height="170.000000009052" wallarea="1057400.00005739">
+        <Point3D x="-7.506151E+07" y="1.530496E+08" z="45860" />
+        <Point3D x="-7.506151E+07" y="1.530496E+08" z="47960" />
+        <Point3D x="-7.506054E+07" y="1.530494E+08" z="47960" />
+        <Point3D x="-7.506054E+07" y="1.530494E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Interior - (322) 170 mm Drywall/Plywood:1123462 (Opening)" guid="25s9zTKrr41P7MRiYS1j4P">
+      <Area area="3358000" height="170.000000009052" wallarea="1278400.00007337">
+        <Point3D x="-7.506022E+07" y="1.530499E+08" z="48160" />
+        <Point3D x="-7.506022E+07" y="1.530499E+08" z="45860" />
+        <Point3D x="-7.506163E+07" y="1.530503E+08" z="45860" />
+        <Point3D x="-7.506163E+07" y="1.530503E+08" z="48160" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Interior - (322) 170 mm Drywall/Plywood:1123462 (Opening)" guid="2VdraqYYP3k9KtEOhc1_0O">
+      <Area area="3082000" height="170.000000009052" wallarea="1237600.00006551">
+        <Point3D x="-7.505483E+07" y="1.530484E+08" z="45860" />
+        <Point3D x="-7.505483E+07" y="1.530484E+08" z="48160" />
+        <Point3D x="-7.505354E+07" y="1.53048E+08" z="48160" />
+        <Point3D x="-7.505354E+07" y="1.53048E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Ext. Single-Flush out - Glass:10x21M:348004:1 (Opening)" guid="0IdklinfPFfObsYeqAwfQ7">
+      <Area area="2121000" height="170.000000009052" wallarea="1057400.00005739">
+        <Point3D x="-7.505484E+07" y="1.530478E+08" z="45860" />
+        <Point3D x="-7.505484E+07" y="1.530478E+08" z="47960" />
+        <Point3D x="-7.505386E+07" y="1.530475E+08" z="47960" />
+        <Point3D x="-7.505386E+07" y="1.530475E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Ext. Single-Flush out - Glass:10x21M:349975:1 (Opening)" guid="31EC1pYL96R93DgOsb_2_B">
+      <Area area="2121000" height="170.000000009052" wallarea="1057400.00005739">
+        <Point3D x="-7.505761E+07" y="1.530455E+08" z="45860" />
+        <Point3D x="-7.505761E+07" y="1.530455E+08" z="47960" />
+        <Point3D x="-7.505858E+07" y="1.530458E+08" z="47960" />
+        <Point3D x="-7.505858E+07" y="1.530458E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Interior - (322) 170 mm Drywall/Plywood:1123462 (Opening)" guid="2jXvEebwrDv8ZJ5BvXBLp1">
+      <Area area="3600000" height="169.999999994695" wallarea="1325999.99996077">
+        <Point3D x="-7.505868E+07" y="1.530412E+08" z="45860" />
+        <Point3D x="-7.505868E+07" y="1.530412E+08" z="48260" />
+        <Point3D x="-7.505908E+07" y="1.530398E+08" z="48260" />
+        <Point3D x="-7.505908E+07" y="1.530398E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Fixed:24x24M:379289:1 (Opening)" guid="0yem0lxtf7PhYMTaZ2Ba5c">
+      <Area area="5760000" height="170.000000009052" wallarea="1632000.00008773">
+        <Point3D x="-7.503392E+07" y="1.530335E+08" z="45860" />
+        <Point3D x="-7.503392E+07" y="1.530335E+08" z="48260" />
+        <Point3D x="-7.503623E+07" y="1.530342E+08" z="48260" />
+        <Point3D x="-7.503623E+07" y="1.530342E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Fixed:24x24M:379991:1 (Opening)" guid="0yem0lxtf7PhYMTaZ2BaIe">
+      <Area area="5760000" height="170.000000009052" wallarea="1632000.00008773">
+        <Point3D x="-7.503738E+07" y="1.530345E+08" z="45860" />
+        <Point3D x="-7.503738E+07" y="1.530345E+08" z="48260" />
+        <Point3D x="-7.503969E+07" y="1.530351E+08" z="48260" />
+        <Point3D x="-7.503969E+07" y="1.530351E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Interior - (322) 170 mm Drywall/Plywood:1123462 (Opening)" guid="24DCCwJZDDBQ$Wyyr39$bv">
+      <Area area="4998000" height="169.999999994695" wallarea="1523199.99994239">
+        <Point3D x="-7.505147E+07" y="1.530397E+08" z="45860" />
+        <Point3D x="-7.505147E+07" y="1.530397E+08" z="47960" />
+        <Point3D x="-7.505083E+07" y="1.53042E+08" z="47960" />
+        <Point3D x="-7.505083E+07" y="1.53042E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Interior - (322) 170 mm Drywall/Plywood:1123462 (Opening)" guid="3yscM5yHT20erAmY6t2ttH">
+      <Area area="8544000" height="169.999999994695" wallarea="2237199.99992913">
+        <Point3D x="-7.504902E+07" y="1.530485E+08" z="47960" />
+        <Point3D x="-7.504902E+07" y="1.530485E+08" z="46180" />
+        <Point3D x="-7.50503E+07" y="1.530439E+08" z="46180" />
+        <Point3D x="-7.50503E+07" y="1.530439E+08" z="47960" />
+      </Area>
+    </Opening>
+    <Opening name="Fixed:24x24M:379155:1 (Opening)" guid="0yem0lxtf7PhYMTaZ2Ba7i">
+      <Area area="5760000" height="170.000000009052" wallarea="1632000.00008773">
+        <Point3D x="-7.506029E+07" y="1.530402E+08" z="45860" />
+        <Point3D x="-7.506029E+07" y="1.530402E+08" z="48260" />
+        <Point3D x="-7.50626E+07" y="1.530409E+08" z="48260" />
+        <Point3D x="-7.50626E+07" y="1.530409E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Interior - (322) 170 mm Drywall/Plywood:1123462 (Opening)" guid="1KwE3VSNnFY8JmawXfY52w">
+      <Area area="1.035165E+07" height="169.999999994695" wallarea="2389179.99992819">
+        <Point3D x="-7.505776E+07" y="1.530408E+08" z="45410" />
+        <Point3D x="-7.505657E+07" y="1.530451E+08" z="45410" />
+        <Point3D x="-7.505657E+07" y="1.530451E+08" z="45860" />
+        <Point3D x="-7.505666E+07" y="1.530448E+08" z="45860" />
+        <Point3D x="-7.505666E+07" y="1.530448E+08" z="47960" />
+        <Point3D x="-7.505771E+07" y="1.53041E+08" z="47960" />
+        <Point3D x="-7.505771E+07" y="1.53041E+08" z="45860" />
+        <Point3D x="-7.505776E+07" y="1.530408E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Fixed:12x12M:379714:1 (Opening)" guid="0yem0lxtf7PhYMTaZ2BaEz">
+      <Area area="1440000" height="169.999999994695" wallarea="815999.999979832">
+        <Point3D x="-7.506194E+07" y="1.530448E+08" z="47060" />
+        <Point3D x="-7.506194E+07" y="1.530448E+08" z="48260" />
+        <Point3D x="-7.506162E+07" y="1.53046E+08" z="48260" />
+        <Point3D x="-7.506162E+07" y="1.53046E+08" z="47060" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Interior - (322) 170 mm Drywall/Plywood:1123462 (Opening)" guid="14i3lDPGT7ZuWR7X_jwQ$o">
+      <Area area="2014650" height="169.999999994695" wallarea="1675179.99994207">
+        <Point3D x="-7.506269E+07" y="1.530422E+08" z="45410" />
+        <Point3D x="-7.506269E+07" y="1.530422E+08" z="45860" />
+        <Point3D x="-7.506149E+07" y="1.530465E+08" z="45860" />
+        <Point3D x="-7.506149E+07" y="1.530465E+08" z="45410" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Interior - (322) 170 mm Drywall/Plywood:1123462 (Opening)" guid="0juIC8hub9D8jlHGMZVG39">
+      <Area area="257625" height="169.999999994695" wallarea="347649.998909392">
+        <Point3D x="-7.505149E+07" y="1.530396E+08" z="45860" />
+        <Point3D x="-7.505149E+07" y="1.530396E+08" z="45410" />
+        <Point3D x="-7.505164E+07" y="1.530391E+08" z="45410" />
+        <Point3D x="-7.505164E+07" y="1.530391E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Fixed:12x12M:379620:1 (Opening)" guid="0yem0lxtf7PhYMTaZ2Ba8R">
+      <Area area="1440000" height="170.000000009052" wallarea="816000.000043865">
+        <Point3D x="-7.50678E+07" y="1.530502E+08" z="47060" />
+        <Point3D x="-7.50678E+07" y="1.530502E+08" z="48260" />
+        <Point3D x="-7.506665E+07" y="1.530499E+08" z="48260" />
+        <Point3D x="-7.506665E+07" y="1.530499E+08" z="47060" />
+      </Area>
+    </Opening>
+    <Opening name="Ext. Single-Flush out - Glass:10x21M:376334:1 (Opening)" guid="3i7XeH07z80xgHCKZQ3XqF">
+      <Area area="2121000" height="170.000000009052" wallarea="1057400.00005739">
+        <Point3D x="-7.507131E+07" y="1.530514E+08" z="45860" />
+        <Point3D x="-7.507131E+07" y="1.530514E+08" z="47960" />
+        <Point3D x="-7.507228E+07" y="1.530517E+08" z="47960" />
+        <Point3D x="-7.507228E+07" y="1.530517E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Fixed:24x24M:379063:1 (Opening)" guid="0yem0lxtf7PhYMTaZ2Ba18">
+      <Area area="5760000" height="170.000000009052" wallarea="1632000.00008773">
+        <Point3D x="-7.507226E+07" y="1.530413E+08" z="45860" />
+        <Point3D x="-7.507226E+07" y="1.530413E+08" z="48260" />
+        <Point3D x="-7.507458E+07" y="1.530419E+08" z="48260" />
+        <Point3D x="-7.507458E+07" y="1.530419E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Interior - 10mm tiles:868276 (Opening)" guid="0pXBGxMxD7ORtb0uxdEQRr">
+      <Area area="2121000" height="10.0000000016596" wallarea="62200.0000103861">
+        <Point3D x="-7.507355E+07" y="1.530574E+08" z="45860" />
+        <Point3D x="-7.507355E+07" y="1.530574E+08" z="47960" />
+        <Point3D x="-7.507382E+07" y="1.530564E+08" z="47960" />
+        <Point3D x="-7.507382E+07" y="1.530564E+08" z="45860" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Double-Flush:16x21M:305466:1 (Opening)" guid="3yDaP8YUL8bOUKSjaFIyxq">
+      <Area area="3381000" height="249.999999998391" wallarea="1854999.99998637">
+        <Point3D x="-7.505614E+07" y="1.530349E+08" z="37070" />
+        <Point3D x="-7.505614E+07" y="1.530349E+08" z="39170" />
+        <Point3D x="-7.505657E+07" y="1.530333E+08" z="39170" />
+        <Point3D x="-7.505657E+07" y="1.530333E+08" z="37070" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:Suspended - 120mm Concrete:923729:3 (Opening)" guid="0j6nvAxgj238CqHcekkuwc">
+      <Area area="40000" height="120" wallarea="96000.0000029049">
+        <Point3D x="-7.507969E+07" y="1.530561E+08" z="37570" />
+        <Point3D x="-7.507974E+07" y="1.53056E+08" z="37570" />
+        <Point3D x="-7.507993E+07" y="1.53056E+08" z="37570" />
+        <Point3D x="-7.507988E+07" y="1.530562E+08" z="37570" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:Suspended - 120mm Concrete:923729:2 (Opening)" guid="0j6nvAxgj238CqHcekkuwY">
+      <Area area="40000" height="120" wallarea="96000.0000029049">
+        <Point3D x="-7.507894E+07" y="1.530588E+08" z="37570" />
+        <Point3D x="-7.507899E+07" y="1.530586E+08" z="37570" />
+        <Point3D x="-7.507918E+07" y="1.530587E+08" z="37570" />
+        <Point3D x="-7.507913E+07" y="1.530589E+08" z="37570" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:9x21M - existing:581814:1 (Opening)" guid="0ss0V06rz5vwTm8TzLzNgV">
+      <Area area="1911000" height="200.000000006052" wallarea="1204000.00003809">
+        <Point3D x="-7.505032E+07" y="1.530269E+08" z="37070" />
+        <Point3D x="-7.505032E+07" y="1.530269E+08" z="39170" />
+        <Point3D x="-7.50512E+07" y="1.530271E+08" z="39170" />
+        <Point3D x="-7.50512E+07" y="1.530271E+08" z="37070" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Single-Flush:10x21M:581784:1 (Opening)" guid="0ss0V06rz5vwTm8TzLzNgn">
+      <Area area="2121000" height="399.999999995825" wallarea="2487999.99998022">
+        <Point3D x="-7.505508E+07" y="1.530316E+08" z="37070" />
+        <Point3D x="-7.505508E+07" y="1.530316E+08" z="39170" />
+        <Point3D x="-7.505606E+07" y="1.530319E+08" z="39170" />
+        <Point3D x="-7.505606E+07" y="1.530319E+08" z="37070" />
+      </Area>
+    </Opening>
+    <Opening name="M_Single-Glass 1:1010 x 2100mm:566796:1 (Opening)" guid="0XBzueC2LD$v_y_ikdVucE">
+      <Area area="2121000" height="399.999999995825" wallarea="2487999.99998024">
+        <Point3D x="-7.505086E+07" y="1.530304E+08" z="40810" />
+        <Point3D x="-7.504988E+07" y="1.530302E+08" z="40810" />
+        <Point3D x="-7.504988E+07" y="1.530302E+08" z="42910" />
+        <Point3D x="-7.505086E+07" y="1.530304E+08" z="42910" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Double-Flush:2450 X 2500:566866:1 (Opening)" guid="0XBzueC2LD$v_y_ikdVudG">
+      <Area area="6125000" height="399.999999995825" wallarea="3959999.99995441">
+        <Point3D x="-7.504571E+07" y="1.53029E+08" z="40810" />
+        <Point3D x="-7.504571E+07" y="1.53029E+08" z="43310" />
+        <Point3D x="-7.504807E+07" y="1.530297E+08" z="43310" />
+        <Point3D x="-7.504807E+07" y="1.530297E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="Fixed:2350X2500:566892:1 (Opening)" guid="0XBzueC2LD$v_y_ikdVudk">
+      <Area area="5875000" height="399.999999995825" wallarea="3879999.99996182">
+        <Point3D x="-7.503709E+07" y="1.530267E+08" z="40810" />
+        <Point3D x="-7.503709E+07" y="1.530267E+08" z="43310" />
+        <Point3D x="-7.503935E+07" y="1.530273E+08" z="43310" />
+        <Point3D x="-7.503935E+07" y="1.530273E+08" z="40810" />
+      </Area>
+    </Opening>
+    <Opening name="M_Single-Glass 1:1010 x 2100mm:586479:1 (Opening)" guid="2XtSrnPeH4lQKIagkcgPhH">
+      <Area area="2121000" height="399.999999995825" wallarea="2487999.99998024">
+        <Point3D x="-7.505086E+07" y="1.530304E+08" z="44935" />
+        <Point3D x="-7.504988E+07" y="1.530302E+08" z="44935" />
+        <Point3D x="-7.504988E+07" y="1.530302E+08" z="47035" />
+        <Point3D x="-7.505086E+07" y="1.530304E+08" z="47035" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Double-Flush asym:16x21M:363241:1 (Opening)" guid="1$np1KZ9z4kARJG8lXur6j">
+      <Area area="3381000" height="250.000000002381" wallarea="1855000.00001797">
+        <Point3D x="-7.50617E+07" y="1.530369E+08" z="37070" />
+        <Point3D x="-7.50617E+07" y="1.530369E+08" z="39170" />
+        <Point3D x="-7.506014E+07" y="1.530365E+08" z="39170" />
+        <Point3D x="-7.506014E+07" y="1.530365E+08" z="37070" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Double-Flush asym:16x21M:315602:1 (Opening)" guid="2a9OifiIvCieRlKLUHy4_g">
+      <Area area="3381000" height="250.000000002381" wallarea="1855000.00001797">
+        <Point3D x="-7.505765E+07" y="1.530358E+08" z="37070" />
+        <Point3D x="-7.505765E+07" y="1.530358E+08" z="39170" />
+        <Point3D x="-7.50561E+07" y="1.530354E+08" z="39170" />
+        <Point3D x="-7.50561E+07" y="1.530354E+08" z="37070" />
+      </Area>
+    </Opening>
+    <Opening name="Ext. Single-Flush:10x21M:303644:1 (Opening)" guid="3yDaP8YUL8bOUKSjaFIyNI">
+      <Area area="2121000" height="249.999999998391" wallarea="1554999.99999358">
+        <Point3D x="-7.508056E+07" y="1.530499E+08" z="37070" />
+        <Point3D x="-7.508056E+07" y="1.530499E+08" z="39170" />
+        <Point3D x="-7.508083E+07" y="1.530489E+08" z="39170" />
+        <Point3D x="-7.508083E+07" y="1.530489E+08" z="37070" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Exterior - (202) 250mm Concrete:609485 (Opening)" guid="21utrEM1bBk8PnfPpfyibA">
+      <Area area="612500" height="250.000000002381" wallarea="869999.99999548">
+        <Point3D x="-7.505411E+07" y="1.530326E+08" z="35820" />
+        <Point3D x="-7.505411E+07" y="1.530326E+08" z="37070" />
+        <Point3D x="-7.505458E+07" y="1.530328E+08" z="37070" />
+        <Point3D x="-7.505458E+07" y="1.530328E+08" z="35820" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Exterior - (202) 250mm Concrete:609485 (Opening)" guid="2yZrXKHfHAzAzb651IY97c">
+      <Area area="3026250" height="250.000000002381" wallarea="1835499.99999834">
+        <Point3D x="-7.50558E+07" y="1.530356E+08" z="35820" />
+        <Point3D x="-7.50558E+07" y="1.530356E+08" z="37070" />
+        <Point3D x="-7.505347E+07" y="1.530349E+08" z="37070" />
+        <Point3D x="-7.505347E+07" y="1.530349E+08" z="35820" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Double-Flush:16x21M:304616:1 (Opening)" guid="3yDaP8YUL8bOUKSjaFIy8c">
+      <Area area="3381000" height="249.999999998391" wallarea="1854999.99998637">
+        <Point3D x="-7.506974E+07" y="1.53037E+08" z="37070" />
+        <Point3D x="-7.506974E+07" y="1.53037E+08" z="39170" />
+        <Point3D x="-7.506931E+07" y="1.530385E+08" z="39170" />
+        <Point3D x="-7.506931E+07" y="1.530385E+08" z="37070" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Exterior - 200mm Insul:763226 (Opening)" guid="0FRb22Ttv7mAaqXFrS24Uh">
+      <Area area="2266650" height="200.000000006052" wallarea="1248400.00002899">
+        <Point3D x="-7.505357E+07" y="1.530354E+08" z="35250" />
+        <Point3D x="-7.505357E+07" y="1.530354E+08" z="36400" />
+        <Point3D x="-7.505546E+07" y="1.53036E+08" z="36400" />
+        <Point3D x="-7.505546E+07" y="1.53036E+08" z="35250" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Exterior - 200mm Insul:763226 (Opening)" guid="2Om2NVNXjESxPEgqXPo$gc">
+      <Area area="258750" height="200.000000006052" wallarea="550000.000015935">
+        <Point3D x="-7.50547E+07" y="1.530323E+08" z="35170" />
+        <Point3D x="-7.50547E+07" y="1.530323E+08" z="36320" />
+        <Point3D x="-7.505449E+07" y="1.530323E+08" z="36320" />
+        <Point3D x="-7.505449E+07" y="1.530323E+08" z="35170" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:Exterior - 230mm Insul:763314 (Opening)" guid="0XJQ982557sgNJNqTAo1GP">
+      <Area area="2121000" height="3047.9999999925" wallarea="18958559.9999728">
+        <Point3D x="-7.508202E+07" y="1.530503E+08" z="37070" />
+        <Point3D x="-7.508202E+07" y="1.530503E+08" z="39170" />
+        <Point3D x="-7.50823E+07" y="1.530493E+08" z="39170" />
+        <Point3D x="-7.50823E+07" y="1.530493E+08" z="37070" />
+      </Area>
+    </Opening>
+    <Opening name="Fixed:10x10M:711019:1 (Opening)" guid="1wh9eobi999xEnAhz7dELn">
+      <Area area="1020100" height="200.000000006052" wallarea="808000.000025731">
+        <Point3D x="-7.508214E+07" y="1.530487E+08" z="37870" />
+        <Point3D x="-7.508214E+07" y="1.530487E+08" z="38880" />
+        <Point3D x="-7.508117E+07" y="1.530484E+08" z="38880" />
+        <Point3D x="-7.508117E+07" y="1.530484E+08" z="37870" />
+      </Area>
+    </Opening>
+    <Opening name="Int. Double-Flush:14x21M:721162:1 (Opening)" guid="3DUddbv8rC8wXu2E8QKc4U">
+      <Area area="2961000" height="200.000000006052" wallarea="1404000.00003871">
+        <Point3D x="-7.508911E+07" y="1.530444E+08" z="37070" />
+        <Point3D x="-7.508911E+07" y="1.530444E+08" z="39170" />
+        <Point3D x="-7.508874E+07" y="1.530457E+08" z="39170" />
+        <Point3D x="-7.508874E+07" y="1.530457E+08" z="37070" />
+      </Area>
+    </Opening>
+  </Building>
+</Project>

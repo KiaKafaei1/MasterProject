@@ -1,0 +1,1589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Application="Autodesk Revit 2017 (ENU)" ElevationOffset="40.81">
+  <Building name="" guid="3M81TAHVb4oghG$s6V$yOu" unitscale="0.001" areaunitscale="1" elevation="40810">
+    <Floor name="FG niveau 00" guid="3M81TAHVb4oghG$s5W03Cg" elevation="2.30140590255881E-10" />
+    <Floor name="Niveau" guid="3M81TAHVb4oghG$s5W03YQ" elevation="-3740.00000000009" />
+    <Floor name="FG niveau 01" guid="3M81TAHVb4oghG$s5W0O41" elevation="5049.99999999998" />
+    <Floor name="Tagplan" guid="3M81TAHVb4oghG$s5W1Wcu" elevation="10050" />
+    <Opening name=" (Opening)" guid="0Acmwg4hnFTgn6L3p4QWM_">
+      <Area area="62500" height="320" wallarea="320000.000005601">
+        <Point3D x="-7.50483E+07" y="1.530494E+08" z="40640" />
+        <Point3D x="-7.504824E+07" y="1.530496E+08" z="40640" />
+        <Point3D x="-7.5048E+07" y="1.530496E+08" z="40640" />
+        <Point3D x="-7.504806E+07" y="1.530493E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0msLOJoK9DnhaF7evWkPDO">
+      <Area area="90000" height="320" wallarea="383999.999995796">
+        <Point3D x="-7.504298E+07" y="1.530508E+08" z="40640" />
+        <Point3D x="-7.504269E+07" y="1.530507E+08" z="40640" />
+        <Point3D x="-7.504277E+07" y="1.530504E+08" z="40640" />
+        <Point3D x="-7.504306E+07" y="1.530505E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="38MI9LCMH7i8OpGdfJq3we">
+      <Area area="62500" height="320" wallarea="319999.999997941">
+        <Point3D x="-7.504696E+07" y="1.530462E+08" z="40640" />
+        <Point3D x="-7.50469E+07" y="1.530465E+08" z="40640" />
+        <Point3D x="-7.504666E+07" y="1.530464E+08" z="40640" />
+        <Point3D x="-7.504672E+07" y="1.530461E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3mjkffHafApAxveIhq0giQ">
+      <Area area="90000" height="320" wallarea="384000.000001667">
+        <Point3D x="-7.503604E+07" y="1.530488E+08" z="40640" />
+        <Point3D x="-7.503575E+07" y="1.530488E+08" z="40640" />
+        <Point3D x="-7.503583E+07" y="1.530485E+08" z="40640" />
+        <Point3D x="-7.503612E+07" y="1.530485E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3xLRcdJOT7eOYnPRDbWnYE">
+      <Area area="62500" height="320" wallarea="320000.000005601">
+        <Point3D x="-7.504772E+07" y="1.530515E+08" z="40640" />
+        <Point3D x="-7.504766E+07" y="1.530518E+08" z="40640" />
+        <Point3D x="-7.504741E+07" y="1.530517E+08" z="40640" />
+        <Point3D x="-7.504748E+07" y="1.530515E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0sxwSNA0L9Axgp0aZAka0d">
+      <Area area="62500" height="270" wallarea="269999.999998263">
+        <Point3D x="-7.50483E+07" y="1.530494E+08" z="40640" />
+        <Point3D x="-7.504824E+07" y="1.530496E+08" z="40640" />
+        <Point3D x="-7.5048E+07" y="1.530496E+08" z="40640" />
+        <Point3D x="-7.504806E+07" y="1.530493E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="1BHlGBN990ngs5WQjDs8SF">
+      <Area area="90000" height="270" wallarea="324000.000004205">
+        <Point3D x="-7.504991E+07" y="1.530527E+08" z="40640" />
+        <Point3D x="-7.504962E+07" y="1.530526E+08" z="40640" />
+        <Point3D x="-7.50497E+07" y="1.530523E+08" z="40640" />
+        <Point3D x="-7.504999E+07" y="1.530524E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2wNBnEmEfCcuRvupFpV8qv">
+      <Area area="62500" height="270" wallarea="270000.000004726">
+        <Point3D x="-7.504772E+07" y="1.530515E+08" z="40640" />
+        <Point3D x="-7.504766E+07" y="1.530518E+08" z="40640" />
+        <Point3D x="-7.504741E+07" y="1.530517E+08" z="40640" />
+        <Point3D x="-7.504748E+07" y="1.530515E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="38xUmWgdbFLQvpJWwj3KtT">
+      <Area area="90000" height="320" wallarea="384000.000001667">
+        <Point3D x="-7.504646E+07" y="1.530382E+08" z="40640" />
+        <Point3D x="-7.504617E+07" y="1.530381E+08" z="40640" />
+        <Point3D x="-7.504625E+07" y="1.530379E+08" z="40640" />
+        <Point3D x="-7.504654E+07" y="1.530379E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3XSjpmOwz7BxFn2tPCAW9Q">
+      <Area area="90000" height="320" wallarea="384000.000002431">
+        <Point3D x="-7.503952E+07" y="1.530363E+08" z="40640" />
+        <Point3D x="-7.503923E+07" y="1.530362E+08" z="40640" />
+        <Point3D x="-7.503931E+07" y="1.530359E+08" z="40640" />
+        <Point3D x="-7.50396E+07" y="1.53036E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0FgfFqDmfEyPgaLhJoZwki">
+      <Area area="137500" height="270" wallarea="432000.000007473">
+        <Point3D x="-7.505008E+07" y="1.53043E+08" z="40640" />
+        <Point3D x="-7.504994E+07" y="1.530436E+08" z="40640" />
+        <Point3D x="-7.50497E+07" y="1.530435E+08" z="40640" />
+        <Point3D x="-7.504984E+07" y="1.53043E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3pR6fIu9L8EPdVNXXzmPV3">
+      <Area area="137500" height="270" wallarea="431999.999994767">
+        <Point3D x="-7.505098E+07" y="1.530398E+08" z="40640" />
+        <Point3D x="-7.505084E+07" y="1.530403E+08" z="40640" />
+        <Point3D x="-7.50506E+07" y="1.530402E+08" z="40640" />
+        <Point3D x="-7.505074E+07" y="1.530397E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:500202 (Opening)" guid="354$kALRTCVQgQzlSqWeDk">
+      <Area area="66125.84" height="200.000000006052" wallarea="185410.196635499">
+        <Point3D x="-7.502957E+07" y="1.530451E+08" z="44310" />
+        <Point3D x="-7.502956E+07" y="1.530451E+08" z="44221.83" />
+        <Point3D x="-7.502954E+07" y="1.530452E+08" z="44167.34" />
+        <Point3D x="-7.502951E+07" y="1.530452E+08" z="44167.34" />
+        <Point3D x="-7.502949E+07" y="1.530453E+08" z="44221.83" />
+        <Point3D x="-7.502949E+07" y="1.530453E+08" z="44310" />
+        <Point3D x="-7.502949E+07" y="1.530453E+08" z="44398.17" />
+        <Point3D x="-7.502951E+07" y="1.530452E+08" z="44452.66" />
+        <Point3D x="-7.502954E+07" y="1.530452E+08" z="44452.66" />
+        <Point3D x="-7.502956E+07" y="1.530451E+08" z="44398.17" />
+        <Point3D x="-7.502957E+07" y="1.530451E+08" z="44310" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:500211 (Opening)" guid="3ozSQusKbF3xWsPVq0VA0T">
+      <Area area="2121000" height="200.000000006052" wallarea="1244000.00003892">
+        <Point3D x="-7.503155E+07" y="1.530322E+08" z="42910" />
+        <Point3D x="-7.503155E+07" y="1.530322E+08" z="40810" />
+        <Point3D x="-7.503252E+07" y="1.530325E+08" z="40810" />
+        <Point3D x="-7.503252E+07" y="1.530325E+08" z="42910" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:500226 (Opening)" guid="0ljs8WVI97LQxv55SgFCh2">
+      <Area area="2899000" height="200.000000006052" wallarea="1412000.00004596">
+        <Point3D x="-7.507713E+07" y="1.530449E+08" z="42910" />
+        <Point3D x="-7.507713E+07" y="1.530449E+08" z="40680" />
+        <Point3D x="-7.507838E+07" y="1.530452E+08" z="40680" />
+        <Point3D x="-7.507838E+07" y="1.530452E+08" z="42910" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:500233 (Opening)" guid="0tHNLxvPH0UwLg7$h4bNO4">
+      <Area area="90004.62" height="200.000000006052" wallarea="216311.896074415">
+        <Point3D x="-7.50778E+07" y="1.530597E+08" z="45010" />
+        <Point3D x="-7.507779E+07" y="1.530598E+08" z="44907.14" />
+        <Point3D x="-7.507777E+07" y="1.530598E+08" z="44843.57" />
+        <Point3D x="-7.507774E+07" y="1.530599E+08" z="44843.57" />
+        <Point3D x="-7.507771E+07" y="1.5306E+08" z="44907.14" />
+        <Point3D x="-7.50777E+07" y="1.530601E+08" z="45010" />
+        <Point3D x="-7.507771E+07" y="1.5306E+08" z="45112.86" />
+        <Point3D x="-7.507774E+07" y="1.530599E+08" z="45176.43" />
+        <Point3D x="-7.507777E+07" y="1.530598E+08" z="45176.43" />
+        <Point3D x="-7.507779E+07" y="1.530598E+08" z="45112.86" />
+        <Point3D x="-7.50778E+07" y="1.530597E+08" z="45010" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:500254 (Opening)" guid="0ljs8WVI97LQxv55SgFCpK">
+      <Area area="2252300" height="200.000000006052" wallarea="1296000.00004044">
+        <Point3D x="-7.508229E+07" y="1.530489E+08" z="42910" />
+        <Point3D x="-7.508229E+07" y="1.530489E+08" z="40680" />
+        <Point3D x="-7.508131E+07" y="1.530486E+08" z="40680" />
+        <Point3D x="-7.508131E+07" y="1.530486E+08" z="42910" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0vVyAGQin0IAfaSKNNw7LO">
+      <Area area="90000" height="270" wallarea="323999.999994298">
+        <Point3D x="-7.507632E+07" y="1.530383E+08" z="40640" />
+        <Point3D x="-7.507603E+07" y="1.530382E+08" z="40640" />
+        <Point3D x="-7.507611E+07" y="1.53038E+08" z="40640" />
+        <Point3D x="-7.507641E+07" y="1.53038E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0XKnpf6LXAbuS3FOiCakWb">
+      <Area area="90000" height="270" wallarea="323999.999997097">
+        <Point3D x="-7.507421E+07" y="1.530459E+08" z="40640" />
+        <Point3D x="-7.507392E+07" y="1.530459E+08" z="40640" />
+        <Point3D x="-7.5074E+07" y="1.530456E+08" z="40640" />
+        <Point3D x="-7.507429E+07" y="1.530456E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2hbUcEcVz4dQLxnU5B6d06">
+      <Area area="90000" height="270" wallarea="324000.000001406">
+        <Point3D x="-7.506034E+07" y="1.530421E+08" z="40640" />
+        <Point3D x="-7.506004E+07" y="1.53042E+08" z="40640" />
+        <Point3D x="-7.506013E+07" y="1.530417E+08" z="40640" />
+        <Point3D x="-7.506042E+07" y="1.530418E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2ROlVVbvj4cuATePUxaUoF">
+      <Area area="90000" height="270" wallarea="323999.999998607">
+        <Point3D x="-7.506727E+07" y="1.53044E+08" z="40640" />
+        <Point3D x="-7.506698E+07" y="1.530439E+08" z="40640" />
+        <Point3D x="-7.506706E+07" y="1.530436E+08" z="40640" />
+        <Point3D x="-7.506735E+07" y="1.530437E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2xhUP1AwT3P9pMEQLRMOW4">
+      <Area area="90000" height="270" wallarea="323999.999996453">
+        <Point3D x="-7.506245E+07" y="1.530345E+08" z="40640" />
+        <Point3D x="-7.506216E+07" y="1.530344E+08" z="40640" />
+        <Point3D x="-7.506224E+07" y="1.530341E+08" z="40640" />
+        <Point3D x="-7.506253E+07" y="1.530342E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3KVeWgETH6hu2qE9tyePwE">
+      <Area area="90000" height="270" wallarea="324000.000001406">
+        <Point3D x="-7.506938E+07" y="1.530364E+08" z="40640" />
+        <Point3D x="-7.50691E+07" y="1.530363E+08" z="40640" />
+        <Point3D x="-7.506918E+07" y="1.53036E+08" z="40640" />
+        <Point3D x="-7.506946E+07" y="1.530361E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0wpIRV1CTAy8skyhBTwhK1">
+      <Area area="62500" height="270" wallarea="269999.999995463">
+        <Point3D x="-7.506418E+07" y="1.530479E+08" z="40640" />
+        <Point3D x="-7.506411E+07" y="1.530481E+08" z="40640" />
+        <Point3D x="-7.506387E+07" y="1.530481E+08" z="40640" />
+        <Point3D x="-7.506394E+07" y="1.530478E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="18JEnTxh9DAgMSbFsObITy">
+      <Area area="62500" height="270" wallarea="270000.000000417">
+        <Point3D x="-7.506102E+07" y="1.53047E+08" z="40640" />
+        <Point3D x="-7.506095E+07" y="1.530472E+08" z="40640" />
+        <Point3D x="-7.50607E+07" y="1.530472E+08" z="40640" />
+        <Point3D x="-7.506078E+07" y="1.530469E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="20np1$Fuv6tfC5wcYJOPhQ">
+      <Area area="90000" height="270" wallarea="323999.999997097">
+        <Point3D x="-7.506034E+07" y="1.530421E+08" z="40640" />
+        <Point3D x="-7.506004E+07" y="1.53042E+08" z="40640" />
+        <Point3D x="-7.506013E+07" y="1.530417E+08" z="40640" />
+        <Point3D x="-7.506042E+07" y="1.530418E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2vvnTNTHrBDgL1bMYatZ0V">
+      <Area area="250000" height="270" wallarea="540000.000000834">
+        <Point3D x="-7.506382E+07" y="1.530434E+08" z="40640" />
+        <Point3D x="-7.506369E+07" y="1.530438E+08" z="40640" />
+        <Point3D x="-7.50632E+07" y="1.530437E+08" z="40640" />
+        <Point3D x="-7.506334E+07" y="1.530432E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3_LOWDAVXEw9aQNocjvHT9">
+      <Area area="62500" height="270" wallarea="270000.000004726">
+        <Point3D x="-7.506274E+07" y="1.530468E+08" z="40640" />
+        <Point3D x="-7.506267E+07" y="1.53047E+08" z="40640" />
+        <Point3D x="-7.506243E+07" y="1.53047E+08" z="40640" />
+        <Point3D x="-7.50625E+07" y="1.530467E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3eh3XXBdz6Mv5eNdxg6iR1">
+      <Area area="90000" height="270" wallarea="323999.999996453">
+        <Point3D x="-7.506727E+07" y="1.53044E+08" z="40640" />
+        <Point3D x="-7.506698E+07" y="1.530439E+08" z="40640" />
+        <Point3D x="-7.506706E+07" y="1.530436E+08" z="40640" />
+        <Point3D x="-7.506735E+07" y="1.530437E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3shL5CjrT3zeiwTzPjX2ii">
+      <Area area="90000" height="270" wallarea="324000.000007005">
+        <Point3D x="-7.507421E+07" y="1.530459E+08" z="40640" />
+        <Point3D x="-7.507392E+07" y="1.530459E+08" z="40640" />
+        <Point3D x="-7.5074E+07" y="1.530456E+08" z="40640" />
+        <Point3D x="-7.507429E+07" y="1.530456E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0hu5cG6Jj0hxF8_u$ac09q">
+      <Area area="62500" height="270" wallarea="270000.000004726">
+        <Point3D x="-7.50765E+07" y="1.530596E+08" z="40640" />
+        <Point3D x="-7.507644E+07" y="1.530599E+08" z="40640" />
+        <Point3D x="-7.507619E+07" y="1.530598E+08" z="40640" />
+        <Point3D x="-7.507626E+07" y="1.530596E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0nbztoeyb5XRwi7jQz_nbB">
+      <Area area="55000" height="270" wallarea="350999.999992316">
+        <Point3D x="-7.50777E+07" y="1.530514E+08" z="40640" />
+        <Point3D x="-7.507767E+07" y="1.530515E+08" z="40640" />
+        <Point3D x="-7.507714E+07" y="1.530513E+08" z="40640" />
+        <Point3D x="-7.507717E+07" y="1.530512E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="25WXAkESr8vwl3JqunomHX">
+      <Area area="7405252" height="270" wallarea="3037850.44976544">
+        <Point3D x="-7.508234E+07" y="1.530487E+08" z="40640" />
+        <Point3D x="-7.507894E+07" y="1.530478E+08" z="40640" />
+        <Point3D x="-7.50795E+07" y="1.530457E+08" z="40640" />
+        <Point3D x="-7.50829E+07" y="1.530467E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBP270 fugeudstøbning:516854:2 (Opening)" guid="2lejXe1KT1RBNkLbHTQcts">
+      <Area area="3.724219E+07" height="270" wallarea="6841796.30214413">
+        <Point3D x="-7.50731E+07" y="1.530588E+08" z="40640" />
+        <Point3D x="-7.507526E+07" y="1.53051E+08" z="40640" />
+        <Point3D x="-7.507972E+07" y="1.530523E+08" z="40640" />
+        <Point3D x="-7.507758E+07" y="1.5306E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3BZ$uAX5X7wQHIuovxQpCS">
+      <Area area="90000" height="270" wallarea="324000.000007005">
+        <Point3D x="-7.50741E+07" y="1.530588E+08" z="40640" />
+        <Point3D x="-7.507402E+07" y="1.53059E+08" z="40640" />
+        <Point3D x="-7.507374E+07" y="1.53059E+08" z="40640" />
+        <Point3D x="-7.507382E+07" y="1.530587E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0$4YBbTsXE2vN$qHMq8vWD">
+      <Area area="62500" height="270" wallarea="269999.999995463">
+        <Point3D x="-7.507506E+07" y="1.530526E+08" z="40640" />
+        <Point3D x="-7.5075E+07" y="1.530529E+08" z="40640" />
+        <Point3D x="-7.507476E+07" y="1.530528E+08" z="40640" />
+        <Point3D x="-7.507482E+07" y="1.530526E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0_s87KvOv4sxfuhTUQN66R">
+      <Area area="62500" height="270" wallarea="270000.000004726">
+        <Point3D x="-7.50781E+07" y="1.530543E+08" z="40640" />
+        <Point3D x="-7.507804E+07" y="1.530545E+08" z="40640" />
+        <Point3D x="-7.50778E+07" y="1.530545E+08" z="40640" />
+        <Point3D x="-7.507786E+07" y="1.530542E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="07EBo0txLCPBFR3DJ9hbfz">
+      <Area area="62500" height="270" wallarea="269999.999994819">
+        <Point3D x="-7.507474E+07" y="1.530538E+08" z="40640" />
+        <Point3D x="-7.507468E+07" y="1.53054E+08" z="40640" />
+        <Point3D x="-7.507444E+07" y="1.53054E+08" z="40640" />
+        <Point3D x="-7.50745E+07" y="1.530537E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0g8VL6fKL1NO0brG555_nV">
+      <Area area="62500" height="270" wallarea="270000.000000417">
+        <Point3D x="-7.507843E+07" y="1.530531E+08" z="40640" />
+        <Point3D x="-7.507836E+07" y="1.530534E+08" z="40640" />
+        <Point3D x="-7.507812E+07" y="1.530533E+08" z="40640" />
+        <Point3D x="-7.507818E+07" y="1.530531E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0vah4n8dLERxKca0xdptx$">
+      <Area area="62500" height="270" wallarea="270000.000004726">
+        <Point3D x="-7.507406E+07" y="1.530569E+08" z="40640" />
+        <Point3D x="-7.507399E+07" y="1.530572E+08" z="40640" />
+        <Point3D x="-7.507375E+07" y="1.530571E+08" z="40640" />
+        <Point3D x="-7.507382E+07" y="1.530569E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="1cTg7pRLbAHOD8MPO58Ci9">
+      <Area area="62500" height="270" wallarea="270000.000004726">
+        <Point3D x="-7.507778E+07" y="1.530555E+08" z="40640" />
+        <Point3D x="-7.507771E+07" y="1.530557E+08" z="40640" />
+        <Point3D x="-7.507747E+07" y="1.530556E+08" z="40640" />
+        <Point3D x="-7.507754E+07" y="1.530554E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="1ucSVhhs59ZgB3805OqJbs">
+      <Area area="62500" height="270" wallarea="270000.000000417">
+        <Point3D x="-7.507821E+07" y="1.530574E+08" z="40640" />
+        <Point3D x="-7.507814E+07" y="1.530576E+08" z="40640" />
+        <Point3D x="-7.50779E+07" y="1.530576E+08" z="40640" />
+        <Point3D x="-7.507797E+07" y="1.530573E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2hd1XiVUn0OQ9WDpx8JFsV">
+      <Area area="62500" height="270" wallarea="270000.000000417">
+        <Point3D x="-7.50795E+07" y="1.530528E+08" z="40640" />
+        <Point3D x="-7.507943E+07" y="1.53053E+08" z="40640" />
+        <Point3D x="-7.507919E+07" y="1.530529E+08" z="40640" />
+        <Point3D x="-7.507926E+07" y="1.530527E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2i8D0$YvL9q8ta$NEsrVkL">
+      <Area area="62500" height="270" wallarea="269999.999994819">
+        <Point3D x="-7.507918E+07" y="1.530539E+08" z="40640" />
+        <Point3D x="-7.507911E+07" y="1.530542E+08" z="40640" />
+        <Point3D x="-7.507886E+07" y="1.530541E+08" z="40640" />
+        <Point3D x="-7.507894E+07" y="1.530539E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2pLxrs4yj28RnPPtwPLcxn">
+      <Area area="62500" height="270" wallarea="269999.999999772">
+        <Point3D x="-7.507853E+07" y="1.530563E+08" z="40640" />
+        <Point3D x="-7.507846E+07" y="1.530565E+08" z="40640" />
+        <Point3D x="-7.507822E+07" y="1.530564E+08" z="40640" />
+        <Point3D x="-7.507829E+07" y="1.530562E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2veuZUOTb9792tmBEMnt_M">
+      <Area area="62500" height="270" wallarea="269999.999995463">
+        <Point3D x="-7.507442E+07" y="1.530549E+08" z="40640" />
+        <Point3D x="-7.507436E+07" y="1.530552E+08" z="40640" />
+        <Point3D x="-7.507411E+07" y="1.530551E+08" z="40640" />
+        <Point3D x="-7.507418E+07" y="1.530549E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3FSLrpRg5BDOyuZXbOOEz_">
+      <Area area="62500" height="270" wallarea="270000.000000417">
+        <Point3D x="-7.507886E+07" y="1.530551E+08" z="40640" />
+        <Point3D x="-7.507878E+07" y="1.530553E+08" z="40640" />
+        <Point3D x="-7.507854E+07" y="1.530553E+08" z="40640" />
+        <Point3D x="-7.507861E+07" y="1.53055E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3HQCu6Dxb9xg2TEiy$CHXA">
+      <Area area="62500" height="270" wallarea="269999.999989865">
+        <Point3D x="-7.507964E+07" y="1.530523E+08" z="40640" />
+        <Point3D x="-7.507958E+07" y="1.530525E+08" z="40640" />
+        <Point3D x="-7.507934E+07" y="1.530524E+08" z="40640" />
+        <Point3D x="-7.50794E+07" y="1.530522E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3NjUFoaBDD_vkz6$upa$Lc">
+      <Area area="62500" height="270" wallarea="270000.000000417">
+        <Point3D x="-7.507874E+07" y="1.53052E+08" z="40640" />
+        <Point3D x="-7.507868E+07" y="1.530522E+08" z="40640" />
+        <Point3D x="-7.507844E+07" y="1.530522E+08" z="40640" />
+        <Point3D x="-7.50785E+07" y="1.530519E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3ZqjYC9EfEeOtuik8RbhnN">
+      <Area area="62500" height="270" wallarea="269999.999994819">
+        <Point3D x="-7.507746E+07" y="1.530566E+08" z="40640" />
+        <Point3D x="-7.507739E+07" y="1.530569E+08" z="40640" />
+        <Point3D x="-7.507715E+07" y="1.530568E+08" z="40640" />
+        <Point3D x="-7.507722E+07" y="1.530566E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:654660 (Opening)" guid="0tHNLxvPH0UwLg7$h4bNU1">
+      <Area area="90004.62" height="200.000000006052" wallarea="216311.896074415">
+        <Point3D x="-7.50778E+07" y="1.530597E+08" z="50060" />
+        <Point3D x="-7.507779E+07" y="1.530598E+08" z="49957.14" />
+        <Point3D x="-7.507777E+07" y="1.530598E+08" z="49893.57" />
+        <Point3D x="-7.507774E+07" y="1.530599E+08" z="49893.57" />
+        <Point3D x="-7.507771E+07" y="1.5306E+08" z="49957.14" />
+        <Point3D x="-7.50777E+07" y="1.530601E+08" z="50060" />
+        <Point3D x="-7.507771E+07" y="1.5306E+08" z="50162.86" />
+        <Point3D x="-7.507774E+07" y="1.530599E+08" z="50226.43" />
+        <Point3D x="-7.507777E+07" y="1.530598E+08" z="50226.43" />
+        <Point3D x="-7.507779E+07" y="1.530598E+08" z="50162.86" />
+        <Point3D x="-7.50778E+07" y="1.530597E+08" z="50060" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:117254 (Opening)" guid="188CwlubrBQuSuqIJnUEiA">
+      <Area area="296400" height="200.000000006052" wallarea="686000.000024608">
+        <Point3D x="-7.508078E+07" y="1.530483E+08" z="50780" />
+        <Point3D x="-7.508078E+07" y="1.530483E+08" z="50975" />
+        <Point3D x="-7.508037E+07" y="1.530497E+08" z="50975" />
+        <Point3D x="-7.508037E+07" y="1.530497E+08" z="50780" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:654660 (Opening)" guid="2bYA6ogir2EeoWzhBvUvb2">
+      <Area area="2252300" height="200.000000006052" wallarea="1296000.00004051">
+        <Point3D x="-7.507798E+07" y="1.530591E+08" z="47960" />
+        <Point3D x="-7.507798E+07" y="1.530591E+08" z="45730" />
+        <Point3D x="-7.507771E+07" y="1.5306E+08" z="45730" />
+        <Point3D x="-7.507771E+07" y="1.5306E+08" z="47960" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:653808 (Opening)" guid="02$_kr8ZDBI8Ay8qGYfNxq">
+      <Area area="45000" height="249.999999998391" wallarea="275000.000004442">
+        <Point3D x="-7.507338E+07" y="1.530581E+08" z="44960" />
+        <Point3D x="-7.507338E+07" y="1.530581E+08" z="45060" />
+        <Point3D x="-7.50735E+07" y="1.530577E+08" z="45060" />
+        <Point3D x="-7.50735E+07" y="1.530577E+08" z="44960" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:653808 (Opening)" guid="0tHNLxvPH0UwLg7$h4bOEu">
+      <Area area="232787.5" height="200.000000006052" wallarea="343823.391785502">
+        <Point3D x="-7.507477E+07" y="1.53053E+08" z="45010" />
+        <Point3D x="-7.507478E+07" y="1.53053E+08" z="45104.05" />
+        <Point3D x="-7.507478E+07" y="1.530529E+08" z="45186.77" />
+        <Point3D x="-7.507481E+07" y="1.530528E+08" z="45248.16" />
+        <Point3D x="-7.507483E+07" y="1.530528E+08" z="45280.82" />
+        <Point3D x="-7.507486E+07" y="1.530527E+08" z="45280.82" />
+        <Point3D x="-7.507488E+07" y="1.530526E+08" z="45248.16" />
+        <Point3D x="-7.50749E+07" y="1.530525E+08" z="45186.77" />
+        <Point3D x="-7.507491E+07" y="1.530525E+08" z="45104.05" />
+        <Point3D x="-7.507492E+07" y="1.530524E+08" z="45010" />
+        <Point3D x="-7.507491E+07" y="1.530525E+08" z="44915.95" />
+        <Point3D x="-7.50749E+07" y="1.530525E+08" z="44833.23" />
+        <Point3D x="-7.507488E+07" y="1.530526E+08" z="44771.84" />
+        <Point3D x="-7.507486E+07" y="1.530527E+08" z="44739.18" />
+        <Point3D x="-7.507483E+07" y="1.530528E+08" z="44739.18" />
+        <Point3D x="-7.507481E+07" y="1.530528E+08" z="44771.84" />
+        <Point3D x="-7.507478E+07" y="1.530529E+08" z="44833.23" />
+        <Point3D x="-7.507478E+07" y="1.53053E+08" z="44915.95" />
+        <Point3D x="-7.507477E+07" y="1.53053E+08" z="45010" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:653808 (Opening)" guid="0tHNLxvPH0UwLg7$h4bOnc">
+      <Area area="232787.5" height="200.000000006052" wallarea="343823.391785502">
+        <Point3D x="-7.507574E+07" y="1.530495E+08" z="45010" />
+        <Point3D x="-7.507574E+07" y="1.530495E+08" z="45104.05" />
+        <Point3D x="-7.507575E+07" y="1.530494E+08" z="45186.77" />
+        <Point3D x="-7.507577E+07" y="1.530494E+08" z="45248.16" />
+        <Point3D x="-7.507579E+07" y="1.530493E+08" z="45280.82" />
+        <Point3D x="-7.507582E+07" y="1.530492E+08" z="45280.82" />
+        <Point3D x="-7.507585E+07" y="1.530491E+08" z="45248.16" />
+        <Point3D x="-7.507586E+07" y="1.53049E+08" z="45186.77" />
+        <Point3D x="-7.507588E+07" y="1.53049E+08" z="45104.05" />
+        <Point3D x="-7.507588E+07" y="1.53049E+08" z="45010" />
+        <Point3D x="-7.507588E+07" y="1.53049E+08" z="44915.95" />
+        <Point3D x="-7.507586E+07" y="1.53049E+08" z="44833.23" />
+        <Point3D x="-7.507585E+07" y="1.530491E+08" z="44771.84" />
+        <Point3D x="-7.507582E+07" y="1.530492E+08" z="44739.18" />
+        <Point3D x="-7.507579E+07" y="1.530493E+08" z="44739.18" />
+        <Point3D x="-7.507577E+07" y="1.530494E+08" z="44771.84" />
+        <Point3D x="-7.507575E+07" y="1.530494E+08" z="44833.23" />
+        <Point3D x="-7.507574E+07" y="1.530495E+08" z="44915.95" />
+        <Point3D x="-7.507574E+07" y="1.530495E+08" z="45010" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:653808 (Opening)" guid="0tHNLxvPH0UwLg7$h4bOra">
+      <Area area="232787.5" height="200.000000006052" wallarea="343823.391785502">
+        <Point3D x="-7.507598E+07" y="1.530486E+08" z="45010" />
+        <Point3D x="-7.507598E+07" y="1.530486E+08" z="45104.05" />
+        <Point3D x="-7.507599E+07" y="1.530486E+08" z="45186.77" />
+        <Point3D x="-7.507601E+07" y="1.530485E+08" z="45248.16" />
+        <Point3D x="-7.507603E+07" y="1.530484E+08" z="45280.82" />
+        <Point3D x="-7.507606E+07" y="1.530483E+08" z="45280.82" />
+        <Point3D x="-7.507609E+07" y="1.530482E+08" z="45248.16" />
+        <Point3D x="-7.50761E+07" y="1.530482E+08" z="45186.77" />
+        <Point3D x="-7.507612E+07" y="1.530481E+08" z="45104.05" />
+        <Point3D x="-7.507612E+07" y="1.530481E+08" z="45010" />
+        <Point3D x="-7.507612E+07" y="1.530481E+08" z="44915.95" />
+        <Point3D x="-7.50761E+07" y="1.530482E+08" z="44833.23" />
+        <Point3D x="-7.507609E+07" y="1.530482E+08" z="44771.84" />
+        <Point3D x="-7.507606E+07" y="1.530483E+08" z="44739.18" />
+        <Point3D x="-7.507603E+07" y="1.530484E+08" z="44739.18" />
+        <Point3D x="-7.507601E+07" y="1.530485E+08" z="44771.84" />
+        <Point3D x="-7.507599E+07" y="1.530486E+08" z="44833.23" />
+        <Point3D x="-7.507598E+07" y="1.530486E+08" z="44915.95" />
+        <Point3D x="-7.507598E+07" y="1.530486E+08" z="45010" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:653808 (Opening)" guid="12b8mx3oXANQoUU3bN$MHR">
+      <Area area="232787.5" height="200.000000006052" wallarea="343823.391785502">
+        <Point3D x="-7.507405E+07" y="1.530556E+08" z="45010" />
+        <Point3D x="-7.507405E+07" y="1.530556E+08" z="45104.05" />
+        <Point3D x="-7.507406E+07" y="1.530555E+08" z="45186.77" />
+        <Point3D x="-7.507408E+07" y="1.530554E+08" z="45248.16" />
+        <Point3D x="-7.50741E+07" y="1.530554E+08" z="45280.82" />
+        <Point3D x="-7.507414E+07" y="1.530553E+08" z="45280.82" />
+        <Point3D x="-7.507416E+07" y="1.530552E+08" z="45248.16" />
+        <Point3D x="-7.507418E+07" y="1.530551E+08" z="45186.77" />
+        <Point3D x="-7.507419E+07" y="1.530551E+08" z="45104.05" />
+        <Point3D x="-7.507419E+07" y="1.53055E+08" z="45010" />
+        <Point3D x="-7.507419E+07" y="1.530551E+08" z="44915.95" />
+        <Point3D x="-7.507418E+07" y="1.530551E+08" z="44833.23" />
+        <Point3D x="-7.507416E+07" y="1.530552E+08" z="44771.84" />
+        <Point3D x="-7.507414E+07" y="1.530553E+08" z="44739.18" />
+        <Point3D x="-7.50741E+07" y="1.530554E+08" z="44739.18" />
+        <Point3D x="-7.507408E+07" y="1.530554E+08" z="44771.84" />
+        <Point3D x="-7.507406E+07" y="1.530555E+08" z="44833.23" />
+        <Point3D x="-7.507405E+07" y="1.530556E+08" z="44915.95" />
+        <Point3D x="-7.507405E+07" y="1.530556E+08" z="45010" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:653808 (Opening)" guid="12b8mx3oXANQoUU3bN$MIQ">
+      <Area area="232787.5" height="200.000000006052" wallarea="343823.391785502">
+        <Point3D x="-7.507381E+07" y="1.530564E+08" z="45010" />
+        <Point3D x="-7.507381E+07" y="1.530564E+08" z="45104.05" />
+        <Point3D x="-7.507382E+07" y="1.530564E+08" z="45186.77" />
+        <Point3D x="-7.507384E+07" y="1.530563E+08" z="45248.16" />
+        <Point3D x="-7.507386E+07" y="1.530562E+08" z="45280.82" />
+        <Point3D x="-7.50739E+07" y="1.530561E+08" z="45280.82" />
+        <Point3D x="-7.507392E+07" y="1.53056E+08" z="45248.16" />
+        <Point3D x="-7.507394E+07" y="1.53056E+08" z="45186.77" />
+        <Point3D x="-7.507395E+07" y="1.530559E+08" z="45104.05" />
+        <Point3D x="-7.507395E+07" y="1.530559E+08" z="45010" />
+        <Point3D x="-7.507395E+07" y="1.530559E+08" z="44915.95" />
+        <Point3D x="-7.507394E+07" y="1.53056E+08" z="44833.23" />
+        <Point3D x="-7.507392E+07" y="1.53056E+08" z="44771.84" />
+        <Point3D x="-7.50739E+07" y="1.530561E+08" z="44739.18" />
+        <Point3D x="-7.507386E+07" y="1.530562E+08" z="44739.18" />
+        <Point3D x="-7.507384E+07" y="1.530563E+08" z="44771.84" />
+        <Point3D x="-7.507382E+07" y="1.530564E+08" z="44833.23" />
+        <Point3D x="-7.507381E+07" y="1.530564E+08" z="44915.95" />
+        <Point3D x="-7.507381E+07" y="1.530564E+08" z="45010" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:653808 (Opening)" guid="12b8mx3oXANQoUU3bN$MJ6">
+      <Area area="232787.5" height="200.000000006052" wallarea="343823.391785502">
+        <Point3D x="-7.507357E+07" y="1.530573E+08" z="45010" />
+        <Point3D x="-7.507357E+07" y="1.530573E+08" z="45104.05" />
+        <Point3D x="-7.507358E+07" y="1.530572E+08" z="45186.77" />
+        <Point3D x="-7.50736E+07" y="1.530572E+08" z="45248.16" />
+        <Point3D x="-7.507362E+07" y="1.530571E+08" z="45280.82" />
+        <Point3D x="-7.507365E+07" y="1.53057E+08" z="45280.82" />
+        <Point3D x="-7.507367E+07" y="1.530569E+08" z="45248.16" />
+        <Point3D x="-7.50737E+07" y="1.530568E+08" z="45186.77" />
+        <Point3D x="-7.507371E+07" y="1.530568E+08" z="45104.05" />
+        <Point3D x="-7.507371E+07" y="1.530568E+08" z="45010" />
+        <Point3D x="-7.507371E+07" y="1.530568E+08" z="44915.95" />
+        <Point3D x="-7.50737E+07" y="1.530568E+08" z="44833.23" />
+        <Point3D x="-7.507367E+07" y="1.530569E+08" z="44771.84" />
+        <Point3D x="-7.507365E+07" y="1.53057E+08" z="44739.18" />
+        <Point3D x="-7.507362E+07" y="1.530571E+08" z="44739.18" />
+        <Point3D x="-7.50736E+07" y="1.530572E+08" z="44771.84" />
+        <Point3D x="-7.507358E+07" y="1.530572E+08" z="44833.23" />
+        <Point3D x="-7.507357E+07" y="1.530573E+08" z="44915.95" />
+        <Point3D x="-7.507357E+07" y="1.530573E+08" z="45010" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:653808 (Opening)" guid="2Paw177pLAiRpzhgfCYRKU">
+      <Area area="45000" height="249.999999998391" wallarea="275000.000004442">
+        <Point3D x="-7.507628E+07" y="1.530477E+08" z="44960" />
+        <Point3D x="-7.507628E+07" y="1.530477E+08" z="45060" />
+        <Point3D x="-7.50764E+07" y="1.530473E+08" z="45060" />
+        <Point3D x="-7.50764E+07" y="1.530473E+08" z="44960" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:654516 (Opening)" guid="2bYA6ogir2EeoWzhBvUvYo">
+      <Area area="1111000" height="200.000000006052" wallarea="844000.00002244">
+        <Point3D x="-7.508226E+07" y="1.530489E+08" z="49870" />
+        <Point3D x="-7.508226E+07" y="1.530489E+08" z="48860" />
+        <Point3D x="-7.50812E+07" y="1.530486E+08" z="48860" />
+        <Point3D x="-7.50812E+07" y="1.530486E+08" z="49870" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3CXpncnBP0tu$1pPNdehHt">
+      <Area area="55000" height="270" wallarea="351000.000007822">
+        <Point3D x="-7.50777E+07" y="1.530514E+08" z="40640" />
+        <Point3D x="-7.507767E+07" y="1.530515E+08" z="40640" />
+        <Point3D x="-7.507714E+07" y="1.530513E+08" z="40640" />
+        <Point3D x="-7.507717E+07" y="1.530512E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="1XyADdT495bfuKAjxHaukF">
+      <Area area="90000" height="270" wallarea="324000.000001406">
+        <Point3D x="-7.508326E+07" y="1.530403E+08" z="40640" />
+        <Point3D x="-7.508297E+07" y="1.530402E+08" z="40640" />
+        <Point3D x="-7.508306E+07" y="1.530399E+08" z="40640" />
+        <Point3D x="-7.508334E+07" y="1.5304E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0jy08YJi5Etuv_hgCH$ZaG">
+      <Area area="62500" height="270" wallarea="270000.000004726">
+        <Point3D x="-7.50765E+07" y="1.530596E+08" z="40640" />
+        <Point3D x="-7.507644E+07" y="1.530599E+08" z="40640" />
+        <Point3D x="-7.507619E+07" y="1.530598E+08" z="40640" />
+        <Point3D x="-7.507626E+07" y="1.530596E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2NcCqpJwv9Y98GL2iZMHw_">
+      <Area area="62500" height="270" wallarea="270000.000000417">
+        <Point3D x="-7.507769E+07" y="1.53059E+08" z="40640" />
+        <Point3D x="-7.507762E+07" y="1.530592E+08" z="40640" />
+        <Point3D x="-7.507738E+07" y="1.530592E+08" z="40640" />
+        <Point3D x="-7.507745E+07" y="1.530589E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2wIA7hGqfBjA2p6fgrrrI3">
+      <Area area="90000" height="270" wallarea="324000.000002051">
+        <Point3D x="-7.50741E+07" y="1.530588E+08" z="40640" />
+        <Point3D x="-7.507402E+07" y="1.53059E+08" z="40640" />
+        <Point3D x="-7.507374E+07" y="1.53059E+08" z="40640" />
+        <Point3D x="-7.507382E+07" y="1.530587E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2VHWOC1Vj22O4cRBxRkzNP">
+      <Area area="210000" height="270" wallarea="540000.000000189">
+        <Point3D x="-7.505569E+07" y="1.530326E+08" z="40640" />
+        <Point3D x="-7.505561E+07" y="1.530329E+08" z="40640" />
+        <Point3D x="-7.505494E+07" y="1.530328E+08" z="40640" />
+        <Point3D x="-7.505502E+07" y="1.530325E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="1TFS18yeT0qurBSaGWrPCw">
+      <Area area="62500" height="320" wallarea="320000.000005601">
+        <Point3D x="-7.504438E+07" y="1.530298E+08" z="40640" />
+        <Point3D x="-7.50443E+07" y="1.5303E+08" z="40640" />
+        <Point3D x="-7.504406E+07" y="1.5303E+08" z="40640" />
+        <Point3D x="-7.504414E+07" y="1.530297E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2A3veXrK56vQSgeem4Nt0D">
+      <Area area="90000" height="270" wallarea="324000.000002051">
+        <Point3D x="-7.506727E+07" y="1.53044E+08" z="40640" />
+        <Point3D x="-7.506698E+07" y="1.530439E+08" z="40640" />
+        <Point3D x="-7.506706E+07" y="1.530436E+08" z="40640" />
+        <Point3D x="-7.506735E+07" y="1.530437E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2egxCfTcvCg8aXbqUd8qZ7">
+      <Area area="90000" height="270" wallarea="324000.000007005">
+        <Point3D x="-7.506034E+07" y="1.530421E+08" z="40640" />
+        <Point3D x="-7.506004E+07" y="1.53042E+08" z="40640" />
+        <Point3D x="-7.506013E+07" y="1.530417E+08" z="40640" />
+        <Point3D x="-7.506042E+07" y="1.530418E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3Y6ZZ0TmX6YQhCwJH9R3KS">
+      <Area area="90000" height="270" wallarea="324000.000001406">
+        <Point3D x="-7.505339E+07" y="1.530402E+08" z="40640" />
+        <Point3D x="-7.50531E+07" y="1.530401E+08" z="40640" />
+        <Point3D x="-7.505318E+07" y="1.530398E+08" z="40640" />
+        <Point3D x="-7.505348E+07" y="1.530399E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3zZo4E0Ef6hf8DaDNfFO5n">
+      <Area area="90000" height="270" wallarea="323999.999996453">
+        <Point3D x="-7.507421E+07" y="1.530459E+08" z="40640" />
+        <Point3D x="-7.507392E+07" y="1.530459E+08" z="40640" />
+        <Point3D x="-7.5074E+07" y="1.530456E+08" z="40640" />
+        <Point3D x="-7.507429E+07" y="1.530456E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2CLdmLbXT1ghAbW0rCwWIq">
+      <Area area="62500" height="320" wallarea="320000.000005601">
+        <Point3D x="-7.504777E+07" y="1.530433E+08" z="40640" />
+        <Point3D x="-7.50477E+07" y="1.530436E+08" z="40640" />
+        <Point3D x="-7.504746E+07" y="1.530435E+08" z="40640" />
+        <Point3D x="-7.504753E+07" y="1.530433E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2dn0PnBsr7BuRVC$nMF1SM">
+      <Area area="137500" height="320" wallarea="512000.000002222">
+        <Point3D x="-7.505098E+07" y="1.530398E+08" z="40640" />
+        <Point3D x="-7.505084E+07" y="1.530403E+08" z="40640" />
+        <Point3D x="-7.50506E+07" y="1.530402E+08" z="40640" />
+        <Point3D x="-7.505074E+07" y="1.530397E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2krYGFcd13YPV8l9QHE_XU">
+      <Area area="137500" height="320" wallarea="512000.000008857">
+        <Point3D x="-7.505008E+07" y="1.53043E+08" z="40640" />
+        <Point3D x="-7.504994E+07" y="1.530436E+08" z="40640" />
+        <Point3D x="-7.50497E+07" y="1.530435E+08" z="40640" />
+        <Point3D x="-7.504984E+07" y="1.53043E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:117254 (Opening)" guid="1HnFzrlnjFMuRhTWvNk0dL">
+      <Area area="110550" height="200.000000006052" wallarea="266000.000005069">
+        <Point3D x="-7.502886E+07" y="1.530468E+08" z="50975" />
+        <Point3D x="-7.502886E+07" y="1.530468E+08" z="50645" />
+        <Point3D x="-7.502894E+07" y="1.530465E+08" z="50645" />
+        <Point3D x="-7.502894E+07" y="1.530465E+08" z="50975" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:117254 (Opening)" guid="3E_wzsVB9AifA3vV7eU$gC">
+      <Area area="296400" height="200.000000006052" wallarea="686000.000024608">
+        <Point3D x="-7.503283E+07" y="1.530326E+08" z="50780" />
+        <Point3D x="-7.503283E+07" y="1.530326E+08" z="50975" />
+        <Point3D x="-7.503242E+07" y="1.53034E+08" z="50975" />
+        <Point3D x="-7.503242E+07" y="1.53034E+08" z="50780" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:655621 (Opening)" guid="3ozSQusKbF3xWsPVq0VA3I">
+      <Area area="2252300" height="200.000000006052" wallarea="1296000.00004051">
+        <Point3D x="-7.502942E+07" y="1.530456E+08" z="47960" />
+        <Point3D x="-7.502942E+07" y="1.530456E+08" z="45730" />
+        <Point3D x="-7.502915E+07" y="1.530465E+08" z="45730" />
+        <Point3D x="-7.502915E+07" y="1.530465E+08" z="47960" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:655621 (Opening)" guid="3ozSQusKbF3xWsPVq0VA3J">
+      <Area area="2252300" height="200.000000006052" wallarea="1296000.00004051">
+        <Point3D x="-7.503221E+07" y="1.530355E+08" z="47960" />
+        <Point3D x="-7.503221E+07" y="1.530355E+08" z="45730" />
+        <Point3D x="-7.503194E+07" y="1.530365E+08" z="45730" />
+        <Point3D x="-7.503194E+07" y="1.530365E+08" z="47960" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:655621 (Opening)" guid="3ozSQusKbF3xWsPVq0VA3L">
+      <Area area="2252300" height="200.000000006052" wallarea="1296000.00004051">
+        <Point3D x="-7.503271E+07" y="1.530337E+08" z="47960" />
+        <Point3D x="-7.503271E+07" y="1.530337E+08" z="45730" />
+        <Point3D x="-7.503244E+07" y="1.530347E+08" z="45730" />
+        <Point3D x="-7.503244E+07" y="1.530347E+08" z="47960" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0$K03f7J1EaBNUOLmWt4dZ">
+      <Area area="62500" height="270" wallarea="270000.000000417">
+        <Point3D x="-7.506338E+07" y="1.530508E+08" z="40640" />
+        <Point3D x="-7.506331E+07" y="1.53051E+08" z="40640" />
+        <Point3D x="-7.506307E+07" y="1.53051E+08" z="40640" />
+        <Point3D x="-7.506314E+07" y="1.530507E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0F8RyA2jD5tuIlgr7Vm_W_">
+      <Area area="90000" height="270" wallarea="324000.000007005">
+        <Point3D x="-7.507073E+07" y="1.530585E+08" z="40640" />
+        <Point3D x="-7.507044E+07" y="1.530584E+08" z="40640" />
+        <Point3D x="-7.507052E+07" y="1.530581E+08" z="40640" />
+        <Point3D x="-7.507081E+07" y="1.530582E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="123CEWjSH8I8Y2C2DU5LIk">
+      <Area area="90000" height="270" wallarea="324000.000001406">
+        <Point3D x="-7.505686E+07" y="1.530546E+08" z="40640" />
+        <Point3D x="-7.505656E+07" y="1.530545E+08" z="40640" />
+        <Point3D x="-7.505664E+07" y="1.530542E+08" z="40640" />
+        <Point3D x="-7.505694E+07" y="1.530543E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="1ESjzSxp9AnPGPvLeSlH3E">
+      <Area area="62500" height="270" wallarea="270000.000000417">
+        <Point3D x="-7.506102E+07" y="1.530529E+08" z="40640" />
+        <Point3D x="-7.506096E+07" y="1.530532E+08" z="40640" />
+        <Point3D x="-7.506072E+07" y="1.530531E+08" z="40640" />
+        <Point3D x="-7.506078E+07" y="1.530529E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="342IeadJ5FIQpQOgRtGeGg">
+      <Area area="62500" height="270" wallarea="270000.000004726">
+        <Point3D x="-7.506021E+07" y="1.530499E+08" z="40640" />
+        <Point3D x="-7.506014E+07" y="1.530501E+08" z="40640" />
+        <Point3D x="-7.50599E+07" y="1.530501E+08" z="40640" />
+        <Point3D x="-7.505997E+07" y="1.530498E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="36XQOEmeb3vQnLMarnO$$1">
+      <Area area="62500" height="270" wallarea="270000.000004726">
+        <Point3D x="-7.506126E+07" y="1.530521E+08" z="40640" />
+        <Point3D x="-7.50612E+07" y="1.530523E+08" z="40640" />
+        <Point3D x="-7.506096E+07" y="1.530523E+08" z="40640" />
+        <Point3D x="-7.506102E+07" y="1.53052E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3fIHjO5njFfgOuPvF7XD4t">
+      <Area area="90000" height="270" wallarea="324000.000002051">
+        <Point3D x="-7.506379E+07" y="1.530565E+08" z="40640" />
+        <Point3D x="-7.50635E+07" y="1.530565E+08" z="40640" />
+        <Point3D x="-7.506358E+07" y="1.530562E+08" z="40640" />
+        <Point3D x="-7.506387E+07" y="1.530563E+08" z="40640" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:FSBP500:446614 (Opening)" guid="1QursxipfD9eRiHJgudp80">
+      <Area area="80000" height="500.000000004762" wallarea="600000.000017818">
+        <Point3D x="-7.503278E+07" y="1.53034E+08" z="39650" />
+        <Point3D x="-7.503278E+07" y="1.53034E+08" z="39850" />
+        <Point3D x="-7.50329E+07" y="1.530336E+08" z="39850" />
+        <Point3D x="-7.50329E+07" y="1.530336E+08" z="39650" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBP25:408362:1 (Opening)" guid="22Ai5_5DD3YBKT75veEXLw">
+      <Area area="235497.7" height="120" wallarea="286077.883450715">
+        <Point3D x="-7.50548E+07" y="1.530315E+08" z="36950" />
+        <Point3D x="-7.505454E+07" y="1.530324E+08" z="36950" />
+        <Point3D x="-7.505478E+07" y="1.530325E+08" z="36950" />
+        <Point3D x="-7.505504E+07" y="1.530316E+08" z="36950" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBP20:408147 (Opening)" guid="0bxCjAiXD38AgFV7vKDlLL">
+      <Area area="55000" height="200.000000006052" wallarea="260000.000006708">
+        <Point3D x="-7.507684E+07" y="1.530474E+08" z="39445" />
+        <Point3D x="-7.507684E+07" y="1.530474E+08" z="39545" />
+        <Point3D x="-7.507737E+07" y="1.530475E+08" z="39545" />
+        <Point3D x="-7.507737E+07" y="1.530475E+08" z="39445" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBP20:408152 (Opening)" guid="1oUPvDuTX3V8mHHmja1ow6">
+      <Area area="1000101" height="200.000000006052" wallarea="712652.121167097">
+        <Point3D x="-7.508288E+07" y="1.530467E+08" z="39650" />
+        <Point3D x="-7.508285E+07" y="1.530467E+08" z="39455.05" />
+        <Point3D x="-7.508275E+07" y="1.530466E+08" z="39283.61" />
+        <Point3D x="-7.50826E+07" y="1.530466E+08" z="39156.37" />
+        <Point3D x="-7.508242E+07" y="1.530466E+08" z="39088.66" />
+        <Point3D x="-7.508223E+07" y="1.530465E+08" z="39088.66" />
+        <Point3D x="-7.508206E+07" y="1.530464E+08" z="39156.37" />
+        <Point3D x="-7.50819E+07" y="1.530464E+08" z="39283.61" />
+        <Point3D x="-7.508182E+07" y="1.530464E+08" z="39455.05" />
+        <Point3D x="-7.508178E+07" y="1.530464E+08" z="39650" />
+        <Point3D x="-7.508182E+07" y="1.530464E+08" z="39844.95" />
+        <Point3D x="-7.50819E+07" y="1.530464E+08" z="40016.39" />
+        <Point3D x="-7.508206E+07" y="1.530464E+08" z="40143.63" />
+        <Point3D x="-7.508223E+07" y="1.530465E+08" z="40211.34" />
+        <Point3D x="-7.508242E+07" y="1.530466E+08" z="40211.34" />
+        <Point3D x="-7.50826E+07" y="1.530466E+08" z="40143.63" />
+        <Point3D x="-7.508275E+07" y="1.530466E+08" z="40016.39" />
+        <Point3D x="-7.508285E+07" y="1.530467E+08" z="39844.95" />
+        <Point3D x="-7.508288E+07" y="1.530467E+08" z="39650" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBP25:408000 (Opening)" guid="19u3yFf$vFRQk5VrIZlCJn">
+      <Area area="2121000" height="249.999999998391" wallarea="1554999.99999152">
+        <Point3D x="-7.508058E+07" y="1.530498E+08" z="37070" />
+        <Point3D x="-7.508058E+07" y="1.530498E+08" z="39170" />
+        <Point3D x="-7.508085E+07" y="1.530488E+08" z="39170" />
+        <Point3D x="-7.508085E+07" y="1.530488E+08" z="37070" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBP25:407640 (Opening)" guid="0rh9w9Tf59C9l7uUIMyWxb">
+      <Area area="1317640" height="250.000000002381" wallarea="1019152.51686808">
+        <Point3D x="-7.507024E+07" y="1.530363E+08" z="39710" />
+        <Point3D x="-7.507026E+07" y="1.530363E+08" z="39574.86" />
+        <Point3D x="-7.50703E+07" y="1.530363E+08" z="39445.62" />
+        <Point3D x="-7.507036E+07" y="1.530363E+08" z="39327.94" />
+        <Point3D x="-7.507045E+07" y="1.530364E+08" z="39226.96" />
+        <Point3D x="-7.507055E+07" y="1.530364E+08" z="39147.08" />
+        <Point3D x="-7.507067E+07" y="1.530364E+08" z="39091.81" />
+        <Point3D x="-7.50708E+07" y="1.530365E+08" z="39063.56" />
+        <Point3D x="-7.507094E+07" y="1.530365E+08" z="39063.56" />
+        <Point3D x="-7.507106E+07" y="1.530365E+08" z="39091.81" />
+        <Point3D x="-7.507118E+07" y="1.530366E+08" z="39147.08" />
+        <Point3D x="-7.507129E+07" y="1.530366E+08" z="39226.96" />
+        <Point3D x="-7.507138E+07" y="1.530366E+08" z="39327.94" />
+        <Point3D x="-7.507144E+07" y="1.530366E+08" z="39445.62" />
+        <Point3D x="-7.507148E+07" y="1.530367E+08" z="39574.86" />
+        <Point3D x="-7.50715E+07" y="1.530367E+08" z="39710" />
+        <Point3D x="-7.507148E+07" y="1.530367E+08" z="39845.14" />
+        <Point3D x="-7.507144E+07" y="1.530366E+08" z="39974.38" />
+        <Point3D x="-7.507138E+07" y="1.530366E+08" z="40092.06" />
+        <Point3D x="-7.507129E+07" y="1.530366E+08" z="40193.04" />
+        <Point3D x="-7.507118E+07" y="1.530366E+08" z="40272.92" />
+        <Point3D x="-7.507106E+07" y="1.530365E+08" z="40328.19" />
+        <Point3D x="-7.507094E+07" y="1.530365E+08" z="40356.44" />
+        <Point3D x="-7.50708E+07" y="1.530365E+08" z="40356.44" />
+        <Point3D x="-7.507067E+07" y="1.530364E+08" z="40328.19" />
+        <Point3D x="-7.507055E+07" y="1.530364E+08" z="40272.92" />
+        <Point3D x="-7.507045E+07" y="1.530364E+08" z="40193.04" />
+        <Point3D x="-7.507036E+07" y="1.530363E+08" z="40092.06" />
+        <Point3D x="-7.50703E+07" y="1.530363E+08" z="39974.38" />
+        <Point3D x="-7.507026E+07" y="1.530363E+08" z="39845.14" />
+        <Point3D x="-7.507024E+07" y="1.530363E+08" z="39710" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBP30:117534 (Opening)" guid="186Jc6Enf38Rc7$kASZfTt">
+      <Area area="113516.3" height="299.999999994721" wallarea="1392195.72432542">
+        <Point3D x="-7.505002E+07" y="1.530343E+08" z="40320" />
+        <Point3D x="-7.505002E+07" y="1.530343E+08" z="40370" />
+        <Point3D x="-7.505221E+07" y="1.530349E+08" z="40370" />
+        <Point3D x="-7.505221E+07" y="1.530349E+08" z="40320" />
+      </Area>
+    </Opening>
+    <Opening name="Foundation Slab:DTBP120:508873:3 (Opening)" guid="2M$gaPoDj27O4w5HiDC1b7">
+      <Area area="40000" height="120" wallarea="96000.0000029049">
+        <Point3D x="-7.507974E+07" y="1.53056E+08" z="37570" />
+        <Point3D x="-7.507993E+07" y="1.53056E+08" z="37570" />
+        <Point3D x="-7.507988E+07" y="1.530562E+08" z="37570" />
+        <Point3D x="-7.507969E+07" y="1.530561E+08" z="37570" />
+      </Area>
+    </Opening>
+    <Opening name="Foundation Slab:DTBP120:508873:2 (Opening)" guid="2M$gaPoDj27O4w5HiDC1cr">
+      <Area area="40000" height="120" wallarea="96000.0000029049">
+        <Point3D x="-7.507899E+07" y="1.530586E+08" z="37570" />
+        <Point3D x="-7.507918E+07" y="1.530587E+08" z="37570" />
+        <Point3D x="-7.507913E+07" y="1.530589E+08" z="37570" />
+        <Point3D x="-7.507894E+07" y="1.530588E+08" z="37570" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:FSBP500:452826 (Opening)" guid="0kkXXbOBf2191SUv99gnrw">
+      <Area area="7347.315" height="500.000000004762" wallarea="154508.497180417">
+        <Point3D x="-7.50312E+07" y="1.530408E+08" z="39870.5" />
+        <Point3D x="-7.503121E+07" y="1.530408E+08" z="39899.89" />
+        <Point3D x="-7.503124E+07" y="1.530408E+08" z="39918.05" />
+        <Point3D x="-7.503126E+07" y="1.530409E+08" z="39918.05" />
+        <Point3D x="-7.503129E+07" y="1.530409E+08" z="39899.89" />
+        <Point3D x="-7.50313E+07" y="1.530409E+08" z="39870.5" />
+        <Point3D x="-7.503129E+07" y="1.530409E+08" z="39841.11" />
+        <Point3D x="-7.503126E+07" y="1.530409E+08" z="39822.95" />
+        <Point3D x="-7.503124E+07" y="1.530408E+08" z="39822.95" />
+        <Point3D x="-7.503121E+07" y="1.530408E+08" z="39841.11" />
+        <Point3D x="-7.50312E+07" y="1.530408E+08" z="39870.5" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:500219 (Opening)" guid="0ljs8WVI97LQxv55SgFCg4">
+      <Area area="2121000" height="200.000000006052" wallarea="1244000.00003892">
+        <Point3D x="-7.507563E+07" y="1.530499E+08" z="53010" />
+        <Point3D x="-7.507563E+07" y="1.530499E+08" z="50910" />
+        <Point3D x="-7.507537E+07" y="1.530508E+08" z="50910" />
+        <Point3D x="-7.507537E+07" y="1.530508E+08" z="53010" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:500219 (Opening)" guid="0ljs8WVI97LQxv55SgFCg5">
+      <Area area="2121000" height="200.000000006052" wallarea="1244000.00003892">
+        <Point3D x="-7.507614E+07" y="1.53048E+08" z="53010" />
+        <Point3D x="-7.507614E+07" y="1.53048E+08" z="50910" />
+        <Point3D x="-7.507587E+07" y="1.53049E+08" z="50910" />
+        <Point3D x="-7.507587E+07" y="1.53049E+08" z="53010" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:500219 (Opening)" guid="0ljs8WVI97LQxv55SgFCg6">
+      <Area area="2121000" height="200.000000006052" wallarea="1244000.00003892">
+        <Point3D x="-7.507342E+07" y="1.530578E+08" z="53010" />
+        <Point3D x="-7.507342E+07" y="1.530578E+08" z="50910" />
+        <Point3D x="-7.507316E+07" y="1.530588E+08" z="50910" />
+        <Point3D x="-7.507316E+07" y="1.530588E+08" z="53010" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:500219 (Opening)" guid="0ljs8WVI97LQxv55SgFCg7">
+      <Area area="2121000" height="200.000000006052" wallarea="1244000.00003892">
+        <Point3D x="-7.507382E+07" y="1.530564E+08" z="53010" />
+        <Point3D x="-7.507382E+07" y="1.530564E+08" z="50910" />
+        <Point3D x="-7.507354E+07" y="1.530574E+08" z="50910" />
+        <Point3D x="-7.507354E+07" y="1.530574E+08" z="53010" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:500219 (Opening)" guid="0tHNLxvPH0UwLg7$h4bOxG">
+      <Area area="848423.7" height="200.000000006052" wallarea="656390.111596999">
+        <Point3D x="-7.507356E+07" y="1.530573E+08" z="49790" />
+        <Point3D x="-7.507357E+07" y="1.530573E+08" z="49969.56" />
+        <Point3D x="-7.507359E+07" y="1.530572E+08" z="50127.46" />
+        <Point3D x="-7.507362E+07" y="1.530571E+08" z="50244.66" />
+        <Point3D x="-7.507367E+07" y="1.530569E+08" z="50307.02" />
+        <Point3D x="-7.507372E+07" y="1.530568E+08" z="50307.02" />
+        <Point3D x="-7.507377E+07" y="1.530566E+08" z="50244.66" />
+        <Point3D x="-7.507381E+07" y="1.530564E+08" z="50127.46" />
+        <Point3D x="-7.507383E+07" y="1.530564E+08" z="49969.56" />
+        <Point3D x="-7.507384E+07" y="1.530563E+08" z="49790" />
+        <Point3D x="-7.507383E+07" y="1.530564E+08" z="49610.44" />
+        <Point3D x="-7.507381E+07" y="1.530564E+08" z="49452.54" />
+        <Point3D x="-7.507377E+07" y="1.530566E+08" z="49335.34" />
+        <Point3D x="-7.507372E+07" y="1.530568E+08" z="49272.98" />
+        <Point3D x="-7.507367E+07" y="1.530569E+08" z="49272.98" />
+        <Point3D x="-7.507362E+07" y="1.530571E+08" z="49335.34" />
+        <Point3D x="-7.507359E+07" y="1.530572E+08" z="49452.54" />
+        <Point3D x="-7.507357E+07" y="1.530573E+08" z="49610.44" />
+        <Point3D x="-7.507356E+07" y="1.530573E+08" z="49790" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:500219 (Opening)" guid="0tHNLxvPH0UwLg7$h4bOyT">
+      <Area area="848423.7" height="200.000000006052" wallarea="656390.111596999">
+        <Point3D x="-7.507586E+07" y="1.53049E+08" z="49790" />
+        <Point3D x="-7.507587E+07" y="1.53049E+08" z="49969.56" />
+        <Point3D x="-7.50759E+07" y="1.530489E+08" z="50127.46" />
+        <Point3D x="-7.507594E+07" y="1.530488E+08" z="50244.66" />
+        <Point3D x="-7.507598E+07" y="1.530486E+08" z="50307.02" />
+        <Point3D x="-7.507603E+07" y="1.530484E+08" z="50307.02" />
+        <Point3D x="-7.507608E+07" y="1.530483E+08" z="50244.66" />
+        <Point3D x="-7.507611E+07" y="1.530481E+08" z="50127.46" />
+        <Point3D x="-7.507614E+07" y="1.53048E+08" z="49969.56" />
+        <Point3D x="-7.507614E+07" y="1.53048E+08" z="49790" />
+        <Point3D x="-7.507614E+07" y="1.53048E+08" z="49610.44" />
+        <Point3D x="-7.507611E+07" y="1.530481E+08" z="49452.54" />
+        <Point3D x="-7.507608E+07" y="1.530483E+08" z="49335.34" />
+        <Point3D x="-7.507603E+07" y="1.530484E+08" z="49272.98" />
+        <Point3D x="-7.507598E+07" y="1.530486E+08" z="49272.98" />
+        <Point3D x="-7.507594E+07" y="1.530488E+08" z="49335.34" />
+        <Point3D x="-7.50759E+07" y="1.530489E+08" z="49452.54" />
+        <Point3D x="-7.507587E+07" y="1.53049E+08" z="49610.44" />
+        <Point3D x="-7.507586E+07" y="1.53049E+08" z="49790" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:500219 (Opening)" guid="2bYA6ogir2EeoWzhBvUvrO">
+      <Area area="2252300" height="200.000000006052" wallarea="1296000.00004051">
+        <Point3D x="-7.507563E+07" y="1.530499E+08" z="47960" />
+        <Point3D x="-7.507563E+07" y="1.530499E+08" z="45730" />
+        <Point3D x="-7.507537E+07" y="1.530508E+08" z="45730" />
+        <Point3D x="-7.507537E+07" y="1.530508E+08" z="47960" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:500219 (Opening)" guid="2bYA6ogir2EeoWzhBvUvrP">
+      <Area area="2252300" height="200.000000006052" wallarea="1296000.00004051">
+        <Point3D x="-7.507614E+07" y="1.53048E+08" z="47960" />
+        <Point3D x="-7.507614E+07" y="1.53048E+08" z="45730" />
+        <Point3D x="-7.507587E+07" y="1.53049E+08" z="45730" />
+        <Point3D x="-7.507587E+07" y="1.53049E+08" z="47960" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:500219 (Opening)" guid="2bYA6ogir2EeoWzhBvUvrU">
+      <Area area="2252300" height="200.000000006052" wallarea="1296000.00004051">
+        <Point3D x="-7.507342E+07" y="1.530578E+08" z="47960" />
+        <Point3D x="-7.507342E+07" y="1.530578E+08" z="45730" />
+        <Point3D x="-7.507316E+07" y="1.530588E+08" z="45730" />
+        <Point3D x="-7.507316E+07" y="1.530588E+08" z="47960" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:500219 (Opening)" guid="2bYA6ogir2EeoWzhBvUvrV">
+      <Area area="2252300" height="200.000000006052" wallarea="1296000.00004051">
+        <Point3D x="-7.507382E+07" y="1.530564E+08" z="47960" />
+        <Point3D x="-7.507382E+07" y="1.530564E+08" z="45730" />
+        <Point3D x="-7.507354E+07" y="1.530574E+08" z="45730" />
+        <Point3D x="-7.507354E+07" y="1.530574E+08" z="47960" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:500219 (Opening)" guid="3Dl8g4gprF7u8d6pWib_nG">
+      <Area area="55000" height="249.999999998391" wallarea="324999.99999646">
+        <Point3D x="-7.507338E+07" y="1.530582E+08" z="50010" />
+        <Point3D x="-7.507338E+07" y="1.530582E+08" z="50110" />
+        <Point3D x="-7.507352E+07" y="1.530577E+08" z="50110" />
+        <Point3D x="-7.507352E+07" y="1.530577E+08" z="50010" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:15 (Opening)" guid="02KbQqlE9Fku9Zj2iT5giy">
+      <Area area="30000" height="270" wallarea="216000.000000937">
+        <Point3D x="-7.507706E+07" y="1.530573E+08" z="45690" />
+        <Point3D x="-7.507703E+07" y="1.530574E+08" z="45690" />
+        <Point3D x="-7.507732E+07" y="1.530575E+08" z="45690" />
+        <Point3D x="-7.507735E+07" y="1.530574E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:17 (Opening)" guid="02KbQqlE9Fku9Zj2iT5gjj">
+      <Area area="30000" height="270" wallarea="216000.000000937">
+        <Point3D x="-7.507765E+07" y="1.530552E+08" z="45690" />
+        <Point3D x="-7.507762E+07" y="1.530553E+08" z="45690" />
+        <Point3D x="-7.507791E+07" y="1.530554E+08" z="45690" />
+        <Point3D x="-7.507794E+07" y="1.530553E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:16 (Opening)" guid="02KbQqlE9Fku9Zj2iT5gjU">
+      <Area area="30000" height="270" wallarea="216000.000000937">
+        <Point3D x="-7.507737E+07" y="1.530562E+08" z="45690" />
+        <Point3D x="-7.507734E+07" y="1.530563E+08" z="45690" />
+        <Point3D x="-7.507763E+07" y="1.530564E+08" z="45690" />
+        <Point3D x="-7.507766E+07" y="1.530563E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:22 (Opening)" guid="02KbQqlE9Fku9Zj2iT5gOi">
+      <Area area="19200" height="270" wallarea="172800.000002386">
+        <Point3D x="-7.507434E+07" y="1.530545E+08" z="45690" />
+        <Point3D x="-7.507426E+07" y="1.530545E+08" z="45690" />
+        <Point3D x="-7.50742E+07" y="1.530547E+08" z="45690" />
+        <Point3D x="-7.507428E+07" y="1.530548E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:23 (Opening)" guid="02KbQqlE9Fku9Zj2iT5gP3">
+      <Area area="19200" height="270" wallarea="172800.000002386">
+        <Point3D x="-7.507405E+07" y="1.530556E+08" z="45690" />
+        <Point3D x="-7.507397E+07" y="1.530556E+08" z="45690" />
+        <Point3D x="-7.50739E+07" y="1.530558E+08" z="45690" />
+        <Point3D x="-7.507398E+07" y="1.530558E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:21 (Opening)" guid="02KbQqlE9Fku9Zj2iT5gR$">
+      <Area area="4018.775" height="270" wallarea="70326.7286238993">
+        <Point3D x="-7.507463E+07" y="1.530532E+08" z="45690" />
+        <Point3D x="-7.507471E+07" y="1.530532E+08" z="45690" />
+        <Point3D x="-7.50747E+07" y="1.530532E+08" z="45690" />
+        <Point3D x="-7.507462E+07" y="1.530532E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:20 (Opening)" guid="02KbQqlE9Fku9Zj2iT5gWJ">
+      <Area area="30000" height="270" wallarea="216000.000000937">
+        <Point3D x="-7.50759E+07" y="1.530511E+08" z="45690" />
+        <Point3D x="-7.507588E+07" y="1.530512E+08" z="45690" />
+        <Point3D x="-7.507617E+07" y="1.530513E+08" z="45690" />
+        <Point3D x="-7.50762E+07" y="1.530512E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:18 (Opening)" guid="02KbQqlE9Fku9Zj2iT5gYL">
+      <Area area="30000" height="270" wallarea="216000.000000937">
+        <Point3D x="-7.507798E+07" y="1.53054E+08" z="45690" />
+        <Point3D x="-7.507795E+07" y="1.530541E+08" z="45690" />
+        <Point3D x="-7.507824E+07" y="1.530542E+08" z="45690" />
+        <Point3D x="-7.507827E+07" y="1.530541E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:19 (Opening)" guid="02KbQqlE9Fku9Zj2iT5gYn">
+      <Area area="30000" height="270" wallarea="216000.000000937">
+        <Point3D x="-7.507839E+07" y="1.530518E+08" z="45690" />
+        <Point3D x="-7.507836E+07" y="1.530519E+08" z="45690" />
+        <Point3D x="-7.507865E+07" y="1.53052E+08" z="45690" />
+        <Point3D x="-7.507868E+07" y="1.530519E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:4 (Opening)" guid="0eMluWkoH8rAQ85MP1g6VN">
+      <Area area="35561.01" height="270" wallarea="183556.094660777">
+        <Point3D x="-7.503204E+07" y="1.530346E+08" z="45690" />
+        <Point3D x="-7.503208E+07" y="1.530345E+08" z="45690" />
+        <Point3D x="-7.503214E+07" y="1.530345E+08" z="45690" />
+        <Point3D x="-7.503221E+07" y="1.530345E+08" z="45690" />
+        <Point3D x="-7.503226E+07" y="1.530346E+08" z="45690" />
+        <Point3D x="-7.503226E+07" y="1.530347E+08" z="45690" />
+        <Point3D x="-7.503222E+07" y="1.530347E+08" z="45690" />
+        <Point3D x="-7.503215E+07" y="1.530347E+08" z="45690" />
+        <Point3D x="-7.503209E+07" y="1.530347E+08" z="45690" />
+        <Point3D x="-7.503205E+07" y="1.530347E+08" z="45690" />
+        <Point3D x="-7.503204E+07" y="1.530346E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:3 (Opening)" guid="0eMluWkoH8rAQ85MP1g6VV">
+      <Area area="20000" height="270" wallarea="162000.000009211">
+        <Point3D x="-7.503093E+07" y="1.530342E+08" z="45690" />
+        <Point3D x="-7.503087E+07" y="1.530344E+08" z="45690" />
+        <Point3D x="-7.503097E+07" y="1.530344E+08" z="45690" />
+        <Point3D x="-7.503102E+07" y="1.530342E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:2 (Opening)" guid="29fG2ekLPCju7vCRoi1H_F">
+      <Area area="150000" height="270" wallarea="459000.000003337">
+        <Point3D x="-7.507717E+07" y="1.530512E+08" z="45690" />
+        <Point3D x="-7.507774E+07" y="1.530513E+08" z="45690" />
+        <Point3D x="-7.507768E+07" y="1.530516E+08" z="45690" />
+        <Point3D x="-7.50771E+07" y="1.530514E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:7 (Opening)" guid="3QgHzaZKn2HRoM$M4TY1Bj">
+      <Area area="20000" height="270" wallarea="162000.000009211">
+        <Point3D x="-7.506169E+07" y="1.530501E+08" z="45690" />
+        <Point3D x="-7.506159E+07" y="1.530501E+08" z="45690" />
+        <Point3D x="-7.506154E+07" y="1.530503E+08" z="45690" />
+        <Point3D x="-7.506163E+07" y="1.530503E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:5 (Opening)" guid="3QgHzaZKn2HRoM$M4TY1C1">
+      <Area area="30000" height="270" wallarea="216000.000000937">
+        <Point3D x="-7.504997E+07" y="1.530432E+08" z="45690" />
+        <Point3D x="-7.504987E+07" y="1.530431E+08" z="45690" />
+        <Point3D x="-7.504979E+07" y="1.530434E+08" z="45690" />
+        <Point3D x="-7.504989E+07" y="1.530435E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:6 (Opening)" guid="3QgHzaZKn2HRoM$M4TY1DQ">
+      <Area area="21233.74" height="270" wallarea="141838.800419282">
+        <Point3D x="-7.506087E+07" y="1.530527E+08" z="45690" />
+        <Point3D x="-7.50609E+07" y="1.530527E+08" z="45690" />
+        <Point3D x="-7.506094E+07" y="1.530527E+08" z="45690" />
+        <Point3D x="-7.5061E+07" y="1.530527E+08" z="45690" />
+        <Point3D x="-7.506103E+07" y="1.530527E+08" z="45690" />
+        <Point3D x="-7.506103E+07" y="1.530528E+08" z="45690" />
+        <Point3D x="-7.506101E+07" y="1.530528E+08" z="45690" />
+        <Point3D x="-7.506095E+07" y="1.530528E+08" z="45690" />
+        <Point3D x="-7.50609E+07" y="1.530528E+08" z="45690" />
+        <Point3D x="-7.506087E+07" y="1.530528E+08" z="45690" />
+        <Point3D x="-7.506087E+07" y="1.530527E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:11 (Opening)" guid="3QgHzaZKn2HRoM$M4TY6wL">
+      <Area area="12416.96" height="270" wallarea="108464.965021223">
+        <Point3D x="-7.507877E+07" y="1.53055E+08" z="45690" />
+        <Point3D x="-7.507879E+07" y="1.530549E+08" z="45690" />
+        <Point3D x="-7.507883E+07" y="1.530549E+08" z="45690" />
+        <Point3D x="-7.507886E+07" y="1.530549E+08" z="45690" />
+        <Point3D x="-7.507889E+07" y="1.53055E+08" z="45690" />
+        <Point3D x="-7.50789E+07" y="1.53055E+08" z="45690" />
+        <Point3D x="-7.507887E+07" y="1.53055E+08" z="45690" />
+        <Point3D x="-7.507883E+07" y="1.53055E+08" z="45690" />
+        <Point3D x="-7.507879E+07" y="1.53055E+08" z="45690" />
+        <Point3D x="-7.507877E+07" y="1.53055E+08" z="45690" />
+        <Point3D x="-7.507877E+07" y="1.53055E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:12 (Opening)" guid="3QgHzaZKn2HRoM$M4TY6wr">
+      <Area area="12416.96" height="270" wallarea="108464.965021223">
+        <Point3D x="-7.507909E+07" y="1.530531E+08" z="45690" />
+        <Point3D x="-7.507911E+07" y="1.530531E+08" z="45690" />
+        <Point3D x="-7.507915E+07" y="1.530531E+08" z="45690" />
+        <Point3D x="-7.507918E+07" y="1.530531E+08" z="45690" />
+        <Point3D x="-7.507921E+07" y="1.530531E+08" z="45690" />
+        <Point3D x="-7.507922E+07" y="1.530532E+08" z="45690" />
+        <Point3D x="-7.507919E+07" y="1.530532E+08" z="45690" />
+        <Point3D x="-7.507915E+07" y="1.530532E+08" z="45690" />
+        <Point3D x="-7.507911E+07" y="1.530532E+08" z="45690" />
+        <Point3D x="-7.507909E+07" y="1.530532E+08" z="45690" />
+        <Point3D x="-7.507909E+07" y="1.530531E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:14 (Opening)" guid="3QgHzaZKn2HRoM$M4TY6xA">
+      <Area area="23805.3" height="270" wallarea="150182.259269826">
+        <Point3D x="-7.507945E+07" y="1.530523E+08" z="45690" />
+        <Point3D x="-7.507948E+07" y="1.530523E+08" z="45690" />
+        <Point3D x="-7.507954E+07" y="1.530523E+08" z="45690" />
+        <Point3D x="-7.507958E+07" y="1.530523E+08" z="45690" />
+        <Point3D x="-7.507962E+07" y="1.530523E+08" z="45690" />
+        <Point3D x="-7.507962E+07" y="1.530524E+08" z="45690" />
+        <Point3D x="-7.507959E+07" y="1.530524E+08" z="45690" />
+        <Point3D x="-7.507954E+07" y="1.530524E+08" z="45690" />
+        <Point3D x="-7.507949E+07" y="1.530524E+08" z="45690" />
+        <Point3D x="-7.507946E+07" y="1.530524E+08" z="45690" />
+        <Point3D x="-7.507945E+07" y="1.530523E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:13 (Opening)" guid="3QgHzaZKn2HRoM$M4TY6xT">
+      <Area area="4000" height="270" wallarea="70200.0000043225">
+        <Point3D x="-7.50794E+07" y="1.530535E+08" z="45690" />
+        <Point3D x="-7.507932E+07" y="1.530535E+08" z="45690" />
+        <Point3D x="-7.507934E+07" y="1.530534E+08" z="45690" />
+        <Point3D x="-7.507942E+07" y="1.530535E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:8 (Opening)" guid="3QgHzaZKn2HRoM$M4TY6yD">
+      <Area area="12416.96" height="270" wallarea="108464.965021223">
+        <Point3D x="-7.507785E+07" y="1.530583E+08" z="45690" />
+        <Point3D x="-7.507787E+07" y="1.530582E+08" z="45690" />
+        <Point3D x="-7.507791E+07" y="1.530582E+08" z="45690" />
+        <Point3D x="-7.507794E+07" y="1.530582E+08" z="45690" />
+        <Point3D x="-7.507798E+07" y="1.530583E+08" z="45690" />
+        <Point3D x="-7.507798E+07" y="1.530583E+08" z="45690" />
+        <Point3D x="-7.507795E+07" y="1.530583E+08" z="45690" />
+        <Point3D x="-7.507791E+07" y="1.530584E+08" z="45690" />
+        <Point3D x="-7.507787E+07" y="1.530583E+08" z="45690" />
+        <Point3D x="-7.507785E+07" y="1.530583E+08" z="45690" />
+        <Point3D x="-7.507785E+07" y="1.530583E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:10 (Opening)" guid="3QgHzaZKn2HRoM$M4TY6zt">
+      <Area area="12416.96" height="270" wallarea="108464.965021223">
+        <Point3D x="-7.507846E+07" y="1.530561E+08" z="45690" />
+        <Point3D x="-7.507849E+07" y="1.53056E+08" z="45690" />
+        <Point3D x="-7.507852E+07" y="1.53056E+08" z="45690" />
+        <Point3D x="-7.507856E+07" y="1.53056E+08" z="45690" />
+        <Point3D x="-7.507858E+07" y="1.530561E+08" z="45690" />
+        <Point3D x="-7.507858E+07" y="1.530561E+08" z="45690" />
+        <Point3D x="-7.507857E+07" y="1.530561E+08" z="45690" />
+        <Point3D x="-7.507853E+07" y="1.530561E+08" z="45690" />
+        <Point3D x="-7.507849E+07" y="1.530561E+08" z="45690" />
+        <Point3D x="-7.507846E+07" y="1.530561E+08" z="45690" />
+        <Point3D x="-7.507846E+07" y="1.530561E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:9 (Opening)" guid="3QgHzaZKn2HRoM$M4TY6zV">
+      <Area area="12416.96" height="270" wallarea="108464.965021223">
+        <Point3D x="-7.507814E+07" y="1.530572E+08" z="45690" />
+        <Point3D x="-7.507817E+07" y="1.530572E+08" z="45690" />
+        <Point3D x="-7.507821E+07" y="1.530572E+08" z="45690" />
+        <Point3D x="-7.507825E+07" y="1.530572E+08" z="45690" />
+        <Point3D x="-7.507827E+07" y="1.530572E+08" z="45690" />
+        <Point3D x="-7.507827E+07" y="1.530572E+08" z="45690" />
+        <Point3D x="-7.507825E+07" y="1.530573E+08" z="45690" />
+        <Point3D x="-7.507822E+07" y="1.530573E+08" z="45690" />
+        <Point3D x="-7.507818E+07" y="1.530573E+08" z="45690" />
+        <Point3D x="-7.507815E+07" y="1.530572E+08" z="45690" />
+        <Point3D x="-7.507814E+07" y="1.530572E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBE270:652592:24 (Opening)" guid="3U0pxbd9HEHxXLGKk0VcBQ">
+      <Area area="21233.74" height="270" wallarea="141838.800419282">
+        <Point3D x="-7.507352E+07" y="1.530574E+08" z="45690" />
+        <Point3D x="-7.507354E+07" y="1.530574E+08" z="45690" />
+        <Point3D x="-7.50736E+07" y="1.530573E+08" z="45690" />
+        <Point3D x="-7.507365E+07" y="1.530574E+08" z="45690" />
+        <Point3D x="-7.507368E+07" y="1.530574E+08" z="45690" />
+        <Point3D x="-7.507368E+07" y="1.530575E+08" z="45690" />
+        <Point3D x="-7.507366E+07" y="1.530575E+08" z="45690" />
+        <Point3D x="-7.50736E+07" y="1.530575E+08" z="45690" />
+        <Point3D x="-7.507355E+07" y="1.530575E+08" z="45690" />
+        <Point3D x="-7.507352E+07" y="1.530575E+08" z="45690" />
+        <Point3D x="-7.507352E+07" y="1.530574E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Basic Wall:VBE20:654275 (Opening)" guid="2Paw177pLAiRpzhgfCYRP8">
+      <Area area="30000" height="250.000000002381" wallarea="200000.00000126">
+        <Point3D x="-7.507733E+07" y="1.530449E+08" z="50012" />
+        <Point3D x="-7.507733E+07" y="1.530449E+08" z="50112" />
+        <Point3D x="-7.507704E+07" y="1.530448E+08" z="50112" />
+        <Point3D x="-7.507704E+07" y="1.530448E+08" z="50012" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBP270 fugeudstøbning:656342:2 (Opening)" guid="3ozSQusKbF3xWsPVq0VAMd">
+      <Area area="2994600" height="270" wallarea="1904039.99833429">
+        <Point3D x="-7.503278E+07" y="1.530328E+08" z="45690" />
+        <Point3D x="-7.503222E+07" y="1.530348E+08" z="45690" />
+        <Point3D x="-7.503084E+07" y="1.530344E+08" z="45690" />
+        <Point3D x="-7.50314E+07" y="1.530324E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:DBP270:656572:2 (Opening)" guid="3ozSQusKbF3xWsPVq0VAIf">
+      <Area area="7405252" height="270" wallarea="3037850.44975209">
+        <Point3D x="-7.508234E+07" y="1.530487E+08" z="45690" />
+        <Point3D x="-7.50829E+07" y="1.530467E+08" z="45690" />
+        <Point3D x="-7.50795E+07" y="1.530457E+08" z="45690" />
+        <Point3D x="-7.507894E+07" y="1.530478E+08" z="45690" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="091d3qPOfAuO5JoR25CBzM">
+      <Area area="1690000" height="600" wallarea="3120000.00000061">
+        <Point3D x="-7.505915E+07" y="1.530448E+08" z="51060" />
+        <Point3D x="-7.50595E+07" y="1.530435E+08" z="51060" />
+        <Point3D x="-7.506075E+07" y="1.530439E+08" z="51060" />
+        <Point3D x="-7.50604E+07" y="1.530451E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0aQm8MAEDEMAoCG8Gy5kha">
+      <Area area="1690000" height="600" wallarea="3120000.00000397">
+        <Point3D x="-7.507362E+07" y="1.530507E+08" z="51060" />
+        <Point3D x="-7.507398E+07" y="1.530494E+08" z="51060" />
+        <Point3D x="-7.507522E+07" y="1.530497E+08" z="51060" />
+        <Point3D x="-7.507488E+07" y="1.53051E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0FYoqNMjD8bwOr437feoOj">
+      <Area area="1690000" height="600" wallarea="3120000.00000397">
+        <Point3D x="-7.505083E+07" y="1.530434E+08" z="51060" />
+        <Point3D x="-7.505118E+07" y="1.530421E+08" z="51060" />
+        <Point3D x="-7.505243E+07" y="1.530425E+08" z="51060" />
+        <Point3D x="-7.505209E+07" y="1.530437E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0j8a6Wr0n9Gfoa9g97LKNd">
+      <Area area="1690000" height="600" wallarea="3119999.99999296">
+        <Point3D x="-7.506956E+07" y="1.530529E+08" z="51060" />
+        <Point3D x="-7.506991E+07" y="1.530517E+08" z="51060" />
+        <Point3D x="-7.507116E+07" y="1.53052E+08" z="51060" />
+        <Point3D x="-7.507082E+07" y="1.530533E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="0UmwpZaqjFkwsZ9jwPrGhf">
+      <Area area="1690000" height="600" wallarea="3120000.0000054">
+        <Point3D x="-7.507274E+07" y="1.530538E+08" z="51060" />
+        <Point3D x="-7.507309E+07" y="1.530526E+08" z="51060" />
+        <Point3D x="-7.507434E+07" y="1.530529E+08" z="51060" />
+        <Point3D x="-7.507399E+07" y="1.530542E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="1AVzmBj150ie$RZ9PVcpFo">
+      <Area area="1690000" height="600" wallarea="3120000.00001497">
+        <Point3D x="-7.50661E+07" y="1.53052E+08" z="51060" />
+        <Point3D x="-7.506644E+07" y="1.530507E+08" z="51060" />
+        <Point3D x="-7.50677E+07" y="1.530511E+08" z="51060" />
+        <Point3D x="-7.506734E+07" y="1.530523E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="1cMkR6WKXAy9P8$oVNmrDJ">
+      <Area area="3738020" height="600" wallarea="5010480.0000015">
+        <Point3D x="-7.504381E+07" y="1.530403E+08" z="51060" />
+        <Point3D x="-7.504458E+07" y="1.530375E+08" z="51060" />
+        <Point3D x="-7.504583E+07" y="1.530379E+08" z="51060" />
+        <Point3D x="-7.504506E+07" y="1.530406E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="1Dmd87VCL7oetsvKi7Xrb4">
+      <Area area="3738020" height="600" wallarea="5010480.00000772">
+        <Point3D x="-7.504498E+07" y="1.530361E+08" z="51060" />
+        <Point3D x="-7.504574E+07" y="1.530333E+08" z="51060" />
+        <Point3D x="-7.5047E+07" y="1.530337E+08" z="51060" />
+        <Point3D x="-7.504623E+07" y="1.530364E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="1DoLRGkif5sAO_Yjxh_M2U">
+      <Area area="1690000" height="600" wallarea="3120000.0000054">
+        <Point3D x="-7.506367E+07" y="1.530473E+08" z="51060" />
+        <Point3D x="-7.506402E+07" y="1.53046E+08" z="51060" />
+        <Point3D x="-7.506527E+07" y="1.530464E+08" z="51060" />
+        <Point3D x="-7.506492E+07" y="1.530476E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="1JI7CNNE593xoj1nVQVc2w">
+      <Area area="1690000" height="600" wallarea="3119999.99999296">
+        <Point3D x="-7.506262E+07" y="1.53051E+08" z="51060" />
+        <Point3D x="-7.506298E+07" y="1.530498E+08" z="51060" />
+        <Point3D x="-7.506422E+07" y="1.530501E+08" z="51060" />
+        <Point3D x="-7.506388E+07" y="1.530514E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="1QSEjrk3n6Ux3saJ6kxEI6">
+      <Area area="1690000" height="600" wallarea="3120000.00000397">
+        <Point3D x="-7.506049E+07" y="1.530486E+08" z="51060" />
+        <Point3D x="-7.506083E+07" y="1.530473E+08" z="51060" />
+        <Point3D x="-7.506209E+07" y="1.530477E+08" z="51060" />
+        <Point3D x="-7.506174E+07" y="1.530489E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="1tWs_XMpvBX9OFFHaYlCP0">
+      <Area area="3738020" height="600" wallarea="5010479.99998571">
+        <Point3D x="-7.503823E+07" y="1.530342E+08" z="51060" />
+        <Point3D x="-7.5039E+07" y="1.530314E+08" z="51060" />
+        <Point3D x="-7.504026E+07" y="1.530318E+08" z="51060" />
+        <Point3D x="-7.503949E+07" y="1.530346E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="1UEJdnDX94zgdcDh5OtdWS">
+      <Area area="3738020" height="600" wallarea="5010479.99997949">
+        <Point3D x="-7.504161E+07" y="1.530352E+08" z="51060" />
+        <Point3D x="-7.504238E+07" y="1.530324E+08" z="51060" />
+        <Point3D x="-7.504362E+07" y="1.530327E+08" z="51060" />
+        <Point3D x="-7.504286E+07" y="1.530355E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="1WjYlXE9L0TPJyL25SHTQq">
+      <Area area="1690000" height="600" wallarea="3120000.00000061">
+        <Point3D x="-7.507126E+07" y="1.530468E+08" z="51060" />
+        <Point3D x="-7.50716E+07" y="1.530456E+08" z="51060" />
+        <Point3D x="-7.507286E+07" y="1.53046E+08" z="51060" />
+        <Point3D x="-7.50725E+07" y="1.530472E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="25VkNx7o9DCu1IyDL9UGQv">
+      <Area area="1690000" height="600" wallarea="3119999.99999439">
+        <Point3D x="-7.505606E+07" y="1.530473E+08" z="51060" />
+        <Point3D x="-7.50564E+07" y="1.530461E+08" z="51060" />
+        <Point3D x="-7.505766E+07" y="1.530464E+08" z="51060" />
+        <Point3D x="-7.50573E+07" y="1.530477E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2Jl_LTX91AJ8hz2Qf28jIs">
+      <Area area="1690000" height="600" wallarea="3120000.0000054">
+        <Point3D x="-7.505298E+07" y="1.530465E+08" z="51060" />
+        <Point3D x="-7.505334E+07" y="1.530452E+08" z="51060" />
+        <Point3D x="-7.505458E+07" y="1.530456E+08" z="51060" />
+        <Point3D x="-7.505424E+07" y="1.530468E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2L3myHnxH2$OVM4jvMrp_B">
+      <Area area="3738020" height="600" wallarea="5010480.00000772">
+        <Point3D x="-7.504044E+07" y="1.530394E+08" z="51060" />
+        <Point3D x="-7.504121E+07" y="1.530366E+08" z="51060" />
+        <Point3D x="-7.504246E+07" y="1.530369E+08" z="51060" />
+        <Point3D x="-7.504169E+07" y="1.530397E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2rJf7f9Tf0xQsvUsOYQRyQ">
+      <Area area="3738020" height="600" wallarea="5010479.99998571">
+        <Point3D x="-7.504718E+07" y="1.530412E+08" z="51060" />
+        <Point3D x="-7.504795E+07" y="1.530385E+08" z="51060" />
+        <Point3D x="-7.50492E+07" y="1.530388E+08" z="51060" />
+        <Point3D x="-7.504843E+07" y="1.530416E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2Uw840Sof3cQXeJaakmMIY">
+      <Area area="1690000" height="600" wallarea="3120000.00000061">
+        <Point3D x="-7.506853E+07" y="1.530432E+08" z="51060" />
+        <Point3D x="-7.506888E+07" y="1.53042E+08" z="51060" />
+        <Point3D x="-7.507013E+07" y="1.530423E+08" z="51060" />
+        <Point3D x="-7.506978E+07" y="1.530436E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="2Z4hQILDf5FOnqm6Py5_7D">
+      <Area area="3738020" height="600" wallarea="5010480.0000015">
+        <Point3D x="-7.503706E+07" y="1.530384E+08" z="51060" />
+        <Point3D x="-7.503783E+07" y="1.530356E+08" z="51060" />
+        <Point3D x="-7.503909E+07" y="1.53036E+08" z="51060" />
+        <Point3D x="-7.503832E+07" y="1.530388E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3$Ltzs4Bb6Qe0EJZud05gF">
+      <Area area="1690000" height="600" wallarea="3119999.99999439">
+        <Point3D x="-7.50745E+07" y="1.530475E+08" z="51060" />
+        <Point3D x="-7.507486E+07" y="1.530462E+08" z="51060" />
+        <Point3D x="-7.50761E+07" y="1.530466E+08" z="51060" />
+        <Point3D x="-7.507576E+07" y="1.530478E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="36HjY3T497SOK$jrroDOHt">
+      <Area area="1690000" height="600" wallarea="3119999.99999439">
+        <Point3D x="-7.506778E+07" y="1.530459E+08" z="51060" />
+        <Point3D x="-7.506814E+07" y="1.530446E+08" z="51060" />
+        <Point3D x="-7.506938E+07" y="1.53045E+08" z="51060" />
+        <Point3D x="-7.506904E+07" y="1.530462E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="374zU64152zPLQNXLK6l$X">
+      <Area area="1690000" height="600" wallarea="3119999.99998195">
+        <Point3D x="-7.505427E+07" y="1.530419E+08" z="51060" />
+        <Point3D x="-7.505462E+07" y="1.530406E+08" z="51060" />
+        <Point3D x="-7.505587E+07" y="1.530409E+08" z="51060" />
+        <Point3D x="-7.505553E+07" y="1.530422E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3cWTVD9I9AGAjXrf1VhEQ1">
+      <Area area="1690000" height="600" wallarea="3120000.0000054">
+        <Point3D x="-7.507051E+07" y="1.530495E+08" z="51060" />
+        <Point3D x="-7.507086E+07" y="1.530483E+08" z="51060" />
+        <Point3D x="-7.507211E+07" y="1.530486E+08" z="51060" />
+        <Point3D x="-7.507177E+07" y="1.530499E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name="Floor:Tagelement 600 mm:646360:2 (Opening)" guid="3dCskdgLPCBfvEtzNXHuPk">
+      <Area area="12416.96" height="600" wallarea="241033.255602718">
+        <Point3D x="-7.507776E+07" y="1.530586E+08" z="51060" />
+        <Point3D x="-7.507778E+07" y="1.530585E+08" z="51060" />
+        <Point3D x="-7.507782E+07" y="1.530585E+08" z="51060" />
+        <Point3D x="-7.507786E+07" y="1.530585E+08" z="51060" />
+        <Point3D x="-7.507789E+07" y="1.530586E+08" z="51060" />
+        <Point3D x="-7.507789E+07" y="1.530586E+08" z="51060" />
+        <Point3D x="-7.507786E+07" y="1.530587E+08" z="51060" />
+        <Point3D x="-7.507782E+07" y="1.530587E+08" z="51060" />
+        <Point3D x="-7.507779E+07" y="1.530587E+08" z="51060" />
+        <Point3D x="-7.507776E+07" y="1.530586E+08" z="51060" />
+        <Point3D x="-7.507776E+07" y="1.530586E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3Ddgjl6D9AOBrFyn3puNKR">
+      <Area area="1690000" height="600" wallarea="3119999.99999439">
+        <Point3D x="-7.5072E+07" y="1.530442E+08" z="51060" />
+        <Point3D x="-7.507234E+07" y="1.530429E+08" z="51060" />
+        <Point3D x="-7.50736E+07" y="1.530433E+08" z="51060" />
+        <Point3D x="-7.507325E+07" y="1.530445E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3eNB2RbAT2cg6wKTwsjKEh">
+      <Area area="1690000" height="600" wallarea="3119999.99999296">
+        <Point3D x="-7.506705E+07" y="1.530486E+08" z="51060" />
+        <Point3D x="-7.506739E+07" y="1.530473E+08" z="51060" />
+        <Point3D x="-7.506865E+07" y="1.530476E+08" z="51060" />
+        <Point3D x="-7.50683E+07" y="1.530489E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3mzj41hsb8SxBhxAxjS5Jb">
+      <Area area="1690000" height="600" wallarea="3120000.0000054">
+        <Point3D x="-7.505978E+07" y="1.530425E+08" z="51060" />
+        <Point3D x="-7.506013E+07" y="1.530413E+08" z="51060" />
+        <Point3D x="-7.506138E+07" y="1.530416E+08" z="51060" />
+        <Point3D x="-7.506103E+07" y="1.530429E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3t7cOhw0DB9vA$wfKGyNli">
+      <Area area="3738020" height="600" wallarea="5010480.00000772">
+        <Point3D x="-7.504835E+07" y="1.53037E+08" z="51060" />
+        <Point3D x="-7.504912E+07" y="1.530343E+08" z="51060" />
+        <Point3D x="-7.505038E+07" y="1.530346E+08" z="51060" />
+        <Point3D x="-7.50496E+07" y="1.530374E+08" z="51060" />
+      </Area>
+    </Opening>
+    <Opening name=" (Opening)" guid="3yivPAg_T5hv7uwYqQRCj7">
+      <Area area="1690000" height="600" wallarea="3119999.99999439">
+        <Point3D x="-7.506439E+07" y="1.530447E+08" z="51060" />
+        <Point3D x="-7.506474E+07" y="1.530434E+08" z="51060" />
+        <Point3D x="-7.506599E+07" y="1.530438E+08" z="51060" />
+        <Point3D x="-7.506564E+07" y="1.53045E+08" z="51060" />
+      </Area>
+    </Opening>
+  </Building>
+</Project>

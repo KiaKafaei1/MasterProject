@@ -63,12 +63,16 @@ for ele in array_new4:
                     tempy.append(pair[i])
         tempx.append(tempx[0])
         tempy.append(tempy[0])
-        plt.plot(tempx,tempy)
+        #plt.plot(tempx[0:2],tempy[0:2])
+        plt.plot([tempx[0],tempx[1]],[tempy[0],tempy[1]])
+       # plt.plot([tempx[0],tempx[2]],[tempy[0],tempy[2]])
+        #plt.plot(tempx[1:3],tempy[1:3])
+        #plt.plot(tempx[2:4],tempy[2:4])
         tempx=[]
         tempy=[]
+        #lines.pop(0).remove()
     
 plt.show()
-
 
 # From list to tuple since we have to use tuple for hashing
 #tup = ()

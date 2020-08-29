@@ -6,12 +6,37 @@ from matplotlib.pyplot import plot, axis, show
 import collections
 import coordinate_processing as cop
 
+
+def hashing_values(tempx,tempy):
+    hash_values=[]
+    hash_values.append(hash(((tempx[0],tempy[0]),(tempx[1],tempy[1]))))
+    hash_values.append(hash(((tempx[1],tempy[1]),(tempx[0],tempy[0]))))
+    hash_values.append(hash(((tempx[0],tempy[0]),(tempx[2],tempy[2]))))
+    hash_values.append(hash(((tempx[2],tempy[2]),(tempx[0],tempy[0]))))
+    hash_values.append(hash(((tempx[1],tempy[1]),(tempx[2],tempy[2]))))
+    hash_values.append(hash(((tempx[2],tempy[2]),(tempx[1],tempy[1]))))
+    
+    return hash_values
+
+
+def dict_hashing(Dic,hash_values):
+    Dic[hash_values[0]].append(((tempx[0],tempy[0]),(tempx[1],tempy[1])))
+    Dic[hash_values[1]].append(((tempx[1],tempy[1]),(tempx[0],tempy[0])))
+    Dic[hash_values[2]].append(((tempx[0],tempy[0]),(tempx[2],tempy[2])))
+    Dic[hash_values[3]].append(((tempx[2],tempy[2]),(tempx[0],tempy[0])))
+    Dic[hash_values[4]].append(((tempx[1],tempy[1]),(tempx[2],tempy[2])))
+    Dic[hash_values[5]].append(((tempx[2],tempy[2]),(tempx[1],tempy[1]))) 
+    return Dic
+
+
+
+
 #Importing values and changing from df to numpy array
 df = pd.read_csv('room_coordinates.csv',sep=',', header=None)
 array = df.to_numpy()
 # Deleting the header
 array = np.delete(array,0)
-
+# Preprocessing the csv file such that it is in the right format for plotting
 array_tri = cop.cor_processing(array)
 
 #plotting triangles
@@ -21,25 +46,13 @@ Dic =collections.defaultdict(list)
 
 for room in array_tri:
     for tri in room:
-        for pair in tri:
-            tempx.append(pair[0])
-            tempy.append(pair[1])
-
+        for cor in tri:
+            tempx.append(cor[0])
+            tempy.append(cor[1])
         #hashing each line in triangle
-        hash1= hash(((tempx[0],tempy[0]),(tempx[1],tempy[1])))
-        hash12= hash(((tempx[1],tempy[1]),(tempx[0],tempy[0])))
-        hash2= hash(((tempx[0],tempy[0]),(tempx[2],tempy[2])))
-        hash22= hash(((tempx[2],tempy[2]),(tempx[0],tempy[0])))
-        hash3= hash(((tempx[1],tempy[1]),(tempx[2],tempy[2])))
-        hash32= hash(((tempx[2],tempy[2]),(tempx[1],tempy[1])))
-        
+        hash_values = hashing_values(tempx,tempy)
         #Adding the hashes with their corresponding line to a Dict
-        Dic[hash1].append(((tempx[0],tempy[0]),(tempx[1],tempy[1])))
-        Dic[hash12].append(((tempx[1],tempy[1]),(tempx[0],tempy[0])))
-        Dic[hash2].append(((tempx[0],tempy[0]),(tempx[2],tempy[2])))
-        Dic[hash22].append(((tempx[2],tempy[2]),(tempx[0],tempy[0])))
-        Dic[hash3].append(((tempx[1],tempy[1]),(tempx[2],tempy[2])))
-        Dic[hash32].append(((tempx[2],tempy[2]),(tempx[1],tempy[1])))    
+        Dic = dict_hashing(Dic,hash_values)
         
         tempx = []
         tempy = []

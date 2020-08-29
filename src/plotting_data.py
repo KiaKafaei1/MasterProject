@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import csv
 import pandas as pd
 from matplotlib.pyplot import plot, axis, show
+import collections
 
 #Importing values and changing from df to numpy array
 df = pd.read_csv('room_coordinates.csv',sep=',', header=None)
@@ -64,7 +65,7 @@ tempx=[]
 tempy=[]
 i=0
 fig, ax = plt.subplots()
-
+Dic =collections.defaultdict(list) 
 for room in array_tri:
     for tri in room:
         for pair in tri:
@@ -80,57 +81,72 @@ for room in array_tri:
         hash22= hash(((tempx[2],tempy[2]),(tempx[0],tempy[0])))
         hash3= hash(((tempx[1],tempy[1]),(tempx[2],tempy[2])))
         hash32= hash(((tempx[2],tempy[2]),(tempx[1],tempy[1])))
-        line1, = ax.plot([tempx[0],tempx[1]],[tempy[0],tempy[1]])
-        line2, = ax.plot([tempx[0],tempx[2]],[tempy[0],tempy[2]])
-        line3, = ax.plot([tempx[1],tempx[2]],[tempy[1],tempy[2]])
+       #line1, = ax.plot([tempx[0],tempx[1]],[tempy[0],tempy[1]])
         
-
-
-        #ax.lines.remove(line1)
-        #l1 = line1.pop(0)
-        #l1.remove()
-        #del l1
-        #line2.pop(0).remove()
-        #line3.pop(0).remove()
-        #line2.remove()
-        #line2.remove()
-        #line2.remove()
-        #line3.remove()
-        print(len(ax.lines))
+        
+        
         if (hash1 in hash_values or hash12 in hash_values):
             i+=1
             #print(i)
             #del ax.lines[0]
-            ax.lines.remove(line1)
+            #ax.lines.remove(line1)
             #l1 = line1.pop(0)
             #l1.remove()
             #del l1
         if (hash2 in hash_values or hash22 in hash_values):
             k=3
-            ax.lines.remove(line2)
+            #ax.lines.remove(line2)
             #l2 = line2.pop(0)
             #l2.remove()              
             #del l2                               
         if (hash3 in hash_values or hash32 in hash_values):
             k=3
-            ax.lines.remove(line3)
+            #ax.lines.remove(line3)
             #l3 = line3.pop(0)
             #l3.remove()
             #del l3
-
-
-
-        hash_values.append(hash1) 
-        hash_values.append(hash12)
-        hash_values.append(hash2) 
-        hash_values.append(hash22) 
-        hash_values.append(hash3) 
-        hash_values.append(hash32) 
+        Dic[hash1].append(((tempx[0],tempy[0]),(tempx[1],tempy[1])))
+        Dic[hash12].append(((tempx[1],tempy[1]),(tempx[0],tempy[0])))
+        Dic[hash2].append(((tempx[0],tempy[0]),(tempx[2],tempy[2])))
+        Dic[hash22].append(((tempx[2],tempy[2]),(tempx[0],tempy[0])))
+        Dic[hash3].append(((tempx[1],tempy[1]),(tempx[2],tempy[2])))
+        Dic[hash32].append(((tempx[2],tempy[2]),(tempx[1],tempy[1])))    
+        
+        
+        
+        #hash_values.append(hash1) 
+        #hash_values.append(hash12)
+        #hash_values.append(hash2) 
+        #hash_values.append(hash22) 
+        #hash_values.append(hash3) 
+        #hash_values.append(hash32) 
         tempx = []
         tempy = []
-    #plt.show()
-print(len(ax.lines))
+
+#print(len(Dic.keys()))
+[Dic.pop(x) for x in list(Dic) if len(Dic[x])>1]
+#print(len(Dic.keys()))
+
+
+for line in Dic.values():
+    #print(line[0][0][0])
+    plt.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]])    
+
+
+
+
+
+
+
+
 plt.show()
+#print(Dic)
+
+
+test_dic = {1: [((1,2),(2,1))]}
+#print("This is the length of the test array",len(test_dic[1]))
+#print(len(Dic[3516082391940370633]))
+#print(len(Dic[-1449807290174480895])) 
 
 seen = []
 for number in hash_values:
@@ -139,7 +155,6 @@ for number in hash_values:
         #print( "Number repeated!")
     else:
         seen.append(number)
-
 
 
 

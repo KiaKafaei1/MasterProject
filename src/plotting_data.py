@@ -35,8 +35,9 @@ def dict_hashing(Dic,hash_values):
 #Importing values and changing from df to numpy array
 df = pd.read_csv('room_coordinates.csv',sep=',', header=None)
 array = df.to_numpy()
+print(array)
 # Deleting the header
-array = np.delete(array,0)
+#array = np.delete(array,0)
 # Preprocessing the csv file such that it is in the right format for plotting
 array = cop.cor_processing(array)
 array_tri = cop.tri_processing(array)
@@ -77,12 +78,12 @@ plt.show()
 
 
 #### Plotting Doors ####
-df = pd.read_csv('door_coordinates.csv',sep=',', header=None)
-print(df)
-array = df.to_numpy()
-array = np.delete(array,0)
-array = cop.cor_processing(array)
-print(array)
+#df = pd.read_csv('door_coordinates.csv',sep=',', header=None)
+#print(df)
+#array = df.to_numpy()
+#array = np.delete(array,0)
+#array = cop.cor_processing(array)
+#print(array)
 
 
 

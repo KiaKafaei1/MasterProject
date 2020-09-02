@@ -4,45 +4,52 @@ import xml.etree.ElementTree as ET
 import csv
 
 
-def get_root(path):
-    tree = ET.parse(path)
-    root = tree.getroot()
-    return root
-
-
 #GETTING COORDINATES FOR ROOMS
 #path ='WayFinding/127/641300/'
 path ='WayFinding/127/641299/rooms.xml'
-root = get_root(path)
-rooms_cord = []
+tree = ET.parse(path)
+rooms_coord = []
 
+elements = tree.findall('.Room/Triangles')
+for i in elements:
+    print(i)
+    rooms_coord.append(i.attrib['Coords'])
+
+#print( len(rooms_coord))
+print(rooms_coord)
 #Getting the coordinates by looping through each room
-for child in root:
-    for grandchild in child:
-        if(grandchild.tag=='Triangles'): 
-            rooms_cord.append(grandchild.attrib)
+#for child in root:
+#    for grandchild in child:
+#        if(grandchild.tag=='Triangles'): 
+#            rooms_cord.append(grandchild.attrib)
+
+
+
 #print(rooms_cord)
 #Writing to CSV file. Used this for help: https://www.geeksforgeeks.org/working-csv-files-python/
-fields = ['Coords']
+#fields = ['Coords']
 filename = "room_coordinates.csv"
 
+#with open(filename,'w') as csvfile:
+#    writer = csv.DictWriter(csvfile,fieldnames = fields)
+#    writer.writeheader()
+#    writer.writerows(rooms_coord)
 with open(filename,'w') as csvfile:
-    writer = csv.DictWriter(csvfile,fieldnames = fields)
-    writer.writeheader()
-    writer.writerows(rooms_cord)
-
-
-
-
+    #w = csv.writer(csvfile)
+    #w.writerows(rooms_coord)
+    for line in rooms_coord:
+        csvfile.write(line)
+    #writer = csv.writer(csvfile,delimiter=',')
+#    writer.writeheader()
+    #writer.writerows(rooms_coord)
 
 
 
 ## GETTING COORDINATES FOR DOORS
 path = 'WayFinding/127/641299/floorplaninfo.xml'
-root = get_root(path)
+tree = ET.parse(path)
 door_cord = []
 
-tree = ET.parse(path)
 test = tree.findall('.elements/door/definition')
 for i in test:
    door_cord.append(i.attrib['origin'])

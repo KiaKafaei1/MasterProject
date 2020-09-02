@@ -4,6 +4,7 @@ import csv
 import pandas as pd
 from matplotlib.pyplot import plot, axis, show
 import collections
+# This is my own library
 import coordinate_processing as cop
 
 
@@ -37,14 +38,20 @@ array = df.to_numpy()
 # Deleting the header
 array = np.delete(array,0)
 # Preprocessing the csv file such that it is in the right format for plotting
-array_tri = cop.cor_processing(array)
+array = cop.cor_processing(array)
+array_tri = cop.tri_processing(array)
 
 #plotting triangles
 tempx=[]
 tempy=[]
 Dic =collections.defaultdict(list) 
 
+i=0
 for room in array_tri:
+    
+    #Not including every room to simplify the drawing
+    if(i>4):
+        continue
     for tri in room:
         for cor in tri:
             tempx.append(cor[0])
@@ -56,6 +63,7 @@ for room in array_tri:
         
         tempx = []
         tempy = []
+    i+=1
 
 # Removing lines that are reoccuring from the Dictionary
 [Dic.pop(x) for x in list(Dic) if len(Dic[x])>1]
@@ -64,5 +72,17 @@ for room in array_tri:
 for line in Dic.values():
     plt.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
 plt.show()
+
+
+
+
+#### Plotting Doors ####
+df = pd.read_csv('door_coordinates.csv',sep=',', header=None)
+print(df)
+array = df.to_numpy()
+array = np.delete(array,0)
+array = cop.cor_processing(array)
+print(array)
+
 
 

@@ -1,20 +1,27 @@
+
 #Using the ElemenTree library to handle XML data
 import xml.etree.ElementTree as ET
 import csv
 
-path ='WayFinding/127/641299/'
-tree = ET.parse(path+'rooms.xml')
-root = tree.getroot()
+
+def get_root(path):
+    tree = ET.parse(path)
+    root = tree.getroot()
+    return root
+
+
+#GETTING COORDINATES FOR ROOMS
+#path ='WayFinding/127/641300/'
+path ='WayFinding/127/641299/rooms.xml'
+root = get_root(path)
 rooms_cord = []
+
 #Getting the coordinates by looping through each room
 for child in root:
     for grandchild in child:
         if(grandchild.tag=='Triangles'): 
             rooms_cord.append(grandchild.attrib)
-
-
-
-
+#print(rooms_cord)
 #Writing to CSV file. Used this for help: https://www.geeksforgeeks.org/working-csv-files-python/
 fields = ['Coords']
 filename = "room_coordinates.csv"
@@ -30,21 +37,36 @@ with open(filename,'w') as csvfile:
 
 
 
+## GETTING COORDINATES FOR DOORS
+path = 'WayFinding/127/641299/floorplaninfo.xml'
+root = get_root(path)
+door_cord = []
 
-#coord =[]
-#for dic in rooms_cord:
-#    coord.append(dic['Coords'])
-#print(coord)
+tree = ET.parse(path)
+test = tree.findall('.elements/door/definition')
+for i in test:
+   door_cord.append(i.attrib['origin'])
+
+#print(door_cord)
+
+
+
+
+
+
+#for child in root:
+#    for grandchild in child:
+#        for great_grandchild in grandchild:
+#            if(great_grandchild
+#            door_cord.append(great_grandchild.attrib['origin'])
 #
+#print(door_cord)
+fields = ['Coords']
+filename = "door_coordinates.csv"
 
-
-
-
-
-
-
-#with open('data.b00','rb') as reader:j
-    #Further file processing goes here
- #   print(reader.readline(5))
+with open(filename,'w') as csvfile:
+    writer = csv.writer(csvfile)
+#    writer.writeheader()
+    writer.writerows(door_cord)
 
 

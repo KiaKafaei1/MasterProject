@@ -12,11 +12,11 @@ rooms_coord = []
 
 elements = tree.findall('.Room/Triangles')
 for i in elements:
-    print(i)
-    rooms_coord.append(i.attrib['Coords'])
+    rooms_coord.append({'Coords': i.attrib['Coords']})
+    #print("Room: ", type(i.attrib['Coords']))
+#    print(i.attrib['Coords'])
 
 #print( len(rooms_coord))
-print(rooms_coord)
 #Getting the coordinates by looping through each room
 #for child in root:
 #    for grandchild in child:
@@ -27,18 +27,18 @@ print(rooms_coord)
 
 #print(rooms_cord)
 #Writing to CSV file. Used this for help: https://www.geeksforgeeks.org/working-csv-files-python/
-#fields = ['Coords']
+fields = ['Coords']
 filename = "room_coordinates.csv"
 
-#with open(filename,'w') as csvfile:
-#    writer = csv.DictWriter(csvfile,fieldnames = fields)
-#    writer.writeheader()
-#    writer.writerows(rooms_coord)
 with open(filename,'w') as csvfile:
+    writer = csv.DictWriter(csvfile,fieldnames = fields)
+    writer.writeheader()
+    writer.writerows(rooms_coord)
+#with open(filename,'w') as csvfile:
     #w = csv.writer(csvfile)
     #w.writerows(rooms_coord)
-    for line in rooms_coord:
-        csvfile.write(line)
+    #for line in rooms_coord:
+    #    csvfile.write(line)
     #writer = csv.writer(csvfile,delimiter=',')
 #    writer.writeheader()
     #writer.writerows(rooms_coord)
@@ -48,12 +48,12 @@ with open(filename,'w') as csvfile:
 ## GETTING COORDINATES FOR DOORS
 path = 'WayFinding/127/641299/floorplaninfo.xml'
 tree = ET.parse(path)
-door_cord = []
-
-test = tree.findall('.elements/door/definition')
-for i in test:
-   door_cord.append(i.attrib['origin'])
-
+doors_coord = []
+elements = tree.findall('.elements/door/definition')
+for i in elements:
+   doors_coord.append({'Coords': i.attrib['origin']})
+   #print("Door: ", type(i.attrib['origin']))
+#   print(i.attrib['origin'])
 #print(door_cord)
 
 
@@ -72,8 +72,19 @@ fields = ['Coords']
 filename = "door_coordinates.csv"
 
 with open(filename,'w') as csvfile:
-    writer = csv.writer(csvfile)
+    writer = csv.DictWriter(csvfile,fieldnames = fields)
+    writer.writeheader()
+    writer.writerows(doors_coord)
+
+
+
+
+
+
+#with open(filename,'w') as csvfile:
+#    writer = csv.writer(csvfile)
 #    writer.writeheader()
-    writer.writerows(door_cord)
+#    writer.writerows(doors_coord)
+
 
 

@@ -30,14 +30,13 @@ def dict_hashing(Dic,hash_values):
     return Dic
 
 
-
+#### Plotting Rooms ####
 
 #Importing values and changing from df to numpy array
 df = pd.read_csv('room_coordinates.csv',sep=',', header=None)
 array = df.to_numpy()
-print(array)
 # Deleting the header
-#array = np.delete(array,0)
+array = np.delete(array,0)
 # Preprocessing the csv file such that it is in the right format for plotting
 array = cop.cor_processing(array)
 array_tri = cop.tri_processing(array)
@@ -72,18 +71,25 @@ for room in array_tri:
 # Plotting the lines
 for line in Dic.values():
     plt.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
-plt.show()
+#plt.show()
 
 
 
 
 #### Plotting Doors ####
-#df = pd.read_csv('door_coordinates.csv',sep=',', header=None)
+df = pd.read_csv('door_coordinates.csv',sep=',', header=None)
 #print(df)
-#array = df.to_numpy()
-#array = np.delete(array,0)
-#array = cop.cor_processing(array)
-#print(array)
+array = df.to_numpy()
+array = np.delete(array,0)
+array = cop.cor_processing(array)
 
-
+i=0
+for cor in array:
+    i+=1
+#    print(cor[0][0])
+    #plt.plot(-1*(cor[0][0]/1000),cor[1][0]/1000,marker='o')
+    plt.plot((cor[0][0]+75000)+117,cor[1][0]-153000-30,marker='o')
+    if i>10:
+        break
+plt.show()
 

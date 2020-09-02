@@ -1,7 +1,6 @@
-
 # The coordinates are in string form and will have to be changed to float
+#Putting 3 following coordinates together to make up triangles
 def tri_processing(array):
-    #Putting 3 following coordinates together to make up triangles
     ele_temp = []
     array_tri= []
     for ele in array:
@@ -11,8 +10,6 @@ def tri_processing(array):
         ele_temp = []
     return array_tri
 
-
-
 # Splitting the strings in the array with spaces
 def cor_processing(array,room=1):
     array_new = []
@@ -21,7 +18,7 @@ def cor_processing(array,room=1):
     
     
     #Splitting the strings with comma
-    # if it is the csv including the rooms we pop the last element, else we dont
+    # if it is the csv with the rooms/doors we pop the last element, else we dont
     if(room ==1):
         array_new2 = []
         ele_temp = []
@@ -40,11 +37,6 @@ def cor_processing(array,room=1):
              array_new2.append(ele_temp)
              ele_temp = []
         
-
-
-        
-        
-    
     #From string to float
     array_new3 = []
     for ele in array_new2:

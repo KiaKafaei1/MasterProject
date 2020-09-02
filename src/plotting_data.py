@@ -86,7 +86,6 @@ array = cop.cor_processing(array)
 i=0
 for cor in array:
     i+=1
-#    print(cor[0][0])
     #plt.plot(-1*(cor[0][0]/1000),cor[1][0]/1000,marker='o')
     plt.plot((cor[0][0]+75000)+117,cor[1][0]-153000-30,marker='o')
     if i>10:

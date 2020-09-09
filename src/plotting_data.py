@@ -46,10 +46,10 @@ array_tri = cop.tri_processing(array)
 tempx=[]
 tempy=[]
 Dic =collections.defaultdict(list) 
+fig, ax = plt.subplots()
 
 i=0
 for room in array_tri:
-    
     #Not including every room to simplify the drawing
     if(i>4):
         continue
@@ -71,17 +71,71 @@ for room in array_tri:
 
 # Plotting the lines
 for line in Dic.values():
-    plt.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
+    ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
 #plt.show()
 
+
+#### Plotting points in each room ###
+plt.plot(48,21,marker='o')
+plt.plot(60,17,marker='o')
+plt.plot(76,13,marker='o')
+plt.plot(72,2,marker='o')
+plt.plot(46,10,marker='o')
+plt.plot(40,22,marker='o')
+
+
+
 # Doing the animation, moving from one point to another
-
-fig, ax = plt.subplots()
-ax.set(xlim=(-0.1,2*np.pi+0-1),ylim = (-1.1,1.1))
-line, = ax.plot( [],[])
-
+#ax.set(xlim=(-0.1,2*np.pi+0-1),ylim = (-1.1,1.1))
+x_data = [48]
+y_data = [21]
 
 
+x =48
+y=21
+line, = ax.plot( 0,0)
+x_goal =60.0
+y_goal =17.0
+print("X_goal: ", x_goal)
+print("Y_goal: ", y_goal)
+
+
+
+
+
+
+
+
+
+
+def animate(i):
+    #if x_data[-1]!=60
+    print("X_data: ", x_data[-1])
+    print("Y_data: ", y_data[-1])
+    print("i",i)
+    if x_data[-1]>x_goal:
+        x_data.append(x_data[-1]-i)
+    elif x_data[-1]<x_goal:
+        x_data.append(x_data[-1]+i)
+    else:# x_data[-1]==x_goal:
+        x_data.append(x_data[-1])
+
+
+    if y_data[-1]>y_goal:
+        y_data.append(y_data[-1]-0.33*i)
+    elif y_data[-1]<y_goal:
+        y_data.append(y_data[-1]+0.33*i) 
+    else:# y_data[-1]==y_goal:
+        y_data.append(y_data[-1])
+
+    
+    line.set_xdata(x_data)
+    line.set_ydata(y_data)
+    return line,
+
+animation = FuncAnimation(fig,func=animate, frames = np.ones(1), interval =60,repeat=True)
+
+plt.show()
 
 
 
@@ -91,7 +145,7 @@ line, = ax.plot( [],[])
 #### Plotting Doors
 #### Plotting using CSV####
 #df = pd.read_csv('door_coordinates.csv',sep=',', header=None)
-##print(df)
+#print(df)
 #array = df.to_numpy()
 #array = np.delete(array,0)
 #array = cop.cor_processing(array)
@@ -113,14 +167,14 @@ line, = ax.plot( [],[])
 #plt.plot(61,1.6,marker='o')
 #plt.show()
 
-#### Plotting points in each room ###
-plt.plot(48,21,marker='o')
-plt.plot(60,17,marker='o')
-plt.plot(76,13,marker='o')
-plt.plot(72,2,marker='o')
-plt.plot(46,10,marker='o')
-plt.plot(40,22,marker='o')
-plt.show()
+
+
+
+
+
+
+
+
 
 
 

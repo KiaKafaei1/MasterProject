@@ -83,60 +83,126 @@ plt.plot(72,2,marker='o')
 plt.plot(46,10,marker='o')
 plt.plot(40,22,marker='o')
 
+##################### SIMULATION ########################################
+
+
+class Ani():
+    def __init__(self,x_dest,y_dest, nsteps, line):
+        self.nsteps = nsteps
+        self.x_dest =x_dest
+        self.y_dest = y_dest
+        self.line=line
+        self.step = 0
+        self.i = 0
+    
+    def getdata(self,j):
+        for i in range(len(self.x_dest)):
+            x_goal = self.x_dest[i]
+            y_goal = self.y_dest[i]
+            if x_data[-1]>x_goal:
+                x_data.append(x_data[-1]-i)
+            elif x_data[-1]<x_goal:
+                x_data.append(x_data[-1]+i)
+            else:# x_data[-1]==x_goal:
+                x_data.append(x_data[-1])
+            
+            
+            if y_data[-1]>y_goal:
+                y_data.append(y_data[-1]-0.25*i)
+            elif y_data[-1]<y_goal:
+                y_data.append(y_data[-1]+0.25*i) 
+            else:# y_data[-1]==y_goal:
+                y_data.append(y_data[-1])
+
+
+        #t = np.arange(0,j)/float(self.nsteps)*2*np.pi
+        #x = np.sin(self.omegas[self.step]*t)
+        return t,x
+        
+    def gen(self):
+        for i in range(len(self.omegas)):
+            tit = u"animated sin(${:g}\cdot t$)".format(self.omegas[self.step])
+            self.line.axes.set_title(tit)
+            for j in range(self.nsteps):
+                yield j
+            self.step += 1
+            
+    def animate(self,j):
+        x,y = self.getdata(j)
+        self.line.set_data(x,y)
+
+fig, ax = plt.subplots()
+ax.axis([0,2*np.pi,-1,1])
+title = ax.set_title(u"")
+line, = ax.plot([],[], lw=3)
+
+
+
+#omegas= [1,2,4,5]
+x_dest = [60,76]
+y_dest = [17,13]
+
+a = Ani(omegas,50,line)
+ani = FuncAnimation(fig,a.animate, a.gen, repeat=False, interval=60)
+plt.show()
+
+
 
 
 # Doing the animation, moving from one point to another
-#ax.set(xlim=(-0.1,2*np.pi+0-1),ylim = (-1.1,1.1))
-x_data = [48]
-y_data = [21]
-
-
-x =48
-y=21
-line, = ax.plot( 0,0)
-x_goal =60.0
-y_goal =17.0
-print("X_goal: ", x_goal)
-print("Y_goal: ", y_goal)
-
-
-
-
-
-
-
-
-
-
-def animate(i):
-    #if x_data[-1]!=60
-    print("X_data: ", x_data[-1])
-    print("Y_data: ", y_data[-1])
-    print("i",i)
-    if x_data[-1]>x_goal:
-        x_data.append(x_data[-1]-i)
-    elif x_data[-1]<x_goal:
-        x_data.append(x_data[-1]+i)
-    else:# x_data[-1]==x_goal:
-        x_data.append(x_data[-1])
-
-
-    if y_data[-1]>y_goal:
-        y_data.append(y_data[-1]-0.33*i)
-    elif y_data[-1]<y_goal:
-        y_data.append(y_data[-1]+0.33*i) 
-    else:# y_data[-1]==y_goal:
-        y_data.append(y_data[-1])
-
-    
-    line.set_xdata(x_data)
-    line.set_ydata(y_data)
-    return line,
-
-animation = FuncAnimation(fig,func=animate, frames = np.ones(1), interval =60,repeat=True)
-
-plt.show()
-
+##ax.set(xlim=(-0.1,2*np.pi+0-1),ylim = (-1.1,1.1))
+#x_data = [48]
+#y_data = [21]
+#
+#
+#x =48
+#y=21
+#line, = ax.plot( 0,0)
+#
+#def animate(i):
+#   # if y_data[-1]==y_goal and x_data[-1]==x_goal:
+#   #     break
+#    print("X_data: ", x_data[-1])
+#    print("Y_data: ", y_data[-1],"\n")
+#    if x_data[-1]>x_goal:
+#        x_data.append(x_data[-1]-i)
+#    elif x_data[-1]<x_goal:
+#        x_data.append(x_data[-1]+i)
+#    else:# x_data[-1]==x_goal:
+#        x_data.append(x_data[-1])
+#    
+#    
+#    if y_data[-1]>y_goal:
+#        y_data.append(y_data[-1]-0.25*i)
+#    elif y_data[-1]<y_goal:
+#        y_data.append(y_data[-1]+0.25*i) 
+#    else:# y_data[-1]==y_goal:
+#        y_data.append(y_data[-1])
+#    
+#    line.set_xdata(x_data)
+#    line.set_ydata(y_data)
+#    return line,
+#    
+#
+#
+#
+#
+#
+#
+#x_points =[60, 76]
+#y_points =[17, 13]
+#for j in range(len(x_points)):
+#    x_goal = x_points[j]
+#    y_goal = y_points[j]
+#    print("X_goal: ", x_goal)
+#    print("Y_goal: ", y_goal)
+#
+#
+#    animation = FuncAnimation(fig,func=animate, frames = np.ones(40), interval =30,repeat=False)
+#    print("hej")
+#    plt.show()
+#
+#
 
 
 

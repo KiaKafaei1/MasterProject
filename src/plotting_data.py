@@ -1,4 +1,5 @@
 import numpy as np
+import math
 import matplotlib.pyplot as plt
 import csv
 import pandas as pd
@@ -6,7 +7,7 @@ from matplotlib.pyplot import plot, axis, show
 import collections
 # This is my own library
 import coordinate_processing as cop
-
+from matplotlib.animation import FuncAnimation
 
 def hashing_values(tempx,tempy):
     hash_values=[]
@@ -45,10 +46,10 @@ array_tri = cop.tri_processing(array)
 tempx=[]
 tempy=[]
 Dic =collections.defaultdict(list) 
+fig, ax = plt.subplots()
 
 i=0
 for room in array_tri:
-    
     #Not including every room to simplify the drawing
     if(i>4):
         continue
@@ -70,25 +71,229 @@ for room in array_tri:
 
 # Plotting the lines
 for line in Dic.values():
-    plt.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
+    ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
+#plt.show()
+
+
+#### Plotting points in each room ###
+plt.plot(48,21,marker='o')
+plt.plot(60,17,marker='o')
+plt.plot(76,13,marker='o')
+plt.plot(72,2,marker='o')
+plt.plot(46,10,marker='o')
+plt.plot(40,22,marker='o')
+
+##################### SIMULATION ########################################
+
+
+class Ani():
+    def __init__(self,x_dest,y_dest, nsteps, line):
+        self.nsteps = nsteps
+        self.x_dest =x_dest
+        self.y_dest = y_dest
+        self.line=line
+        self.step = 0
+        self.i = 0
+    
+    def getdata(self,j):
+        for i in range(len(self.x_dest)):
+            x_goal = self.x_dest[i]
+            y_goal = self.y_dest[i]
+            if x_data[-1]>x_goal:
+                x_data.append(x_data[-1]-i)
+            elif x_data[-1]<x_goal:
+                x_data.append(x_data[-1]+i)
+            else:# x_data[-1]==x_goal:
+                x_data.append(x_data[-1])
+            
+            
+            if y_data[-1]>y_goal:
+                y_data.append(y_data[-1]-0.25*i)
+            elif y_data[-1]<y_goal:
+                y_data.append(y_data[-1]+0.25*i) 
+            else:# y_data[-1]==y_goal:
+                y_data.append(y_data[-1])
+
+
+        #t = np.arange(0,j)/float(self.nsteps)*2*np.pi
+        #x = np.sin(self.omegas[self.step]*t)
+        return t,x
+        
+    def gen(self):
+        for i in range(len(self.omegas)):
+            tit = u"animated sin(${:g}\cdot t$)".format(self.omegas[self.step])
+            self.line.axes.set_title(tit)
+            for j in range(self.nsteps):
+                yield j
+            self.step += 1
+            
+    def animate(self,j):
+        x,y = self.getdata(j)
+        self.line.set_data(x,y)
+
+fig, ax = plt.subplots()
+ax.axis([0,2*np.pi,-1,1])
+title = ax.set_title(u"")
+line, = ax.plot([],[], lw=3)
+
+
+
+#omegas= [1,2,4,5]
+x_dest = [60,76]
+y_dest = [17,13]
+
+a = Ani(omegas,50,line)
+ani = FuncAnimation(fig,a.animate, a.gen, repeat=False, interval=60)
+plt.show()
+
+
+
+
+# Doing the animation, moving from one point to another
+##ax.set(xlim=(-0.1,2*np.pi+0-1),ylim = (-1.1,1.1))
+#x_data = [48]
+#y_data = [21]
+#
+#
+#x =48
+#y=21
+#line, = ax.plot( 0,0)
+#
+#def animate(i):
+#   # if y_data[-1]==y_goal and x_data[-1]==x_goal:
+#   #     break
+#    print("X_data: ", x_data[-1])
+#    print("Y_data: ", y_data[-1],"\n")
+#    if x_data[-1]>x_goal:
+#        x_data.append(x_data[-1]-i)
+#    elif x_data[-1]<x_goal:
+#        x_data.append(x_data[-1]+i)
+#    else:# x_data[-1]==x_goal:
+#        x_data.append(x_data[-1])
+#    
+#    
+#    if y_data[-1]>y_goal:
+#        y_data.append(y_data[-1]-0.25*i)
+#    elif y_data[-1]<y_goal:
+#        y_data.append(y_data[-1]+0.25*i) 
+#    else:# y_data[-1]==y_goal:
+#        y_data.append(y_data[-1])
+#    
+#    line.set_xdata(x_data)
+#    line.set_ydata(y_data)
+#    return line,
+#    
+#
+#
+#
+#
+#
+#
+#x_points =[60, 76]
+#y_points =[17, 13]
+#for j in range(len(x_points)):
+#    x_goal = x_points[j]
+#    y_goal = y_points[j]
+#    print("X_goal: ", x_goal)
+#    print("Y_goal: ", y_goal)
+#
+#
+#    animation = FuncAnimation(fig,func=animate, frames = np.ones(40), interval =30,repeat=False)
+#    print("hej")
+#    plt.show()
+#
+#
+
+
+
+
+
+#### Plotting Doors
+#### Plotting using CSV####
+#df = pd.read_csv('door_coordinates.csv',sep=',', header=None)
+#print(df)
+#array = df.to_numpy()
+#array = np.delete(array,0)
+#array = cop.cor_processing(array)
+#
+#i=0
+#for cor in array:
+#    i+=1
+#    #plt.plot(-1*(cor[0][0]/1000),cor[1][0]/1000,marker='o')
+#    plt.plot((cor[0][0]+75000)+117,cor[1][0]-153000-30,marker='o')
+#    if i>10:
+#        break
+#plt.show()
+
+## Plotting manually ##
+
+#plt.plot(75,6,marker='o')
+#plt.plot(60,10.2,marker='o')
+#plt.plot(46,14,marker='o')
+#plt.plot(61,1.6,marker='o')
 #plt.show()
 
 
 
 
-#### Plotting Doors ####
-df = pd.read_csv('door_coordinates.csv',sep=',', header=None)
-#print(df)
-array = df.to_numpy()
-array = np.delete(array,0)
-array = cop.cor_processing(array)
 
-i=0
-for cor in array:
-    i+=1
-    #plt.plot(-1*(cor[0][0]/1000),cor[1][0]/1000,marker='o')
-    plt.plot((cor[0][0]+75000)+117,cor[1][0]-153000-30,marker='o')
-    if i>10:
-        break
-plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## DOING THE MINIMUMSPANNING TREE ##
+#A = [48,21]
+#B = [60,17]
+#C = [76,13]
+#D = [72,2]
+#E = [46,10]
+#F = [40,22]
+#
+### Calculating distances between each point assuming straight lines in a distance table##
+#
+#points = [A,B,C,D,E,F]
+#dist_table={}
+#for p1 in points:
+#    for p2 in points:
+#        i1 = points.index(p1)
+#        i2 = points.index(p2)
+#        if i1==i2 or i1>i2:
+#            continue
+#        dist_table[str(i1)+str(i2)]=math.sqrt((p1[0]-p2[0])**2+(p1[1]-p2[1])**2)
+#        
+##        dist_table[str(i0
+#dist_table = sorted(dist_table.items(),key=lambda x: x[1])
+#print(dist_table)
+#
+#### Making Minimum spanning tree ###
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

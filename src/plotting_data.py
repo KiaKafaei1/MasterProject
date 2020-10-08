@@ -9,6 +9,9 @@ import collections
 import coordinate_processing as cop
 from matplotlib.animation import FuncAnimation
 
+
+################# Defining functions and classes ###################
+
 def hashing_values(tempx,tempy):
     hash_values=[]
     hash_values.append(hash(((tempx[0],tempy[0]),(tempx[1],tempy[1]))))
@@ -30,9 +33,47 @@ def dict_hashing(Dic,hash_values):
     Dic[hash_values[5]].append(((tempx[2],tempy[2]),(tempx[1],tempy[1]))) 
     return Dic
 
+#Dertimining line intersection 
+# Code taken from https://bryceboe.com/2006/10/23/line-segment-intersection-algorithm/
+class Point:
+	def __init__(self,x,y):
+		self.x = x
+		self.y = y
+# Checking if 3 points are in counterclockwise order
+def ccw(A,B,C):
+	return (C.y-A.y)*(B.x-A.x) > (B.y-A.y)*(C.x-A.x)
+# Finding if 4 points are intersecting. Se above link for explanation.
+def intersect(A,B,C,D):
+	return ccw(A,C,D) != ccw(B,C,D) and ccw(A,B,C) != ccw(A,B,D)
 
-#### Plotting Rooms ####
+# Function for plotting points
+def plot_point(point,door=True):
+    if door:
+        plt.plot(point.x,point.y,marker='o',color='black',markerfacecolor='black')
+    else:
+        plt.plot(point.x,point.y,marker='o',color='red', markerfacecolor='red')
 
+# Function for plotting path 
+def plot_path(p1,q1,Dic_lines):
+    epsilon = 2
+    # If this is true it means that it is 2 doors right next to eachother and the path should therefore be traversable
+    if (math.sqrt((p1.x-q1.x)**2+(p1.y-q1.y)**2)<epsilon):
+        plt.plot([p1.x,q1.x],[p1.y,q1.y],'b')
+        return
+
+    for line in Dic.values():
+        p2 = Point(line[0][0][0],line[0][0][1])
+        q2 = Point(line[0][1][0],line[0][1][1])
+        
+        val= intersect(p1,q1,p2,q2)
+        if val:
+            #They do intersect
+            break
+    if not val:
+        plt.plot([p1.x,q1.x],[p1.y,q1.y],'b')
+
+
+##################### Plotting Rooms ###########################
 #Importing values and changing from df to numpy array
 df = pd.read_csv('room_coordinates.csv',sep=',', header=None)
 array = df.to_numpy()
@@ -41,6 +82,7 @@ array = np.delete(array,0)
 # Preprocessing the csv file such that it is in the right format for plotting
 array = cop.cor_processing(array)
 array_tri = cop.tri_processing(array)
+
 
 #plotting triangles
 tempx=[]
@@ -61,7 +103,6 @@ for room in array_tri:
         hash_values = hashing_values(tempx,tempy)
         #Adding the hashes with their corresponding line to a Dict
         Dic = dict_hashing(Dic,hash_values)
-        
         tempx = []
         tempy = []
     i+=1
@@ -72,80 +113,148 @@ for room in array_tri:
 # Plotting the lines
 for line in Dic.values():
     ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
+
+
+# Creating the point lists for the door, room and corner points.
+points_doors = [Point(80.5,4.3), Point(60.8,9.9),Point(50.6,12.3),Point(69.1,19.7),Point(56.3,22.9),Point(42.6,25.8),Point(80.5,5.1),Point(60.8,10.7),Point(50.6,13.4),Point(68.0,19.7),Point(54.9,22.9),Point(43.4,25.8)]
+points_rooms= [Point(48,21),Point(60,17),Point(76,13),Point(72,2),Point(46,10),Point(40,22)]
+points_corners = [Point(40,15.8),Point(60,2.5),Point(81,-3.2),Point(36.2,17.9)]
+points_all = points_doors+points_rooms+points_corners
+
+# Plotting the points
+for p in points_doors:
+    plot_point(p)
+for p in points_rooms:
+    plot_point(p,False)
+for p in points_corners:
+    plot_point(p)
+
+# Plotting the entire walkable path
+for p in points_all:
+    p1 = p
+    for p in points_all:
+        q1 = p
+        if p1==q1:
+            continue
+        plot_path(p1,q1,Dic)
+plt.show()
+
+
+
+
+##### Plotting Doors ####
+#df = pd.read_csv('door_coordinates.csv',sep=',', header=None)
+##print(df)
+#array = df.to_numpy()
+#array = np.delete(array,0)
+#array = cop.cor_processing(array)
+#
+#i=0
+#for cor in array:
+#    i+=1
+#    #plt.plot(-1*(cor[0][0]/1000),cor[1][0]/1000,marker='o')
+#    plt.plot((cor[0][0]+75000)+117,cor[1][0]-153000-30,color='black',marker='o',markerfacecolor='black')
+#    #plt.plot(cor[0][0]+75000,cor[1][0]-153000,color='black',marker='o',markerfacecolor='black')
+#    if i>10:
+#        break
 #plt.show()
 
 
-#### Plotting points in each room ###
-plt.plot(48,21,marker='o')
-plt.plot(60,17,marker='o')
-plt.plot(76,13,marker='o')
-plt.plot(72,2,marker='o')
-plt.plot(46,10,marker='o')
-plt.plot(40,22,marker='o')
+
+########### DOING THE MINIMUMSPANNING TREE ################
+#A = [48,21]
+#B = [60,17]
+#C = [76,13]
+#D = [72,2]
+#E = [46,10]
+#F = [40,22]
+#
+### Calculating distances between each point assuming straight lines in a distance table##
+#
+#points = [A,B,C,D,E,F]
+#dist_table={}
+#for p1 in points:
+#    for p2 in points:
+#        i1 = points.index(p1)
+#        i2 = points.index(p2)
+#        if i1==i2 or i1>i2:
+#            continue
+#        dist_table[str(i1)+str(i2)]=math.sqrt((p1[0]-p2[0])**2+(p1[1]-p2[1])**2)
+#        
+##        dist_table[str(i0
+#dist_table = sorted(dist_table.items(),key=lambda x: x[1])
+#print(dist_table)
+#
+#### Making Minimum spanning tree ###
+
+
+
+
+
 
 ##################### SIMULATION ########################################
 
 
-class Ani():
-    def __init__(self,x_dest,y_dest, nsteps, line):
-        self.nsteps = nsteps
-        self.x_dest =x_dest
-        self.y_dest = y_dest
-        self.line=line
-        self.step = 0
-        self.i = 0
-    
-    def getdata(self,j):
-        for i in range(len(self.x_dest)):
-            x_goal = self.x_dest[i]
-            y_goal = self.y_dest[i]
-            if x_data[-1]>x_goal:
-                x_data.append(x_data[-1]-i)
-            elif x_data[-1]<x_goal:
-                x_data.append(x_data[-1]+i)
-            else:# x_data[-1]==x_goal:
-                x_data.append(x_data[-1])
-            
-            
-            if y_data[-1]>y_goal:
-                y_data.append(y_data[-1]-0.25*i)
-            elif y_data[-1]<y_goal:
-                y_data.append(y_data[-1]+0.25*i) 
-            else:# y_data[-1]==y_goal:
-                y_data.append(y_data[-1])
-
-
-        #t = np.arange(0,j)/float(self.nsteps)*2*np.pi
-        #x = np.sin(self.omegas[self.step]*t)
-        return t,x
-        
-    def gen(self):
-        for i in range(len(self.omegas)):
-            tit = u"animated sin(${:g}\cdot t$)".format(self.omegas[self.step])
-            self.line.axes.set_title(tit)
-            for j in range(self.nsteps):
-                yield j
-            self.step += 1
-            
-    def animate(self,j):
-        x,y = self.getdata(j)
-        self.line.set_data(x,y)
-
-fig, ax = plt.subplots()
-ax.axis([0,2*np.pi,-1,1])
-title = ax.set_title(u"")
-line, = ax.plot([],[], lw=3)
-
-
-
-#omegas= [1,2,4,5]
-x_dest = [60,76]
-y_dest = [17,13]
-
-a = Ani(omegas,50,line)
-ani = FuncAnimation(fig,a.animate, a.gen, repeat=False, interval=60)
-plt.show()
-
+#class Ani():
+#    def __init__(self,x_dest,y_dest, nsteps, line):
+#        self.nsteps = nsteps
+#        self.x_dest =x_dest
+#        self.y_dest = y_dest
+#        self.line=line
+#        self.step = 0
+#        self.i = 0
+#    
+#    def getdata(self,j):
+#        for i in range(len(self.x_dest)):
+#            x_goal = self.x_dest[i]
+#            y_goal = self.y_dest[i]
+#            if x_data[-1]>x_goal:
+#                x_data.append(x_data[-1]-i)
+#            elif x_data[-1]<x_goal:
+#                x_data.append(x_data[-1]+i)
+#            else:# x_data[-1]==x_goal:
+#                x_data.append(x_data[-1])
+#            
+#            
+#            if y_data[-1]>y_goal:
+#                y_data.append(y_data[-1]-0.25*i)
+#            elif y_data[-1]<y_goal:
+#                y_data.append(y_data[-1]+0.25*i) 
+#            else:# y_data[-1]==y_goal:
+#                y_data.append(y_data[-1])
+#
+#
+#        #t = np.arange(0,j)/float(self.nsteps)*2*np.pi
+#        #x = np.sin(self.omegas[self.step]*t)
+#        return t,x
+#        
+#    def gen(self):
+#        for i in range(len(self.omegas)):
+#            tit = u"animated sin(${:g}\cdot t$)".format(self.omegas[self.step])
+#            self.line.axes.set_title(tit)
+#            for j in range(self.nsteps):
+#                yield j
+#            self.step += 1
+#            
+#    def animate(self,j):
+#        x,y = self.getdata(j)
+#        self.line.set_data(x,y)
+#
+#fig, ax = plt.subplots()
+#ax.axis([0,2*np.pi,-1,1])
+#title = ax.set_title(u"")
+#line, = ax.plot([],[], lw=3)
+#
+#
+#
+##omegas= [1,2,4,5]
+#x_dest = [60,76]
+#y_dest = [17,13]
+#
+#a = Ani(omegas,50,line)
+#ani = FuncAnimation(fig,a.animate, a.gen, repeat=False, interval=60)
+#plt.show()
+#
 
 
 
@@ -254,31 +363,13 @@ plt.show()
 
 
 
-## DOING THE MINIMUMSPANNING TREE ##
-#A = [48,21]
-#B = [60,17]
-#C = [76,13]
-#D = [72,2]
-#E = [46,10]
-#F = [40,22]
-#
-### Calculating distances between each point assuming straight lines in a distance table##
-#
-#points = [A,B,C,D,E,F]
-#dist_table={}
-#for p1 in points:
-#    for p2 in points:
-#        i1 = points.index(p1)
-#        i2 = points.index(p2)
-#        if i1==i2 or i1>i2:
-#            continue
-#        dist_table[str(i1)+str(i2)]=math.sqrt((p1[0]-p2[0])**2+(p1[1]-p2[1])**2)
-#        
-##        dist_table[str(i0
-#dist_table = sorted(dist_table.items(),key=lambda x: x[1])
-#print(dist_table)
-#
-#### Making Minimum spanning tree ###
+
+
+
+
+
+
+
 
 
 

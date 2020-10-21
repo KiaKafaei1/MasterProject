@@ -5,10 +5,12 @@ import csv
 import pandas as pd
 from matplotlib.pyplot import plot, axis, show
 import collections
-# This is my own library
-import coordinate_processing as cop
+import coordinate_processing as cop # This is my own library
 from matplotlib.animation import FuncAnimation
-
+from scipy.sparse import csr_matrix
+from scipy.sparse.csgraph import minimum_spanning_tree
+import networkx as nx
+from scipy.spatial import distance
 
 ################# Defining functions and classes ###################
 
@@ -53,13 +55,16 @@ def plot_point(point,door=True):
     else:
         plt.plot(point.x,point.y,marker='o',color='red', markerfacecolor='red')
 
+
 # Function for plotting path 
 def plot_path(p1,q1,Dic_lines):
     epsilon = 2
+    # Function that returns true is there is a traversable connection between 2 points
+    # else returns False
+
     # If this is true it means that it is 2 doors right next to eachother and the path should therefore be traversable
     if (math.sqrt((p1.x-q1.x)**2+(p1.y-q1.y)**2)<epsilon):
-        plt.plot([p1.x,q1.x],[p1.y,q1.y],'b')
-        return
+        return True
 
     for line in Dic.values():
         p2 = Point(line[0][0][0],line[0][0][1])
@@ -70,7 +75,8 @@ def plot_path(p1,q1,Dic_lines):
             #They do intersect
             break
     if not val:
-        plt.plot([p1.x,q1.x],[p1.y,q1.y],'b')
+        return True
+    return False
 
 
 ##################### Plotting Rooms ###########################
@@ -129,17 +135,95 @@ for p in points_rooms:
 for p in points_corners:
     plot_point(p)
 
-# Plotting the entire walkable path
-for p in points_all:
-    p1 = p
-    for p in points_all:
-        q1 = p
-        if p1==q1:
+# Plotting the entire walkable path and making graph of connected nodes 
+# with weighted edges (euclidean distance)
+G = nx.Graph()
+for i,p in enumerate(points_all):
+    # identify the essential nodes in the graph
+    if p in points_rooms:
+        G.add_node(i,att= "room") #pos=(p.x,p.y))
+    else:
+        G.add_node(i,att= "other")
+    # Checking nodes are traversable to node p
+    for j,q in enumerate(points_all):
+        if p==q:
             continue
-        plot_path(p1,q1,Dic)
-plt.show()
+        is_walkable = plot_path(p,q,Dic)
+        if is_walkable:
+            eucl_dist = round(distance.euclidean([p.x,p.y],[q.x,q.y]),2)
+            G.add_edge(i,j,weight=eucl_dist)
+            plt.plot([p.x,q.x],[p.y,q.y],'b')
 
 
+nodes_ordered = sorted(G.nodes())
+
+#plt.show()
+#print(G.edges)
+
+# Find shortest path between all "room" nodes
+
+node_rooms = [x for x,y in sorted(G.nodes(data=True)) if y['att']=="room"]
+
+dijk_dist = []
+dijk_pred = []
+#node_rooms.sort()
+for node in node_rooms:
+    pred,distance = nx.dijkstra_predecessor_and_distance(G,node,weight='weight')
+    dijk_dist.append(distance)
+    dijk_pred.append(pred)
+    #print(distance)
+    #print(pred)
+#print(G[12])
+#print(dijk_dist)
+
+
+#Make complete subgraph of all room nodes
+#Make a new graph only including the room nodes called G_rooms
+G_rooms = nx.Graph()
+for node,at in G.nodes(data=True):
+    if at['att']=="room":
+        G_rooms.add_node(node,att = at['att']) 
+
+
+
+# Compute the distance between each node in G_rooms using the dijk_distance
+for i,node in enumerate(sorted(G_rooms)):
+    print(i)
+    print(node)
+    for node2 in sorted(G_rooms):
+        print(node2)
+        if node==node2:
+            continue
+        distance= dijk_dist[i][node2]
+        print(distance)
+        G_rooms.add_edge(node,node2,weight = distance)
+
+print(G_rooms.edges())
+
+print(dijk_dist)
+#print(G_rooms.nodes)
+#print(G.nodes)
+
+
+
+
+#T = nx.minimum_spanning_tree(G)
+#print("minimum spanning tree", T)
+#print(sorted(T.edges(data=True)))
+#dfs = nx.dfs_edges(T)
+##print("DFS", list(dfs))
+#print(sorted(T.edges(data=True)))
+
+
+
+
+######## SOLVING THE TSP PROBLEM ##############
+#G = nx.Graph()
+#for i,p in enumerate(points_all):
+#    G.add_node(i,pos=(p.x,p.y))
+#    G.add_edge(1,2,weight = 4.7)
+#print(G.adj)
+######## MINIMUM SPANNING TREEE ###############
 
 
 ##### Plotting Doors ####

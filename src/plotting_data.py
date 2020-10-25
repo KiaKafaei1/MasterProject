@@ -121,7 +121,6 @@ for room in array_tri:
         tempx = []
         tempy = []
     i+=1
-#print(Dic[])
 
 # Removing lines that are reoccuring from the Dictionary
 [Dic.pop(x) for x in list(Dic) if len(Dic[x])>1]
@@ -129,7 +128,6 @@ for room in array_tri:
 # Plotting the lines
 for line in Dic.values():
     ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
-#plt.show()
 
 # Creating the point lists for the door, room and corner points.
 if room_127:
@@ -145,6 +143,10 @@ for p in points_rooms:
     plot_point(p,False)
 for p in points_corners:
     plot_point(p)
+
+
+
+####### Approximate solution to the TSP problem #######
 
 # Plotting the entire walkable path and making graph of connected nodes 
 # with weighted edges (euclidean distance)
@@ -164,16 +166,9 @@ for i,p in enumerate(points_all):
             eucl_dist = round(distance.euclidean([p.x,p.y],[q.x,q.y]),2)
             G.add_edge(i,j,weight=eucl_dist)
             plt.plot([p.x,q.x],[p.y,q.y],'b')
-
-
 nodes_ordered = sorted(G.nodes())
 
-#print(G.nodes(data=True)[12]['att'][0])
-#plt.show()
-#print(G.edges)
-
 # Find shortest path between all "room" nodes
-
 node_rooms = [node for node,at in sorted(G.nodes(data=True)) if at['att'][0]=="room"]
 dijk_dist = []
 dijk_pred = []
@@ -182,10 +177,6 @@ for node in node_rooms:
     pred,distance = nx.dijkstra_predecessor_and_distance(G,node,weight='weight')
     dijk_dist.append(distance)
     dijk_pred.append(pred)
-    #print(distance)
-    #print(pred)
-#print(G[12])
-#print(dijk_dist)
 
 
 #Make complete subgraph of all room nodes
@@ -199,20 +190,12 @@ for node,at in G.nodes(data=True):
 
 # Compute the distance between each node in G_rooms using the dijk_distance
 for i,node in enumerate(sorted(G_rooms)):
-    #print(i)
-    #print(node)
     for node2 in sorted(G_rooms):
-        #print(node2)
         if node==node2:
             continue
         distance= dijk_dist[i][node2]
         G_rooms.add_edge(node,node2,weight = distance)
 
-#print(G_rooms.edges())
-
-#print(dijk_dist)
-#print(G_rooms.nodes)
-#print(G.nodes)
 
 # Checking if the graph is indeed complete
 #print("Is G graph connected? Returns 1 if graph is complete", nx.density(G))
@@ -222,15 +205,19 @@ for i,node in enumerate(sorted(G_rooms)):
 #Make a minimum spanning tree
 mst_G_rooms=nx.minimum_spanning_tree(G_rooms)
 source_node = 18
+
 # Solve the TSP problem for subgraph using DFS traversal
 dfs_edges_list = list(nx.dfs_edges(mst_G_rooms,source=source_node))
-#tsp_tree = nx.dfs_tree(mst_G_rooms)
+
+
+
 #print(list(tsp_tree.nodes()))
 #print(list(nx.dfs_postorder_nodes(G_rooms)))
 
 #print("The DFS traversal before removing double vertices:")
 #print(dfs_edges_list)
-# remove double vertices
+
+# Remove double vertices
 tsp_edges = []
 for i in range(len(dfs_edges_list)):
     if i== 0:
@@ -241,14 +228,14 @@ for i in range(len(dfs_edges_list)):
        node_pair = dfs_edges_list[i] 
     #print(node_pair)
     tsp_edges.append(node_pair)
-        
+#Adding the last edge from end to start node in tsp edges       
+tsp_edges.append(tuple([tsp_edges[-1][1],tsp_edges[0][0]]))
+
 #print("The DFS traversal after removing double vertices:")
 #print(tsp_edges)
 
 
-#Adding the last edge from end to start node in tsp edges
-tsp_edges.append(tuple([tsp_edges[-1][1],tsp_edges[0][0]]))
-# Plotting only the "room" points and their TSP solution
+#### Plotting only the "room" points and their TSP solution
 # Make new figure with the floorplan
 fig, ax = plt.subplots()
 for line in Dic.values():
@@ -257,30 +244,18 @@ for line in Dic.values():
 # First we plot just the relevant points
 for p in points_rooms:
     plot_point(p,False)
-#Plotting starting node
+# Plotting starting node
 p = G_rooms.nodes(data=True)[source_node]['att'][1]
 plot_point(p,door=False,starting_node = True)
 
-
-
-
-#for node,at in G_rooms.nodes(data=True):
-#    if node==source_node:
-#        starting_node = True
-#    else:
-#        starting_node = False
-#    plot_point(at['att'][1],door=False,starting_node=starting_node)
-#
 # Then we plot the edges
 for edge in tsp_edges:
     p = G_rooms.nodes(data=True)[edge[0]]['att'][1]
     q = G_rooms.nodes(data=True)[edge[1]]['att'][1]
     plt.plot([p.x,q.x],[p.y,q.y],'b')
 
-#plt.show()
 
-
-#Plotting the TSP solution for room and other nodes
+####Plotting the TSP solution for room and other nodes
 #Make new figure with the floorplan
 fig, ax = plt.subplots()
 for line in Dic.values():
@@ -299,32 +274,53 @@ p = G_rooms.nodes(data=True)[source_node]['att'][1]
 plot_point(p,door=False,starting_node = True)
 
 
-def find_predecessor(pred_dic,node):
-    node = pred[node][0]
-    return node
-
 #Making a mapping from node values to index values
 from scipy.interpolate import interp1d
 m = interp1d([12,22],[0,10])
 
 
-
-
 # Then we plot the edges of the tsp approximate solution
 for edge in tsp_edges:
     index = int(m(edge[0]))
-    pred = dijk_pred[index]
+    pred = dijk_pred[index] # These are the predecessor nodes
     node = edge[1]
-#    print("This is the starting node", edge[0])
-#    print("This is the ende node",edge[1])
     while node != edge[0]:
         node1 = node
-        node = find_predecessor(pred,node1)
+        node = pred[node][0]
         p = G.nodes(data=True)[node]['att'][1]
         q = G.nodes(data=True)[node1]['att'][1]
         plt.plot([p.x,q.x],[p.y,q.y],'b')
-        #plot_point(point,door=True,starting_node=False):
 plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #If we want to include the return to starting node
 #p = q
 #q = G_rooms.nodes(data=True)[source_node]['att'][1]

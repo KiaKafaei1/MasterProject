@@ -4,7 +4,9 @@ import csv
 
 
 #GETTING COORDINATES FOR ROOMS
-path ='WayFinding/127/641299/rooms.xml'
+bd127 = '127/641299'
+bdBig = 'rac' 
+path ='WayFinding/'+bd127+'/rooms.xml'
 tree = ET.parse(path)
 rooms_coord = []
 
@@ -25,7 +27,7 @@ with open(filename,'w') as csvfile:
 
 
 ## GETTING COORDINATES FOR DOORS
-path = 'WayFinding/127/641299/floorplaninfo.xml'
+path = 'WayFinding/'+bd127+'/floorplaninfo.xml'
 tree = ET.parse(path)
 doors_coord = []
 elements = tree.findall('.elements/door/definition')

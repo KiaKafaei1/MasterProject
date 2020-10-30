@@ -62,7 +62,7 @@ def plot_point(point,door=True,starting_node=False):
 # Function for plotting path 
 def plot_path(p1,q1,Dic_lines):
     epsilon = 2
-    # Function that returns true is there is a traversable connection between 2 points
+    # Function that returns true if there is a traversable connection between 2 points
     # else returns False
 
     # If this is true it means that it is 2 doors right next to eachother and the path should therefore be traversable
@@ -85,8 +85,8 @@ def plot_path(p1,q1,Dic_lines):
 ##################### Plotting Rooms ###########################
 #Importing values and changing from df to numpy array
 df = pd.read_csv('room_coordinates.csv',sep=',', header=None)
-room_127 = True
-room_big = False 
+room_127 = True 
+#room_big = False 
 array = df.to_numpy()
 # Deleting the header
 array = np.delete(array,0)
@@ -106,9 +106,9 @@ for room in array_tri:
     #Not including every room to simplify the drawing
     if room_127:
         if(i>4):
-            continue
-    if room_big:
-        if(i>14):
+           break 
+    else:
+        if(i>6):
            break 
     for tri in room:
         for cor in tri:
@@ -135,15 +135,16 @@ if room_127:
     points_rooms= [Point(48,21),Point(60,17),Point(76,13),Point(72,2),Point(46,10),Point(40,22),Point(36.2,12.5),Point(67.8,10.4),Point(84.9,16.1),Point(84.3,1.9),Point(64.1,12.6)]
     points_corners = [Point(40,15.8),Point(60,2.5),Point(81,-3.2),Point(36.2,17.9)]
     points_all = points_doors+points_rooms+points_corners
+
+#plt.show()
     
-# Plotting the points
+#Plotting the points
 for p in points_doors:
     plot_point(p)
 for p in points_rooms:
     plot_point(p,False)
 for p in points_corners:
     plot_point(p)
-
 
 
 ####### Approximate solution to the TSP problem #######
@@ -168,7 +169,7 @@ for i,p in enumerate(points_all):
             plt.plot([p.x,q.x],[p.y,q.y],'b')
 nodes_ordered = sorted(G.nodes())
 
-# Find shortest path between all "room" nodes
+# Find shortest path between all "room" nodes using dijkstras algorithm
 node_rooms = [node for node,at in sorted(G.nodes(data=True)) if at['att'][0]=="room"]
 dijk_dist = []
 dijk_pred = []
@@ -283,12 +284,13 @@ m = interp1d([12,22],[0,10])
 for edge in tsp_edges:
     index = int(m(edge[0]))
     pred = dijk_pred[index] # These are the predecessor nodes
-    node = edge[1]
-    while node != edge[0]:
-        node1 = node
-        node = pred[node][0]
-        p = G.nodes(data=True)[node]['att'][1]
-        q = G.nodes(data=True)[node1]['att'][1]
+    node_prev = edge[1]
+    #loop that plots line from end node to all its predecessors until it reaches start node
+    while node_prev != edge[0]:
+        node_new = node_prev
+        node_prev = pred[node_prev][0]
+        p = G.nodes(data=True)[node_new]['att'][1]
+        q = G.nodes(data=True)[node_prev]['att'][1]
         plt.plot([p.x,q.x],[p.y,q.y],'b')
 plt.show()
 

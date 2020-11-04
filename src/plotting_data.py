@@ -121,6 +121,35 @@ for room in array_tri:
         tempy = []
     # Removing lines that are reoccuring from the Dictionary
     [Dic.pop(x) for x in list(Dic) if len(Dic[x])>1]   
+    # Removing small circles and small unusefull lines 
+    [Dic.pop(x) for x in list(Dic) if distance.euclidean(Dic[x][0][0],Dic[x][0][1])<1]
+    # Removing all unconnected lines
+    remove_indices = []
+    for x in list(Dic):
+        counter = 0
+        coord1 = Dic[x][0][0]
+        coord2 = Dic[x][0][1]
+        if 117<coord1[0]<117.5 or 117<coord2[0]<117.5:
+            print("coord1: ",coord1)
+            print("coord2: ",coord2)
+        for y in list(Dic):
+            #print("counter", counter)
+            
+            if x==y:
+                continue
+            if coord1 in Dic[y][0] or coord2 in Dic[y][0]:
+                counter+=1
+            if 117<coord1[0]<117.5 or 117<coord2[0]<117.5:
+                print("Dic[y][0] ",Dic[y][0])
+                print("counter: ",counter)
+            #print(coord1)
+            #print(Dic[y][0])
+            #print(coord1 in Dic[y][0])
+        if counter==0:
+            remove_indices.append(x)
+
+    print("removed indices", remove_indices)
+    [Dic.pop(x) for x in remove_indices]
     # Plotting the lines
     for line in Dic.values():
         ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
@@ -141,12 +170,17 @@ translation =  [array[-1][i] for i in (0,2)]
 # Remove the translation from the array of door coordinates
 array = array[:-1]
 
-
+i=0
 for cor in array:
     plt.plot(cor[0][0]-translation[0][0],cor[1][0]+translation[1][0],marker='o',color='black')
+    #i+=1
     #if i>10:
     #    break
 plt.show()
+
+
+#Removing unconnected lines
+
 
 
 
@@ -158,6 +192,19 @@ plt.show()
 #    points_corners = [Point(40,15.8),Point(60,2.5),Point(81,-3.2),Point(36.2,17.9)]
 #    points_all = points_doors+points_rooms+points_corners
 #
+#else: 
+#points_rooms = [Point(165,56),Point(154,63),Point(168,54),Point(110,56),Point(120,72),Point(110,85),Point(110,104),Point(120,93),Point(110,84),Point(135,103),Point(126,60),Point(118,92),Point(141,57)]
+
+
+
+
+
+
+
+
+
+
+
 ##plt.show()
 #    
 ##Plotting the points

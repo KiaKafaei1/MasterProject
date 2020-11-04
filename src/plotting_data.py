@@ -15,25 +15,32 @@ from scipy.spatial import distance
 
 ################# Defining functions and classes ###################
 
-def hashing_values(tempx,tempy):
-    hash_values=[]
-    hash_values.append(hash(((tempx[0],tempy[0]),(tempx[1],tempy[1]))))
-    hash_values.append(hash(((tempx[1],tempy[1]),(tempx[0],tempy[0]))))
-    hash_values.append(hash(((tempx[0],tempy[0]),(tempx[2],tempy[2]))))
-    hash_values.append(hash(((tempx[2],tempy[2]),(tempx[0],tempy[0]))))
-    hash_values.append(hash(((tempx[1],tempy[1]),(tempx[2],tempy[2]))))
-    hash_values.append(hash(((tempx[2],tempy[2]),(tempx[1],tempy[1]))))
-    
-    return hash_values
+#def hashing_values(tempx,tempy):
+#    hash_values=[]
+#    hash_values.append(hash(((tempx[0],tempy[0]),(tempx[1],tempy[1]))))
+#    hash_values.append(hash(((tempx[1],tempy[1]),(tempx[0],tempy[0]))))
+#    hash_values.append(hash(((tempx[0],tempy[0]),(tempx[2],tempy[2]))))
+#    hash_values.append(hash(((tempx[2],tempy[2]),(tempx[0],tempy[0]))))
+#    hash_values.append(hash(((tempx[1],tempy[1]),(tempx[2],tempy[2]))))
+#    hash_values.append(hash(((tempx[2],tempy[2]),(tempx[1],tempy[1]))))
+#    
+#    return hash_values
+#
 
+def dict_hashing(Dic,tempx,tempy):
+    h1=hash(((tempx[0],tempy[0]),(tempx[1],tempy[1])))
+    h2=hash(((tempx[1],tempy[1]),(tempx[0],tempy[0])))
+    h3=hash(((tempx[0],tempy[0]),(tempx[2],tempy[2])))
+    h4=hash(((tempx[2],tempy[2]),(tempx[0],tempy[0])))
+    h5=hash(((tempx[1],tempy[1]),(tempx[2],tempy[2])))
+    h6=hash(((tempx[2],tempy[2]),(tempx[1],tempy[1])))
 
-def dict_hashing(Dic,hash_values):
-    Dic[hash_values[0]].append(((tempx[0],tempy[0]),(tempx[1],tempy[1])))
-    Dic[hash_values[1]].append(((tempx[1],tempy[1]),(tempx[0],tempy[0])))
-    Dic[hash_values[2]].append(((tempx[0],tempy[0]),(tempx[2],tempy[2])))
-    Dic[hash_values[3]].append(((tempx[2],tempy[2]),(tempx[0],tempy[0])))
-    Dic[hash_values[4]].append(((tempx[1],tempy[1]),(tempx[2],tempy[2])))
-    Dic[hash_values[5]].append(((tempx[2],tempy[2]),(tempx[1],tempy[1]))) 
+    Dic[h1].append(((tempx[0],tempy[0]),(tempx[1],tempy[1])))
+    Dic[h2].append(((tempx[1],tempy[1]),(tempx[0],tempy[0])))
+    Dic[h3].append(((tempx[0],tempy[0]),(tempx[2],tempy[2])))
+    Dic[h4].append(((tempx[2],tempy[2]),(tempx[0],tempy[0])))
+    Dic[h5].append(((tempx[1],tempy[1]),(tempx[2],tempy[2])))
+    Dic[h6].append(((tempx[2],tempy[2]),(tempx[1],tempy[1]))) 
     return Dic
 
 #Dertimining line intersection 
@@ -114,9 +121,9 @@ for room in array_tri:
             tempx.append(cor[0])
             tempy.append(cor[1])
         #hashing each line in triangle
-        hash_values = hashing_values(tempx,tempy)
+        #hash_values = hashing_values(tempx,tempy)
         #Adding the hashes with their corresponding line to a Dict
-        Dic = dict_hashing(Dic,hash_values)
+        Dic = dict_hashing(Dic,tempx,tempy)
         tempx = []
         tempy = []
     # Removing lines that are reoccuring from the Dictionary
@@ -130,8 +137,9 @@ for room in array_tri:
         coord1 = Dic[x][0][0]
         coord2 = Dic[x][0][1]
         if 117<coord1[0]<117.5 or 117<coord2[0]<117.5:
-            print("coord1: ",coord1)
-            print("coord2: ",coord2)
+            k=1
+            #print("coord1: ",coord1)
+            #print("coord2: ",coord2)
         for y in list(Dic):
             #print("counter", counter)
             
@@ -140,15 +148,16 @@ for room in array_tri:
             if coord1 in Dic[y][0] or coord2 in Dic[y][0]:
                 counter+=1
             if 117<coord1[0]<117.5 or 117<coord2[0]<117.5:
-                print("Dic[y][0] ",Dic[y][0])
-                print("counter: ",counter)
+                k=1
+                #print("Dic[y][0] ",Dic[y][0])
+                #print("counter: ",counter)
             #print(coord1)
             #print(Dic[y][0])
             #print(coord1 in Dic[y][0])
         if counter==0:
             remove_indices.append(x)
 
-    print("removed indices", remove_indices)
+    #print("removed indices", remove_indices)
     [Dic.pop(x) for x in remove_indices]
     # Plotting the lines
     for line in Dic.values():
@@ -156,7 +165,8 @@ for room in array_tri:
     Dic = collections.defaultdict(list)
     i+=1
 
-
+#print(hash(((1,2),(1,3))))
+#print(hash(((1,3),(1,2))))
 ### Plotting Doors
 ### Plotting using CSV####
 df = pd.read_csv('door_coordinates.csv',sep=',', header=None)

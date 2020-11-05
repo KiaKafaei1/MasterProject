@@ -15,18 +15,7 @@ from scipy.spatial import distance
 
 ################# Defining functions and classes ###################
 
-#def hashing_values(tempx,tempy):
-#    hash_values=[]
-#    hash_values.append(hash(((tempx[0],tempy[0]),(tempx[1],tempy[1]))))
-#    hash_values.append(hash(((tempx[1],tempy[1]),(tempx[0],tempy[0]))))
-#    hash_values.append(hash(((tempx[0],tempy[0]),(tempx[2],tempy[2]))))
-#    hash_values.append(hash(((tempx[2],tempy[2]),(tempx[0],tempy[0]))))
-#    hash_values.append(hash(((tempx[1],tempy[1]),(tempx[2],tempy[2]))))
-#    hash_values.append(hash(((tempx[2],tempy[2]),(tempx[1],tempy[1]))))
-#    
-#    return hash_values
-#
-
+# We hash 6 lines because the lines may be in reverse coordinate order for different triangles, meaning that a line from x1,y1 to x2,y2 in one triangle is the line x2,y2 to x1,y1 in another triangle.
 def dict_hashing(Dic,tempx,tempy):
     h1=hash(((tempx[0],tempy[0]),(tempx[1],tempy[1])))
     h2=hash(((tempx[1],tempy[1]),(tempx[0],tempy[0])))
@@ -127,46 +116,65 @@ for room in array_tri:
         tempx = []
         tempy = []
     # Removing lines that are reoccuring from the Dictionary
-    [Dic.pop(x) for x in list(Dic) if len(Dic[x])>1]   
-    # Removing small circles and small unusefull lines 
-    [Dic.pop(x) for x in list(Dic) if distance.euclidean(Dic[x][0][0],Dic[x][0][1])<1]
-    # Removing all unconnected lines
-    remove_indices = []
+    # Removing small circles and small unusefull lines
     for x in list(Dic):
-        counter = 0
+        if len(Dic[x])>1 or distance.euclidean(Dic[x][0][0],Dic[x][0][1])<0.1:
+            Dic.pop(x)            
+#            if -x in list(Dic):
+#                #print("x",x)
+#                #print("-x",-x)
+#                #print(Dic[-x])
+#                print("hej") 
+#                #k = -x
+#                #Dic.pop(k)
+#                #Dic.pop(-x)
+        #Manually removing lines
+        
+        
+    for x in list(Dic):
         coord1 = Dic[x][0][0]
         coord2 = Dic[x][0][1]
-        if 117<coord1[0]<117.5 or 117<coord2[0]<117.5:
-            k=1
-            #print("coord1: ",coord1)
-            #print("coord2: ",coord2)
-        for y in list(Dic):
-            #print("counter", counter)
-            
-            if x==y:
-                continue
-            if coord1 in Dic[y][0] or coord2 in Dic[y][0]:
-                counter+=1
-            if 117<coord1[0]<117.5 or 117<coord2[0]<117.5:
-                k=1
-                #print("Dic[y][0] ",Dic[y][0])
-                #print("counter: ",counter)
-            #print(coord1)
-            #print(Dic[y][0])
-            #print(coord1 in Dic[y][0])
-        if counter==0:
-            remove_indices.append(x)
+        if (123.8<coord1[0]<123.85 and 63.6<coord1[1]<63.65) or (123.8<coord2[0]<123.85 and 63.6<coord2[1]<63.65):
+            Dic.pop(x)
+        if (123.82<coord1[0]<123.86 and 95.6<coord1[1]<95.75) or (123.82<coord2[0]<123.86 and 95.6<coord2[1]<95.75): 
+            Dic.pop(x)
+        
+        if (117<coord1[0]<118 and 95<coord1[1]<95.5) or (117<coord2[0]<118 and 95<coord2[1]<95.5): 
+            Dic.pop(x)
+        if (114<coord1[0]<115 and 98.5<coord1[1]<99) or (114<coord2[0]<115 and 98.5<coord2[1]<99):
+            Dic.pop(x)
 
-    #print("removed indices", remove_indices)
-    [Dic.pop(x) for x in remove_indices]
+
+    # All lines are plotted twice due to the way we are hashing, it is more appropriate to remove replicate values that are in more than 1 hash.
+    # Remove replicate lines  
+    #print("length of dic before",len(Dic.keys()))
+    temp = Dic.copy()
+    visited_lines = []
+    for key,line in temp.items():
+        for key2,line2 in temp.items():
+            #print(line)
+            #print(line[0][0])
+            #print("udenfor")
+            if line[0][0] == line2[0][1] and line[0][1] == line2[0][0] and line not in visited_lines and line2 not in visited_lines:
+                #print("indenfor")
+                #print(line[0])
+                #print(line2[0])
+                Dic.pop(key2)
+                visited_lines.append(line)
+                break
+    #print("length of dic after", len(Dic.keys()))
+
+
+
+
+
     # Plotting the lines
     for line in Dic.values():
         ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
     Dic = collections.defaultdict(list)
     i+=1
 
-#print(hash(((1,2),(1,3))))
-#print(hash(((1,3),(1,2))))
+
 ### Plotting Doors
 ### Plotting using CSV####
 df = pd.read_csv('door_coordinates.csv',sep=',', header=None)
@@ -181,6 +189,7 @@ translation =  [array[-1][i] for i in (0,2)]
 array = array[:-1]
 
 i=0
+print(translation)
 for cor in array:
     plt.plot(cor[0][0]-translation[0][0],cor[1][0]+translation[1][0],marker='o',color='black')
     #i+=1
@@ -661,4 +670,40 @@ plt.show()
 #plt.show()
 
 
-
+#### Removing all unconnected lines
+#    remove_indices = []
+#    for x in list(Dic):
+#        counter = 0
+#        coord1 = Dic[x][0][0]
+#        coord2 = Dic[x][0][1]
+#        if 117<coord1[0]<117.5 or 117<coord2[0]<117.5:
+#            k=1
+#            print("x",x)
+#            print("coord1: ",coord1)
+#            print("coord2: ",coord2)
+#        for y in list(Dic):
+#            #print("counter", counter)
+#            
+#            if x==y:
+#                continue
+#            # The first coordinate of one line should be the last coordinate of another line
+#            # We thereby remove all lines that are not connected to another line
+#            if coord1 in Dic[y][0] or coord2 in Dic[y][0]:
+#                counter+=1
+#            if 117<coord1[0]<117.5 or 117<coord2[0]<117.5:
+#                k=1
+#                print("Dic[y][0] ",Dic[y][0])
+#                print("counter: ",counter)
+#                print("y:",y)
+#            #print(coord1)
+#            #print(Dic[y][0])
+#            #print(coord1 in Dic[y][0])
+#        if counter<3:
+#            remove_indices.append(x)
+#            if 117<coord1[0]<117.5 or 117<coord2[0]<117.5:
+#                #print(remove_indices[-1])
+#                k=1
+#
+#    #print("removed indices", remove_indices)
+#    for x in remove_indices:
+#        Dic.pop(x)

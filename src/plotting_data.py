@@ -103,34 +103,25 @@ for room in array_tri:
     if room_127:
         if(i>4): break 
     else:
+        #ojoj=1
         if(i>35): break 
 
     for tri in room:
         for cor in tri:
             tempx.append(cor[0])
             tempy.append(cor[1])
-        #hashing each line in triangle
-        #hash_values = hashing_values(tempx,tempy)
-        #Adding the hashes with their corresponding line to a Dict
+        # Hashcing each line in both directions and adding the hashes with their corresponding line to a Dict
         Dic = dict_hashing(Dic,tempx,tempy)
         tempx = []
         tempy = []
+
     # Removing lines that are reoccuring from the Dictionary
     # Removing small circles and small unusefull lines
     for x in list(Dic):
         if len(Dic[x])>1 or distance.euclidean(Dic[x][0][0],Dic[x][0][1])<0.1:
             Dic.pop(x)            
-#            if -x in list(Dic):
-#                #print("x",x)
-#                #print("-x",-x)
-#                #print(Dic[-x])
-#                print("hej") 
-#                #k = -x
-#                #Dic.pop(k)
-#                #Dic.pop(-x)
-        #Manually removing lines
         
-        
+    # Manually removing lines    
     for x in list(Dic):
         coord1 = Dic[x][0][0]
         coord2 = Dic[x][0][1]
@@ -143,7 +134,7 @@ for room in array_tri:
             Dic.pop(x)
         if (114<coord1[0]<115 and 98.5<coord1[1]<99) or (114<coord2[0]<115 and 98.5<coord2[1]<99):
             Dic.pop(x)
-
+    
 
     # All lines are plotted twice due to the way we are hashing, it is more appropriate to remove replicate values that are in more than 1 hash.
     # Remove replicate lines  
@@ -166,7 +157,7 @@ for room in array_tri:
 
 
 
-
+    
 
     # Plotting the lines
     for line in Dic.values():
@@ -188,19 +179,82 @@ translation =  [array[-1][i] for i in (0,2)]
 # Remove the translation from the array of door coordinates
 array = array[:-1]
 
+
+
+
 i=0
-print(translation)
-for cor in array:
-    plt.plot(cor[0][0]-translation[0][0],cor[1][0]+translation[1][0],marker='o',color='black')
-    #i+=1
-    #if i>10:
-    #    break
+points_doors = []
+facing_doors = []
+for i,cor in enumerate(array):
+    if i%2 == 0:
+        points_doors.append(Point(cor[0][0]-translation[0][0],cor[1][0]+translation[1][0]))
+    if i%2 == 1:
+        facing_doors.append([cor[0],cor[1]])
+
+    
+
+    # Checking if the point is within range of wall, if not the door is not usefull and should therefore be removed
+#for i in range(len(points_doors)):
+#    p1 = points_doors[i]
+
+# placing a door on the other side of the wall
+temp_points = []#points_doors.copy()
+for i,door in enumerate(points_doors):
+    print(facing_doors[i])
+    if facing_doors[i][0][0] == -1:
+        temp_points.append(Point(door.x-0.5,door.y))
+        temp_points.append(Point(door.x+0.5,door.y))
+    if facing_doors[i][0][0] == 1:
+        temp_points.append(Point(door.x+0.5,door.y))
+        temp_points.append(Point(door.x-0.5,door.y)) 
+    if facing_doors[i][1][0] == -1:
+        temp_points.append(Point(door.x,door.y-0.5))
+        temp_points.append(Point(door.x,door.y+0.5))
+    if facing_doors[i][1][0] == 1:
+        temp_points.append(Point(door.x,door.y+0.5))
+        temp_points.append(Point(door.x,door.y-0.5))
+    #print(facing_doors[i])
+    
+points_doors = temp_points.copy()
+
+
+
+# Place 2 doors on each side of the wall
+
+# Doing some work on the doors
+# Remove one of the doors that are within certain radius of another door
+# This is to cut down on the number of doors
+#temp_points =  points_doors.copy()
+#print("Before: ",len(temp_points))
+#for i in range(len(points_doors)):
+#    p1 = points_doors[i]
+#    if p1 not in temp_points:
+#        continue
+#    for j in range(len(points_doors)):
+#            if i ==j:
+#                continue
+#            p2 = points_doors[j]
+#            if math.sqrt((p2.x-p1.x)**2+(p2.y-p1.y)**2)<4:
+#            #if -0.001<(p1.x-p2.x)<0.001 and -1<(p1.y-p2.y)<1: 
+#                if p2 in temp_points:
+#                    temp_points.remove(p2)
+#print("After: ",len(temp_points))
+#points_doors = temp_points.copy()            
+
+
+
+
+
+
+
+for p in points_doors:
+    plot_point(p,door=True)
 plt.show()
 
 
+
+
 #Removing unconnected lines
-
-
 
 
 

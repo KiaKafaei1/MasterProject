@@ -34,6 +34,7 @@ doors_coord = []
 elements = tree.findall('.elements/door/definition')
 for i in elements:
    doors_coord.append({'Coords': i.attrib['origin']})
+   doors_coord.append({'Coords': i.attrib['facing']})
 #print(doors_coord)
 
 

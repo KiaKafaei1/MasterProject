@@ -78,7 +78,8 @@ The function returns true if there is a traversable connection between 2 points 
     epsilon = 2
 
     # If this is true it means that it is 2 doors right next to eachother and the path should therefore be traversable
-    if (math.sqrt((p1.x-q1.x)**2+(p1.y-q1.y)**2)<epsilon):
+    # To make sure that the doors are the correctly aligned such that it doesn't walk diagonally to another door we make sure that the x or y values are the same.
+    if (math.sqrt((p1.x-q1.x)**2+(p1.y-q1.y)**2)<epsilon) and (-0.01<p1.x-q1.x<0.01 or -0.01<p1.y-q1.y<0.01):
         return True
     #print(Dic_lines.values())
     #print("size of dict",len(Dic_lines))
@@ -398,7 +399,7 @@ mst_G_rooms=nx.minimum_spanning_tree(G_rooms)
 
 
 source_node = random.choice(list(G_rooms.nodes))
-
+#source_node = 189
 
 # Solve the TSP problem for subgraph using DFS traversal
 dfs_edges_list = list(nx.dfs_edges(mst_G_rooms,source=source_node))
@@ -408,15 +409,23 @@ dfs_edges_list = list(nx.dfs_edges(mst_G_rooms,source=source_node))
 #print(list(tsp_tree.nodes()))
 #print(list(nx.dfs_postorder_nodes(G_rooms)))
 
-#print("The DFS traversal before removing double vertices:")
-#print(dfs_edges_list)
+print("The DFS traversal before removing double vertices:")
+print(dfs_edges_list)
 
 # Remove double vertices
 tsp_edges = []
 for i in range(len(dfs_edges_list)):
+    #print(dfs_edges_list[i])
     if i== 0:
+        # This is the top node of the dfs traversal
         node_pair = dfs_edges_list[i]
     elif dfs_edges_list[i-1][1]!=dfs_edges_list[i][0]:
+        # If the 'to node' in the previous node pair (from node, to node)
+        # is not the same as the from node in the next node pair then the new 
+        # 'from node' should be the previous 'to node' and the new to node 
+        # should be the current 'to node'.
+        # For example if we have (1,2), (1,3) then because we go back to 1
+        # we change it to (1,2), (2,3).
         node_pair = tuple([dfs_edges_list[i-1][1],dfs_edges_list[i][1]])
     else:
        node_pair = dfs_edges_list[i] 
@@ -425,9 +434,10 @@ for i in range(len(dfs_edges_list)):
 #Adding the last edge from end to start node in tsp edges       
 tsp_edges.append(tuple([tsp_edges[-1][1],tsp_edges[0][0]]))
 
-#print("The DFS traversal after removing double vertices:")
-#print(tsp_edges)
+print("The DFS traversal after removing double vertices:")
+print(tsp_edges)
 
+print('source node:', source_node)
 
 #### Plotting only the "room" points and their TSP solution
 # Make new figure with the floorplan
@@ -444,6 +454,7 @@ plot_point(p,door=False,starting_node = True)
 
 # Then we plot the edges
 for edge in tsp_edges:
+    #print(edge)
     p = G_rooms.nodes(data=True)[edge[0]]['att'][1]
     q = G_rooms.nodes(data=True)[edge[1]]['att'][1]
     plt.plot([p.x,q.x],[p.y,q.y],'b')
@@ -473,10 +484,6 @@ from scipy.interpolate import interp1d
 min_node = min(list(G_rooms.nodes))
 max_node = max(list(G_rooms.nodes))
 range_val = max_node-min_node
-
-print(min_node)
-print(max_node)
-print(range_val)
 
 
 m = interp1d([min_node,max_node],[0,range_val])

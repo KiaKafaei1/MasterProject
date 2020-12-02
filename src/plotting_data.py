@@ -70,7 +70,7 @@ Function for plotting points
 
 
 #5
-def plot_path(p1,q1,Dic_lines):
+def is_traversable(p1,q1,Dic_lines):
     '''
 Function for plotting path.
 The function returns true if there is a traversable connection between 2 points else returns False.
@@ -344,7 +344,7 @@ for i,p in enumerate(points_all):
         #print(q)
         #print("-------------------------")
         #print(Dic_all)
-        is_walkable = plot_path(p,q,Dic_all)
+        is_walkable = is_traversable(p,q,Dic_all)
         if is_walkable:
             s +=1
             eucl_dist = round(distance.euclidean([p.x,p.y],[q.x,q.y]),2)
@@ -356,6 +356,7 @@ nodes_ordered = sorted(G.nodes())
 print("# walkable paths", s)
 print("# non walkable paths",a)
 #plt.show()
+
 
 # Find shortest path between all "room" nodes using dijkstras algorithm
 node_rooms = [node for node,at in sorted(G.nodes(data=True)) if at['att'][0]=="room"]

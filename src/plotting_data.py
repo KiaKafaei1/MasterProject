@@ -14,6 +14,7 @@ import networkx as nx
 import dwave_networkx as dnx
 from scipy.spatial import distance
 import random
+import time 
 ################# Defining functions and classes ###################
 
 #1
@@ -134,6 +135,8 @@ def point_line_dist(x1,y1,x2,y2,x3,y3): #x3,y3 is the point
 ##################### Plotting Rooms ###########################
 #6
 #Importing values and changing from df to numpy array
+#t0 = time.time()
+
 df = pd.read_csv('room_coordinates.csv',sep=',', header=None)
 room_127 = False
 array = df.to_numpy()
@@ -318,8 +321,9 @@ for p in temp_doors:
 #plt.show()
 
 
-
-
+#t1 = time.time()
+#print("Time for section 1:", t1-t0)
+#t0 = time.time()
 
 ## Creating the point lists for the door, room and corner points.
 #if room_127:
@@ -401,8 +405,6 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
         points_grid.append(Point(x,y))
 
 
-
-
 # Plotting the points
 #for p in points_grid:
 #    plot_point(p,door=True,starting_node=False)
@@ -423,6 +425,8 @@ G_grid = nx.Graph()
 #Compute distance to nearest walls
 all_point_wall_dist = []
 for i,p in enumerate(points_grid):
+    if i == 2000:
+        break;
     for line in Dic_all.values():
         p1 = line[0][0]
         p2 = line[0][1]
@@ -432,8 +436,8 @@ for i,p in enumerate(points_grid):
     min_dist = min(all_point_wall_dist)
     G_grid.add_node(i,att =("grid",p,min_dist))   
 
-
-
+t1 = time.time()
+print("Time for section 4:", t1-t0)
 
 #Plot all the points that are close to the wall for visual purposes
 for node,at in sorted(G_grid.nodes(data=True)):
@@ -443,8 +447,6 @@ for node,at in sorted(G_grid.nodes(data=True)):
         plot_point(point)
 
 #plt.show()
-
-            
 
 
 

@@ -405,6 +405,9 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
         points_grid.append(Point(x,y))
 
 
+## Implementing data structure for the walls
+
+
 # Plotting the points
 #for p in points_grid:
 #    plot_point(p,door=True,starting_node=False)
@@ -421,11 +424,11 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
 # Make a graph object with all the grid points as nodes
 G_grid = nx.Graph()
 
-
+t0 = time.time()
 #Compute distance to nearest walls
 all_point_wall_dist = []
 for i,p in enumerate(points_grid):
-    if i == 2000:
+    if i == 200:
         break;
     for line in Dic_all.values():
         p1 = line[0][0]
@@ -448,7 +451,8 @@ for node,at in sorted(G_grid.nodes(data=True)):
 
 #plt.show()
 
-
+print("# lines: ",len(Dic_all))
+print("# gridpoints: ",len(points_grid))
 
 
 

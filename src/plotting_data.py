@@ -15,6 +15,8 @@ import dwave_networkx as dnx
 from scipy.spatial import distance
 import random
 import time 
+from rtree import index
+from rtree.index import Rtree
 ################# Defining functions and classes ###################
 
 #1
@@ -43,6 +45,8 @@ class Point:
     def __init__(self,x,y):
         self.x = x
         self.y = y
+    def __repr__(self):
+        return "Point({},{})".format(self.x,self.y)
 #3
 def ccw(A,B,C):
     ''' 
@@ -405,7 +409,77 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
         points_grid.append(Point(x,y))
 
 
+
+
+
 ## Implementing data structure for the walls
+p = index.Property()
+idx = index.Index(interleaved=False)
+
+# Making a dictionary for the rectangles, such that they can later be retrieved when wanting to branch out
+
+rectangles = collections.defaultdict(list)
+Dic_all_unhashed = collections.defaultdict(list)
+
+for i,line in enumerate(Dic_all.values()):
+    p1 = line[0][0]
+    p2 = line[0][1]
+
+    bottom = min(p1[1],p2[1])
+    left = min(p1[0],p2[0])
+    top = max(p1[1],p2[1])
+    right = max(p1[0],p2[0])
+
+    rectangles[i] = [left,right,bottom,top]
+    Dic_all_unhashed[i] = line
+    idx.insert(i,(left,right,bottom,top),obj = line)
+
+#print(len(list(idx.intersection((110,150,55,100)))))
+#print(idx)
+
+
+
+## Splitting the leaf nodes (indexes) up in branches
+left_branch = index.Index(interleaved = False)
+right_branch = index.Index(interleaved= False)
+for id in idx.intersection((106,145,52,75)):
+
+    [left,right,bottom,top] = rectangles[id]
+    left_branch.insert(id, (left,right,bottom,top))
+
+for id in idx.intersection((145,174,75,107)):
+    [left,right,bottom,top] = rectangles[id]
+    right_branch.insert(id,(left,right,bottom,top))
+
+
+G_grid = nx.Graph()
+for i,p in enumerate(points_grid):
+    k = list(idx.nearest((p.x,p.x, p.y, p.y), 1))
+    print(k)
+    k = max(k) #If multiple walls are close we just choose a random wall (the wall with the highest index)
+    print(rectangles[k])
+    print(p)
+    line = Dic_all_unhashed.get(k)
+    print('Line',line)
+    p1 = line[0][0]
+    p2 = line[0][1]
+    dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p.x,p.y)
+
+    #min()
+    G_grid.add_node(i,att =("grid",p,dist))
+
+for node,at in sorted(G_grid.nodes(data=True)):
+
+    dist = at['att'][2]
+    point = at['att'][1]
+    #print('Hej')
+    if dist<0.5:
+        #print('Hej')
+        plot_point(point)
+
+plt.show()
+#print(Dic_all_unhashed)
+ #   o=0
 
 
 # Plotting the points
@@ -422,37 +496,37 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
 #plt.show()
 
 # Make a graph object with all the grid points as nodes
-G_grid = nx.Graph()
 
-t0 = time.time()
-#Compute distance to nearest walls
-all_point_wall_dist = []
-for i,p in enumerate(points_grid):
-    if i == 200:
-        break;
-    for line in Dic_all.values():
-        p1 = line[0][0]
-        p2 = line[0][1]
-        dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p.x,p.y)
-        all_point_wall_dist.append(dist)  
+
+# t0 = time.time()
+# #Compute distance to nearest walls. This is the brute force way of comparing every point to every wall to find nearest wall.
+# all_point_wall_dist = []
+# for i,p in enumerate(points_grid):
+#     if i == 200:
+#         break;
+#     for line in Dic_all.values():
+#         p1 = line[0][0]
+#         p2 = line[0][1]
+#         dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p.x,p.y)
+#         all_point_wall_dist.append(dist)  
     
-    min_dist = min(all_point_wall_dist)
-    G_grid.add_node(i,att =("grid",p,min_dist))   
+#     min_dist = min(all_point_wall_dist)
+#     G_grid.add_node(i,att =("grid",p,min_dist))   
 
-t1 = time.time()
-print("Time for section 4:", t1-t0)
+# t1 = time.time()
+# #print("Time for section 4:", t1-t0)
 
-#Plot all the points that are close to the wall for visual purposes
-for node,at in sorted(G_grid.nodes(data=True)):
-    dist = at['att'][2]
-    point = at['att'][1]
-    if dist<0.5:
-        plot_point(point)
+# #Plot all the points that are close to the wall for visual purposes
+# for node,at in sorted(G_grid.nodes(data=True)):
+#     dist = at['att'][2]
+#     point = at['att'][1]
+#     if dist<0.5:
+#         plot_point(point)
 
 #plt.show()
 
-print("# lines: ",len(Dic_all))
-print("# gridpoints: ",len(points_grid))
+#print("# lines: ",len(Dic_all))
+#print("# gridpoints: ",len(points_grid))
 
 
 

@@ -133,6 +133,21 @@ def point_line_dist(x1,y1,x2,y2,x3,y3): #x3,y3 is the point
     return dist
 
 
+def plot_grid(ax,x_min,x_max,y_min,y_max):
+	ax.set_xlim(roundDown10(x_min),roundUp10(x_max))
+	ax.set_ylim(roundDown10(y_min),roundUp10(y_max))
+
+	# Change major ticks 
+	ax.xaxis.set_major_locator(MultipleLocator(20))
+	ax.yaxis.set_major_locator(MultipleLocator(20))
+
+
+	# Change minor ticks to show every 5 (20/4 = 5)
+	ax.xaxis.set_minor_locator(AutoMinorLocator(40))
+	ax.yaxis.set_minor_locator(AutoMinorLocator(40))
+	ax.grid(which = 'minor')
+	plt.grid()
+
 
 
 
@@ -372,20 +387,21 @@ def roundDown10(x):
     return int(math.floor(x/10.0))*10
 
 
+plot_grid(ax,x_min,x_max,y_min,y_max)
 
-ax.set_xlim(roundDown10(x_min),roundUp10(x_max))
-ax.set_ylim(roundDown10(y_min),roundUp10(y_max))
+# ax.set_xlim(roundDown10(x_min),roundUp10(x_max))
+# ax.set_ylim(roundDown10(y_min),roundUp10(y_max))
 
-# Change major ticks 
-ax.xaxis.set_major_locator(MultipleLocator(20))
-ax.yaxis.set_major_locator(MultipleLocator(20))
+# # Change major ticks 
+# ax.xaxis.set_major_locator(MultipleLocator(20))
+# ax.yaxis.set_major_locator(MultipleLocator(20))
 
 
-# Change minor ticks to show every 5 (20/4 = 5)
-ax.xaxis.set_minor_locator(AutoMinorLocator(40))
-ax.yaxis.set_minor_locator(AutoMinorLocator(40))
-ax.grid(which = 'minor')
-plt.grid()
+# # Change minor ticks to show every 5 (20/4 = 5)
+# ax.xaxis.set_minor_locator(AutoMinorLocator(40))
+# ax.yaxis.set_minor_locator(AutoMinorLocator(40))
+# ax.grid(which = 'minor')
+# plt.grid()
 #plt.show()
 
 
@@ -542,6 +558,8 @@ for i,p in enumerate(points_all):
        #print("-------------------------")
        #print(Dic_all)
        is_walkable = is_traversable(p,q,Dic_all)
+       
+       bool_dist_wall = True
        if is_walkable:
            s +=1
            eucl_dist = round(distance.euclidean([p.x,p.y],[q.x,q.y]),2)
@@ -631,14 +649,14 @@ for i in range(len(dfs_edges_list)):
 #Adding the last edge from end to start node in tsp edges       
 tsp_edges.append(tuple([tsp_edges[-1][1],tsp_edges[0][0]]))
 
-print("The DFS traversal after removing double vertices:")
-print(tsp_edges)
+#print("The DFS traversal after removing double vertices:")
+#print(tsp_edges)
 
-print('source node:', source_node)
+#print('source node:', source_node)
 
 #### Plotting only the "room" points and their TSP solution
 # Make new figure with the floorplan
-fig, ax = plt.subplots()
+#fig, ax = plt.subplots()
 for line in Dic.values():
    ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
 
@@ -660,6 +678,8 @@ for edge in tsp_edges:
 ####Plotting the TSP solution for room and other nodes
 #Make new figure with the floorplan
 fig, ax = plt.subplots()
+plot_grid(ax,x_min,x_max,y_min,y_max)
+
 for line in Dic_all.values():
    ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
 
@@ -684,7 +704,8 @@ range_val = max_node-min_node
 
 
 m = interp1d([min_node,max_node],[0,range_val])
-
+#fig, ax = plt.subplots()
+#plot_grid(ax,x_min,x_max,y_min,y_max)
 
 # Then we plot the edges of the tsp approximate solution
 for edge in tsp_edges:
@@ -700,6 +721,7 @@ for edge in tsp_edges:
        q = G.nodes(data=True)[node_prev]['att'][1]
        plt.plot([p.x,q.x],[p.y,q.y],'b')
 plt.show()
+
 
 
 

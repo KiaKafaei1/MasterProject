@@ -348,9 +348,9 @@ for p in temp_doors:
 #else: 
 points_rooms = [Point(165,56),Point(154,63),Point(168,54),Point(110,56),Point(120,72),Point(110,85),Point(110,104),Point(120,93),Point(110,84),Point(135,103),Point(126,60),Point(118,92),Point(141,57)]
 
-points_corners = [Point(170.3,61),Point(170.3,60.14),Point(173.15,61.1),Point(129.3,61),Point(124,61),Point(117.9,61.1),Point(123.9,63.7),Point(123.2,69.2),Point(123.1,75.2),Point(123.1,85.8),Point(123.1,93.6),Point(123.9,95.7),Point(141.3,98.2),Point(137.8,100.8),Point(115.1,98.4),Point(120.5,58.7)]#,Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61)]
+#points_corners = [Point(170.3,61),Point(170.3,60.14),Point(173.15,61.1),Point(129.3,61),Point(124,61),Point(117.9,61.1),Point(123.9,63.7),Point(123.2,69.2),Point(123.1,75.2),Point(123.1,85.8),Point(123.1,93.6),Point(123.9,95.7),Point(141.3,98.2),Point(137.8,100.8),Point(115.1,98.4),Point(120.5,58.7)]#,Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61)]
 
-points_all = points_doors+points_corners+points_rooms
+points_all = points_doors+points_rooms #+points_corners
 
 # Finding the largest and smallest points in the dictionary which will be used as 
 # limits for the x axis and y axis
@@ -492,8 +492,8 @@ for p in points_doors:
    plot_point(p)
 for p in points_rooms:
    plot_point(p,False)
-for p in points_corners:
-   plot_point(p)
+# for p in points_corners:
+#    plot_point(p)
 plt.show()
 
 
@@ -558,7 +558,7 @@ for i,p in enumerate(points_all):
        #print("-------------------------")
        #print(Dic_all)
        is_walkable = is_traversable(p,q,Dic_all)
-       
+
        bool_dist_wall = True
        if is_walkable:
            s +=1
@@ -688,8 +688,8 @@ for p in points_doors:
    plot_point(p)
 for p in points_rooms:
    plot_point(p,False)
-for p in points_corners:
-   plot_point(p)
+#for p in points_corners:
+ #  plot_point(p)
 
 #Plotting starting node
 p = G_rooms.nodes(data=True)[source_node]['att'][1]

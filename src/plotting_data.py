@@ -598,8 +598,9 @@ for node,at in sorted(G_grid.nodes(data=True)):
     #if node_type == "door"
 
     #removable_edge_list.append(G_grid.edges(node))
-    removable_edge_list = G_grid.edges(node)
-    G_grid_cpy.remove_edges_from(removable_edge_list)
+    
+    #removable_edge_list = G_grid.edges(node)
+    #G_grid_cpy.remove_edges_from(removable_edge_list)
     G_grid_cpy.remove_node(node)
     #print(removable_edge_list)
  
@@ -612,16 +613,16 @@ for node,at in sorted(G_grid.nodes(data=True)):
     if node_type == 'door':
         p = at['att'][1]
         for node1,at1 in sorted(G_grid.nodes(data=True)):
-            node_type1 = at['att'][0]
+            node_type1 = at1['att'][0]
 
             if node_type1 == 'door':
                 if node == node1:
                     continue
-                q = at['att'][1]
+                q = at1['att'][1]
                 if distance.euclidean([p.x,p.y],[q.x,q.y])<1.1:
-                    print(p)
-                    print(q)
-                    print(distance.euclidean([p.x,p.y],[q.x,q.y]))
+                    #print(p)
+                    #print(q)
+                    #print(distance.euclidean([p.x,p.y],[q.x,q.y]))
                     G_grid.add_edge(node,node1, weight = 10)
                     break
 
@@ -1071,8 +1072,8 @@ for node,at in sorted(G_grid.nodes(data=True)):
         plot_point(p,False)
     elif node_type == 'door':
         plot_point(p,False)
-    else:
-       plot_point(p)
+    # else:
+    #    plot_point(p)
 
 
 
@@ -1109,21 +1110,25 @@ for edge in tsp_edges:
     start_node = edge[0]
     end_node = edge[1]
     pred = astar_path_dic[start_node][end_node]
+
     #print(edge)
     #print(index)
     # pred = 
     node_prev = end_node
     #loop that plots line from end node to all its predecessors until it reaches start node
-    count=0
+    count=len(pred)
+    #print(pred)
+    #print("start node: ", start_node)
+    #print("end node: ", end_node)
     while node_prev != edge[0]:
-         node_new = node_prev
-         #node_prev = pred[node_prev][0]
-         node_prev = pred[count]
-         p = G.nodes(data=True)[node_new]['att'][1]
-         q = G.nodes(data=True)[node_prev]['att'][1]
-         plt.plot([p.x,q.x],[p.y,q.y],'b')
+        node_new = node_prev
+        #node_prev = pred[node_prev][0]
+        node_prev = pred[count-1]
+        p = G.nodes(data=True)[node_new]['att'][1]
+        q = G.nodes(data=True)[node_prev]['att'][1]
+        plt.plot([p.x,q.x],[p.y,q.y],'b')
 
-         count = count+1
+        count = count-1
 
 plt.show()
 

@@ -647,7 +647,7 @@ for node,at in sorted(G_grid.nodes(data=True)):
 
 G_grid = G_grid_cpy.copy()
 t1_start = process_time()
-# Connecting all doors that are 1 m from eachother. This is because we want connection between the doors outisde and inside a room.
+# Connecting all doors that are opposite from eachother. This is because we want connection between the doors outisde and inside a room.
 for node,at in sorted(G_grid.nodes(data=True)):
     node_type = at['att'][0]
     if node_type == 'door':
@@ -668,6 +668,7 @@ for node,at in sorted(G_grid.nodes(data=True)):
                     #print(distance.euclidean([p.x,p.y],[q.x,q.y]))
                 G_grid.add_edge(node,node1, weight = 10)
                 break
+
 
 t1_stop = process_time() 
 

@@ -285,20 +285,22 @@ print(len(facing_doors))
 
 # placing a door on the other side of the wall
 temp_points = []#points_doors.copy()
+points_doors_opposite = []
+
 for i,door in enumerate(points_doors):
     #print(facing_doors[i])
     if facing_doors[i][0][0] == -1:
         temp_points.append(Point(door.x-0.5,door.y))
-        temp_points.append(Point(door.x+0.5,door.y))
+        points_doors_opposite.append(Point(door.x+0.5,door.y))
     if facing_doors[i][0][0] == 1:
         temp_points.append(Point(door.x+0.5,door.y))
-        temp_points.append(Point(door.x-0.5,door.y)) 
+        points_doors_opposite.append(Point(door.x-0.5,door.y)) 
     if facing_doors[i][1][0] == -1:
         temp_points.append(Point(door.x,door.y-0.5))
-        temp_points.append(Point(door.x,door.y+0.5))
+        points_doors_opposite.append(Point(door.x,door.y+0.5))
     if facing_doors[i][1][0] == 1:
         temp_points.append(Point(door.x,door.y+0.5))
-        temp_points.append(Point(door.x,door.y-0.5))
+        points_doors_opposite.append(Point(door.x,door.y-0.5))
     #print(facing_doors[i])
     
 points_doors = temp_points.copy()
@@ -509,10 +511,12 @@ points_rooms = [Point(165,56),Point(154,63),Point(168,54),Point(110,56),Point(12
 
 # Rounding the doors to nearest 0.5 since that is the resolution of the grid.
 [p.round_to_half() for p in points_doors]
+[p.round_to_half() for p in points_doors_opposite]
+
 # Doing the same for the room nodes
 [p.round_to_half() for p in points_rooms]
 
-points_all = points_doors+points_rooms #+points_corners
+points_all = points_doors+points_rooms+ points_doors_opposite #+points_corners
 #Plotting the points
 
 
@@ -538,8 +542,15 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
         #print(i)
 
         #Removing floating doors by removing all doors that are far away from the nearest wall
-        if p in points_doors and dist<1.1: 
-            G_grid.add_node(i,att =("door",p,dist))
+        # We use the information that length of the lists are the same and each index corresponds to opposite points.
+        if p in points_doors:# and dist<1.1: 
+            idx_d = points_doors.index(p)
+            G_grid.add_node(i,att =("door",p,dist,idx_d))
+        elif p in points_doors_opposite: # and dist<1.1:
+            idx_d = points_doors_opposite.index(p)
+            G_grid.add_node(i,att = ("door",p,dist,idx_d))
+
+
         elif p in points_rooms:
             G_grid.add_node(i,att=("room",p,dist))
         else:
@@ -582,10 +593,35 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
 bug_nodes = list(range(0,-110,-1))
 G_grid.remove_nodes_from(bug_nodes)
 
+
+
+# Changing all door nodes that are floating to regular grid nodes.
+# This might not be important after all since the program doesn't care if a point in the middle of the room is a door node or a grid node
+# This is only visible when plotting.
+
+G_grid_temp = G_grid.copy()
+for node,at in sorted(G_grid_temp.nodes(data=True)):
+    node_type = at['att'][0]
+    if node_type != 'door':
+        continue
+    dist = at['att'][2]
+    if dist >1.1:
+
+        p = at['att'][1]
+        idx_d = at['att'][3]
+
+        G_grid.add_node(node,att=("grid",p,dist))
+        #nx.set_node_attributes(G_grid, bb, "betweenness")
+
+
+
+
+
 #temp = [node for node,at in sorted(G_grid.nodes(data=True))]
 #print(temp)
 #print(x_min)
 #print(y_min)
+
 
 # Remove non traversable nodes
 removable_edge_list = []
@@ -615,20 +651,23 @@ t1_start = process_time()
 for node,at in sorted(G_grid.nodes(data=True)):
     node_type = at['att'][0]
     if node_type == 'door':
-        p = at['att'][1]
+        #p = at['att'][1]
+        idx = at['att'][3]
         for node1,at1 in sorted(G_grid.nodes(data=True)):
             node_type1 = at1['att'][0]
 
             if node_type1 == 'door':
-                if node == node1:
+                idx1 = at1['att'][3]
+                if node == node1 or idx1 != idx:
                     continue
-                q = at1['att'][1]
-                if distance.euclidean([p.x,p.y],[q.x,q.y])<1.1:
+
+                #q = at1['att'][1]
+                #if distance.euclidean([p.x,p.y],[q.x,q.y])<1.1:
                     #print(p)
                     #print(q)
                     #print(distance.euclidean([p.x,p.y],[q.x,q.y]))
-                    G_grid.add_edge(node,node1, weight = 10)
-                    break
+                G_grid.add_edge(node,node1, weight = 10)
+                break
 
 t1_stop = process_time() 
 

@@ -303,29 +303,6 @@ for i,door in enumerate(points_doors):
 points_doors = temp_points.copy()
 
 
-# Doing some work on the doors
-# Remove one of the doors that are within certain radius of another door
-# This is to cut down on the number of doors
-#temp_points =  points_doors.copy()
-#print("Before: ",len(temp_points))
-#for i in range(len(points_doors)):
-#    p1 = points_doors[i]
-#    if p1 not in temp_points:
-#        continue
-#    for j in range(len(points_doors)):
-#            if i ==j:
-#                continue
-#            p2 = points_doors[j]
-#            if math.sqrt((p2.x-p1.x)**2+(p2.y-p1.y)**2)<4:
-#            #if -0.001<(p1.x-p2.x)<0.001 and -1<(p1.y-p2.y)<1: 
-#                if p2 in temp_points:
-#                    temp_points.remove(p2)
-#print("After: ",len(temp_points))
-#points_doors = temp_points.copy()            
-
-
-
-
 
 # #remove 2 outside doors
 # points_doors = [ p for p in points_doors if not (123<p.x<128 and 74<p.y<77)]
@@ -554,62 +531,6 @@ for node,at in sorted(G_grid.nodes(data=True)):
 
 t1_stop = process_time() 
 
-#print(astar_path_dic)
-      
-#print("Elapsed time for connecting doors:", t1_stop-t1_start)
-
-#print(removable_edge_list[:200])
-
-#G_grid_cpy = G_grid.copy()
-
-
-
-
-# This is to visualize the border to the walls
-# for node,at in sorted(G_grid.nodes(data=True)):
-#     dist = at['att'][2]
-#     point = at['att'][1]
-    # if dist<0.5:
-    #     plot_point(point)
-#plt.show()
-
-
-
-
-#### Compute distance to nearest walls. This is the brute force way of comparing every point to every wall to find nearest wall.
-# Make a graph object with all the grid points as nodes
-# t0 = time.time()
-# #Compute distance to nearest walls. This is the brute force way of comparing every point to every wall to find nearest wall.
-# all_point_wall_dist = []
-# for i,p in enumerate(points_grid):
-#     if i == 200:
-#         break;
-#     for line in Dic_all.values():
-#         p1 = line[0][0]
-#         p2 = line[0][1]
-#         dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p.x,p.y)
-#         all_point_wall_dist.append(dist)  
-    
-#     min_dist = min(all_point_wall_dist)
-#     G_grid.add_node(i,att =("grid",p,min_dist))   
-
-# t1 = time.time()
-# #print("Time for section 4:", t1-t0)
-
-# #Plot all the points that are close to the wall for visual purposes
-# for node,at in sorted(G_grid.nodes(data=True)):
-#     dist = at['att'][2]
-#     point = at['att'][1]
-#     if dist<0.5:
-#         plot_point(point)
-#plt.show()
-#print("# lines: ",len(Dic_all))
-#print("# gridpoints: ",len(points_grid))
-
-
-
-
-
 
 
 ####### Approximate solution to the TSP problem #######
@@ -694,10 +615,6 @@ mst_G_rooms=nx.minimum_spanning_tree(G_rooms)
 
 source_node = random.choice(list(G_rooms.nodes))
 
- 
-
-####### Approximate solution to the TSP problem #######
-
 
 # #Make a minimum spanning tree
 mst_G_rooms=nx.minimum_spanning_tree(G_rooms)
@@ -709,10 +626,6 @@ source_node = 993
 # Solve the TSP problem for subgraph using DFS traversal
 dfs_edges_list = list(nx.dfs_edges(mst_G_rooms,source=source_node))
 
-
-
-#print(list(tsp_tree.nodes()))
-#print(list(nx.dfs_postorder_nodes(G_rooms)))
 
 #print("The DFS traversal before removing double vertices:")
 #print(dfs_edges_list)

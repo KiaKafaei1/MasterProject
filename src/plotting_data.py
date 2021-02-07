@@ -304,25 +304,6 @@ points_doors = temp_points.copy()
 
 
 
-# #remove 2 outside doors
-# points_doors = [ p for p in points_doors if not (123<p.x<128 and 74<p.y<77)]
-
-# # remove all doors that are floating
-# temp_doors = points_doors.copy()
-# for p in temp_doors:
-#     if 112<p.x<116 and 79<p.y<81:
-#         points_doors.remove(p)
-#     if 106<p.x<108 and 81<p.y<83:
-#         points_doors.remove(p)
-#     if 112<p.x<114 and 91<p.y<94:
-#         points_doors.remove(p)
-#     if 114<p.x<117 and 93<p.y<94:
-#         points_doors.remove(p)
-#     if 114<p.x<117 and 94<p.y<95:
-#         points_doors.remove(p)
-#     if 120<p.x<140 and 99.5<p.y<106:
-#         points_doors.remove(p)
-
 
 points_rooms = [Point(165,56),Point(154,63),Point(168,54),Point(110,56),Point(120,72),Point(110,85),Point(110,104),Point(120,93),Point(110,84),Point(135,103),Point(126,60),Point(118,92),Point(141,57)]
 
@@ -656,28 +637,6 @@ tsp_edges.append(tuple([tsp_edges[-1][1],tsp_edges[0][0]]))
 
 
 ###### PLOTTING #######
-
-### Plotting only the "room" points and their TSP solution
-#fig, ax = plt.subplots()
-# for line in Dic.values():
-#    ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')
-
-
-# # First we plot just the relevant points
-# for p in points_rooms:
-#    plot_point(p,False)
-# # Plotting starting node
-# p = G_rooms.nodes(data=True)[source_node]['att'][1]
-# plot_point(p,door=False,starting_node = True)
-
-# # Then we plot the edges
-# for edge in tsp_edges:
-#    #print(edge)
-#    p = G_rooms.nodes(data=True)[edge[0]]['att'][1]
-#    q = G_rooms.nodes(data=True)[edge[1]]['att'][1]
-#    plt.plot([p.x,q.x],[p.y,q.y],'b')
-
-
 ####Plotting the TSP solution for room and other nodes
 #Make new figure with the floorplan
 fig, ax = plt.subplots()

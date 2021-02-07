@@ -386,8 +386,8 @@ points_all = points_doors+points_rooms #+points_corners
 #points_corners = [Point(170.3,61),Point(170.3,60.14),Point(173.15,61.1),Point(129.3,61),Point(124,61),Point(117.9,61.1),Point(123.9,63.7),Point(123.2,69.2),Point(123.1,75.2),Point(123.1,85.8),Point(123.1,93.6),Point(123.9,95.7),Point(141.3,98.2),Point(137.8,100.8),Point(115.1,98.4),Point(120.5,58.7)]#,Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61)]
 
 points_all = points_doors+points_rooms #+points_corners
-=======
->>>>>>> distance_field
+# =======
+# >>>>>>> distance_field
 
 # Finding the largest and smallest points in the dictionary which will be used as 
 # limits for the x axis and y axis
@@ -762,16 +762,16 @@ print("Elapsed time for connecting doors:", t1_stop-t1_start)
 
 
 #Plotting the points
-for p in points_doors:
-   plot_point(p)
-for p in points_rooms:
-   plot_point(p,False)
-# for p in points_corners:
+# for p in points_doors:
 #    plot_point(p)
-plt.show()
-=======
+# for p in points_rooms:
+#    plot_point(p,False)
+# # for p in points_corners:
+# #    plot_point(p)
+# plt.show()
+# =======
 
->>>>>>> distance_field
+# >>>>>>> distance_field
 
 
 #### Compute distance to nearest walls. This is the brute force way of comparing every point to every wall to find nearest wall.
@@ -851,28 +851,28 @@ G = G_grid.copy()
 
    # Checking nodes are traversable to node p
 
-   for j,q in enumerate(points_all):
-       if p==q:
-           continue
-       #print(p)
-       #print(q)
-       #print("-------------------------")
-       #print(Dic_all)
-       is_walkable = is_traversable(p,q,Dic_all)
+#    for j,q in enumerate(points_all):
+#        if p==q:
+#            continue
+#        #print(p)
+#        #print(q)
+#        #print("-------------------------")
+#        #print(Dic_all)
+#        is_walkable = is_traversable(p,q,Dic_all)
 
-       bool_dist_wall = True
-       if is_walkable:
-           s +=1
-           eucl_dist = round(distance.euclidean([p.x,p.y],[q.x,q.y]),2)
-           G.add_edge(i,j,weight=eucl_dist)
-           plt.plot([p.x,q.x],[p.y,q.y],'b')
-       else:
-           a+=1
-nodes_ordered = sorted(G.nodes())
-print("# walkable paths", s)
-print("# non walkable paths",a)
-=======
->>>>>>> distance_field
+#        bool_dist_wall = True
+#        if is_walkable:
+#            s +=1
+#            eucl_dist = round(distance.euclidean([p.x,p.y],[q.x,q.y]),2)
+#            G.add_edge(i,j,weight=eucl_dist)
+#            plt.plot([p.x,q.x],[p.y,q.y],'b')
+#        else:
+#            a+=1
+# nodes_ordered = sorted(G.nodes())
+# print("# walkable paths", s)
+# print("# non walkable paths",a)
+# =======
+# >>>>>>> distance_field
 
 #Finding shortest path between all room nodes using the astar algorithm
 # Get all the traversable nodes in the points_all_incl_trav
@@ -1149,14 +1149,14 @@ for line in Dic_all.values():
    ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
 
 
-#First we plot all points
-for p in points_doors:
-   plot_point(p)
-for p in points_rooms:
-   plot_point(p,False)
-#for p in points_corners:
- #  plot_point(p)
-=======
+# #First we plot all points
+# for p in points_doors:
+#    plot_point(p)
+# for p in points_rooms:
+#    plot_point(p,False)
+# #for p in points_corners:
+#  #  plot_point(p)
+# =======
 #Plotting all the nodes of the graph on the map
 for node,at in sorted(G_grid.nodes(data=True)):
     p = at['att'][1]
@@ -1178,7 +1178,7 @@ print("starting node", source_node)
 #    plot_point(p,False)
 # # #for p in points_corners:
 # #  #  plot_point(p)
->>>>>>> distance_field
+# >>>>>>> distance_field
 
 #Plotting starting node
 p = G_rooms.nodes(data=True)[source_node]['att'][1]

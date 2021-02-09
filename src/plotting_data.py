@@ -165,6 +165,11 @@ def plot_grid(ax,x_min,x_max,y_min,y_max):
     plt.grid()
 
 
+### Implementing spatial datastrukture for rooms ###
+p = index.Property()
+idx_rooms = index.Index(interleaved=False)
+# Making a dictionary for the rectangles, such that they can later be retrieved when wanting to branch out
+rectangles_rooms = collections.defaultdict(list)
 
 
 ##################### Plotting Rooms ###########################
@@ -248,9 +253,42 @@ for room in array_tri:
     Dic_all.update(Dic)
     # Plotting the lines
     #for line in Dic.values():
-    #    ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
+    #    ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')
+    Dic_all_unhashed = collections.defaultdict(list)
+    p_x_max = 0
+    p_y_max = 0
+    p_x_min = 1000
+    p_y_min = 1000
+    for line in Dic.values():
+        p1 = line[0][0]
+        p2 = line[0][1]
+        for p in (p1,p2):
+            if p[0]>p_x_max:
+                p_x_max = p1[0]
+            if p[0]<p_x_min:
+                p_x_min = p1[0]
+            if p[1]>p_y_max:
+                p_y_max=p[1]
+            if p[1]<p_y_min:
+                p_y_min = p[1]
+
+    bottom = p_y_min
+    left = p_x_min
+    top = p_y_max
+    right = p_x_max
+    idx_rooms.insert(i,(left,right,bottom,top),obj = room)
+    rectangles_rooms[i] = [left,right,bottom,top]
     Dic = collections.defaultdict(list)
     i+=1
+
+### Plotting the rooms from the R tree datastructure
+fig, ax = plt.subplots()
+for room in rectangles_rooms.values():
+    plt.plot([room[0],room[0],room[1],room[1],room[0]],[room[2],room[3],room[3],room[2],room[2]])
+
+#plt.show()   
+
+
 
 #10
 ### Plotting Doors

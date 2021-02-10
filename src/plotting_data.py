@@ -164,13 +164,15 @@ def plot_grid(ax,x_min,x_max,y_min,y_max):
     ax.grid(which = 'minor')
     plt.grid()
 
+def rec_dd():
+    return collections.defaultdict(rec_dd)
 
 ### Implementing spatial datastrukture for rooms ###
 p = index.Property()
 idx_rooms = index.Index(interleaved=False)
 # Making a dictionary for the rectangles, such that they can later be retrieved when wanting to branch out
 rectangles_rooms = collections.defaultdict(list)
-
+Dic_rooms = rec_dd()
 
 ##################### Plotting Rooms ###########################
 #6
@@ -254,7 +256,7 @@ for room in array_tri:
     # Plotting the lines
     #for line in Dic.values():
     #    ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')
-    Dic_all_unhashed = collections.defaultdict(list)
+    #Dic_all_unhashed = collections.defaultdict(list)
     p_x_max = 0
     p_y_max = 0
     p_x_min = 1000
@@ -278,6 +280,8 @@ for room in array_tri:
     right = p_x_max
     idx_rooms.insert(i,(left,right,bottom,top),obj = room)
     rectangles_rooms[i] = [left,right,bottom,top]
+
+    Dic_rooms[i] = Dic
     Dic = collections.defaultdict(list)
     i+=1
 
@@ -308,11 +312,16 @@ array = array[:-1]
 i=0
 points_doors = []
 facing_doors = []
+
+
 for i,cor in enumerate(array):
     if i%2 == 0:
         points_doors.append(Point(cor[0][0]-translation[0][0],cor[1][0]+translation[1][0]))
     if i%2 == 1:
         facing_doors.append([cor[0],cor[1]])
+
+
+
 
 # Checking if the point is within range of wall, if not the door is not usefull and should therefore be removed
 #for i in range(len(points_doors)):
@@ -342,13 +351,41 @@ points_doors = temp_points.copy()
 
 
 
-
+# Making the room points
+# First I do it manually
 points_rooms = [Point(165,56),Point(154,63),Point(168,54),Point(110,56),Point(120,72),Point(110,85),Point(110,104),Point(120,93),Point(110,84),Point(135,103),Point(126,60),Point(118,92),Point(141,57)]
 
+
+# Now I try to autogenerate them
+points_rooms = []
+for room in Dic_rooms.values():
+    p_x_max = 0
+    p_y_max = 0
+    p_x_min = 1000
+    p_y_min = 1000
+    for line in room.values():
+        p1 = line[0][0]
+        p2 = line[0][1]
+        for p in (p1,p2):
+            if p[0]>p_x_max:
+                p_x_max = p1[0]
+            if p[0]<p_x_min:
+                p_x_min = p1[0]
+            if p[1]>p_y_max:
+                p_y_max=p[1]
+            if p[1]<p_y_min:
+                p_y_min = p[1]
+    room_node = Point((p_x_max-p_x_min)/2+p_x_min,(p_y_max-p_y_min)/2+p_y_min)
+    room_node.round_to_half()
+    points_rooms.append(room_node)
+
+#print(points_rooms)
+
+
+    # else:
+    #    plot_point(p)
+
 #points_corners = [Point(170.3,61),Point(170.3,60.14),Point(173.15,61.1),Point(129.3,61),Point(124,61),Point(117.9,61.1),Point(123.9,63.7),Point(123.2,69.2),Point(123.1,75.2),Point(123.1,85.8),Point(123.1,93.6),Point(123.9,95.7),Point(141.3,98.2),Point(137.8,100.8),Point(115.1,98.4),Point(120.5,58.7)]#,Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61)]
-
-points_all = points_doors+points_rooms #+points_corners
-
 
 points_all = points_doors+points_rooms #+points_corners
 
@@ -372,6 +409,22 @@ x_max = math.ceil(max([Dic_all[x_max_idx1][0][0][0],Dic_all[x_max_idx2][0][1][0]
 x_min = math.floor(min([Dic_all[x_min_idx1][0][0][0],Dic_all[x_min_idx2][0][1][0]]))
 y_max = math.ceil(max([Dic_all[y_max_idx1][0][0][1],Dic_all[y_max_idx2][0][1][1]]))
 y_min = math.floor(min([Dic_all[y_min_idx1][0][0][1],Dic_all[y_min_idx2][0][1][1]]))
+
+# fig, ax = plt.subplots()
+# plot_grid(ax,x_min,x_max,y_min,y_max)
+
+# for line in Dic_all.values():
+#    ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
+
+# #Plotting all the nodes of the graph on the map
+# for point in points_rooms:
+#     plot_point(point)
+# for point in points_doors:
+#     plot_point(point,False)
+# for point in points_doors_opposite:
+#     plot_point(point,False)
+
+# plt.show()
 
 
 ######## IMPLEMENTING THE DATASTRUCTURE FOR THE WALLS ########
@@ -517,7 +570,7 @@ for node,at in sorted(G_grid.nodes(data=True)):
 
    # We remove all the edges connected to and from the nodes that are too close to a wall
    if dist<0.5:
-    if node_type == "door" or node_type == "room":
+    if node_type == "door":
         continue
 
     #removable_edge_list.append(G_grid.edges(node))
@@ -561,8 +614,7 @@ G = G_grid.copy()
 # Get all the traversable nodes in the points_all_incl_trav
 # Then calculate the entire walkable path for all the connected nodes while you also check for traversability.
 # This is not the fastest method since it needs to calculate the distance between all nodes. 
-def rec_dd():
-    return collections.defaultdict(rec_dd)
+
 
 # Find the shortest path between all room nodes using the a star algoritm
 astar_path_dic = rec_dd()
@@ -578,9 +630,51 @@ for node,at in sorted(G.nodes(data=True)):
 
    # identify the essential nodes in the graph
    # Checking nodes are traversable to node p
-    for node1,at1 in sorted(G.nodes(data=True)):
-        if at1['att'][0]!= "room":
+
+# #Checking for descendants for each room node   
+# for node,at in sorted(G_rooms.nodes(data=True)):
+#     for node1,at1 in sorted(G_rooms.nodes(data=True)):
+#         pass
+#         #nx.algorithms.descendants(, target_nodes)
+
+Dic_connectivity = collections.defaultdict()
+# First check for connectivity between all room nodes
+from networkx.algorithms import approximation as approx
+for node,at in sorted(G_rooms.nodes(data=True)):
+    Dic_connectivity[node] = 0
+    for node1,at1 in sorted(G_rooms.nodes(data=True)):
+        if node==node1:
             continue
+        # This functions checks how many nodes need to be removed to disconnect 2 nodes
+        connectivity = approx.local_node_connectivity(G, node, node1)
+        if connectivity > 0:
+            connectivity = 1
+
+        Dic_connectivity[node] += connectivity
+
+#print(G.nodes[501]['att'][0])
+
+# Removing room nodes that are not connected to other room nodes, also change its description from roon node to grid node in G
+#print(Dic_connectivity)
+max_connection = max(Dic_connectivity.values())
+
+for key,value in Dic_connectivity.items():
+    if value == max_connection:
+        continue
+    G_rooms.remove_node(key)
+    p = G.nodes[key]['att'][1]
+    dist = G.nodes[key]['att'][2]
+    G.remove_node(key)
+    G.add_node(key,att=("grid",p,dist))
+
+
+ 
+
+
+for node,at in sorted(G_rooms.nodes(data=True)):
+    for node1,at1 in sorted(G_rooms.nodes(data=True)):
+        # if at1['att'][0]!= "room":
+        #     continue
         if node==node1:
             continue
 
@@ -588,7 +682,7 @@ for node,at in sorted(G.nodes(data=True)):
         q = at1['att'][1]
 
 
-        dist = round(distance.euclidean([p.x,p.y],[q.x,q.y]),2)
+        #dist = round(distance.euclidean([p.x,p.y],[q.x,q.y]),2)
 
         temp = nx.astar_path(G, node, node1, weight = 'weight')# heuristic=distance.euclidean, weight='weight')
 
@@ -596,11 +690,11 @@ for node,at in sorted(G.nodes(data=True)):
 
 
 
-t1_stop = process_time() 
+# t1_stop = process_time() 
 
-#print(astar_path_dic)
+# #print(astar_path_dic)
       
-print("Elapsed time for checking traversability:", t1_stop-t1_start)
+# print("Elapsed time for checking traversability:", t1_stop-t1_start)
 
 
 
@@ -626,8 +720,8 @@ for room_node1 in astar_path_dic:
 
 
 #Checking if the graph is indeed complete
-#print("Is G graph connected? Returns 1 if graph is complete", nx.density(G))
-#print("Is G_rooms graph connected? Returns 1 if graph is complete", nx.density(G_rooms))
+# print("Is G graph connected? Returns 1 if graph is complete", nx.density(G))
+# print("Is G_rooms graph connected? Returns 1 if graph is complete", nx.density(G_rooms))
 
 #Make a minimum spanning tree
 mst_G_rooms=nx.minimum_spanning_tree(G_rooms)
@@ -639,7 +733,7 @@ source_node = random.choice(list(G_rooms.nodes))
 mst_G_rooms=nx.minimum_spanning_tree(G_rooms)
 
 source_node = random.choice(list(G_rooms.nodes))
-source_node = 993
+#source_node = 993
 # #source_node = 189
 
 # Solve the TSP problem for subgraph using DFS traversal
@@ -684,7 +778,7 @@ for line in Dic_all.values():
    ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
 
 #Plotting all the nodes of the graph on the map
-for node,at in sorted(G_grid.nodes(data=True)):
+for node,at in sorted(G.nodes(data=True)):
     p = at['att'][1]
     node_type = at['att'][0]
     if node_type == "room":

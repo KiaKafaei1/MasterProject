@@ -257,6 +257,7 @@ for room in array_tri:
     #for line in Dic.values():
     #    ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')
     #Dic_all_unhashed = collections.defaultdict(list)
+    #### Making a dictionary containing all the rooms and their lines.
     p_x_max = 0
     p_y_max = 0
     p_x_min = 1000
@@ -348,6 +349,8 @@ for i,door in enumerate(points_doors):
     #print(facing_doors[i])
     
 points_doors = temp_points.copy()
+#print(points_doors)
+#print(points_doors_opposite)
 
 
 
@@ -375,6 +378,7 @@ for room in Dic_rooms.values():
                 p_y_max=p[1]
             if p[1]<p_y_min:
                 p_y_min = p[1]
+
     room_node = Point((p_x_max-p_x_min)/2+p_x_min,(p_y_max-p_y_min)/2+p_y_min)
     room_node.round_to_half()
     points_rooms.append(room_node)
@@ -476,6 +480,37 @@ grid_height = len(np.linspace(y_min,y_max,(y_max-y_min)*2+1))
 points_all = points_doors+points_rooms+ points_doors_opposite #+points_corners
 #Plotting the points
 
+# #### Removing doors that lead to the outside
+# # I try to do this manually first
+# temp = points_doors.copy()
+# for i,p in enumerate(temp):
+#     if p.x ==144.5 and p.y==100.5:
+#         points_doors.remove(p)
+#     if p.x == 173.5 and p.y ==60:
+#         points_doors.remove(p)
+
+#     # if p.x >144 and p.x <145 and p.y>100 and p.y<101:
+#     #     points_doors.pop(i)
+#     # if p.x >173 and p.x <174 and p.y>59 and p.y<61:
+#     #     points_doors.pop(i)
+
+    
+# temp = points_doors_opposite.copy()
+# for i,p in enumerate(temp):
+#     if p.x ==144.5 and p.y==100.5:
+#         points_doors_opposite.remove(p)
+#     if p.x == 173.5 and p.y ==60:
+#         points_doors_opposite.remove(p)
+    #if p.x >144 and p.x <145 and p.y>100 and p.y<101:
+     #   points_doors_opposite.pop(i)
+    #if p.x >173 and p.x <174 and p.y>59 and p.y<61:
+      #  points_doors_opposite.pop(i)
+
+
+
+
+
+
 
 
 G_grid = nx.Graph()
@@ -559,6 +594,27 @@ for node,at in sorted(G_grid_temp.nodes(data=True)):
 
 
 
+# Removing doors connected to the outside, this is done using if statements.
+G_grid_cpy = G_grid.copy()
+for node,at in sorted(G_grid.nodes(data=True)):
+    node_type = at['att'][0]
+    if node_type == "door":
+        p = at['att'][1]
+        if p.x == 144.5 and p.y == 100.5:
+            dist = at['att'][2]
+            #G_grid.remove_node(node)
+            G_grid.add_node(node,att=("grid",p,dist))
+        elif p.x == 173.5 and p.y == 60:
+            dist = at['att'][2]
+            #G_grid.remove_node(node)
+            G_grid.add_node(node,att=("grid",p,dist))
+
+
+
+
+
+
+
 
 # Remove non traversable nodes
 removable_edge_list = []
@@ -581,27 +637,44 @@ for node,at in sorted(G_grid.nodes(data=True)):
     #print(removable_edge_list)
  
 
+
+
+
+
+
+
+
 G_grid = G_grid_cpy.copy()
 t1_start = process_time()
 # Connecting all doors that are opposite from eachother. This is because we want connection between the doors outisde and inside a room.
 for node,at in sorted(G_grid.nodes(data=True)):
     node_type = at['att'][0]
     if node_type == 'door':
+
         #p = at['att'][1]
         idx = at['att'][3]
+        #print(idx)
         for node1,at1 in sorted(G_grid.nodes(data=True)):
             node_type1 = at1['att'][0]
+            
 
             if node_type1 == 'door':
                 idx1 = at1['att'][3]
+                #print(idx1)
                 if node == node1 or idx1 != idx:
                     continue
 
+                #print("First door",at)
+                #print("Second door",at1)
                 G_grid.add_edge(node,node1, weight = 10)
                 break
 
 
 t1_stop = process_time() 
+
+
+
+
 
 
 
@@ -733,7 +806,7 @@ source_node = random.choice(list(G_rooms.nodes))
 mst_G_rooms=nx.minimum_spanning_tree(G_rooms)
 
 source_node = random.choice(list(G_rooms.nodes))
-#source_node = 993
+source_node = 1141
 # #source_node = 189
 
 # Solve the TSP problem for subgraph using DFS traversal
@@ -786,7 +859,7 @@ for node,at in sorted(G.nodes(data=True)):
     elif node_type == 'door':
         plot_point(p)
     # else:
-    #    plot_point(p)
+    #     plot_point(p)
 
 print("starting node", source_node)
 

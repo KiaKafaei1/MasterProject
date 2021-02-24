@@ -287,9 +287,9 @@ for room in array_tri:
     i+=1
 
 ### Plotting the rooms from the R tree datastructure
-fig, ax = plt.subplots()
-for room in rectangles_rooms.values():
-    plt.plot([room[0],room[0],room[1],room[1],room[0]],[room[2],room[3],room[3],room[2],room[2]])
+# fig, ax = plt.subplots()
+# for room in rectangles_rooms.values():
+#     plt.plot([room[0],room[0],room[1],room[1],room[0]],[room[2],room[3],room[3],room[2],room[2]])
 
 #plt.show()   
 
@@ -594,21 +594,54 @@ for node,at in sorted(G_grid_temp.nodes(data=True)):
 
 
 
-# Removing doors connected to the outside, this is done using if statements.
-G_grid_cpy = G_grid.copy()
+# # Removing doors connected to the outside, this is done using if statements.
+# G_grid_cpy = G_grid.copy()
+# for node,at in sorted(G_grid.nodes(data=True)):
+#     node_type = at['att'][0]
+#     if node_type == "door":
+#         p = at['att'][1]
+#         if p.x == 144.5 and p.y == 100.5:
+#             dist = at['att'][2]
+#             #G_grid.remove_node(node)
+#             G_grid.add_node(node,att=("grid",p,dist))
+#         elif p.x == 173.5 and p.y == 60:
+#             dist = at['att'][2]
+#             #G_grid.remove_node(node)
+#             G_grid.add_node(node,att=("grid",p,dist))
+
+
+## Removing doors connected to the outside, using the line intersection algorithm
+# If the door is inside the building it will interesect with wall lines in all four directions. If it does not intersect with walls 
+# in a given direction it means that the door is outside the building. And it should therefore be removed.
+
+inside_building = 0
+#G_grid_cpy = G_grid.copy()
 for node,at in sorted(G_grid.nodes(data=True)):
     node_type = at['att'][0]
     if node_type == "door":
         p = at['att'][1]
-        if p.x == 144.5 and p.y == 100.5:
+        four_points = [Point(p.x,y_max),Point(p.x,y_min),Point(x_max,p.y),Point(x_min,p.y)]
+        for p1 in four_points:
+            for line in Dic_all.values():
+                p2 = Point(line[0][0][0],line[0][0][1])
+                p3 = Point(line[0][1][0],line[0][1][1])
+                if intersect(p,p1,p2,p3)==True:
+                    #print("lol")
+                    # The point intersecteded with a line in the given direction, we therefore move on to the next direction
+                    inside_building = 1
+                    break
+            if inside_building==1:
+                inside_building=0
+                continue
+            # The door node didn't intersect with any lines in the given direction meaning it is outside the building.
             dist = at['att'][2]
-            #G_grid.remove_node(node)
             G_grid.add_node(node,att=("grid",p,dist))
-        elif p.x == 173.5 and p.y == 60:
-            dist = at['att'][2]
-            #G_grid.remove_node(node)
-            G_grid.add_node(node,att=("grid",p,dist))
+            #inside_building = 1
+            break
+        
 
+
+                    
 
 
 

@@ -17,6 +17,7 @@ import random
 from time import process_time
 from rtree import index
 from rtree.index import Rtree
+import copy
 ################# Defining functions and classes ###################
 
 #1
@@ -346,11 +347,11 @@ for i,door in enumerate(points_doors):
     if facing_doors[i][1][0] == 1:
         temp_points.append(Point(door.x,door.y+0.5))
         points_doors_opposite.append(Point(door.x,door.y-0.5))
-    #print(facing_doors[i])
+
     
 points_doors = temp_points.copy()
-#print(points_doors)
-#print(points_doors_opposite)
+
+
 
 
 
@@ -383,7 +384,10 @@ for room in Dic_rooms.values():
     room_node.round_to_half()
     points_rooms.append(room_node)
 
-#print(points_rooms)
+#Some of the room nodes are identical since two overlapping rooms have identical centers
+#print(len(points_rooms))
+
+
 
 
     # else:
@@ -470,15 +474,23 @@ grid_height = len(np.linspace(y_min,y_max,(y_max-y_min)*2+1))
 #points_rooms = [Point(165,56),Point(154,63),Point(168,54),Point(110,56),Point(120,72),Point(110,85),Point(110,104),Point(120,93),Point(110,84),Point(135,103),Point(126,60),Point(118,92),Point(141,57)]
 
 
-# Rounding the doors to nearest 0.5 since that is the resolution of the grid.
-[p.round_to_half() for p in points_doors]
-[p.round_to_half() for p in points_doors_opposite]
+
+
+# Keeping the original door coordinates
+points_doors_discrete = copy.deepcopy(points_doors)
+points_doors_opposite_discrete = copy.deepcopy(points_doors_opposite)
+
+
+# Rounding the discrete doors to nearest 0.5 since that is the resolution of the grid.
+[p.round_to_half() for p in points_doors_discrete]
+[p.round_to_half() for p in points_doors_opposite_discrete]
 
 # Doing the same for the room nodes
 [p.round_to_half() for p in points_rooms]
 
 points_all = points_doors+points_rooms+ points_doors_opposite #+points_corners
 #Plotting the points
+
 
 # #### Removing doors that lead to the outside
 # # I try to do this manually first
@@ -530,12 +542,16 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
 
         #Removing floating doors by removing all doors that are far away from the nearest wall
         # We use the information that length of the lists are the same and each index corresponds to opposite points.
-        if p in points_doors:# and dist<1.1: 
-            idx_d = points_doors.index(p)
-            G_grid.add_node(i,att =("door",p,dist,idx_d))
-        elif p in points_doors_opposite: # and dist<1.1:
-            idx_d = points_doors_opposite.index(p)
-            G_grid.add_node(i,att = ("door",p,dist,idx_d))
+        if p in points_doors_discrete:# and dist<1.1: 
+            idx_d = points_doors_discrete.index(p)
+            p_float = points_doors[idx_d]
+            dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p_float.x,p_float.y)
+            G_grid.add_node(i,att =("door",p_float,dist,idx_d))
+        elif p in points_doors_opposite_discrete: # and dist<1.1:
+            idx_d = points_doors_opposite_discrete.index(p)
+            p_float = points_doors_opposite[idx_d]
+            dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p_float.x,p_float.y)
+            G_grid.add_node(i,att = ("door",p_float,dist,idx_d))
 
 
         elif p in points_rooms:
@@ -587,7 +603,7 @@ for node,at in sorted(G_grid_temp.nodes(data=True)):
     if node_type != 'door':
         continue
     dist = at['att'][2]
-    if dist >1.1:
+    if dist >2:
         p = at['att'][1]
         idx_d = at['att'][3]
         G_grid.add_node(node,att=("grid",p,dist))
@@ -763,7 +779,8 @@ for node,at in sorted(G_rooms.nodes(data=True)):
 # Removing room nodes that are not connected to other room nodes, also change its description from roon node to grid node in G
 #print(Dic_connectivity)
 max_connection = max(Dic_connectivity.values())
-
+#print(Dic_connectivity)
+print(len(Dic_connectivity))
 for key,value in Dic_connectivity.items():
     if value == max_connection:
         continue
@@ -894,6 +911,10 @@ for node,at in sorted(G.nodes(data=True)):
     # else:
     #     plot_point(p)
 
+#print(points_rooms)
+for p in points_rooms:
+    plot_point(p,False)
+
 print("starting node", source_node)
 
 
@@ -931,7 +952,7 @@ for edge in tsp_edges:
         node_prev = pred[count-1]
         p = G.nodes(data=True)[node_new]['att'][1]
         q = G.nodes(data=True)[node_prev]['att'][1]
-        plt.plot([p.x,q.x],[p.y,q.y],'b')
+        plt.plot([p.x,q.x],[p.y,q.y],'g')
 
         count = count-1
 

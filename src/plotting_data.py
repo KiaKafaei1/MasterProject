@@ -174,7 +174,7 @@ idx_rooms = index.Index(interleaved=False)
 # Making a dictionary for the rectangles, such that they can later be retrieved when wanting to branch out
 rectangles_rooms = collections.defaultdict(list)
 Dic_rooms = rec_dd()
-
+Dic_rooms_edges = collections.defaultdict(list)
 ##################### Plotting Rooms ###########################
 #6
 #Importing values and changing from df to numpy array
@@ -275,14 +275,14 @@ for room in array_tri:
                 p_y_max=p[1]
             if p[1]<p_y_min:
                 p_y_min = p[1]
-
     bottom = p_y_min
     left = p_x_min
     top = p_y_max
     right = p_x_max
     idx_rooms.insert(i,(left,right,bottom,top),obj = room)
     rectangles_rooms[i] = [left,right,bottom,top]
-
+    # I save the maximum points in another dictionary
+    Dic_rooms_edges[i] = [p_x_min, p_y_min,p_x_max,p_y_max]
     Dic_rooms[i] = Dic
     Dic = collections.defaultdict(list)
     i+=1
@@ -362,27 +362,30 @@ points_rooms = [Point(165,56),Point(154,63),Point(168,54),Point(110,56),Point(12
 
 # Now I try to autogenerate them
 points_rooms = []
-for room in Dic_rooms.values():
-    p_x_max = 0
-    p_y_max = 0
-    p_x_min = 1000
-    p_y_min = 1000
-    for line in room.values():
-        p1 = line[0][0]
-        p2 = line[0][1]
-        for p in (p1,p2):
-            if p[0]>p_x_max:
-                p_x_max = p1[0]
-            if p[0]<p_x_min:
-                p_x_min = p1[0]
-            if p[1]>p_y_max:
-                p_y_max=p[1]
-            if p[1]<p_y_min:
-                p_y_min = p[1]
+
+for edges in Dic_rooms_edges.values():
+    p_x_min = edges[0]
+    p_y_min = edges[1]
+    p_x_max = edges[2]
+    p_y_max = edges[3]
+
+    # for line in room.values():
+    #     p1 = line[0][0]
+    #     p2 = line[0][1]
+    #     for p in (p1,p2):
+    #         if p[0]>p_x_max:
+    #             p_x_max = p1[0]
+    #         if p[0]<p_x_min:
+    #             p_x_min = p1[0]
+    #         if p[1]>p_y_max:
+    #             p_y_max=p[1]
+    #         if p[1]<p_y_min:
+    #             p_y_min = p[1]
 
     room_node = Point((p_x_max-p_x_min)/2+p_x_min,(p_y_max-p_y_min)/2+p_y_min)
     room_node.round_to_half()
     points_rooms.append(room_node)
+
 
 #Some of the room nodes are identical since two overlapping rooms have identical centers
 #print(len(points_rooms))

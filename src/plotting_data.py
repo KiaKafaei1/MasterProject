@@ -636,8 +636,8 @@ for node,at in sorted(G_grid_temp.nodes(data=True)):
 inside_building = 0
 #G_grid_cpy = G_grid.copy()
 for node,at in sorted(G_grid.nodes(data=True)):
-    node_type = at['att'][0]
-    if node_type == "door":
+        node_type = at['att'][0]
+    #if node_type == "door":
         p = at['att'][1]
         four_points = [Point(p.x,y_max),Point(p.x,y_min),Point(x_max,p.y),Point(x_min,p.y)]
         for p1 in four_points:
@@ -654,7 +654,8 @@ for node,at in sorted(G_grid.nodes(data=True)):
                 continue
             # The door node didn't intersect with any lines in the given direction meaning it is outside the building.
             dist = at['att'][2]
-            G_grid.add_node(node,att=("grid",p,dist))
+            #G_grid.add_node(node,att=("grid",p,dist))
+            G_grid.remove_node(node)
             #inside_building = 1
             break
         
@@ -688,15 +689,25 @@ for node,at in sorted(G_grid.nodes(data=True)):
     G_grid_cpy.remove_node(node)
     #print(removable_edge_list)
  
-
-
-
-
-
-
-
-
 G_grid = G_grid_cpy.copy()
+
+# Placing a room label on all nodes in the grid, such that we know which rooms they belong to
+for node,at in sorted(G_grid.nodes(data=True)):
+    p = at['att'][1]
+    k = list(idx_rooms.nearest((p.x,p.x, p.y, p.y), 4))
+
+#print(Dic_rooms_edges[k[3]])
+#print(p)
+#print(k)
+
+
+
+
+
+
+
+
+
 t1_start = process_time()
 # Connecting all doors that are opposite from eachother. This is because we want connection between the doors outisde and inside a room.
 for node,at in sorted(G_grid.nodes(data=True)):
@@ -911,8 +922,8 @@ for node,at in sorted(G.nodes(data=True)):
         plot_point(p,False)
     elif node_type == 'door':
         plot_point(p)
-    # else:
-    #     plot_point(p)
+    else:
+        plot_point(p)
 
 #print(points_rooms)
 for p in points_rooms:

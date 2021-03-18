@@ -701,124 +701,67 @@ G_grid_cpy = G_grid.copy()
 
 
 
-
-#print("Len Dic rooms", len(Dic_rooms))
+# Placing a room label on all nodes in the grid, such that we know which rooms they belong to
 inside_building=0
 intersect_flag = False
 new_room_flag = False
-# Placing a room label on all nodes in the grid, such that we know which rooms they belong to
 for node,at in sorted(G_grid_cpy.nodes(data=True)):
-
     p = at['att'][1]
-    #print("Point", p)
-
-
-    k = list(idx_rooms.nearest((p.x,p.x, p.y, p.y), 1)) #len(Dic_rooms)))#len(Dic_rooms))
-    o = list(idx_rooms.intersection((p.x, p.x, p.y, p.y)))
+    k = list(idx_rooms.nearest((p.x,p.x, p.y, p.y), 1)) #len(Dic_rooms)))
+    #o = list(idx_rooms.intersection((p.x, p.x, p.y, p.y))) 
     # This is for the case that the closest room to a gridpoint is not the room that the point is within
-    #print("k", k)
-    #print("o",o)
-
-    #print(k)
-    #print("room edges", Dic_rooms_edges[k[0]])
-    #print("point", p)
     room_index_sq_feet = collections.defaultdict(list)
     list_rooms = []
-
     # Finding the area of the rooms such that we can begin assigning to the smallest rooms first
     for test,room_index in enumerate(k):
         [room_x_min, room_y_min,room_x_max,room_y_max] = Dic_rooms_edges[room_index]
         sq_feet = (room_y_max - room_y_min)*(room_x_max-room_x_min)
         room_index_sq_feet[room_index] = sq_feet
-
     # Dictionary of rooms 
     temp_dict = {k: v for k, v in sorted(room_index_sq_feet.items(), key=lambda item: item[1])}
     # Converting back to list
     k_new = list(temp_dict.keys())
-
-    #print("k", k)
-    #print("k_new",k_new)   
     for test,room_index in enumerate(k_new):
-        #print("K_new", k_new)
-        #print("test",test)
-
-        #print("room_index", room_index)
-
-        # print("room",room)
-        # if p.x>Dic_rooms_edges[room][0] and p.y>Dic_rooms_edges[room][1] \
-        # and p.x<Dic_rooms_edges[room][2] and p.y<Dic_rooms_edges[room][3]:
-        #     room_index = room
-        #     break
-        # room_index = room
-
     #Doing line intersection with the gridpoint and all walls in the room in 4 directions
-        [room_x_min,room_y_min,room_x_max,room_y_max] = Dic_rooms_edges[room_index]
+        [room_x_min,room_y_min,room_x_max,room_y_max] = Dic_rooms_edges[room_index] # remember that the edges are +- a small sigma
         four_points = [Point(p.x,room_y_max),Point(p.x,room_y_min),Point(room_x_max,p.y),Point(room_x_min,p.y)]
-        #print("room_index",room_index)
-        #print(Dic_rooms[room_index].values())
-        #print("Edges", [room_x_min,room_y_min,room_x_max,room_y_max])
-        # We go through each of the 4 edge points
+        # We go through each of the 4 edge points and check for line intersection with all the walls in the room
         for i,p1 in enumerate(four_points):
-
-            #print(i)
             for line in Dic_rooms[room_index].values():
-                #print("intersect flag", intersect_flag)
                 p2 = Point(line[0][0][0],line[0][0][1])
                 p3 = Point(line[0][1][0],line[0][1][1])
                 if intersect(p,p1,p2,p3)==True:
-                    #print("lol")
                     # The point intersecteded with a line in the given direction, we therefore move on to the next direction
                     inside_building += 1
                     intersect_flag = True
-                    #print("inside_building:", inside_building)
                     break
-
-
+            # We go in here if the node intersected with all 4 edges.
             if inside_building==4:
                 inside_building=0
                 intersect_flag = False
                 node_type = at['att'][0]
                 dist = at['att'][2]
                 room_label = room_index
-
-                print("hej")
+                # We add a room label to the node
                 if node_type == 'door':
                     idx_d = at['att'][3]
-                    
-                    #print(at)
-                    #print(room_label)
-                    #G_grid.remove_node(node)
                     G_grid.add_node(node, att=(node_type,p,dist,room_label,idx_d))
                 else:
                     G_grid.add_node(node, att=(node_type,p,dist,room_label))
                 break
-
+            # If we havent gone through all the 4 edges yet, but we have intersected with the current edge
+            # In this case we the line intersection checking with a new edge/boundary point 
             if intersect_flag == True:
                 intersect_flag = False
-                continue
-                
-
-            # We only reach this place if it has gone through all points, if it intersects with all points
-
-            # If we hit walls in all direction it means that the node belongs to this room
-            #print("inside building", inside_building)
-
+                continue     
             # If we dont intersect in a given direction we test with a new room
             if inside_building < 4:
-                #print("inside_building",inside_building)
                 new_room_flag = True
                 inside_building = 0
                 break
-
-            # If we dont hit walls in a specific direction it means that we are in the wrong room and should therefore check the next room.
-            #if i == 4:
-            #    print("hej")
-
-            #    continue
         if new_room_flag == True:
             new_room_flag = False
             continue
-
         break
 
 

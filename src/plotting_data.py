@@ -800,11 +800,12 @@ for node,at in sorted(G_grid_cpy.nodes(data=True)):
 
 
 ## Doing K means clustering
-# iterating over every room
+
 room_nodes = []
 cent_ratio = 100 # For every 100 nodes we have 1 room node
 points_rooms = []
 points_rooms_dic = collections.defaultdict(list)
+# Iterating over every room
 for i in range(len(Dic_rooms)):
     points_temp = [at['att'][1] for node,at in G_grid.nodes(data=True) if at['att'][3]==i]
     #points_temp = nodes_temp[:][1]['att'][1]
@@ -812,63 +813,45 @@ for i in range(len(Dic_rooms)):
     # If there are no nodes in the room
     if num_of_nodes == 0:
         continue
-
     # Number of centroids, 1 in every cent_ratio
     num_cent = math.ceil(len(points_temp)/cent_ratio)
     centroids = []
     centroid_dict = collections.defaultdict(list)
-    #print("number of nodes", num_of_nodes)
-    #print("number of centroids", num_cent)
-    
     # Generating random integer to indicate which node should be centroids
     for j in range(num_cent):
         cent_idx = random.randint(0,num_of_nodes-1)
         centroids.append(points_temp[cent_idx])
-    #print("centroids",centroids)
-
-
     delta = 0.6 # This indicates when we stop the K means algorithm
     counter = 0
     while counter < 5:#delta>0.5:
-        #print("centroids",centroids)
         #Associating each node with the nearest centroid
         for p in points_temp:
             # Checking the distance to each centroid
             dist = []
-            #print("centroids",centroids)
             for centroid in centroids:
                 p1 = centroid
                 dist.append(round(distance.euclidean([p.x,p.y],[p1.x,p1.y]),2))
             # Finding the index of the closest centroid
             centr_idx = dist.index(min(dist))
-            #print("min dist",min(dist))
-            #print("centr_idx",centr_idx)
-            # adding the point to the closest centroid
+            # Adding the point to the closest centroid
             centroid_dict[centr_idx].append(p)
-            #print("centroid_dict", centroid_dict)
         # Calculating new centroid
-        #print("counter",counter)
         centroids_new = []
         for centroid_idx in range(len(centroids)):
             points_centroid = centroid_dict[centroid_idx]
-            
             # If there are no points associated with the centroid we skip it
             if len(points_centroid)==0:
                 continue
-            #print("points_centroid", len(points_centroid))
+            # Finding the avg of the points which will be the new centroid
             avg_x = round(np.mean([p.x for p in points_centroid]),2)
             avg_y = round(np.mean([p.y for p in points_centroid]),2)
-            #print("avg_x",avg_x)
-            #print("avg_y",avg_y)
             avg_point = Point(avg_x,avg_y)
-            #print("avg_point",avg_point)
             avg_point.round_to_half()
             # If the centroid is not in the room we skip the centroid and settle with fewer centroids
             if avg_point not in points_temp:
                 print("hej")
                 continue
             centroids_new.append(avg_point)
-            #print("centroids_new",centroids_new)
         centroids = copy.deepcopy(centroids_new)
         # Resetting which nodes are associated to which centroid
         centroid_dict = collections.defaultdict(list)
@@ -876,16 +859,9 @@ for i in range(len(Dic_rooms)):
         # If we only have 1 centroid it will converge after one iteration
         if len(centroids)==1:
             counter = 6
-        #print("centroids", centroids_new)
-    #points_rooms.extend(centroids)
     # Adding the centroids to the correct room
-    #print("centroids",centroids)
-    points_rooms.extend(centroids)
+    #points_rooms.extend(centroids)
     points_rooms_dic[i] = centroids
-
-print("points_rooms_dic", points_rooms_dic)
-
-
 
 
 
@@ -896,72 +872,14 @@ j = 0
 for room_label,room_points in points_rooms_dic.items():
     for p in room_points:
         j = j+1
-        # The distance to the wall is not important anymore since it is used to remove the closest nodes to the walls
-        # dist = 5 
-        #print(p)
-        # k = list(idx.nearest((p.x,p.x, p.y, p.y), 1))
-        # k = max(k) #If multiple walls are close we just choose a random wall (the wall with the highest index)
-        # line = Dic_all_unhashed.get(k)
-        # p1 = line[0][0]
-        # p2 = line[0][1]
-        # dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p.x,p.y)
-        # G_grid.add_node(grid_len+j,att=("room",p,dist,room_label))
-        
-        # # Finding the closest nodes and adding the edge
-        # self_node = list(idx_nodes.nearest((p.x,p.x,p.y,p.y),1)) # This is itself
-        # k = list(idx_nodes.nearest((p.x,p.x,p.y,p.y),5)) # These are horizontal and vertical nodes
-        # o = list(idx_nodes.nearest((p.x,p.x,p.y,p.y),9)) # These include the diagonal nodes
-        # print("room point",p)
-        # print("self_node",self_node)
-        # print()
-        # print("k",k)
-        # print("o",o)
-        # grid_points = [at['att'][1] for node,at in G_grid.nodes(data=True) if node in o]
-        # print("grid_points",grid_points)
         node_and_at = [[node,at] for node,at in G_grid.nodes(data=True) if at['att'][1]==p]
         # This is the case if the point is not in the grid. This is probably because room point is outside the building
         if not node_and_at:
             continue
-
-        #print(node_and_at)
         node = node_and_at[0][0]
         at = node_and_at[0][1]
         dist = at['att'][2]
-
-
         G_grid.add_node(node,att = ("room",p,dist,room_label))
-        # for node in k:
-        #     # Making sure that the node has not been removed from the grid
-        #     if node in self_node:
-        #         continue
-        #     if G_grid.has_node(node):
-        #         G_grid.add_edge(node,grid_len+j,weight=10)
-
-        # for node in o:
-        #     if node in self_node:
-        #         continue
-        #     if node in k:
-        #         continue
-        #     if G_grid.has_node(node):
-        #         G_grid.add_edge(node,grid_len+j,weight = 14)
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 t1_stop = process_time()
 print(t1_stop - t1_start)
 

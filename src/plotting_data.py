@@ -592,8 +592,8 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
             G_grid.add_node(i,att = ("door",p_float,dist,idx_d))
 
 
-        elif p in points_rooms:
-            G_grid.add_node(i,att=("room",p,dist))
+        #elif p in points_rooms:
+        #    G_grid.add_node(i,att=("room",p,dist))
         else:
             G_grid.add_node(i,att =("grid",p,dist))       
 
@@ -809,8 +809,11 @@ for i in range(len(Dic_rooms)):
     points_temp = [at['att'][1] for node,at in G_grid.nodes(data=True) if at['att'][3]==i]
     #points_temp = nodes_temp[:][1]['att'][1]
     num_of_nodes = len(points_temp)
+    # If there are no nodes in the room
     if num_of_nodes == 0:
         continue
+
+    # Number of centroids, 1 in every cent_ratio
     num_cent = math.ceil(len(points_temp)/cent_ratio)
     centroids = []
     centroid_dict = collections.defaultdict(list)
@@ -821,12 +824,13 @@ for i in range(len(Dic_rooms)):
     for j in range(num_cent):
         cent_idx = random.randint(0,num_of_nodes-1)
         centroids.append(points_temp[cent_idx])
-
     #print("centroids",centroids)
+
 
     delta = 0.6 # This indicates when we stop the K means algorithm
     counter = 0
-    while counter < 10:#delta>0.5:
+    while counter < 5:#delta>0.5:
+        #print("centroids",centroids)
         #Associating each node with the nearest centroid
         for p in points_temp:
             # Checking the distance to each centroid
@@ -835,39 +839,54 @@ for i in range(len(Dic_rooms)):
             for centroid in centroids:
                 p1 = centroid
                 dist.append(round(distance.euclidean([p.x,p.y],[p1.x,p1.y]),2))
-            
             # Finding the index of the closest centroid
             centr_idx = dist.index(min(dist))
             #print("min dist",min(dist))
             #print("centr_idx",centr_idx)
-
             # adding the point to the closest centroid
             centroid_dict[centr_idx].append(p)
             #print("centroid_dict", centroid_dict)
-
         # Calculating new centroid
+        #print("counter",counter)
         centroids_new = []
         for centroid_idx in range(len(centroids)):
-
             points_centroid = centroid_dict[centroid_idx]
-            #print("points_centroid", points_centroid)
-            avg_x = np.mean([p.x for p in points_centroid])
-            avg_y = np.mean([p.y for p in points_centroid])
+            
+            # If there are no points associated with the centroid we skip it
+            if len(points_centroid)==0:
+                continue
+            #print("points_centroid", len(points_centroid))
+            avg_x = round(np.mean([p.x for p in points_centroid]),2)
+            avg_y = round(np.mean([p.y for p in points_centroid]),2)
             #print("avg_x",avg_x)
             #print("avg_y",avg_y)
             avg_point = Point(avg_x,avg_y)
-            print("avg_point",avg_point)
+            #print("avg_point",avg_point)
             avg_point.round_to_half()
+            # If the centroid is not in the room we skip the centroid and settle with fewer centroids
+            if avg_point not in points_temp:
+                print("hej")
+                continue
             centroids_new.append(avg_point)
             #print("centroids_new",centroids_new)
-
         centroids = copy.deepcopy(centroids_new)
+        # Resetting which nodes are associated to which centroid
+        centroid_dict = collections.defaultdict(list)
         counter +=1
+        # If we only have 1 centroid it will converge after one iteration
+        if len(centroids)==1:
+            counter = 6
         #print("centroids", centroids_new)
     #points_rooms.extend(centroids)
     # Adding the centroids to the correct room
     #print("centroids",centroids)
+    points_rooms.extend(centroids)
     points_rooms_dic[i] = centroids
+
+print("points_rooms_dic", points_rooms_dic)
+
+
+
 
 
 # Making all the point_rooms room nodes
@@ -900,7 +919,11 @@ for room_label,room_points in points_rooms_dic.items():
         # grid_points = [at['att'][1] for node,at in G_grid.nodes(data=True) if node in o]
         # print("grid_points",grid_points)
         node_and_at = [[node,at] for node,at in G_grid.nodes(data=True) if at['att'][1]==p]
-        print(node_and_at)
+        # This is the case if the point is not in the grid. This is probably because room point is outside the building
+        if not node_and_at:
+            continue
+
+        #print(node_and_at)
         node = node_and_at[0][0]
         at = node_and_at[0][1]
         dist = at['att'][2]
@@ -1107,7 +1130,7 @@ source_node = random.choice(list(G_rooms.nodes))
 mst_G_rooms=nx.minimum_spanning_tree(G_rooms)
 
 source_node = random.choice(list(G_rooms.nodes))
-source_node = 1141
+#source_node = 1141
 # #source_node = 189
 
 # Solve the TSP problem for subgraph using DFS traversal
@@ -1177,8 +1200,8 @@ for node,at in sorted(G.nodes(data=True)):
 
 
 #print(points_rooms)
-for p in points_rooms:
-    plot_point(p,False)
+#for p in points_rooms:
+#    plot_point(p,False)
 
 print("starting node", source_node)
 

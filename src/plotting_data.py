@@ -541,9 +541,6 @@ for node,at in sorted(G_grid.nodes(data=True)):
    if dist<0.5:
     if node_type == "door":
         continue
-    #removable_edge_list.append(G_grid.edges(node))
-    #removable_edge_list = G_grid.edges(node)
-    #G_grid_cpy.remove_edges_from(removable_edge_list)
     G_grid_cpy.remove_node(node)
  
 G_grid = G_grid_cpy.copy()
@@ -682,8 +679,7 @@ for i in range(len(Dic_rooms)):
 
 
 
-# Making all the point_rooms room nodes
-# Using the length of the grid as the first index 
+# Connecting all the room nodes to the overall graph
 grid_len = len(G_grid)
 j = 0
 for room_label,room_points in points_rooms_dic.items():
@@ -699,6 +695,7 @@ for room_label,room_points in points_rooms_dic.items():
         G_grid.add_node(node,att = ("room",p,dist,room_label))
 t1_stop = process_time()
 print(t1_stop - t1_start)
+
 
 
 t1_start = process_time()
@@ -722,6 +719,33 @@ t1_stop = process_time()
 
 
 
+# For all doors connect them to a node in the room if not already connected to more than one other node
+for node,at in sorted(G_grid.nodes(data=True)):
+    node_type = at['att'][0]
+    if node_type != "door":
+        continue
+    num_edges = G_grid.edges(node)
+    # This is the case when the door is only connected to its opposite door, and to no other nodes in the room
+    # In this case we find the room it belongs to and connect it to one of the room nodes of the room.
+    if len(num_edges) <=1:
+        room_num_door = at['att'][3]
+        p = at['att'][1]
+        # Find the nearest nodes to the door
+        nearest_nodes= list(idx_nodes.nearest((p.x,p.x, p.y, p.y), 30))
+        # For all the nearest node the first one that is in the same room as the door will be connected to the door
+        for node1 in nearest_nodes:
+            # The nearest node will be itself, and therefore we skip this node
+            if node == node1:
+                continue
+            # Check if the node exists in the grid graph, this is because it might be a node that has been
+            # removed from the grid graph
+            if not G_grid.has_node(node1):
+                continue
+            room_num_node = G_grid.nodes[node1]['att'][3]
+            if room_num_door == room_num_node:
+                G_grid.add_edge(node,node1,weight=14)
+                point_node = G_grid.nodes[node1]['att'][1]
+                break
 
 
 
@@ -864,16 +888,14 @@ for node,at in sorted(G.nodes(data=True)):
 
 
 ##Plotting all the nodes with their room labels of the graph on the map
-##cmap = colors.ListedColormap(['k','b','y','g','r'])
 # color_list = ['k','b','y','g','r']
-
 # for node,at in sorted(G.nodes(data=True)):
 #     p = at['att'][1]
 #     node_type = at['att'][0]
 #     room = at['att'][3]
-
 #     color = color_list[room%5]
 #     plt.plot(p.x,p.y,marker='o',color=color,markerfacecolor=color)
+
 print("starting node", source_node)
 #Plotting starting node
 p = G_rooms.nodes(data=True)[source_node]['att'][1]

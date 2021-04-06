@@ -185,6 +185,13 @@ array = np.delete(array,0)
 # Preprocessing the csv file such that it is in the right format for plotting
 array = cop.cor_processing(array)
 array_tri = cop.tri_processing(array)
+
+# Getting the room min elevation values
+df_elevation = pd.read_csv('room_elevation.csv',sep=',', header=None)
+array_elevation = df_elevation.to_numpy()
+#array_elevation = np.delete(array_elevation,0)
+
+#print(array_elevation)
 #7
 #plotting triangles
 tempx=[]
@@ -192,13 +199,52 @@ tempy=[]
 Dic =collections.defaultdict(list) 
 #fig, ax = plt.subplots()
 Dic_all = collections.defaultdict(list)
-i=0
-for room in array_tri:
+
+#array_elevation = [item for sublist in array_elevation for item in sublist]
+#print(array_elevation)
+#min_elevation = array_elevation[0][0]
+#max_elevation = array_elevation[0][1]
+
+#Finding all possible elevation combos
+elevation_combos = []
+for i,ele in enumerate(array_elevation):
+    min_ele = ele[0]
+    max_ele = ele[1]
+
+    if [min_ele,max_ele] not in elevation_combos:
+        elevation_combos.append([min_ele,max_ele])
+
+
+#print(type(array_elevation[0]))
+
+# choosing random floorplan
+random_floor = random.randint(0, len(elevation_combos)-1)
+min_elevation = elevation_combos[random_floor][0]
+max_elevation = elevation_combos[random_floor][1]
+
+min_elevation = elevation_combos[0][0]
+max_elevation = elevation_combos[0][1]
+
+
+print(elevation_combos)
+print([min_elevation,max_elevation])
+
+#print(array_elevation)
+
+
+for i,room in enumerate(array_tri):
+    #print(i)
     #Not including every room to simplify the drawing
-    if room_127:
-        if(i>4): break 
-    else:
-        if(i>35): break 
+    #if room_127:
+     #   if(i>4): break 
+    #else:
+        #if(i>35): break 
+    if array_elevation[i][0]!=min_elevation:# or array_elevation[i][1]>max_elevation:
+        continue
+
+    #if array_elevation[i][0]!=min_elevation or array_elevation[i][1]!=max_elevation:
+    #    continue
+    
     for tri in room:
         for cor in tri:
             tempx.append(cor[0])
@@ -210,21 +256,21 @@ for room in array_tri:
     # Removing lines that are reoccuring from the Dictionary
     # Removing small circles and small unusefull lines
     for x in list(Dic):
-        if len(Dic[x])>1 or distance.euclidean(Dic[x][0][0],Dic[x][0][1])<0.1:
+        if len(Dic[x])>1:# or distance.euclidean(Dic[x][0][0],Dic[x][0][1])<0.1:
             Dic.pop(x)            
 #8        
-    # Manually removing lines    
-    for x in list(Dic):
-        coord1 = Dic[x][0][0]
-        coord2 = Dic[x][0][1]
-        if (123.82<coord1[0]<123.86 and 95.6<coord1[1]<95.75) or (123.82<coord2[0]<123.86 and 95.6<coord2[1]<95.75): 
-            Dic.pop(x) 
-        if (117<coord1[0]<118 and 95<coord1[1]<95.5) or (117<coord2[0]<118 and 95<coord2[1]<95.5): 
-            Dic.pop(x)
-        if (114<coord1[0]<115 and 98.5<coord1[1]<99) or (114<coord2[0]<115 and 98.5<coord2[1]<99):
-            Dic.pop(x)
-        if (123.75<coord1[0]<123.95 and 63.6<coord1[1]<63.67) or (123.75<coord2[0]<123.95 and 63.6<coord2[1]<63.67): 
-            Dic.pop(x)     
+    # # Manually removing lines    
+    # for x in list(Dic):
+    #     coord1 = Dic[x][0][0]
+    #     coord2 = Dic[x][0][1]
+    #     if (123.82<coord1[0]<123.86 and 95.6<coord1[1]<95.75) or (123.82<coord2[0]<123.86 and 95.6<coord2[1]<95.75): 
+    #         Dic.pop(x) 
+    #     if (117<coord1[0]<118 and 95<coord1[1]<95.5) or (117<coord2[0]<118 and 95<coord2[1]<95.5): 
+    #         Dic.pop(x)
+    #     if (114<coord1[0]<115 and 98.5<coord1[1]<99) or (114<coord2[0]<115 and 98.5<coord2[1]<99):
+    #         Dic.pop(x)
+    #     if (123.75<coord1[0]<123.95 and 63.6<coord1[1]<63.67) or (123.75<coord2[0]<123.95 and 63.6<coord2[1]<63.67): 
+    #         Dic.pop(x)     
 #9
     # All lines are plotted twice due to the way we are hashing, it is more appropriate to remove replicate values that are in more than 1 hash.
     # Remove replicate lines  
@@ -270,7 +316,7 @@ for room in array_tri:
     Dic_rooms_edges[i] = [p_x_min, p_y_min,p_x_max,p_y_max]
     Dic_rooms[i] = Dic
     Dic = collections.defaultdict(list)
-    i+=1
+
 
 ### Plotting the rooms from the R tree datastructure
 # fig, ax = plt.subplots()
@@ -286,20 +332,86 @@ for room in array_tri:
 ### Plotting using CSV####
 df = pd.read_csv('door_coordinates.csv',sep=',', header=None)
 array = df.to_numpy()
-array = np.delete(array,0)
+array = [item for sublist in array for item in sublist]
+
+
+
+#array = np.delete(array,0)
 array = cop.cor_processing(array,room=0)
 #This is the translation needed to make doors align with floorplan
+
+#print(type(array[-1][0]))
+#print(float(array[-1][0]))
+
 translation =  [array[-1][i] for i in (0,2)]
+
 # Remove the translation from the array of door coordinates
 array = array[:-1]
-i=0
+# Split the doors in two lists: the points of the doors and the facing of the doors.
+list_points_doors = [ele for i,ele in enumerate(array) if i%2==0]
+list_facing_doors = [ele for i,ele in enumerate(array) if i%2==1]
+
+
+
+
+# Door elevation
+df2 = pd.read_csv('doors_elevation.csv',sep=',', header=None)
+array2 = df2.to_numpy()
+
+#Finding all possible elevation combos
+elevation_combos = []
+for i,ele in enumerate(array2):
+    min_ele = ele[0]
+    max_ele = ele[1]
+
+    if [min_ele,max_ele] not in elevation_combos:
+        elevation_combos.append([min_ele,max_ele])
+
+print(elevation_combos)
+
+
+
+
+
+
 points_doors = []
 facing_doors = []
-for i,cor in enumerate(array):
-    if i%2 == 0:
-        points_doors.append(Point(cor[0][0]-translation[0][0],cor[1][0]+translation[1][0]))
-    if i%2 == 1:
-        facing_doors.append([cor[0],cor[1]])
+min_elevation = array2[0][0]
+max_elevation = array2[0][1]
+j=0
+
+# Having the list of doors needed and also other doors
+for i,elev in enumerate(array2):
+    min_elevation_temp = elev[0]
+    max_elevation_temp = elev[1]
+    if min_elevation == min_elevation_temp:
+        points_doors.append(Point(list_points_doors[i][0][0]-translation[0][0],list_points_doors[i][1][0]+translation[1][0]))
+        facing_doors.append([list_facing_doors[i][0],list_facing_doors[i][1]])
+
+# print(len(points_doors))
+# print(len(facing_doors))
+
+# print(points_doors)
+# print(facing_doors)
+
+# for i,cor in enumerate(array):
+#     if j == 1:
+#         facing_doors.append([cor[0],cor[1]])
+#         j=0
+#     if i%2 == 0:
+#         #door_elevation_temp = cor[2][0]
+#         min_elevation_temp = array2[j][0]
+#         max_elevation_temp = array2[j][1]
+#         print
+#         #if min_elevation == min_elevation_temp and max_elevation==max_elevation_temp:
+#         if min_elevation == min_elevation_temp:
+#             points_doors.append(Point(cor[0][0]-translation[0][0],cor[1][0]+translation[1][0]))
+#         j+=1
+    #if i%2 == 1:
+    #    if min_elevation == min_elevation_temp and max_elevation==max_elevation_temp:
+    #        facing_doors.append([cor[0],cor[1]])
+
+
 
 
 
@@ -311,6 +423,8 @@ for i,cor in enumerate(array):
 # Placing a door on the other side of the wall
 temp_points = []#points_doors.copy()
 points_doors_opposite = []
+print(len(points_doors))
+print(len(facing_doors))
 for i,door in enumerate(points_doors):
     if facing_doors[i][0][0] == -1:
         temp_points.append(Point(door.x-0.5,door.y))
@@ -367,6 +481,7 @@ x_max = math.ceil(max([Dic_all[x_max_idx1][0][0][0],Dic_all[x_max_idx2][0][1][0]
 x_min = math.floor(min([Dic_all[x_min_idx1][0][0][0],Dic_all[x_min_idx2][0][1][0]]))
 y_max = math.ceil(max([Dic_all[y_max_idx1][0][0][1],Dic_all[y_max_idx2][0][1][1]]))
 y_min = math.floor(min([Dic_all[y_min_idx1][0][0][1],Dic_all[y_min_idx2][0][1][1]]))
+
 
 
 

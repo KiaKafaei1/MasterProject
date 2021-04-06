@@ -15,7 +15,7 @@ elements = tree.findall('.Room/Triangles')
 for i in elements:
     rooms_coord.append({'Coords': i.attrib['Coords']})
 
-
+#print(rooms_coord)
 
 # Writing to csv file
 fields = ['Coords']
@@ -26,6 +26,33 @@ with open(filename,'w') as csvfile:
     writer.writeheader()
     writer.writerows(rooms_coord)
 
+#-------------
+
+# Getting the min and max elevations
+elements = tree.findall('.Room')
+room_elevation =[]
+for i in elements:
+    #room_elevation.append({'MinElevation': i.attrib['MinElevation']})
+    #room_elevation.append({'MaxElevation': i.attrib['MaxElevation']})
+    room_elevation.append([i.attrib['MinElevation'],i.attrib['MaxElevation']])
+    #room_elevation.append(i.attrib['MaxElevation'])
+
+
+#fields = ['MinElevation','MaxElevation']
+filename = "room_elevation.csv"
+with open(filename,'w') as csvfile:
+    #writer = csv.DictWriter(csvfile)
+    writer = csv.writer(csvfile)
+    #csvfile.writeheader()
+    writer.writerows(room_elevation)
+    #writer.writerows(max_elevation)
+
+
+
+
+
+
+
 
 ## GETTING COORDINATES FOR DOORS
 door_path = path+'/floorplaninfo.xml'
@@ -33,8 +60,8 @@ tree = ET.parse(door_path)
 doors_coord = []
 elements = tree.findall('.elements/door/definition')
 for i in elements:
-   doors_coord.append({'Coords': i.attrib['origin']})
-   doors_coord.append({'Coords': i.attrib['facing']})
+    doors_coord.append([i.attrib['origin']])#,i.attrib['facing']])
+    doors_coord.append([i.attrib['facing']])
 #print(doors_coord)
 
 
@@ -48,16 +75,28 @@ with open(output_path,'r') as csv_file:
         text = line.split(' ',1)[0]
         if text == 'Translation:':
             line = line.split(' ',1)[1]
-            doors_coord.append({'Coords': line})
+            doors_coord.append([line])
 
 
 
 
-fields = ['Coords']
+#fields = ['Coords']
 filename = "door_coordinates.csv"
 
 with open(filename,'w') as csvfile:
-    writer = csv.DictWriter(csvfile,fieldnames = fields)
-    writer.writeheader()
+    writer = csv.writer(csvfile)#,fieldnames = fields)
+    #writer.writeheader()
     writer.writerows(doors_coord)
 
+#-----
+# Getting the min and max elevation of the doors.
+elements = tree.findall('.elements/door')
+doors_elevation = []
+for i in elements:
+   doors_elevation.append([i.attrib['minheight'], i.attrib['maxheight']])
+   #doors_elevation.append(i.attrib['maxheight'])
+
+filename = "doors_elevation.csv"
+with open(filename,'w') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerows(doors_elevation)

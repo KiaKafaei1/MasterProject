@@ -350,8 +350,6 @@ for i,elev in enumerate(array2):
 # Placing a door on the other side of the wall
 temp_points = []#points_doors.copy()
 points_doors_opposite = []
-print(len(points_doors))
-print(len(facing_doors))
 for i,door in enumerate(points_doors):
     if facing_doors[i][0][0] == -1:
         temp_points.append(Point(door.x-0.5,door.y))
@@ -462,10 +460,12 @@ idx_nodes = index.Index(interleaved=False)
 #         p = Point(x,y)
 #         idx_nodes.insert(i,(p.x,p.x,p.y,p.y))
 
+grid_height = len(np.linspace(y_min,y_max,(y_max-y_min)*2+1))
 
 G_grid = nx.Graph()
 i = 0
 counter_room = 0 
+
 for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
     for y in np.linspace(y_min,y_max,(y_max-y_min)*2+1):
         i = i+1
@@ -478,7 +478,6 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
         p2 = line[0][1]
         dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p.x,p.y)
         
-
         #Removing floating doors by removing all doors that are far away from the nearest wall
         # We use the information that length of the lists are the same and each index corresponds to opposite points.
         if p in points_doors_discrete:# and dist<1.1: 
@@ -501,9 +500,6 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
 
         # Vertical and horizontal neighbours
         if x>x_min:
-            #Making sure that the nodes are the length we think.
-            grid_height = len(np.linspace(y_min,y_max,(y_max-y_min)*2+1))
-            #if len(G_grid.nodes)> grid_height:
             G_grid.add_edge(i,i-grid_height,weight=10)
         if y>y_min:
             G_grid.add_edge(i,i-1,weight=10)
@@ -512,17 +508,9 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
         if x>x_min and y>y_min:
             G_grid.add_edge(i,i-grid_height-1,weight=14)
         # Diagonal up left which is the same as right down
-        if x<x_max and y>y_min:
-            G_grid.add_edge(i,i-grid_height+1,weight=14)
+        if x>x_min and y<y_max: 
+           G_grid.add_edge(i,i-grid_height+1,weight=14)
 
-
-
-
-# Adressing a very weird bug where the graph would add these random nodes.
-# print("number of room nodes detected", counter_room)
-# print("number of room nodes that actually exist", len(points_rooms))
-bug_nodes = list(range(0,-110,-1))
-G_grid.remove_nodes_from(bug_nodes)
 
 
 

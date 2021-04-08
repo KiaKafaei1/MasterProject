@@ -517,16 +517,16 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
 # Changing all door nodes that are floating to regular grid nodes.
 # This might not be important after all since the program doesn't care if a point in the middle of the room is a door node or a grid node
 # This is only visible when plotting.
-G_grid_temp = G_grid.copy()
-for node,at in sorted(G_grid_temp.nodes(data=True)):
-    node_type = at['att'][0]
-    if node_type != 'door':
-        continue
-    dist = at['att'][2]
-    if dist >2:
-        p = at['att'][1]
-        idx_d = at['att'][3]
-        G_grid.add_node(node,att=("grid",p,dist))
+# G_grid_temp = G_grid.copy()
+# for node,at in sorted(G_grid_temp.nodes(data=True)):
+#     node_type = at['att'][0]
+#     if node_type != 'door':
+#         continue
+#     dist = at['att'][2]
+#     if dist >2:
+#         p = at['att'][1]
+#         idx_d = at['att'][3]
+#         G_grid.add_node(node,att=("grid",p,dist))
 
 
     
@@ -824,6 +824,8 @@ for node,at in sorted(G_rooms.nodes(data=True)):
             continue
         # This functions checks how many nodes need to be removed to disconnect 2 nodes
         connectivity = approx.local_node_connectivity(G, node, node1)
+        #if connectivity == 0 and at['att'][3]==at1['att'][]
+
         if connectivity > 0:
             connectivity = 1
         Dic_connectivity[node] += connectivity

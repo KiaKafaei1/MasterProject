@@ -191,6 +191,27 @@ df_elevation = pd.read_csv('room_elevation.csv',sep=',', header=None)
 array_elevation = df_elevation.to_numpy()
 #array_elevation = np.delete(array_elevation,0)
 
+# Getting the room numbers
+df_number = pd.read_csv('room_number.csv',sep=',', header=None)
+array_number = df_number.to_numpy()
+
+
+
+# Dividing the numbers in floors, works up to 10 floors
+building_floors = collections.defaultdict(list)
+for num in array_number:
+    # This is floor zero
+    if num <100:
+        building_floors[0].append(num)
+    if num>100 and num<200:
+        building_floors[1].append(num)
+    if num>200 and num <300:
+        building_floors[2].append(num)
+    if num>300:
+        building_floors[3].append(num)
+
+
+
 #print(array_elevation)
 #7
 #plotting triangles
@@ -200,31 +221,36 @@ Dic =collections.defaultdict(list)
 #fig, ax = plt.subplots()
 Dic_all = collections.defaultdict(list)
 
+
 #Finding all possible elevation combos
 elevation_combos = []
-for i,ele in enumerate(array_elevation):
-    min_ele = ele[0]
-    max_ele = ele[1]
+floor_number = building_floors[1]
 
-    if [min_ele,max_ele] not in elevation_combos:
-        elevation_combos.append([min_ele,max_ele])
+# for i,ele in enumerate(array_elevation):
+#     min_ele = ele[0]
+#     max_ele = ele[1]
+
+#     if [min_ele,max_ele] not in elevation_combos:
+#         elevation_combos.append([min_ele,max_ele])
 
 
-# Choosing random floor
-random_floor = random.randint(0, len(elevation_combos)-1)
-min_elevation = elevation_combos[random_floor][0]
-max_elevation = elevation_combos[random_floor][1]
+# # Choosing random floor
+# random_floor = random.randint(0, len(elevation_combos)-1)
+# min_elevation = elevation_combos[random_floor][0]
+# max_elevation = elevation_combos[random_floor][1]
 
-# Choosing deliberate floor
-min_elevation = elevation_combos[0][0]
-max_elevation = elevation_combos[0][1]
+# # Choosing deliberate floor
+# min_elevation = elevation_combos[0][0]
+# max_elevation = elevation_combos[0][1]
 
 
 
 
 for i,room in enumerate(array_tri):
-    if array_elevation[i][0]!=min_elevation:
+    if array_number[i][0] not in floor_number:
         continue
+    #if array_elevation[i][0]!=min_elevation:
+    #    continue
 
     #if array_elevation[i][0]!=min_elevation or array_elevation[i][1]!=max_elevation:
     #    continue
@@ -267,6 +293,13 @@ for i,room in enumerate(array_tri):
                 break
     Dic_all.update(Dic)
 
+    fig, ax = plt.subplots()
+    #plot_grid(ax,x_min,x_max,y_min,y_max)
+
+    for line in Dic_all.values():
+        ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')  
+        ax.set_title(array_number[i][0])  
+    plt.show()
 
     #### Making a dictionary containing all the rooms and their lines.
     p_x_max = 0
@@ -308,663 +341,668 @@ for i,room in enumerate(array_tri):
 
 #plt.show()   
 
+fig, ax = plt.subplots()
+#plot_grid(ax,x_min,x_max,y_min,y_max)
+
+for line in Dic_all.values():
+   ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
+plt.show()
+
+# #10
+# ### Extracting the door information
+# df = pd.read_csv('door_coordinates.csv',sep=',', header=None)
+# array = df.to_numpy()
+# array = [item for sublist in array for item in sublist]
+# array = cop.cor_processing(array,room=0)
+# #This is the translation needed to make doors align with floorplan
+# translation =  [array[-1][i] for i in (0,2)]
+# # Remove the translation from the array of door coordinates
+# array = array[:-1]
+# # Split the doors in two lists: the points of the doors and the facing of the doors.
+# list_points_doors = [ele for i,ele in enumerate(array) if i%2==0]
+# list_facing_doors = [ele for i,ele in enumerate(array) if i%2==1]
+# # Door elevation
+# df2 = pd.read_csv('doors_elevation.csv',sep=',', header=None)
+# array2 = df2.to_numpy()
+# #Finding all possible elevation combos
+# elevation_combos = []
+# for i,ele in enumerate(array2):
+#     min_ele = ele[0]
+#     max_ele = ele[1]
+#     if [min_ele,max_ele] not in elevation_combos:
+#         elevation_combos.append([min_ele,max_ele])
+# points_doors = []
+# facing_doors = []
+# #Choosing the height levels for the doors corresponding to the floor chosen
+# min_elevation = array2[0][0]
+# max_elevation = array2[0][1]
+# # Making a list of the needed doors and their facing direction
+# for i,elev in enumerate(array2):
+#     min_elevation_temp = elev[0]
+#     max_elevation_temp = elev[1]
+#     if min_elevation == min_elevation_temp:
+#         points_doors.append(Point(list_points_doors[i][0][0]-translation[0][0],list_points_doors[i][1][0]+translation[1][0]))
+#         facing_doors.append([list_facing_doors[i][0],list_facing_doors[i][1]])
 
 
-#10
-### Extracting the door information
-df = pd.read_csv('door_coordinates.csv',sep=',', header=None)
-array = df.to_numpy()
-array = [item for sublist in array for item in sublist]
-array = cop.cor_processing(array,room=0)
-#This is the translation needed to make doors align with floorplan
-translation =  [array[-1][i] for i in (0,2)]
-# Remove the translation from the array of door coordinates
-array = array[:-1]
-# Split the doors in two lists: the points of the doors and the facing of the doors.
-list_points_doors = [ele for i,ele in enumerate(array) if i%2==0]
-list_facing_doors = [ele for i,ele in enumerate(array) if i%2==1]
-# Door elevation
-df2 = pd.read_csv('doors_elevation.csv',sep=',', header=None)
-array2 = df2.to_numpy()
-#Finding all possible elevation combos
-elevation_combos = []
-for i,ele in enumerate(array2):
-    min_ele = ele[0]
-    max_ele = ele[1]
-    if [min_ele,max_ele] not in elevation_combos:
-        elevation_combos.append([min_ele,max_ele])
-points_doors = []
-facing_doors = []
-#Choosing the height levels for the doors corresponding to the floor chosen
-min_elevation = array2[0][0]
-max_elevation = array2[0][1]
-# Making a list of the needed doors and their facing direction
-for i,elev in enumerate(array2):
-    min_elevation_temp = elev[0]
-    max_elevation_temp = elev[1]
-    if min_elevation == min_elevation_temp:
-        points_doors.append(Point(list_points_doors[i][0][0]-translation[0][0],list_points_doors[i][1][0]+translation[1][0]))
-        facing_doors.append([list_facing_doors[i][0],list_facing_doors[i][1]])
-
-
-# Placing a door on the other side of the wall
-temp_points = []#points_doors.copy()
-points_doors_opposite = []
-for i,door in enumerate(points_doors):
-    if facing_doors[i][0][0] == -1:
-        temp_points.append(Point(door.x-0.5,door.y))
-        points_doors_opposite.append(Point(door.x+0.5,door.y))
-    if facing_doors[i][0][0] == 1:
-        temp_points.append(Point(door.x+0.5,door.y))
-        points_doors_opposite.append(Point(door.x-0.5,door.y)) 
-    if facing_doors[i][1][0] == -1:
-        temp_points.append(Point(door.x,door.y-0.5))
-        points_doors_opposite.append(Point(door.x,door.y+0.5))
-    if facing_doors[i][1][0] == 1:
-        temp_points.append(Point(door.x,door.y+0.5))
-        points_doors_opposite.append(Point(door.x,door.y-0.5))
-points_doors = temp_points.copy()
-
-
-
-# Both ways have been depreciated!
-# Making the room points
-# First I do it manually
-points_rooms = [Point(165,56),Point(154,63),Point(168,54),Point(110,56),Point(120,72),Point(110,85),Point(110,104),Point(120,93),Point(110,84),Point(135,103),Point(126,60),Point(118,92),Point(141,57)]
-# Now I try to autogenerate them
-points_rooms = []
-for edges in Dic_rooms_edges.values():
-    p_x_min = edges[0]
-    p_y_min = edges[1]
-    p_x_max = edges[2]
-    p_y_max = edges[3]
-    room_node = Point((p_x_max-p_x_min)/2+p_x_min,(p_y_max-p_y_min)/2+p_y_min)
-    room_node.round_to_half()
-    points_rooms.append(room_node)
-
-#points_corners = [Point(170.3,61),Point(170.3,60.14),Point(173.15,61.1),\
-#Point(129.3,61),Point(124,61),Point(117.9,61.1),Point(123.9,63.7),Point(123.2,69.2),\
-#Point(123.1,75.2),Point(123.1,85.8),Point(123.1,93.6),Point(123.9,95.7),Point(141.3,98.2),\
-#Point(137.8,100.8),Point(115.1,98.4),Point(120.5,58.7)]#,Point(124,61),Point(124,61),\
-#Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61)]
-points_all = points_doors+points_rooms #+points_corners
-
-
-###### MAKING THE HIGH RESOLUTION GRID #######
-# Finding the keys for the largest and smallest x and y values from each point in each line
-x_max_idx1 = max(Dic_all, key=lambda key: Dic_all[key][0][1][0])
-x_max_idx2 = max(Dic_all, key=lambda key: Dic_all[key][0][0][0])
-x_min_idx1 = min(Dic_all, key=lambda key: Dic_all[key][0][1][0])
-x_min_idx2 = min(Dic_all, key=lambda key: Dic_all[key][0][0][0])
-# y_values
-y_max_idx1 = max(Dic_all, key=lambda key: Dic_all[key][0][0][1])
-y_max_idx2 = max(Dic_all, key=lambda key: Dic_all[key][0][1][1])
-y_min_idx1 = min(Dic_all, key=lambda key: Dic_all[key][0][0][1])
-y_min_idx2 = min(Dic_all, key=lambda key: Dic_all[key][0][1][1])
-# Getting the corresponding max and min values
-x_max = math.ceil(max([Dic_all[x_max_idx1][0][0][0],Dic_all[x_max_idx2][0][1][0]]))
-x_min = math.floor(min([Dic_all[x_min_idx1][0][0][0],Dic_all[x_min_idx2][0][1][0]]))
-y_max = math.ceil(max([Dic_all[y_max_idx1][0][0][1],Dic_all[y_max_idx2][0][1][1]]))
-y_min = math.floor(min([Dic_all[y_min_idx1][0][0][1],Dic_all[y_min_idx2][0][1][1]]))
+# # Placing a door on the other side of the wall
+# temp_points = []#points_doors.copy()
+# points_doors_opposite = []
+# for i,door in enumerate(points_doors):
+#     if facing_doors[i][0][0] == -1:
+#         temp_points.append(Point(door.x-0.5,door.y))
+#         points_doors_opposite.append(Point(door.x+0.5,door.y))
+#     if facing_doors[i][0][0] == 1:
+#         temp_points.append(Point(door.x+0.5,door.y))
+#         points_doors_opposite.append(Point(door.x-0.5,door.y)) 
+#     if facing_doors[i][1][0] == -1:
+#         temp_points.append(Point(door.x,door.y-0.5))
+#         points_doors_opposite.append(Point(door.x,door.y+0.5))
+#     if facing_doors[i][1][0] == 1:
+#         temp_points.append(Point(door.x,door.y+0.5))
+#         points_doors_opposite.append(Point(door.x,door.y-0.5))
+# points_doors = temp_points.copy()
 
 
 
+# # Both ways have been depreciated!
+# # Making the room points
+# # First I do it manually
+# points_rooms = [Point(165,56),Point(154,63),Point(168,54),Point(110,56),Point(120,72),Point(110,85),Point(110,104),Point(120,93),Point(110,84),Point(135,103),Point(126,60),Point(118,92),Point(141,57)]
+# # Now I try to autogenerate them
+# points_rooms = []
+# for edges in Dic_rooms_edges.values():
+#     p_x_min = edges[0]
+#     p_y_min = edges[1]
+#     p_x_max = edges[2]
+#     p_y_max = edges[3]
+#     room_node = Point((p_x_max-p_x_min)/2+p_x_min,(p_y_max-p_y_min)/2+p_y_min)
+#     room_node.round_to_half()
+#     points_rooms.append(room_node)
 
-######## IMPLEMENTING THE DATASTRUCTURE FOR THE WALLS ########
-p = index.Property()
-idx = index.Index(interleaved=False)
-# Making a dictionary for the rectangles, such that they can later be retrieved when wanting to branch out
-rectangles = collections.defaultdict(list)
-Dic_all_unhashed = collections.defaultdict(list)
-for i,line in enumerate(Dic_all.values()):
-    p1 = line[0][0]
-    p2 = line[0][1]
-    bottom = min(p1[1],p2[1])
-    left = min(p1[0],p2[0])
-    top = max(p1[1],p2[1])
-    right = max(p1[0],p2[0])
-    rectangles[i] = [left,right,bottom,top]
-    Dic_all_unhashed[i] = line
-    idx.insert(i,(left,right,bottom,top),obj = line)
-## Splitting the leaf nodes (indexes) up in branches
-left_branch = index.Index(interleaved = False)
-right_branch = index.Index(interleaved= False)
-for id in idx.intersection((106,145,52,75)):
-    [left,right,bottom,top] = rectangles[id]
-    left_branch.insert(id, (left,right,bottom,top))
-for id in idx.intersection((145,174,75,107)):
-    [left,right,bottom,top] = rectangles[id]
-    right_branch.insert(id,(left,right,bottom,top))
+# #points_corners = [Point(170.3,61),Point(170.3,60.14),Point(173.15,61.1),\
+# #Point(129.3,61),Point(124,61),Point(117.9,61.1),Point(123.9,63.7),Point(123.2,69.2),\
+# #Point(123.1,75.2),Point(123.1,85.8),Point(123.1,93.6),Point(123.9,95.7),Point(141.3,98.2),\
+# #Point(137.8,100.8),Point(115.1,98.4),Point(120.5,58.7)]#,Point(124,61),Point(124,61),\
+# #Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61)]
+# points_all = points_doors+points_rooms #+points_corners
 
 
-# Grid height is used when making the grid nodes
-grid_height = len(np.linspace(y_min,y_max,(y_max-y_min)*2+1))
-# Keeping the original door coordinates
-points_doors_discrete = copy.deepcopy(points_doors)
-points_doors_opposite_discrete = copy.deepcopy(points_doors_opposite)
-# Rounding the discrete doors to nearest 0.5 since that is the resolution of the grid.
-[p.round_to_half() for p in points_doors_discrete]
-[p.round_to_half() for p in points_doors_opposite_discrete]
-# Doing the same for the room nodes
-[p.round_to_half() for p in points_rooms]
-points_all = points_doors+points_rooms+ points_doors_opposite #+points_corners
-#Plotting the points
+# ###### MAKING THE HIGH RESOLUTION GRID #######
+# # Finding the keys for the largest and smallest x and y values from each point in each line
+# x_max_idx1 = max(Dic_all, key=lambda key: Dic_all[key][0][1][0])
+# x_max_idx2 = max(Dic_all, key=lambda key: Dic_all[key][0][0][0])
+# x_min_idx1 = min(Dic_all, key=lambda key: Dic_all[key][0][1][0])
+# x_min_idx2 = min(Dic_all, key=lambda key: Dic_all[key][0][0][0])
+# # y_values
+# y_max_idx1 = max(Dic_all, key=lambda key: Dic_all[key][0][0][1])
+# y_max_idx2 = max(Dic_all, key=lambda key: Dic_all[key][0][1][1])
+# y_min_idx1 = min(Dic_all, key=lambda key: Dic_all[key][0][0][1])
+# y_min_idx2 = min(Dic_all, key=lambda key: Dic_all[key][0][1][1])
+# # Getting the corresponding max and min values
+# x_max = math.ceil(max([Dic_all[x_max_idx1][0][0][0],Dic_all[x_max_idx2][0][1][0]]))
+# x_min = math.floor(min([Dic_all[x_min_idx1][0][0][0],Dic_all[x_min_idx2][0][1][0]]))
+# y_max = math.ceil(max([Dic_all[y_max_idx1][0][0][1],Dic_all[y_max_idx2][0][1][1]]))
+# y_min = math.floor(min([Dic_all[y_min_idx1][0][0][1],Dic_all[y_min_idx2][0][1][1]]))
 
 
-# Making a spatial datastructure for the points
-idx_nodes = index.Index(interleaved=False)
+
+
+# ######## IMPLEMENTING THE DATASTRUCTURE FOR THE WALLS ########
+# p = index.Property()
+# idx = index.Index(interleaved=False)
+# # Making a dictionary for the rectangles, such that they can later be retrieved when wanting to branch out
+# rectangles = collections.defaultdict(list)
+# Dic_all_unhashed = collections.defaultdict(list)
+# for i,line in enumerate(Dic_all.values()):
+#     p1 = line[0][0]
+#     p2 = line[0][1]
+#     bottom = min(p1[1],p2[1])
+#     left = min(p1[0],p2[0])
+#     top = max(p1[1],p2[1])
+#     right = max(p1[0],p2[0])
+#     rectangles[i] = [left,right,bottom,top]
+#     Dic_all_unhashed[i] = line
+#     idx.insert(i,(left,right,bottom,top),obj = line)
+# ## Splitting the leaf nodes (indexes) up in branches
+# left_branch = index.Index(interleaved = False)
+# right_branch = index.Index(interleaved= False)
+# for id in idx.intersection((106,145,52,75)):
+#     [left,right,bottom,top] = rectangles[id]
+#     left_branch.insert(id, (left,right,bottom,top))
+# for id in idx.intersection((145,174,75,107)):
+#     [left,right,bottom,top] = rectangles[id]
+#     right_branch.insert(id,(left,right,bottom,top))
+
+
+# # Grid height is used when making the grid nodes
+# grid_height = len(np.linspace(y_min,y_max,(y_max-y_min)*2+1))
+# # Keeping the original door coordinates
+# points_doors_discrete = copy.deepcopy(points_doors)
+# points_doors_opposite_discrete = copy.deepcopy(points_doors_opposite)
+# # Rounding the discrete doors to nearest 0.5 since that is the resolution of the grid.
+# [p.round_to_half() for p in points_doors_discrete]
+# [p.round_to_half() for p in points_doors_opposite_discrete]
+# # Doing the same for the room nodes
+# [p.round_to_half() for p in points_rooms]
+# points_all = points_doors+points_rooms+ points_doors_opposite #+points_corners
+# #Plotting the points
+
+
+# # Making a spatial datastructure for the points
+# idx_nodes = index.Index(interleaved=False)
+# # i = 0
+# # for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
+# #     for y in np.linspace(y_min,y_max,(y_max-y_min)*2+1):
+# #         i = i+1
+# #         p = Point(x,y)
+# #         idx_nodes.insert(i,(p.x,p.x,p.y,p.y))
+
+# grid_height = len(np.linspace(y_min,y_max,(y_max-y_min)*2+1))
+
+# G_grid = nx.Graph()
 # i = 0
+# counter_room = 0 
+
 # for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
 #     for y in np.linspace(y_min,y_max,(y_max-y_min)*2+1):
 #         i = i+1
 #         p = Point(x,y)
-#         idx_nodes.insert(i,(p.x,p.x,p.y,p.y))
-
-grid_height = len(np.linspace(y_min,y_max,(y_max-y_min)*2+1))
-
-G_grid = nx.Graph()
-i = 0
-counter_room = 0 
-
-for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
-    for y in np.linspace(y_min,y_max,(y_max-y_min)*2+1):
-        i = i+1
-        p = Point(x,y)
-        k = list(idx.nearest((p.x,p.x, p.y, p.y), 1))
-        idx_nodes.insert(i,(p.x,p.x,p.y,p.y)) # Making spatial datastructure for the nodes
-        k = max(k) #If multiple walls are close we just choose a random wall (the wall with the highest index)
-        line = Dic_all_unhashed.get(k)
-        p1 = line[0][0]
-        p2 = line[0][1]
-        dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p.x,p.y)
+#         k = list(idx.nearest((p.x,p.x, p.y, p.y), 1))
+#         idx_nodes.insert(i,(p.x,p.x,p.y,p.y)) # Making spatial datastructure for the nodes
+#         k = max(k) #If multiple walls are close we just choose a random wall (the wall with the highest index)
+#         line = Dic_all_unhashed.get(k)
+#         p1 = line[0][0]
+#         p2 = line[0][1]
+#         dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p.x,p.y)
         
-        #Removing floating doors by removing all doors that are far away from the nearest wall
-        # We use the information that length of the lists are the same and each index corresponds to opposite points.
-        if p in points_doors_discrete:# and dist<1.1: 
-            idx_d = points_doors_discrete.index(p)
-            p_float = points_doors[idx_d]
-            dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p_float.x,p_float.y)
-            G_grid.add_node(i,att =("door",p_float,dist,idx_d))
-        elif p in points_doors_opposite_discrete: # and dist<1.1:
-            idx_d = points_doors_opposite_discrete.index(p)
-            p_float = points_doors_opposite[idx_d]
-            dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p_float.x,p_float.y)
-            G_grid.add_node(i,att = ("door",p_float,dist,idx_d))
-        #elif p in points_rooms:
-        #    G_grid.add_node(i,att=("room",p,dist))
-        else:
-            G_grid.add_node(i,att =("grid",p,dist))       
-        # Not adding edges to and from nodes that are too close to the wall
-        # This is not possible because then the other nodes will have weird edges to and from eachother
-        # THe only reliable way is to add the edges and then remove them again.
+#         #Removing floating doors by removing all doors that are far away from the nearest wall
+#         # We use the information that length of the lists are the same and each index corresponds to opposite points.
+#         if p in points_doors_discrete:# and dist<1.1: 
+#             idx_d = points_doors_discrete.index(p)
+#             p_float = points_doors[idx_d]
+#             dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p_float.x,p_float.y)
+#             G_grid.add_node(i,att =("door",p_float,dist,idx_d))
+#         elif p in points_doors_opposite_discrete: # and dist<1.1:
+#             idx_d = points_doors_opposite_discrete.index(p)
+#             p_float = points_doors_opposite[idx_d]
+#             dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p_float.x,p_float.y)
+#             G_grid.add_node(i,att = ("door",p_float,dist,idx_d))
+#         #elif p in points_rooms:
+#         #    G_grid.add_node(i,att=("room",p,dist))
+#         else:
+#             G_grid.add_node(i,att =("grid",p,dist))       
+#         # Not adding edges to and from nodes that are too close to the wall
+#         # This is not possible because then the other nodes will have weird edges to and from eachother
+#         # THe only reliable way is to add the edges and then remove them again.
 
-        # Vertical and horizontal neighbours
-        if x>x_min:
-            G_grid.add_edge(i,i-grid_height,weight=10)
-        if y>y_min:
-            G_grid.add_edge(i,i-1,weight=10)
-        # Diagonal neighbours
-        # Diagonal down left which is the same as up right
-        if x>x_min and y>y_min:
-            G_grid.add_edge(i,i-grid_height-1,weight=14)
-        # Diagonal up left which is the same as right down
-        if x>x_min and y<y_max: 
-           G_grid.add_edge(i,i-grid_height+1,weight=14)
-
-
+#         # Vertical and horizontal neighbours
+#         if x>x_min:
+#             G_grid.add_edge(i,i-grid_height,weight=10)
+#         if y>y_min:
+#             G_grid.add_edge(i,i-1,weight=10)
+#         # Diagonal neighbours
+#         # Diagonal down left which is the same as up right
+#         if x>x_min and y>y_min:
+#             G_grid.add_edge(i,i-grid_height-1,weight=14)
+#         # Diagonal up left which is the same as right down
+#         if x>x_min and y<y_max: 
+#            G_grid.add_edge(i,i-grid_height+1,weight=14)
 
 
-# Changing all door nodes that are floating to regular grid nodes.
-# This might not be important after all since the program doesn't care if a point in the middle of the room is a door node or a grid node
-# This is only visible when plotting.
-# G_grid_temp = G_grid.copy()
-# for node,at in sorted(G_grid_temp.nodes(data=True)):
-#     node_type = at['att'][0]
-#     if node_type != 'door':
-#         continue
-#     dist = at['att'][2]
-#     if dist >2:
-#         p = at['att'][1]
-#         idx_d = at['att'][3]
-#         G_grid.add_node(node,att=("grid",p,dist))
+
+
+# # Changing all door nodes that are floating to regular grid nodes.
+# # This might not be important after all since the program doesn't care if a point in the middle of the room is a door node or a grid node
+# # This is only visible when plotting.
+# # G_grid_temp = G_grid.copy()
+# # for node,at in sorted(G_grid_temp.nodes(data=True)):
+# #     node_type = at['att'][0]
+# #     if node_type != 'door':
+# #         continue
+# #     dist = at['att'][2]
+# #     if dist >2:
+# #         p = at['att'][1]
+# #         idx_d = at['att'][3]
+# #         G_grid.add_node(node,att=("grid",p,dist))
 
 
     
-# Below you should make the exception of nodes that are within the same room.
-# Remove non traversable nodes
-removable_edge_list = []
-G_grid_cpy = G_grid.copy()
-inside_building = 0
-for node,at in sorted(G_grid.nodes(data=True)):
-   dist = at['att'][2]
-   point = at['att'][1]
-   node_type = at['att'][0]
-   # We remove all the edges connected to and from the nodes that are too close to a wall
-   if dist<0.5:
-    if node_type == "door":
-        continue
-    G_grid_cpy.remove_node(node)
- 
-G_grid = G_grid_cpy.copy()
-t1_start = process_time()
-G_grid_cpy = G_grid.copy()
-
-
-
-
-# Placing a room label on all nodes in the grid, such that we know which rooms they belong to
-inside_building=0
-intersect_flag = False
-new_room_flag = False
-intersected_line = 0
-vote = []
-for node,at in sorted(G_grid_cpy.nodes(data=True)):
-    p = at['att'][1]
-    k = list(idx_rooms.nearest((p.x,p.x, p.y, p.y), 1)) #len(Dic_rooms)))
-    # This is for the case that the closest room to a gridpoint is not the room that the point is within
-    room_index_sq_feet = collections.defaultdict(list)
-    list_rooms = []
-    # Finding the area of the rooms such that we can begin assigning to the smallest rooms first
-    for test,room_index in enumerate(k):
-        [room_x_min, room_y_min,room_x_max,room_y_max] = Dic_rooms_edges[room_index]
-        sq_feet = (room_y_max - room_y_min)*(room_x_max-room_x_min)
-        room_index_sq_feet[room_index] = sq_feet
-    # Dictionary of rooms 
-    temp_dict = {k: v for k, v in sorted(room_index_sq_feet.items(), key=lambda item: item[1])}
-    # Converting back to list
-    k_new = list(temp_dict.keys())
-    for j,room_index in enumerate(k_new):
-    #Doing line intersection with the gridpoint and all walls in the room in 4 directions
-        #[room_x_min,room_y_min,room_x_max,room_y_max] = Dic_rooms_edges[room_index] # remember that the edges are +- a small sigma
-        #four_points = [Point(p.x,room_y_max),Point(p.x,room_y_min),Point(room_x_max,p.y),Point(room_x_min,p.y)]
-        four_points = [Point(p.x,y_max),Point(p.x,y_min),Point(x_max,p.y),Point(x_min,p.y)] # using global boundaries
-        #four_points = [Point(p.x,y_max),Point(p.x-10,y_max),Point(p.x+10,y_max),Point(p.x-5,y_max)] # Shooting different angles in the same direction
-        # We go through each of the 4 edge points and check for line intersection with all the walls in the room
-        for i,p1 in enumerate(four_points):
-            for line in Dic_rooms[room_index].values():
-                p2 = Point(line[0][0][0],line[0][0][1])
-                p3 = Point(line[0][1][0],line[0][1][1])
-                if intersect(p,p1,p2,p3)==True:
-                    # The point intersecteded with a line in the given direction
-                    intersected_line +=1
-
-            # Plotting the cases with more than 2 intersections
-            #if intersected_line >2:
-            # if p.x == 133 and p.y == 89:
-            #     print("K_new", len(k_new))
-            #     print("j",j)
-            #     print("Dic_rooms_lines",Dic_rooms[room_index].values())
-            #     print("p1",p1)
-            #     print("p",p)
-            #     print("intersected_line",intersected_line)
-            #     fig, ax = plt.subplots()
-            #     plot_grid(ax,x_min,x_max,y_min,y_max)
-            #     for line in Dic_rooms[room_index].values():
-            #         ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
-            #     plot_point(p)
-            #     plot_point(p1)
-            #     plt.show()
-
-            # The node is outside the building
-            if intersected_line %2 ==0:
-                vote.append(0)
-            else: #inside the building
-                vote.append(1)
-            intersected_line = 0
-        # After checking all directions we use majority vote to figure out if inside or outside room
-        # If not inside room we check the other rooms
-        if sum(vote)>=3:
-            vote = []
-            # We are inside room
-            node_type = at['att'][0]
-            dist = at['att'][2]
-            room_label = room_index
-            # We add a room label to the node
-            if node_type == 'door':
-                idx_d = at['att'][3]
-                G_grid.add_node(node, att=(node_type,p,dist,room_label,idx_d))
-            else:
-                G_grid.add_node(node, att=(node_type,p,dist,room_label))
-            break
-        # If none of the rooms belong to the node, we remove the node since it means it is outside the building
-        if j==len(k_new)-1:
-            G_grid.remove_node(node)
-
-
-
-
-
-## Doing K means clustering
-room_nodes = []
-cent_ratio = 100 # For every 100 nodes we have 1 room node
-points_rooms = []
-points_rooms_dic = collections.defaultdict(list)
-print("Dic_rooms",len(Dic_rooms))
-
-
-# Iterating over every room
-for i in range(len(Dic_rooms)):
-    points_temp = [at['att'][1] for node,at in G_grid.nodes(data=True) if at['att'][3]==i]
-    #points_temp = nodes_temp[:][1]['att'][1]
-    num_of_nodes = len(points_temp)
-    # If there are no nodes in the room
-    if num_of_nodes == 0:
-        continue
-    # Number of centroids, 1 in every cent_ratio
-    num_cent = math.ceil(len(points_temp)/cent_ratio)
-    centroids = []
-    centroid_dict = collections.defaultdict(list)
-    # Generating random integer to indicate which node should be centroids
-    for j in range(num_cent):
-        cent_idx = random.randint(0,num_of_nodes-1)
-        centroids.append(points_temp[cent_idx])
-    delta = 0.6 # This indicates when we stop the K means algorithm
-    counter = 0
-    while counter < 5:#delta>0.5:
-        #Associating each node with the nearest centroid
-        for p in points_temp:
-            # Checking the distance to each centroid
-            dist = []
-            for centroid in centroids:
-                p1 = centroid
-                dist.append(round(distance.euclidean([p.x,p.y],[p1.x,p1.y]),2))
-            # Finding the index of the closest centroid
-            centr_idx = dist.index(min(dist))
-            # Adding the point to the closest centroid
-            centroid_dict[centr_idx].append(p)
-        # Calculating new centroid
-        centroids_new = []
-        for centroid_idx in range(len(centroids)):
-            points_centroid = centroid_dict[centroid_idx]
-            # If there are no points associated with the centroid we skip it
-            if len(points_centroid)==0:
-                continue
-            # Finding the avg of the points which will be the new centroid
-            avg_x = round(np.mean([p.x for p in points_centroid]),2)
-            avg_y = round(np.mean([p.y for p in points_centroid]),2)
-            avg_point = Point(avg_x,avg_y)
-            avg_point.round_to_half()
-            # If the centroid is not in the room we skip the centroid and settle with fewer centroids
-            if avg_point not in points_temp:
-                # If there are no centroids we choose a random node in the room as centroid
-                if len(centroids_new)==0:
-                    points_temp_idx = random.randint(0,len(points_temp))
-                    centroids_new.append(points_temp[points_temp_idx])
-                #print("hej")
-                continue
-            # If the centroid is not in the room we find the nearest node in the room and append the centroid value to that node
-            # if avg_point not in points_temp:
-            #     k = list(idx.nearest((p.x,p.x, p.y, p.y), len(G_grid.nodes)))
-            #     #print("k",k)
-            #     #print("G_grid.nodes", G_grid.nodes)
-            #     for node in k:
-            #         # Check if the node exists in the grid graph, this is because it might be a node that has been
-            #         # removed from the grid graph
-            #         if not G_grid.has_node(node):
-            #             continue
-            #         node_point = G_grid.nodes[node]['att'][1]
-            #         if node_point in points_temp:
-            #             avg_point = node_point
-            #             break
-
-            centroids_new.append(avg_point)
-        centroids = copy.deepcopy(centroids_new)
-        # Resetting which nodes are associated to which centroid
-        centroid_dict = collections.defaultdict(list)
-        counter +=1
-        # If we only have 1 centroid it will converge after one iteration
-        if len(centroids)==1:
-            counter = 6
-    # Adding the centroids to the correct room
-    #points_rooms.extend(centroids)
-    points_rooms_dic[i] = centroids
-
-
-
-# Connecting all the room nodes to the overall graph
-grid_len = len(G_grid)
-j = 0
-for room_label,room_points in points_rooms_dic.items():
-    for p in room_points:
-        j = j+1
-        node_and_at = [[node,at] for node,at in G_grid.nodes(data=True) if at['att'][1]==p]
-        # This is the case if the point is not in the grid. This is probably because room point is outside the building
-        if not node_and_at:
-            continue
-        node = node_and_at[0][0]
-        at = node_and_at[0][1]
-        dist = at['att'][2]
-        G_grid.add_node(node,att = ("room",p,dist,room_label))
-t1_stop = process_time()
-print(t1_stop - t1_start)
-
-
-
-t1_start = process_time()
-# Connecting all doors that are opposite from eachother. This is because we want connection between the doors outisde and inside a room.
-for node,at in sorted(G_grid.nodes(data=True)):
-    # First door
-    node_type = at['att'][0]
-    if node_type == 'door':
-        #p = at['att'][1]
-        idx = at['att'][4]
-        # Finding the corresponding door
-        for node1,at1 in sorted(G_grid.nodes(data=True)):
-            node_type1 = at1['att'][0]
-            if node_type1 == 'door':
-                idx1 = at1['att'][4]
-                if node == node1 or idx1 != idx:
-                    continue
-                G_grid.add_edge(node,node1, weight = 10)
-                break
-t1_stop = process_time() 
-
-
-
-# For all doors connect them to a node in the room if not already connected to more than one other node
-for node,at in sorted(G_grid.nodes(data=True)):
-    node_type = at['att'][0]
-    if node_type != "door":
-        continue
-    num_edges = G_grid.edges(node)
-    # This is the case when the door is only connected to its opposite door, and to no other nodes in the room
-    # In this case we find the room it belongs to and connect it to one of the room nodes of the room.
-    if len(num_edges) <=1:
-        room_num_door = at['att'][3]
-        p = at['att'][1]
-        # Find the nearest nodes to the door
-        nearest_nodes= list(idx_nodes.nearest((p.x,p.x, p.y, p.y), 30))
-        # For all the nearest node the first one that is in the same room as the door will be connected to the door
-        for node1 in nearest_nodes:
-            # The nearest node will be itself, and therefore we skip this node
-            if node == node1:
-                continue
-            # Check if the node exists in the grid graph, this is because it might be a node that has been
-            # removed from the grid graph
-            if not G_grid.has_node(node1):
-                continue
-            room_num_node = G_grid.nodes[node1]['att'][3]
-            if room_num_door == room_num_node:
-                G_grid.add_edge(node,node1,weight=14)
-                point_node = G_grid.nodes[node1]['att'][1]
-                break
-
-
-
-
-####### Approximate solution to the TSP problem #######
-G = G_grid.copy()
-#Finding shortest path between all room nodes using the astar algorithm
-# Get all the traversable nodes in the points_all_incl_trav
-# Then calculate the entire walkable path for all the connected nodes while you also check for traversability.
-# This is not the fastest method since it needs to calculate the distance between all nodes. 
-
-
-# Find the shortest path between all room nodes using the a star algoritm
-astar_path_dic = rec_dd()
-t1_start = process_time()
-G_rooms = nx.Graph()
-for node,at in sorted(G.nodes(data=True)):
-    if at['att'][0]!= "room":
-        continue
-    #Make complete subgraph of all room nodes
-    #Make a new graph only including the room nodes called G_rooms
-    G_rooms.add_node(node,att = at['att'])  
-   # identify the essential nodes in the graph
-   # Checking nodes are traversable to node p
-
- 
-Dic_connectivity = collections.defaultdict()
-# First check for connectivity between all room nodes
-from networkx.algorithms import approximation as approx
-for node,at in sorted(G_rooms.nodes(data=True)):
-    Dic_connectivity[node] = 0
-    for node1,at1 in sorted(G_rooms.nodes(data=True)):
-        if node==node1:
-            continue
-        # This functions checks how many nodes need to be removed to disconnect 2 nodes
-        connectivity = approx.local_node_connectivity(G, node, node1)
-        #if connectivity == 0 and at['att'][3]==at1['att'][]
-
-        if connectivity > 0:
-            connectivity = 1
-        Dic_connectivity[node] += connectivity
-# Removing room nodes that are not connected to other room nodes, also change its description from roon node to grid node in G
-max_connection = max(Dic_connectivity.values())
-print(len(Dic_connectivity))
-
-for key,value in Dic_connectivity.items():
-    if value == max_connection:
-        continue
-    G_rooms.remove_node(key)
-    p = G.nodes[key]['att'][1]
-    dist = G.nodes[key]['att'][2]
-    room_label = G.nodes[key]['att'][3]
-    G.remove_node(key)
-    G.add_node(key,att=("grid",p,dist,room_label))
-
-
-for node,at in sorted(G_rooms.nodes(data=True)):
-    for node1,at1 in sorted(G_rooms.nodes(data=True)):
-        if node==node1:
-            continue
-        p = at['att'][1]
-        q = at1['att'][1]
-        #dist = round(distance.euclidean([p.x,p.y],[q.x,q.y]),2)
-        temp = nx.astar_path(G, node, node1, weight = 'weight')# heuristic=distance.euclidean, weight='weight')
-        astar_path_dic[node][node1] = temp
-
-
-
-# Getting the edge data between all connected nodes in the a star path.
-# Getting the distance of the shortest path between each room node
-astar_path_length_dic = rec_dd()
-for room_node1 in astar_path_dic:
-    for room_node2 in astar_path_dic[room_node1]:
-        dist = 0
-        for i,node_path in enumerate(astar_path_dic[room_node1][room_node2]):
-            if i==0:
-                node_start = node_path
-                continue
-            node_dest = node_path
-            dist = dist + G.get_edge_data(node_start,node_dest)['weight']
-            node_start = node_path
-        G_rooms.add_edge(room_node1,room_node2,weight=dist)
-
-
-#Checking if the graph is indeed complete
-# print("Is G graph connected? Returns 1 if graph is complete", nx.density(G))
-# print("Is G_rooms graph connected? Returns 1 if graph is complete", nx.density(G_rooms))
-
-
-
-# #Make a minimum spanning tree
-mst_G_rooms=nx.minimum_spanning_tree(G_rooms)
-
-source_node = random.choice(list(G_rooms.nodes))
-
-# Solve the TSP problem for subgraph using DFS traversal
-dfs_edges_list = list(nx.dfs_edges(mst_G_rooms,source=source_node))
-
-
-# Remove double vertices
-tsp_edges = []
-for i in range(len(dfs_edges_list)):
-   if i== 0:
-       # This is the top node of the dfs traversal
-       node_pair = dfs_edges_list[i]
-   elif dfs_edges_list[i-1][1]!=dfs_edges_list[i][0]:
-       # If the 'to node' in the previous node pair (from node, to node)
-       # is not the same as the from node in the next node pair then the new 
-       # 'from node' should be the previous 'to node' and the new to node 
-       # should be the current 'to node'.
-       # For example if we have (1,2), (1,3) then because we go back to 1
-       # we change it to (1,2), (2,3).
-       node_pair = tuple([dfs_edges_list[i-1][1],dfs_edges_list[i][1]])
-   else:
-      node_pair = dfs_edges_list[i] 
-   tsp_edges.append(node_pair)
-#Adding the last edge from end to start node in tsp edges       
-tsp_edges.append(tuple([tsp_edges[-1][1],tsp_edges[0][0]]))
-
-
-
-
-# ###### PLOTTING #######
-# ####Plotting the TSP solution for room and other nodes
-# #Make new figure with the floorplan
-fig, ax = plt.subplots()
-plot_grid(ax,x_min,x_max,y_min,y_max)
-
-for line in Dic_all.values():
-   ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
-
-#Plotting all the nodes of the graph on the map
-for node,at in sorted(G.nodes(data=True)):
-    p = at['att'][1]
-    node_type = at['att'][0]
-    if node_type == "room":
-        plt.plot(p.x,p.y,marker='o',color='red',markerfacecolor='red')
-    elif node_type == 'door':
-        plt.plot(p.x,p.y,marker='o',color='black',markerfacecolor='black')
-    #else:
-    #    plt.plot(p.x,p.y,marker='o',color='black',markerfacecolor='black')
-
-
-# #Plotting all the nodes with their room labels of the graph on the map
-# color_list = ['k','b','y','g','r']
+# # Below you should make the exception of nodes that are within the same room.
+# # Remove non traversable nodes
+# removable_edge_list = []
+# G_grid_cpy = G_grid.copy()
+# inside_building = 0
 # for node,at in sorted(G_grid.nodes(data=True)):
+#    dist = at['att'][2]
+#    point = at['att'][1]
+#    node_type = at['att'][0]
+#    # We remove all the edges connected to and from the nodes that are too close to a wall
+#    if dist<0.5:
+#     if node_type == "door":
+#         continue
+#     G_grid_cpy.remove_node(node)
+ 
+# G_grid = G_grid_cpy.copy()
+# t1_start = process_time()
+# G_grid_cpy = G_grid.copy()
+
+
+
+
+# # Placing a room label on all nodes in the grid, such that we know which rooms they belong to
+# inside_building=0
+# intersect_flag = False
+# new_room_flag = False
+# intersected_line = 0
+# vote = []
+# for node,at in sorted(G_grid_cpy.nodes(data=True)):
+#     p = at['att'][1]
+#     k = list(idx_rooms.nearest((p.x,p.x, p.y, p.y), 1)) #len(Dic_rooms)))
+#     # This is for the case that the closest room to a gridpoint is not the room that the point is within
+#     room_index_sq_feet = collections.defaultdict(list)
+#     list_rooms = []
+#     # Finding the area of the rooms such that we can begin assigning to the smallest rooms first
+#     for test,room_index in enumerate(k):
+#         [room_x_min, room_y_min,room_x_max,room_y_max] = Dic_rooms_edges[room_index]
+#         sq_feet = (room_y_max - room_y_min)*(room_x_max-room_x_min)
+#         room_index_sq_feet[room_index] = sq_feet
+#     # Dictionary of rooms 
+#     temp_dict = {k: v for k, v in sorted(room_index_sq_feet.items(), key=lambda item: item[1])}
+#     # Converting back to list
+#     k_new = list(temp_dict.keys())
+#     for j,room_index in enumerate(k_new):
+#     #Doing line intersection with the gridpoint and all walls in the room in 4 directions
+#         #[room_x_min,room_y_min,room_x_max,room_y_max] = Dic_rooms_edges[room_index] # remember that the edges are +- a small sigma
+#         #four_points = [Point(p.x,room_y_max),Point(p.x,room_y_min),Point(room_x_max,p.y),Point(room_x_min,p.y)]
+#         four_points = [Point(p.x,y_max),Point(p.x,y_min),Point(x_max,p.y),Point(x_min,p.y)] # using global boundaries
+#         #four_points = [Point(p.x,y_max),Point(p.x-10,y_max),Point(p.x+10,y_max),Point(p.x-5,y_max)] # Shooting different angles in the same direction
+#         # We go through each of the 4 edge points and check for line intersection with all the walls in the room
+#         for i,p1 in enumerate(four_points):
+#             for line in Dic_rooms[room_index].values():
+#                 p2 = Point(line[0][0][0],line[0][0][1])
+#                 p3 = Point(line[0][1][0],line[0][1][1])
+#                 if intersect(p,p1,p2,p3)==True:
+#                     # The point intersecteded with a line in the given direction
+#                     intersected_line +=1
+
+#             # Plotting the cases with more than 2 intersections
+#             #if intersected_line >2:
+#             # if p.x == 133 and p.y == 89:
+#             #     print("K_new", len(k_new))
+#             #     print("j",j)
+#             #     print("Dic_rooms_lines",Dic_rooms[room_index].values())
+#             #     print("p1",p1)
+#             #     print("p",p)
+#             #     print("intersected_line",intersected_line)
+#             #     fig, ax = plt.subplots()
+#             #     plot_grid(ax,x_min,x_max,y_min,y_max)
+#             #     for line in Dic_rooms[room_index].values():
+#             #         ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
+#             #     plot_point(p)
+#             #     plot_point(p1)
+#             #     plt.show()
+
+#             # The node is outside the building
+#             if intersected_line %2 ==0:
+#                 vote.append(0)
+#             else: #inside the building
+#                 vote.append(1)
+#             intersected_line = 0
+#         # After checking all directions we use majority vote to figure out if inside or outside room
+#         # If not inside room we check the other rooms
+#         if sum(vote)>=3:
+#             vote = []
+#             # We are inside room
+#             node_type = at['att'][0]
+#             dist = at['att'][2]
+#             room_label = room_index
+#             # We add a room label to the node
+#             if node_type == 'door':
+#                 idx_d = at['att'][3]
+#                 G_grid.add_node(node, att=(node_type,p,dist,room_label,idx_d))
+#             else:
+#                 G_grid.add_node(node, att=(node_type,p,dist,room_label))
+#             break
+#         # If none of the rooms belong to the node, we remove the node since it means it is outside the building
+#         if j==len(k_new)-1:
+#             G_grid.remove_node(node)
+
+
+
+
+
+# ## Doing K means clustering
+# room_nodes = []
+# cent_ratio = 100 # For every 100 nodes we have 1 room node
+# points_rooms = []
+# points_rooms_dic = collections.defaultdict(list)
+# print("Dic_rooms",len(Dic_rooms))
+
+
+# # Iterating over every room
+# for i in range(len(Dic_rooms)):
+#     points_temp = [at['att'][1] for node,at in G_grid.nodes(data=True) if at['att'][3]==i]
+#     #points_temp = nodes_temp[:][1]['att'][1]
+#     num_of_nodes = len(points_temp)
+#     # If there are no nodes in the room
+#     if num_of_nodes == 0:
+#         continue
+#     # Number of centroids, 1 in every cent_ratio
+#     num_cent = math.ceil(len(points_temp)/cent_ratio)
+#     centroids = []
+#     centroid_dict = collections.defaultdict(list)
+#     # Generating random integer to indicate which node should be centroids
+#     for j in range(num_cent):
+#         cent_idx = random.randint(0,num_of_nodes-1)
+#         centroids.append(points_temp[cent_idx])
+#     delta = 0.6 # This indicates when we stop the K means algorithm
+#     counter = 0
+#     while counter < 5:#delta>0.5:
+#         #Associating each node with the nearest centroid
+#         for p in points_temp:
+#             # Checking the distance to each centroid
+#             dist = []
+#             for centroid in centroids:
+#                 p1 = centroid
+#                 dist.append(round(distance.euclidean([p.x,p.y],[p1.x,p1.y]),2))
+#             # Finding the index of the closest centroid
+#             centr_idx = dist.index(min(dist))
+#             # Adding the point to the closest centroid
+#             centroid_dict[centr_idx].append(p)
+#         # Calculating new centroid
+#         centroids_new = []
+#         for centroid_idx in range(len(centroids)):
+#             points_centroid = centroid_dict[centroid_idx]
+#             # If there are no points associated with the centroid we skip it
+#             if len(points_centroid)==0:
+#                 continue
+#             # Finding the avg of the points which will be the new centroid
+#             avg_x = round(np.mean([p.x for p in points_centroid]),2)
+#             avg_y = round(np.mean([p.y for p in points_centroid]),2)
+#             avg_point = Point(avg_x,avg_y)
+#             avg_point.round_to_half()
+#             # If the centroid is not in the room we skip the centroid and settle with fewer centroids
+#             if avg_point not in points_temp:
+#                 # If there are no centroids we choose a random node in the room as centroid
+#                 if len(centroids_new)==0:
+#                     points_temp_idx = random.randint(0,len(points_temp))
+#                     centroids_new.append(points_temp[points_temp_idx])
+#                 #print("hej")
+#                 continue
+#             # If the centroid is not in the room we find the nearest node in the room and append the centroid value to that node
+#             # if avg_point not in points_temp:
+#             #     k = list(idx.nearest((p.x,p.x, p.y, p.y), len(G_grid.nodes)))
+#             #     #print("k",k)
+#             #     #print("G_grid.nodes", G_grid.nodes)
+#             #     for node in k:
+#             #         # Check if the node exists in the grid graph, this is because it might be a node that has been
+#             #         # removed from the grid graph
+#             #         if not G_grid.has_node(node):
+#             #             continue
+#             #         node_point = G_grid.nodes[node]['att'][1]
+#             #         if node_point in points_temp:
+#             #             avg_point = node_point
+#             #             break
+
+#             centroids_new.append(avg_point)
+#         centroids = copy.deepcopy(centroids_new)
+#         # Resetting which nodes are associated to which centroid
+#         centroid_dict = collections.defaultdict(list)
+#         counter +=1
+#         # If we only have 1 centroid it will converge after one iteration
+#         if len(centroids)==1:
+#             counter = 6
+#     # Adding the centroids to the correct room
+#     #points_rooms.extend(centroids)
+#     points_rooms_dic[i] = centroids
+
+
+
+# # Connecting all the room nodes to the overall graph
+# grid_len = len(G_grid)
+# j = 0
+# for room_label,room_points in points_rooms_dic.items():
+#     for p in room_points:
+#         j = j+1
+#         node_and_at = [[node,at] for node,at in G_grid.nodes(data=True) if at['att'][1]==p]
+#         # This is the case if the point is not in the grid. This is probably because room point is outside the building
+#         if not node_and_at:
+#             continue
+#         node = node_and_at[0][0]
+#         at = node_and_at[0][1]
+#         dist = at['att'][2]
+#         G_grid.add_node(node,att = ("room",p,dist,room_label))
+# t1_stop = process_time()
+# print(t1_stop - t1_start)
+
+
+
+# t1_start = process_time()
+# # Connecting all doors that are opposite from eachother. This is because we want connection between the doors outisde and inside a room.
+# for node,at in sorted(G_grid.nodes(data=True)):
+#     # First door
+#     node_type = at['att'][0]
+#     if node_type == 'door':
+#         #p = at['att'][1]
+#         idx = at['att'][4]
+#         # Finding the corresponding door
+#         for node1,at1 in sorted(G_grid.nodes(data=True)):
+#             node_type1 = at1['att'][0]
+#             if node_type1 == 'door':
+#                 idx1 = at1['att'][4]
+#                 if node == node1 or idx1 != idx:
+#                     continue
+#                 G_grid.add_edge(node,node1, weight = 10)
+#                 break
+# t1_stop = process_time() 
+
+
+
+# # For all doors connect them to a node in the room if not already connected to more than one other node
+# for node,at in sorted(G_grid.nodes(data=True)):
+#     node_type = at['att'][0]
+#     if node_type != "door":
+#         continue
+#     num_edges = G_grid.edges(node)
+#     # This is the case when the door is only connected to its opposite door, and to no other nodes in the room
+#     # In this case we find the room it belongs to and connect it to one of the room nodes of the room.
+#     if len(num_edges) <=1:
+#         room_num_door = at['att'][3]
+#         p = at['att'][1]
+#         # Find the nearest nodes to the door
+#         nearest_nodes= list(idx_nodes.nearest((p.x,p.x, p.y, p.y), 30))
+#         # For all the nearest node the first one that is in the same room as the door will be connected to the door
+#         for node1 in nearest_nodes:
+#             # The nearest node will be itself, and therefore we skip this node
+#             if node == node1:
+#                 continue
+#             # Check if the node exists in the grid graph, this is because it might be a node that has been
+#             # removed from the grid graph
+#             if not G_grid.has_node(node1):
+#                 continue
+#             room_num_node = G_grid.nodes[node1]['att'][3]
+#             if room_num_door == room_num_node:
+#                 G_grid.add_edge(node,node1,weight=14)
+#                 point_node = G_grid.nodes[node1]['att'][1]
+#                 break
+
+
+
+
+# ####### Approximate solution to the TSP problem #######
+# G = G_grid.copy()
+# #Finding shortest path between all room nodes using the astar algorithm
+# # Get all the traversable nodes in the points_all_incl_trav
+# # Then calculate the entire walkable path for all the connected nodes while you also check for traversability.
+# # This is not the fastest method since it needs to calculate the distance between all nodes. 
+
+
+# # Find the shortest path between all room nodes using the a star algoritm
+# astar_path_dic = rec_dd()
+# t1_start = process_time()
+# G_rooms = nx.Graph()
+# for node,at in sorted(G.nodes(data=True)):
+#     if at['att'][0]!= "room":
+#         continue
+#     #Make complete subgraph of all room nodes
+#     #Make a new graph only including the room nodes called G_rooms
+#     G_rooms.add_node(node,att = at['att'])  
+#    # identify the essential nodes in the graph
+#    # Checking nodes are traversable to node p
+
+ 
+# Dic_connectivity = collections.defaultdict()
+# # First check for connectivity between all room nodes
+# from networkx.algorithms import approximation as approx
+# for node,at in sorted(G_rooms.nodes(data=True)):
+#     Dic_connectivity[node] = 0
+#     for node1,at1 in sorted(G_rooms.nodes(data=True)):
+#         if node==node1:
+#             continue
+#         # This functions checks how many nodes need to be removed to disconnect 2 nodes
+#         connectivity = approx.local_node_connectivity(G, node, node1)
+#         #if connectivity == 0 and at['att'][3]==at1['att'][]
+
+#         if connectivity > 0:
+#             connectivity = 1
+#         Dic_connectivity[node] += connectivity
+# # Removing room nodes that are not connected to other room nodes, also change its description from roon node to grid node in G
+# max_connection = max(Dic_connectivity.values())
+# print(len(Dic_connectivity))
+
+# for key,value in Dic_connectivity.items():
+#     if value == max_connection:
+#         continue
+#     G_rooms.remove_node(key)
+#     p = G.nodes[key]['att'][1]
+#     dist = G.nodes[key]['att'][2]
+#     room_label = G.nodes[key]['att'][3]
+#     G.remove_node(key)
+#     G.add_node(key,att=("grid",p,dist,room_label))
+
+
+# for node,at in sorted(G_rooms.nodes(data=True)):
+#     for node1,at1 in sorted(G_rooms.nodes(data=True)):
+#         if node==node1:
+#             continue
+#         p = at['att'][1]
+#         q = at1['att'][1]
+#         #dist = round(distance.euclidean([p.x,p.y],[q.x,q.y]),2)
+#         temp = nx.astar_path(G, node, node1, weight = 'weight')# heuristic=distance.euclidean, weight='weight')
+#         astar_path_dic[node][node1] = temp
+
+
+
+# # Getting the edge data between all connected nodes in the a star path.
+# # Getting the distance of the shortest path between each room node
+# astar_path_length_dic = rec_dd()
+# for room_node1 in astar_path_dic:
+#     for room_node2 in astar_path_dic[room_node1]:
+#         dist = 0
+#         for i,node_path in enumerate(astar_path_dic[room_node1][room_node2]):
+#             if i==0:
+#                 node_start = node_path
+#                 continue
+#             node_dest = node_path
+#             dist = dist + G.get_edge_data(node_start,node_dest)['weight']
+#             node_start = node_path
+#         G_rooms.add_edge(room_node1,room_node2,weight=dist)
+
+
+# #Checking if the graph is indeed complete
+# # print("Is G graph connected? Returns 1 if graph is complete", nx.density(G))
+# # print("Is G_rooms graph connected? Returns 1 if graph is complete", nx.density(G_rooms))
+
+
+
+# # #Make a minimum spanning tree
+# mst_G_rooms=nx.minimum_spanning_tree(G_rooms)
+
+# source_node = random.choice(list(G_rooms.nodes))
+
+# # Solve the TSP problem for subgraph using DFS traversal
+# dfs_edges_list = list(nx.dfs_edges(mst_G_rooms,source=source_node))
+
+
+# # Remove double vertices
+# tsp_edges = []
+# for i in range(len(dfs_edges_list)):
+#    if i== 0:
+#        # This is the top node of the dfs traversal
+#        node_pair = dfs_edges_list[i]
+#    elif dfs_edges_list[i-1][1]!=dfs_edges_list[i][0]:
+#        # If the 'to node' in the previous node pair (from node, to node)
+#        # is not the same as the from node in the next node pair then the new 
+#        # 'from node' should be the previous 'to node' and the new to node 
+#        # should be the current 'to node'.
+#        # For example if we have (1,2), (1,3) then because we go back to 1
+#        # we change it to (1,2), (2,3).
+#        node_pair = tuple([dfs_edges_list[i-1][1],dfs_edges_list[i][1]])
+#    else:
+#       node_pair = dfs_edges_list[i] 
+#    tsp_edges.append(node_pair)
+# #Adding the last edge from end to start node in tsp edges       
+# tsp_edges.append(tuple([tsp_edges[-1][1],tsp_edges[0][0]]))
+
+
+
+
+# # ###### PLOTTING #######
+# # ####Plotting the TSP solution for room and other nodes
+# # #Make new figure with the floorplan
+# fig, ax = plt.subplots()
+# plot_grid(ax,x_min,x_max,y_min,y_max)
+
+# for line in Dic_all.values():
+#    ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
+
+# #Plotting all the nodes of the graph on the map
+# for node,at in sorted(G.nodes(data=True)):
 #     p = at['att'][1]
 #     node_type = at['att'][0]
-#     room = at['att'][3]
-#     color = color_list[room%5]
-#     plt.plot(p.x,p.y,marker='o',color=color,markerfacecolor=color)
+#     if node_type == "room":
+#         plt.plot(p.x,p.y,marker='o',color='red',markerfacecolor='red')
+#     elif node_type == 'door':
+#         plt.plot(p.x,p.y,marker='o',color='black',markerfacecolor='black')
+#     #else:
+#     #    plt.plot(p.x,p.y,marker='o',color='black',markerfacecolor='black')
 
-print("starting node", source_node)
-#Plotting starting node
-p = G_rooms.nodes(data=True)[source_node]['att'][1]
-plot_point(p,door=False,starting_node = True)
-#Making a mapping from node values to index values
-from scipy.interpolate import interp1d
-min_node = min(list(G_rooms.nodes))
-max_node = max(list(G_rooms.nodes))
-range_val = max_node-min_node
-m = interp1d([min_node,max_node],[0,range_val])
 
-# Then we plot the edges of the tsp approximate solution
-for edge in tsp_edges:
-    start_node = edge[0]
-    end_node = edge[1]
-    pred = astar_path_dic[start_node][end_node]
-    node_prev = end_node
-    #loop that plots line from end node to all its predecessors until it reaches start node
-    count=len(pred)
-    while node_prev != edge[0]:
-        node_new = node_prev
-        #node_prev = pred[node_prev][0]
-        node_prev = pred[count-1]
-        p = G.nodes(data=True)[node_new]['att'][1]
-        q = G.nodes(data=True)[node_prev]['att'][1]
-        plt.plot([p.x,q.x],[p.y,q.y],'g')
-        count = count-1
-plt.show()
+# # #Plotting all the nodes with their room labels of the graph on the map
+# # color_list = ['k','b','y','g','r']
+# # for node,at in sorted(G_grid.nodes(data=True)):
+# #     p = at['att'][1]
+# #     node_type = at['att'][0]
+# #     room = at['att'][3]
+# #     color = color_list[room%5]
+# #     plt.plot(p.x,p.y,marker='o',color=color,markerfacecolor=color)
+
+# print("starting node", source_node)
+# #Plotting starting node
+# p = G_rooms.nodes(data=True)[source_node]['att'][1]
+# plot_point(p,door=False,starting_node = True)
+# #Making a mapping from node values to index values
+# from scipy.interpolate import interp1d
+# min_node = min(list(G_rooms.nodes))
+# max_node = max(list(G_rooms.nodes))
+# range_val = max_node-min_node
+# m = interp1d([min_node,max_node],[0,range_val])
+
+# # Then we plot the edges of the tsp approximate solution
+# for edge in tsp_edges:
+#     start_node = edge[0]
+#     end_node = edge[1]
+#     pred = astar_path_dic[start_node][end_node]
+#     node_prev = end_node
+#     #loop that plots line from end node to all its predecessors until it reaches start node
+#     count=len(pred)
+#     while node_prev != edge[0]:
+#         node_new = node_prev
+#         #node_prev = pred[node_prev][0]
+#         node_prev = pred[count-1]
+#         p = G.nodes(data=True)[node_new]['att'][1]
+#         q = G.nodes(data=True)[node_prev]['att'][1]
+#         plt.plot([p.x,q.x],[p.y,q.y],'g')
+#         count = count-1
+# plt.show()

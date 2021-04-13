@@ -47,6 +47,17 @@ with open(filename,'w') as csvfile:
     writer.writerows(room_elevation)
     #writer.writerows(max_elevation)
 
+#------------
+room_number = []
+for i in elements:
+    room_number.append([i.attrib["Number"]])
+
+
+filename = "room_number.csv"
+with open(filename,'w') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerows(room_number)
+
 
 
 

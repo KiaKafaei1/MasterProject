@@ -233,6 +233,9 @@ for i,ele in enumerate(array_elevation):
     if [min_ele,max_ele] not in elevation_combos:
         elevation_combos.append([min_ele,max_ele])
 
+# Choosing random clipping height, by taking avg of a floor min and max height
+random_floor = random.randint(0, len(elevation_combos)-1)
+clippingHeight = (elevation_combos[random_floor][0]+elevation_combos[random_floor][1])/2 
 #print(elevation_combos)
 # # Choosing random floor
 # random_floor = random.randint(0, len(elevation_combos)-1)
@@ -243,7 +246,7 @@ for i,ele in enumerate(array_elevation):
 min_elevation = elevation_combos[0][0]
 max_elevation = elevation_combos[0][1]
 
-topClipPlaneHeight = 7.599+0.1-9.753599609375
+#topClipPlaneHeight = 7.599+0.1-9.753599609375
 
 #if (topClipPlaneHeight < room.MinElevation || topClipPlaneHeight > room.MaxElevation) 
 #    continue;
@@ -253,14 +256,14 @@ for i,room in enumerate(array_tri):
     #print(i)
     # if array_number[i][0] not in floor_number:
     #     continue
-    if array_elevation[i][0]!=min_elevation:
-       continue
+    #if array_elevation[i][0]!=min_elevation:
+    #   continue
 
     #if array_elevation[i][0]!=min_elevation or array_elevation[i][1]!=max_elevation:
     #    continue
     
-    #if (topClipPlaneHeight < array_elevation[i][0] or topClipPlaneHeight > array_elevation[i][1]): 
-    #    continue
+    if (clippingHeight <= array_elevation[i][0] or clippingHeight >= array_elevation[i][1]): 
+        continue
     #print(i)
 
     for tri in room:
@@ -375,15 +378,15 @@ array = array[:-1]
 list_points_doors = [ele for i,ele in enumerate(array) if i%2==0]
 list_facing_doors = [ele for i,ele in enumerate(array) if i%2==1]
 # Door elevation
-df2 = pd.read_csv('doors_elevation.csv',sep=',', header=None)
+df2 = pd.read_csv('doors_elevation.csv', sep=',', header=None)
 array2 = df2.to_numpy()
 #Finding all possible elevation combos
-# elevation_combos = []
-# for i,ele in enumerate(array2):
-#     min_ele = ele[0]
-#     max_ele = ele[1]
-#     if [min_ele,max_ele] not in elevation_combos:
-#         elevation_combos.append([min_ele,max_ele])
+elevation_combos = []
+for i,ele in enumerate(array2):
+    min_ele = ele[0]
+    max_ele = ele[1]
+    if [min_ele,max_ele] not in elevation_combos:
+        elevation_combos.append([min_ele,max_ele])
 points_doors = []
 facing_doors = []
 # #Choosing the height levels for the doors corresponding to the floor chosen
@@ -391,15 +394,16 @@ facing_doors = []
 # max_elevation = array2[0][1]
 #print(list_points_doors)
 #print(list_points_doors[0][1][0])
-topClipPlaneHeight = 7.599+0.1
+#print(elevation_combos)
+#clippingHeight = 
 #print(list_facing_doors)
 #print(list_facing_doors[1][0])
 # Making a list of the needed doors and their facing direction
 #print(translation)
 #print(translation[0][0])
 for i,elev in enumerate(array2):
-    min_elevation_temp = elev[0]
-    max_elevation_temp = elev[1]
+    #min_elevation_temp = elev[0]
+    #max_elevation_temp = elev[1]
     #if (topClipPlaneHeight < array_elevation[i][0] || topClipPlaneHeight - 0.8 * levelHeight > array_elevation[i][1]):
     #if (topClipPlaneHeight < array_elevation[i][0] or topClipPlaneHeight > array_elevation[i][1]): 
     #    continue
@@ -408,6 +412,8 @@ for i,elev in enumerate(array2):
     # Building RAC
     #points_doors.append(Point(list_points_doors[i][0][0]-translation[0][0],list_points_doors[i][1][0]+translation[1][0]))
     # Building Ny2
+    if (clippingHeight <= elev[0] or clippingHeight >= elev[1]): 
+        continue
     points_doors.append(Point(list_points_doors[i][0][0],list_points_doors[i][1][0]))
     facing_doors.append([list_facing_doors[i][0][0],list_facing_doors[i][1][0]])
 
@@ -415,26 +421,33 @@ for i,elev in enumerate(array2):
 #print(points_doors)
 #print(facing_doors)
 # print(facing_doors[0][0])
-# Placing a door on the other side of the wall
+# # Placing a door on the other side of the wall
+# temp_points = []#points_doors.copy()
+# points_doors_opposite = []
+# print(facing_doors)
+# for i,door in enumerate(points_doors):
+#     if facing_doors[i][0] < 0:
+#         temp_points.append(Point(door.x-0.5,door.y))
+#         points_doors_opposite.append(Point(door.x+0.5,door.y))
+#     if facing_doors[i][0] > 0:
+#         temp_points.append(Point(door.x+0.5,door.y))
+#         points_doors_opposite.append(Point(door.x-0.5,door.y)) 
+#     if facing_doors[i][1] < 0:
+#         temp_points.append(Point(door.x,door.y-0.5))
+#         points_doors_opposite.append(Point(door.x,door.y+0.5))
+#     if facing_doors[i][1] > 0:
+#         temp_points.append(Point(door.x,door.y+0.5))
+#         points_doors_opposite.append(Point(door.x,door.y-0.5))
+# points_doors = temp_points.copy()
+# #print(points_doors)
+
+# The new way to append opposite doors
 temp_points = []#points_doors.copy()
 points_doors_opposite = []
-#print(facing_doors)
 for i,door in enumerate(points_doors):
-    if facing_doors[i][0] < 0:
-        temp_points.append(Point(door.x-0.5,door.y))
-        points_doors_opposite.append(Point(door.x+0.5,door.y))
-    if facing_doors[i][0] > 0:
-        temp_points.append(Point(door.x+0.5,door.y))
-        points_doors_opposite.append(Point(door.x-0.5,door.y)) 
-    if facing_doors[i][1] < 0:
-        temp_points.append(Point(door.x,door.y-0.5))
-        points_doors_opposite.append(Point(door.x,door.y+0.5))
-    if facing_doors[i][1] > 0:
-        temp_points.append(Point(door.x,door.y+0.5))
-        points_doors_opposite.append(Point(door.x,door.y-0.5))
+    temp_points.append(Point(door.x+facing_doors[i][0],door.y+facing_doors[i][1]))
+    points_doors_opposite.append(Point(door.x-facing_doors[i][0],door.y-facing_doors[i][1]))
 points_doors = temp_points.copy()
-#print(points_doors)
-
 
 
 # Both ways have been depreciated!
@@ -478,6 +491,11 @@ y_max = math.ceil(max([Dic_all[y_max_idx1][0][0][1],Dic_all[y_max_idx2][0][1][1]
 y_min = math.floor(min([Dic_all[y_min_idx1][0][0][1],Dic_all[y_min_idx2][0][1][1]]))
 
 print("PART 2")
+
+print("x_min", x_min)
+print("x_max", x_max)
+print("y_min", y_min)
+print("y_max", y_max)
 
 
 

@@ -6,7 +6,11 @@ import csv
 #GETTING COORDINATES FOR ROOMS
 bd127 = '127/641299'
 bdBig = 'rac' 
-path ='WayFinding/'+bdBig
+bdHospital = 'NNH/Hospital'
+bdNy = 'Ny_byg'
+bdNy2 = 'Ny_byg2'
+path ='WayFinding/'+bdNy2
+#path = bdHospital
 room_path = path+'/rooms.xml'
 tree = ET.parse(room_path)
 rooms_coord = []

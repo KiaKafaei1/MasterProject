@@ -264,7 +264,7 @@ for i,room in enumerate(array_tri):
     
     if (clippingHeight <= array_elevation[i][0] or clippingHeight >= array_elevation[i][1]): 
         continue
-    #print(i)
+    print(i)
 
     for tri in room:
         for cor in tri:
@@ -345,6 +345,7 @@ for i,room in enumerate(array_tri):
     Dic = collections.defaultdict(list)
 
 print("PART 1")
+print(len(Dic_rooms))
 
 ### Plotting the rooms from the R tree datastructure
 # fig, ax = plt.subplots()
@@ -367,6 +368,7 @@ array = df.to_numpy()
 array = [item for sublist in array for item in sublist]
 array = cop.cor_processing(array,room=0)
 #print(array)
+
 
 #Checking if there are 2 door coordinates or 3 door coordinates
 #This is the translation needed to make doors align with floorplan
@@ -412,8 +414,8 @@ for i,elev in enumerate(array2):
     # Building RAC
     #points_doors.append(Point(list_points_doors[i][0][0]-translation[0][0],list_points_doors[i][1][0]+translation[1][0]))
     # Building Ny2
-    if (clippingHeight <= elev[0] or clippingHeight >= elev[1]): 
-        continue
+    #if (clippingHeight <= elev[0] or clippingHeight >= elev[1]): 
+    #    continue
     points_doors.append(Point(list_points_doors[i][0][0],list_points_doors[i][1][0]))
     facing_doors.append([list_facing_doors[i][0][0],list_facing_doors[i][1][0]])
 
@@ -445,10 +447,11 @@ for i,elev in enumerate(array2):
 temp_points = []#points_doors.copy()
 points_doors_opposite = []
 for i,door in enumerate(points_doors):
-    temp_points.append(Point(door.x+facing_doors[i][0],door.y+facing_doors[i][1]))
-    points_doors_opposite.append(Point(door.x-facing_doors[i][0],door.y-facing_doors[i][1]))
+    # Dividing by 2 such that it doesn't go a unit vector away from the original point but only a euclidean distance of 0.5
+    temp_points.append(Point(door.x+facing_doors[i][0]/2,door.y+facing_doors[i][1]/2))
+    points_doors_opposite.append(Point(door.x-facing_doors[i][0]/2,door.y-facing_doors[i][1]/2))
 points_doors = temp_points.copy()
-
+print("length points doors",len(points_doors))
 
 # Both ways have been depreciated!
 # Making the room points
@@ -492,10 +495,10 @@ y_min = math.floor(min([Dic_all[y_min_idx1][0][0][1],Dic_all[y_min_idx2][0][1][1
 
 print("PART 2")
 
-print("x_min", x_min)
-print("x_max", x_max)
-print("y_min", y_min)
-print("y_max", y_max)
+# print("x_min", x_min)
+# print("x_max", x_max)
+# print("y_min", y_min)
+# print("y_max", y_max)
 
 
 
@@ -647,6 +650,7 @@ intersect_flag = False
 new_room_flag = False
 intersected_line = 0
 vote = []
+room_indexes = []
 for node,at in sorted(G_grid_cpy.nodes(data=True)):
     p = at['att'][1]
     k = list(idx_rooms.nearest((p.x,p.x, p.y, p.y), 1)) #len(Dic_rooms)))
@@ -708,6 +712,9 @@ for node,at in sorted(G_grid_cpy.nodes(data=True)):
             node_type = at['att'][0]
             dist = at['att'][2]
             room_label = room_index
+            # This is used when doing k means. It is usefull to have a list of all room indexes
+            if room_index not in room_indexes:
+                room_indexes.append(room_index)
             # We add a room label to the node
             if node_type == 'door':
                 idx_d = at['att'][3]
@@ -719,8 +726,11 @@ for node,at in sorted(G_grid_cpy.nodes(data=True)):
         if j==len(k_new)-1:
             G_grid.remove_node(node)
 
+test = [at['att'] for node,at in G_grid.nodes(data=True)]# if at['att'][3]==1]
 
-
+#print("test", test)
+print("len dic rooms", len(Dic_rooms))
+print("len dic rooms edges",len(Dic_rooms_edges))
 print("PART 5")
 
 ## Doing K means clustering
@@ -728,15 +738,16 @@ room_nodes = []
 cent_ratio = 50 # For every 100 nodes we have 1 room node
 points_rooms = []
 points_rooms_dic = collections.defaultdict(list)
-print("Dic_rooms",len(Dic_rooms))
+#print("Dic_rooms",len(Dic_rooms))
 
 
 # Iterating over every room
 for i in range(len(Dic_rooms)):
-    points_temp = [at['att'][1] for node,at in G_grid.nodes(data=True) if at['att'][3]==i]
+    points_temp = [at['att'][1] for node,at in G_grid.nodes(data=True) if at['att'][3]==room_indexes[i]]
     #points_temp = nodes_temp[:][1]['att'][1]
     num_of_nodes = len(points_temp)
     # If there are no nodes in the room
+    #print("num of nodes",num_of_nodes)
     if num_of_nodes == 0:
         continue
     # Number of centroids, 1 in every cent_ratio
@@ -811,7 +822,7 @@ for i in range(len(Dic_rooms)):
     #points_rooms.extend(centroids)
     points_rooms_dic[i] = centroids
 
-
+#print("points_rooms_dic",points_rooms_dic)
 print("PART 6")
 # Connecting all the room nodes to the overall graph
 grid_len = len(G_grid)
@@ -828,7 +839,7 @@ for room_label,room_points in points_rooms_dic.items():
         dist = at['att'][2]
         G_grid.add_node(node,att = ("room",p,dist,room_label))
 t1_stop = process_time()
-print(t1_stop - t1_start)
+#print(t1_stop - t1_start)
 
 
 
@@ -899,6 +910,7 @@ G_rooms = nx.Graph()
 for node,at in sorted(G.nodes(data=True)):
     if at['att'][0]!= "room":
         continue
+    #print("ny G_rooms node")
     #Make complete subgraph of all room nodes
     #Make a new graph only including the room nodes called G_rooms
     G_rooms.add_node(node,att = at['att'])  

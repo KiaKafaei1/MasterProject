@@ -236,7 +236,7 @@ for i,ele in enumerate(array_elevation):
 # Choosing random clipping height, by taking avg of a floor min and max height
 random_floor = random.randint(0, len(elevation_combos)-1)
 clippingHeight = (elevation_combos[random_floor][0]+elevation_combos[random_floor][1])/2 
-clippingHeight = -3
+#clippingHeight = -3
 print(clippingHeight)
 #print(elevation_combos)
 # # Choosing random floor
@@ -363,6 +363,24 @@ print("PART 1")
 #    ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
 # plt.show()
 
+###### MAKING THE HIGH RESOLUTION GRID #######
+# Finding the keys for the largest and smallest x and y values from each point in each line
+x_max_idx1 = max(Dic_all, key=lambda key: Dic_all[key][0][1][0])
+x_max_idx2 = max(Dic_all, key=lambda key: Dic_all[key][0][0][0])
+x_min_idx1 = min(Dic_all, key=lambda key: Dic_all[key][0][1][0])
+x_min_idx2 = min(Dic_all, key=lambda key: Dic_all[key][0][0][0])
+# y_values
+y_max_idx1 = max(Dic_all, key=lambda key: Dic_all[key][0][0][1])
+y_max_idx2 = max(Dic_all, key=lambda key: Dic_all[key][0][1][1])
+y_min_idx1 = min(Dic_all, key=lambda key: Dic_all[key][0][0][1])
+y_min_idx2 = min(Dic_all, key=lambda key: Dic_all[key][0][1][1])
+# Getting the corresponding max and min values
+x_max = math.ceil(max([Dic_all[x_max_idx1][0][0][0],Dic_all[x_max_idx2][0][1][0]]))
+x_min = math.floor(min([Dic_all[x_min_idx1][0][0][0],Dic_all[x_min_idx2][0][1][0]]))
+y_max = math.ceil(max([Dic_all[y_max_idx1][0][0][1],Dic_all[y_max_idx2][0][1][1]]))
+y_min = math.floor(min([Dic_all[y_min_idx1][0][0][1],Dic_all[y_min_idx2][0][1][1]]))
+
+
 #10
 ### Extracting the door information
 df = pd.read_csv('door_coordinates.csv',sep=',', header=None)
@@ -375,6 +393,11 @@ array = cop.cor_processing(array,room=0)
 #Checking if there are 2 door coordinates or 3 door coordinates
 #This is the translation needed to make doors align with floorplan
 translation =  [array[-1][i] for i in (0,-1)]
+
+ 
+translation_height = [array[-1][1]]
+
+
 #print(translation)
 # Remove the translation from the array of door coordinates
 array = array[:-1]
@@ -393,6 +416,8 @@ for i,ele in enumerate(array2):
         elevation_combos.append([min_ele,max_ele])
 points_doors = []
 facing_doors = []
+
+
 # #Choosing the height levels for the doors corresponding to the floor chosen
 # min_elevation = array2[0][0]
 # max_elevation = array2[0][1]
@@ -405,7 +430,26 @@ facing_doors = []
 # Making a list of the needed doors and their facing direction
 #print(translation)
 #print(translation[0][0])
-for i,elev in enumerate(array2):
+
+# If the first doors x coordinates are out of bounds it means we should 
+# use the translation to translate the coordinates
+translation_usage = False
+if list_points_doors[0][0][0]>x_max or list_points_doors[0][0][0]<x_min:
+    translation_usage = True
+    clippingHeight = clippingHeight+translation_height
+
+
+if translation_usage:
+    for i,elev in enumerate(array2):
+        points_doors.append(Point(list_points_doors[i][0][0]-translation[0][0],list_points_doors[i][1][0]+translation[1][0]))
+        facing_doors.append([list_facing_doors[i][0][0],list_facing_doors[i][1][0]])
+else:
+    for i,elev in enumerate(array2):
+        points_doors.append(Point(list_points_doors[i][0][0],list_points_doors[i][1][0]))
+        facing_doors.append([list_facing_doors[i][0][0],list_facing_doors[i][1][0]])
+
+
+#for i,elev in enumerate(array2):
     #min_elevation_temp = elev[0]
     #max_elevation_temp = elev[1]
     #if (topClipPlaneHeight < array_elevation[i][0] || topClipPlaneHeight - 0.8 * levelHeight > array_elevation[i][1]):
@@ -418,8 +462,9 @@ for i,elev in enumerate(array2):
     # Building Ny2
     #if (clippingHeight <= elev[0] or clippingHeight >= elev[1]): 
     #    continue
-    points_doors.append(Point(list_points_doors[i][0][0],list_points_doors[i][1][0]))
-    facing_doors.append([list_facing_doors[i][0][0],list_facing_doors[i][1][0]])
+
+    #points_doors.append(Point(list_points_doors[i][0][0],list_points_doors[i][1][0]))
+    #facing_doors.append([list_facing_doors[i][0][0],list_facing_doors[i][1][0]])
 
 #print(elevation_combos)
 #print(points_doors)
@@ -449,51 +494,37 @@ for i,elev in enumerate(array2):
 temp_points = []#points_doors.copy()
 points_doors_opposite = []
 for i,door in enumerate(points_doors):
+    # print(i)
     # Dividing by 2 such that it doesn't go a unit vector away from the original point but only a euclidean distance of 0.5
     temp_points.append(Point(door.x+facing_doors[i][0]/2,door.y+facing_doors[i][1]/2))
     points_doors_opposite.append(Point(door.x-facing_doors[i][0]/2,door.y-facing_doors[i][1]/2))
 points_doors = temp_points.copy()
 #print("length points doors",len(points_doors))
 
-# Both ways have been depreciated!
-# Making the room points
-# First I do it manually
-points_rooms = [Point(165,56),Point(154,63),Point(168,54),Point(110,56),Point(120,72),Point(110,85),Point(110,104),Point(120,93),Point(110,84),Point(135,103),Point(126,60),Point(118,92),Point(141,57)]
-# Now I try to autogenerate them
-points_rooms = []
-for edges in Dic_rooms_edges.values():
-    p_x_min = edges[0]
-    p_y_min = edges[1]
-    p_x_max = edges[2]
-    p_y_max = edges[3]
-    room_node = Point((p_x_max-p_x_min)/2+p_x_min,(p_y_max-p_y_min)/2+p_y_min)
-    room_node.round_to_half()
-    points_rooms.append(room_node)
+# # Both ways have been depreciated!
+# # Making the room points
+# # First I do it manually
+# points_rooms = [Point(165,56),Point(154,63),Point(168,54),Point(110,56),Point(120,72),Point(110,85),Point(110,104),Point(120,93),Point(110,84),Point(135,103),Point(126,60),Point(118,92),Point(141,57)]
+# # Now I try to autogenerate them
+# points_rooms = []
+# for edges in Dic_rooms_edges.values():
+#     p_x_min = edges[0]
+#     p_y_min = edges[1]
+#     p_x_max = edges[2]
+#     p_y_max = edges[3]
+#     room_node = Point((p_x_max-p_x_min)/2+p_x_min,(p_y_max-p_y_min)/2+p_y_min)
+#     room_node.round_to_half()
+#     points_rooms.append(room_node)
 
-#points_corners = [Point(170.3,61),Point(170.3,60.14),Point(173.15,61.1),\
-#Point(129.3,61),Point(124,61),Point(117.9,61.1),Point(123.9,63.7),Point(123.2,69.2),\
-#Point(123.1,75.2),Point(123.1,85.8),Point(123.1,93.6),Point(123.9,95.7),Point(141.3,98.2),\
-#Point(137.8,100.8),Point(115.1,98.4),Point(120.5,58.7)]#,Point(124,61),Point(124,61),\
-#Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61)]
-points_all = points_doors+points_rooms #+points_corners
+# #points_corners = [Point(170.3,61),Point(170.3,60.14),Point(173.15,61.1),\
+# #Point(129.3,61),Point(124,61),Point(117.9,61.1),Point(123.9,63.7),Point(123.2,69.2),\
+# #Point(123.1,75.2),Point(123.1,85.8),Point(123.1,93.6),Point(123.9,95.7),Point(141.3,98.2),\
+# #Point(137.8,100.8),Point(115.1,98.4),Point(120.5,58.7)]#,Point(124,61),Point(124,61),\
+# #Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61)]
+# points_all = points_doors+points_rooms #+points_corners
 
 
-###### MAKING THE HIGH RESOLUTION GRID #######
-# Finding the keys for the largest and smallest x and y values from each point in each line
-x_max_idx1 = max(Dic_all, key=lambda key: Dic_all[key][0][1][0])
-x_max_idx2 = max(Dic_all, key=lambda key: Dic_all[key][0][0][0])
-x_min_idx1 = min(Dic_all, key=lambda key: Dic_all[key][0][1][0])
-x_min_idx2 = min(Dic_all, key=lambda key: Dic_all[key][0][0][0])
-# y_values
-y_max_idx1 = max(Dic_all, key=lambda key: Dic_all[key][0][0][1])
-y_max_idx2 = max(Dic_all, key=lambda key: Dic_all[key][0][1][1])
-y_min_idx1 = min(Dic_all, key=lambda key: Dic_all[key][0][0][1])
-y_min_idx2 = min(Dic_all, key=lambda key: Dic_all[key][0][1][1])
-# Getting the corresponding max and min values
-x_max = math.ceil(max([Dic_all[x_max_idx1][0][0][0],Dic_all[x_max_idx2][0][1][0]]))
-x_min = math.floor(min([Dic_all[x_min_idx1][0][0][0],Dic_all[x_min_idx2][0][1][0]]))
-y_max = math.ceil(max([Dic_all[y_max_idx1][0][0][1],Dic_all[y_max_idx2][0][1][1]]))
-y_min = math.floor(min([Dic_all[y_min_idx1][0][0][1],Dic_all[y_min_idx2][0][1][1]]))
+
 
 print("PART 2")
 
@@ -541,8 +572,8 @@ points_doors_opposite_discrete = copy.deepcopy(points_doors_opposite)
 [p.round_to_half() for p in points_doors_discrete]
 [p.round_to_half() for p in points_doors_opposite_discrete]
 # Doing the same for the room nodes
-[p.round_to_half() for p in points_rooms]
-points_all = points_doors+points_rooms+ points_doors_opposite #+points_corners
+#[p.round_to_half() for p in points_rooms]
+#points_all = points_doors+points_rooms+ points_doors_opposite #+points_corners
 #Plotting the points
 
 
@@ -787,8 +818,11 @@ points_rooms_dic = collections.defaultdict(list)
 #print("Dic_rooms",len(Dic_rooms))
 
 
-# Iterating over every room
-for i in range(len(Dic_rooms)):
+# Iterating over all labeled rooms. We are not iterating over all rooms since some
+# of the rooms might not be labeled.
+print(len(Dic_rooms))
+print(len(room_indexes))
+for i in range(len(room_indexes)-1):
     points_temp = [at['att'][1] for node,at in G_grid.nodes(data=True) if at['att'][3]==room_indexes[i]]
     #points_temp = nodes_temp[:][1]['att'][1]
     num_of_nodes = len(points_temp)
@@ -946,7 +980,7 @@ for node,at in sorted(G_grid.nodes(data=True)):
             # we find another node
             p1 = G_grid.nodes[node1]['att'][1]
             if not is_traversable(p,p1,Dic_rooms[room_num_door]):
-                print("hej")
+                #print("hej")
                 continue
 
             # If there is a wall find a new node.

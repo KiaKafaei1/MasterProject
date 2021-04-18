@@ -932,11 +932,34 @@ for node,at in sorted(G_grid.nodes(data=True)):
             # removed from the grid graph
             if not G_grid.has_node(node1):
                 continue
+
+
+
+
             room_num_node = G_grid.nodes[node1]['att'][3]
-            if room_num_door == room_num_node:
-                G_grid.add_edge(node,node1,weight=14)
-                point_node = G_grid.nodes[node1]['att'][1]
-                break
+            # If the grid node is not in the same room as the door node find another node
+            if room_num_door != room_num_node:
+                continue
+
+            # Doing a line intersection check here, 
+            # such that if it is a node in the same room but the node is obstructed by a wall
+            # we find another node
+            p1 = G_grid.nodes[node1]['att'][1]
+            if not is_traversable(p,p1,Dic_rooms[room_num_door]):
+                print("hej")
+                continue
+
+            # If there is a wall find a new node.
+            #if not connection_to_room:
+            #    continue
+
+
+            G_grid.add_edge(node,node1,weight=14)
+            point_node = G_grid.nodes[node1]['att'][1]
+            break
+
+
+
 
 
 

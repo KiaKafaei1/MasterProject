@@ -236,6 +236,8 @@ for i,ele in enumerate(array_elevation):
 # Choosing random clipping height, by taking avg of a floor min and max height
 random_floor = random.randint(0, len(elevation_combos)-1)
 clippingHeight = (elevation_combos[random_floor][0]+elevation_combos[random_floor][1])/2 
+clippingHeight = -3
+print(clippingHeight)
 #print(elevation_combos)
 # # Choosing random floor
 # random_floor = random.randint(0, len(elevation_combos)-1)
@@ -264,7 +266,7 @@ for i,room in enumerate(array_tri):
     
     if (clippingHeight <= array_elevation[i][0] or clippingHeight >= array_elevation[i][1]): 
         continue
-    print(i)
+    #print(i)
 
     for tri in room:
         for cor in tri:
@@ -345,7 +347,7 @@ for i,room in enumerate(array_tri):
     Dic = collections.defaultdict(list)
 
 print("PART 1")
-print(len(Dic_rooms))
+#print(len(Dic_rooms))
 
 ### Plotting the rooms from the R tree datastructure
 # fig, ax = plt.subplots()
@@ -451,7 +453,7 @@ for i,door in enumerate(points_doors):
     temp_points.append(Point(door.x+facing_doors[i][0]/2,door.y+facing_doors[i][1]/2))
     points_doors_opposite.append(Point(door.x-facing_doors[i][0]/2,door.y-facing_doors[i][1]/2))
 points_doors = temp_points.copy()
-print("length points doors",len(points_doors))
+#print("length points doors",len(points_doors))
 
 # Both ways have been depreciated!
 # Making the room points
@@ -521,10 +523,10 @@ for i,line in enumerate(Dic_all.values()):
 ## Splitting the leaf nodes (indexes) up in branches
 left_branch = index.Index(interleaved = False)
 right_branch = index.Index(interleaved= False)
-for id in idx.intersection((106,145,52,75)):
+for id in idx.intersection((x_min,(x_max+x_min)/2,y_min,(y_max+y_min)/2)):
     [left,right,bottom,top] = rectangles[id]
     left_branch.insert(id, (left,right,bottom,top))
-for id in idx.intersection((145,174,75,107)):
+for id in idx.intersection(((x_max+x_min)/2,x_max,(y_max+y_min)/2,y_max)):
     [left,right,bottom,top] = rectangles[id]
     right_branch.insert(id,(left,right,bottom,top))
 
@@ -553,6 +555,13 @@ idx_nodes = index.Index(interleaved=False)
 #         p = Point(x,y)
 #         idx_nodes.insert(i,(p.x,p.x,p.y,p.y))
 
+#print(Dic_all_unhashed)
+#temp= list(idx.nearest((1.0000001, 1.0000001, 2.0, 2.0),300))
+
+#for i in temp:
+#    print(Dic_all_unhashed[i])
+
+
 grid_height = len(np.linspace(y_min,y_max,(y_max-y_min)*2+1))
 G_grid = nx.Graph()
 i = 0
@@ -562,14 +571,37 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
     for y in np.linspace(y_min,y_max,(y_max-y_min)*2+1):
         i = i+1
         p = Point(x,y)
-        k = list(idx.nearest((p.x,p.x, p.y, p.y), 1))
+        k = list(idx.nearest((p.x,p.x, p.y, p.y),1))
+        # if p.x == -1.5 and p.y==-0.5:
+        #     print("k",k)
+        #     print(Dic_all_unhashed.get(k[0]))
+        #     print(Dic_all_unhashed.get(k[1]))
+        #     print(Dic_all_unhashed.get(k[2]))
+            #print("line",line)
         idx_nodes.insert(i,(p.x,p.x,p.y,p.y)) # Making spatial datastructure for the nodes
-        k = max(k) #If multiple walls are close we just choose a random wall (the wall with the highest index)
-        line = Dic_all_unhashed.get(k)
-        p1 = line[0][0]
-        p2 = line[0][1]
-        dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p.x,p.y)
+        dist_list = []
+        # Finding the wall with the shortest distance
+        for idx_ in k:
+            line = Dic_all_unhashed.get(idx_)
+            p1 = line[0][0]
+            p2 = line[0][1]
+            dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p.x,p.y)
+            dist_list.append(dist)
+        dist = min(dist_list)
+
+        #k = max(k) #If multiple walls are close we just choose a random wall (the wall with the highest index)
+        #line = Dic_all_unhashed.get(k)
+        #p1 = line[0][0]
+        #p2 = line[0][1]
+        #dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p.x,p.y)
         
+        #Testing bug
+        # if p.x == -1.5 and p.y==-0.5:
+        #     print("k",k)
+        #     print("line",line)
+        
+
+
         #Removing floating doors by removing all doors that are far away from the nearest wall
         # We use the information that length of the lists are the same and each index corresponds to opposite points.
         if p in points_doors_discrete:# and dist<1.1: 
@@ -729,8 +761,9 @@ for node,at in sorted(G_grid_cpy.nodes(data=True)):
 test = [at['att'] for node,at in G_grid.nodes(data=True)]# if at['att'][3]==1]
 
 #print("test", test)
-print("len dic rooms", len(Dic_rooms))
-print("len dic rooms edges",len(Dic_rooms_edges))
+#print("len dic rooms", len(Dic_rooms))
+#print("len dic rooms edges",len(Dic_rooms_edges))
+#print("len room indexes", len(room_indexes))
 print("PART 5")
 
 ## Doing K means clustering
@@ -897,6 +930,8 @@ for node,at in sorted(G_grid.nodes(data=True)):
 print("PART 7")
 ####### Approximate solution to the TSP problem #######
 G = G_grid.copy()
+#test = [at['att'] for node,at in G.nodes(data=True) if(at['att'][1].x ==-1.5 and at['att'][1].y ==-0.5)]# if at['att'][3]==1]
+#print(test)
 #Finding shortest path between all room nodes using the astar algorithm
 # Get all the traversable nodes in the points_all_incl_trav
 # Then calculate the entire walkable path for all the connected nodes while you also check for traversability.
@@ -938,7 +973,7 @@ for node,at in sorted(G_rooms.nodes(data=True)):
 
 
 max_connection = max(Dic_connectivity.values())
-print(len(Dic_connectivity))
+#print(len(Dic_connectivity))
 
 for key,value in Dic_connectivity.items():
     if value == max_connection:

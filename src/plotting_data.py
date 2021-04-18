@@ -819,9 +819,9 @@ points_rooms_dic = collections.defaultdict(list)
 
 
 # Iterating over all labeled rooms. We are not iterating over all rooms since some
-# of the rooms might not be labeled.
-print(len(Dic_rooms))
-print(len(room_indexes))
+# of the rooms might not be labeled. 
+#print(len(Dic_rooms))
+#print(len(room_indexes))
 for i in range(len(room_indexes)-1):
     points_temp = [at['att'][1] for node,at in G_grid.nodes(data=True) if at['att'][3]==room_indexes[i]]
     #points_temp = nodes_temp[:][1]['att'][1]

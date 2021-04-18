@@ -604,20 +604,20 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
 
         #Removing floating doors by removing all doors that are far away from the nearest wall
         # We use the information that length of the lists are the same and each index corresponds to opposite points.
-        if p in points_doors_discrete:# and dist<1.1: 
-            idx_d = points_doors_discrete.index(p)
-            p_float = points_doors[idx_d]
-            dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p_float.x,p_float.y)
-            G_grid.add_node(i,att =("door",p_float,dist,idx_d))
-        elif p in points_doors_opposite_discrete: # and dist<1.1:
-            idx_d = points_doors_opposite_discrete.index(p)
-            p_float = points_doors_opposite[idx_d]
-            dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p_float.x,p_float.y)
-            G_grid.add_node(i,att = ("door",p_float,dist,idx_d))
-        #elif p in points_rooms:
+        # if p in points_doors_discrete:# and dist<1.1: 
+        #     idx_d = points_doors_discrete.index(p)
+        #     p_float = points_doors[idx_d]
+        #     dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p_float.x,p_float.y)
+        #     G_grid.add_node(i,att =("door",p_float,dist,idx_d))
+        # elif p in points_doors_opposite_discrete: # and dist<1.1:
+        #     idx_d = points_doors_opposite_discrete.index(p)
+        #     p_float = points_doors_opposite[idx_d]
+        #     dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p_float.x,p_float.y)
+        #     G_grid.add_node(i,att = ("door",p_float,dist,idx_d))
+        # elif p in points_rooms:
         #    G_grid.add_node(i,att=("room",p,dist))
-        else:
-            G_grid.add_node(i,att =("grid",p,dist))       
+        # else:
+        G_grid.add_node(i,att =("grid",p,dist))       
         # Not adding edges to and from nodes that are too close to the wall
         # This is not possible because then the other nodes will have weird edges to and from eachother
         # THe only reliable way is to add the edges and then remove them again.
@@ -636,6 +636,19 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
            G_grid.add_edge(i,i-grid_height+1,weight=14)
 
 
+# Adding the door nodes
+number_of_nodes = len(G_grid.nodes)
+for idx_d in range(1,len(points_doors)):
+    # The distance will be a dummy number, since it is only needed as a place holder
+    dist = 2
+    p_float= points_doors[idx_d]
+    G_grid.add_node(number_of_nodes+idx_d,att =("door",p_float,dist,idx_d))
+number_of_nodes = len(G_grid.nodes)
+
+for idx_d in range(1,len(points_doors)):
+    dist = 2
+    p_float = points_doors_opposite[idx_d]
+    G_grid.add_node(number_of_nodes+idx_d,att =("door",p_float,dist,idx_d))
 
 
 # Changing all door nodes that are floating to regular grid nodes.
@@ -930,7 +943,9 @@ for node,at in sorted(G_grid.nodes(data=True)):
 print("PART 7")
 ####### Approximate solution to the TSP problem #######
 G = G_grid.copy()
-#test = [at['att'] for node,at in G.nodes(data=True) if(at['att'][1].x ==-1.5 and at['att'][1].y ==-0.5)]# if at['att'][3]==1]
+test = [at['att'] for node,at in G.nodes(data=True) if(at['att'][1].x ==4.5 and at['att'][1].y ==2)]# if at['att'][3]==1]
+#print(G.edges[4])
+#test = [at['att'] for node,at in G.edges(data=True if(at['att'][1].x ==5.0 and at['att'][1].y ==2.5)]
 #print(test)
 #Finding shortest path between all room nodes using the astar algorithm
 # Get all the traversable nodes in the points_all_incl_trav

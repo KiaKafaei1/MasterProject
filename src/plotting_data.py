@@ -236,7 +236,7 @@ for i,ele in enumerate(array_elevation):
 # Choosing random clipping height, by taking avg of a floor min and max height
 random_floor = random.randint(0, len(elevation_combos)-1)
 clippingHeight = (elevation_combos[random_floor][0]+elevation_combos[random_floor][1])/2 
-#clippingHeight = -3
+clippingHeight = -7.7
 print(clippingHeight)
 #print(elevation_combos)
 # # Choosing random floor
@@ -305,14 +305,14 @@ for i,room in enumerate(array_tri):
                 visited_lines.append(line)
                 break
     Dic_all.update(Dic)
+    # if array_number[i][0] == 102 or array_number[i][0] == 107:
+    #     fig, ax = plt.subplots()
+    #     #plot_grid(ax,x_min,x_max,y_min,y_max)
 
-    # fig, ax = plt.subplots()
-    # #plot_grid(ax,x_min,x_max,y_min,y_max)
-
-    # for line in Dic_all.values():
-    #     ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')  
-    #     ax.set_title(array_number[i][0])  
-    # plt.show()
+    #     for line in Dic.values():
+    #         ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')  
+    #         ax.set_title(array_number[i][0])  
+    #     plt.show()
 
     #### Making a dictionary containing all the rooms and their lines.
     p_x_max = 0
@@ -345,6 +345,82 @@ for i,room in enumerate(array_tri):
     Dic_rooms_edges[i] = [p_x_min, p_y_min,p_x_max,p_y_max]
     Dic_rooms[i] = Dic
     Dic = collections.defaultdict(list)
+
+
+#temp_dic = Dic_all.deepcopy()
+# Removin all one line walls, since these do not represent real walls and therefore obstruct the path.
+temp_dic = copy.deepcopy(Dic_all)
+for key1,line1 in temp_dic.items():
+    for key2,line2 in temp_dic.items():
+        if key1==key2:
+            #print("same key")
+            continue
+        #print(key1)
+        #print(line1)
+        p1 = Point(line1[0][0][0],line1[0][0][1])
+        p2 = Point(line1[0][1][0],line1[0][1][1])
+        p3 = Point(line2[0][0][0],line2[0][0][1])
+        p4 = Point(line2[0][1][0],line2[0][1][1])
+        # If the two points that make up the line is in the same order or opposite order
+        if ((p1 == p3 and p2==p4) or (p1==p4 and p2==p3)):
+        #if (line1[0][0] == line2[0][0] and line1[0][1]== line2[0][1]) or (line1[0][0] == line2[0][1] and line1[0][1]== line2[0][0]):
+            #print("testen virker")
+            #print("key1", key1)
+            #print(Dic_all[key1])
+            del Dic_all[key1]
+            break
+        # Checking if the two lines (or the four points they are made of) 
+        # are colinear, by checking the slope of three or more points are the same.
+        slope_lines = []
+        if (p2.x-p1.x) == 0:
+            slope_lines.append(1000)
+        else:
+            slope_lines.append((p2.y-p1.y)/((p2.x-p1.x)))
+        if (p4.x-p3.x) == 0:
+            slope_lines.append(1000)
+        else:
+            slope_lines.append((p4.y-p3.y)/((p4.x-p3.x)))
+        if (p4.x-p1.x) == 0:
+            slope_lines.append(1000)
+        else:
+            slope_lines.append((p4.y-p1.y)/((p4.x-p1.x)))
+        #print(slope_lines)
+        # They are coolinear now we check if they overlap by looking at their projections on the x axis
+        if all(x==slope_lines[0] for x in slope_lines):
+            #if slope_lines[0]==1000:
+            #    del Dic_all[key1]
+            #    break  
+            #for p in [p1,p2,p3,p4]:
+            #    if 123.9< p.x <124 and 60.9 <p.y < 61.2:
+            #        print([p1,p2,p3,p4])
+            #print("VI ER HER")
+            if(p3.x < p1.x < p4.x or p4.x < p1.x < p3.x) or \
+            (p3.x < p2.x < p4.x or p4.x < p2.x < p3.x) or \
+            (p1.x < p3.x < p2.x or p1.x < p3.x < p2.x) or \
+            (p1.x < p4.x < p2.x or p1.x < p4.x < p2.x):
+                print("vi er her")                
+                del Dic_all[key1]
+                break  
+
+            # In case of vertical line we project also on y direction
+            if(p3.y < p1.y < p4.y or p4.y < p1.y < p3.y) or \
+            (p3.y < p2.y < p4.y or p4.y < p2.y < p3.y) or \
+            (p1.y < p3.y < p2.y or p1.y < p3.y < p2.y) or \
+            (p1.y < p4.y < p2.y or p1.y < p4.y < p2.y):
+                print("vi er her y")                
+                del Dic_all[key1]
+                break
+        #print(line1[0][0])
+        #elif intersect(p1,p2,p3,p4):
+        #    print("hej")
+        #    del Dic_all[key1]
+        #    break
+            #del Dic_all[key2]
+
+
+#print(list(Dic_all.keys())[0])
+
+    #print(Dic_all[key])
 
 print("PART 1")
 #print(len(Dic_rooms))
@@ -395,7 +471,8 @@ array = cop.cor_processing(array,room=0)
 translation =  [array[-1][i] for i in (0,-1)]
 
  
-translation_height = [array[-1][1]]
+translation_height = array[-1][1][0]
+
 
 
 #print(translation)
@@ -522,6 +599,10 @@ points_doors = temp_points.copy()
 # #Point(137.8,100.8),Point(115.1,98.4),Point(120.5,58.7)]#,Point(124,61),Point(124,61),\
 # #Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61)]
 # points_all = points_doors+points_rooms #+points_corners
+
+
+
+            
 
 
 

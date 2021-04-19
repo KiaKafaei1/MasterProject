@@ -347,75 +347,71 @@ for i,room in enumerate(array_tri):
     Dic = collections.defaultdict(list)
 
 
-#temp_dic = Dic_all.deepcopy()
-# Removin all one line walls, since these do not represent real walls and therefore obstruct the path.
-temp_dic = copy.deepcopy(Dic_all)
-for key1,line1 in temp_dic.items():
-    for key2,line2 in temp_dic.items():
-        if key1==key2:
-            #print("same key")
-            continue
-        #print(key1)
-        #print(line1)
-        p1 = Point(line1[0][0][0],line1[0][0][1])
-        p2 = Point(line1[0][1][0],line1[0][1][1])
-        p3 = Point(line2[0][0][0],line2[0][0][1])
-        p4 = Point(line2[0][1][0],line2[0][1][1])
-        # If the two points that make up the line is in the same order or opposite order
-        if ((p1 == p3 and p2==p4) or (p1==p4 and p2==p3)):
-        #if (line1[0][0] == line2[0][0] and line1[0][1]== line2[0][1]) or (line1[0][0] == line2[0][1] and line1[0][1]== line2[0][0]):
-            #print("testen virker")
-            #print("key1", key1)
-            #print(Dic_all[key1])
-            del Dic_all[key1]
-            break
-        # Checking if the two lines (or the four points they are made of) 
-        # are colinear, by checking the slope of three or more points are the same.
-        slope_lines = []
-        if (p2.x-p1.x) == 0:
-            slope_lines.append(1000)
-        else:
-            slope_lines.append((p2.y-p1.y)/((p2.x-p1.x)))
-        if (p4.x-p3.x) == 0:
-            slope_lines.append(1000)
-        else:
-            slope_lines.append((p4.y-p3.y)/((p4.x-p3.x)))
-        if (p4.x-p1.x) == 0:
-            slope_lines.append(1000)
-        else:
-            slope_lines.append((p4.y-p1.y)/((p4.x-p1.x)))
-        #print(slope_lines)
-        # They are coolinear now we check if they overlap by looking at their projections on the x axis
-        if all(x==slope_lines[0] for x in slope_lines):
-            #if slope_lines[0]==1000:
-            #    del Dic_all[key1]
-            #    break  
-            #for p in [p1,p2,p3,p4]:
-            #    if 123.9< p.x <124 and 60.9 <p.y < 61.2:
-            #        print([p1,p2,p3,p4])
-            #print("VI ER HER")
-            if(p3.x < p1.x < p4.x or p4.x < p1.x < p3.x) or \
-            (p3.x < p2.x < p4.x or p4.x < p2.x < p3.x) or \
-            (p1.x < p3.x < p2.x or p1.x < p3.x < p2.x) or \
-            (p1.x < p4.x < p2.x or p1.x < p4.x < p2.x):
-                print("vi er her")                
-                del Dic_all[key1]
-                break  
+# #temp_dic = Dic_all.deepcopy()
+# # Removin all one line walls, since these do not represent real walls and therefore obstruct the path.
+# temp_dic = copy.deepcopy(Dic_all)
+# for key1,line1 in temp_dic.items():
+#     for key2,line2 in temp_dic.items():
+#         if key1==key2:
+#             #print("same key")
+#             continue
+#         #print(key1)
+#         #print(line1)
+#         p1 = Point(line1[0][0][0],line1[0][0][1])
+#         p2 = Point(line1[0][1][0],line1[0][1][1])
+#         p3 = Point(line2[0][0][0],line2[0][0][1])
+#         p4 = Point(line2[0][1][0],line2[0][1][1])
+#         # If the two points that make up the line is in the same order or opposite order
+#         if ((p1 == p3 and p2==p4) or (p1==p4 and p2==p3)):
+#         #if (line1[0][0] == line2[0][0] and line1[0][1]== line2[0][1]) or (line1[0][0] == line2[0][1] and line1[0][1]== line2[0][0]):
+#             #print("testen virker")
+#             #print("key1", key1)
+#             #print(Dic_all[key1])
+#             del Dic_all[key1]
+#             break
+#         # Checking if the two lines (or the four points they are made of) 
+#         # are colinear, by checking the slope of three or more points are the same.
+#         slope_lines = []
+#         if (p2.x-p1.x) == 0:
+#             slope_lines.append(1000)
+#         else:
+#             slope_lines.append((p2.y-p1.y)/((p2.x-p1.x)))
+#         if (p4.x-p3.x) == 0:
+#             slope_lines.append(1000)
+#         else:
+#             slope_lines.append((p4.y-p3.y)/((p4.x-p3.x)))
+#         if (p4.x-p1.x) == 0:
+#             slope_lines.append(1000)
+#         else:
+#             slope_lines.append((p4.y-p1.y)/((p4.x-p1.x)))
+#         #print(slope_lines)
+#         # They are coolinear now we check if they overlap by looking at their projections on the x axis
+#         if all(x==slope_lines[0] for x in slope_lines):
+#             #if slope_lines[0]==1000:
+#             #    del Dic_all[key1]
+#             #    break  
+#             #for p in [p1,p2,p3,p4]:
+#             #    if 123.9< p.x <124 and 60.9 <p.y < 61.2:
+#             #        print([p1,p2,p3,p4])
+#             #print("VI ER HER")
+#             if(p3.x < p1.x < p4.x or p4.x < p1.x < p3.x) or \
+#             (p3.x < p2.x < p4.x or p4.x < p2.x < p3.x) or \
+#             (p1.x < p3.x < p2.x or p1.x < p3.x < p2.x) or \
+#             (p1.x < p4.x < p2.x or p1.x < p4.x < p2.x):
+#                 print("vi er her")                
+#                 del Dic_all[key1]
+#                 break  
 
-            # In case of vertical line we project also on y direction
-            if(p3.y < p1.y < p4.y or p4.y < p1.y < p3.y) or \
-            (p3.y < p2.y < p4.y or p4.y < p2.y < p3.y) or \
-            (p1.y < p3.y < p2.y or p1.y < p3.y < p2.y) or \
-            (p1.y < p4.y < p2.y or p1.y < p4.y < p2.y):
-                print("vi er her y")                
-                del Dic_all[key1]
-                break
-        #print(line1[0][0])
-        #elif intersect(p1,p2,p3,p4):
-        #    print("hej")
-        #    del Dic_all[key1]
-        #    break
-            #del Dic_all[key2]
+#             # In case of vertical line we project also on y direction
+#             if(p3.y < p1.y < p4.y or p4.y < p1.y < p3.y) or \
+#             (p3.y < p2.y < p4.y or p4.y < p2.y < p3.y) or \
+#             (p1.y < p3.y < p2.y or p1.y < p3.y < p2.y) or \
+#             (p1.y < p4.y < p2.y or p1.y < p4.y < p2.y):
+#                 print("vi er her y")                
+#                 del Dic_all[key1]
+#                 break
+
+
 
 
 #print(list(Dic_all.keys())[0])
@@ -617,6 +613,223 @@ print("PART 2")
 
 
 ######## IMPLEMENTING THE DATASTRUCTURE FOR THE WALLS ########
+#p = index.Property()
+# idx = index.Index(interleaved=False)
+# # Making a dictionary for the rectangles, such that they can later be retrieved when wanting to branch out
+# rectangles = collections.defaultdict(list)
+# Dic_all_unhashed = collections.defaultdict(list)
+# for i,line in enumerate(Dic_all.values()):
+#     p1 = line[0][0]
+#     p2 = line[0][1]
+#     bottom = min(p1[1],p2[1])
+#     left = min(p1[0],p2[0])
+#     top = max(p1[1],p2[1])
+#     right = max(p1[0],p2[0])
+#     rectangles[i] = [left,right,bottom,top]
+#     Dic_all_unhashed[i] = line
+#     idx.insert(i,(left,right,bottom,top),obj = line)
+# ## Splitting the leaf nodes (indexes) up in branches
+# left_branch = index.Index(interleaved = False)
+# right_branch = index.Index(interleaved= False)
+# for id in idx.intersection((x_min,(x_max+x_min)/2,y_min,(y_max+y_min)/2)):
+#     [left,right,bottom,top] = rectangles[id]
+#     left_branch.insert(id, (left,right,bottom,top))
+# for id in idx.intersection(((x_max+x_min)/2,x_max,(y_max+y_min)/2,y_max)):
+#     [left,right,bottom,top] = rectangles[id]
+#     right_branch.insert(id,(left,right,bottom,top))
+
+
+# Grid height is used when making the grid nodes
+grid_height = len(np.linspace(y_min,y_max,(y_max-y_min)*2+1))
+# Keeping the original door coordinates
+points_doors_discrete = copy.deepcopy(points_doors)
+points_doors_opposite_discrete = copy.deepcopy(points_doors_opposite)
+#print(points_doors_discrete)
+# Rounding the discrete doors to nearest 0.5 since that is the resolution of the grid.
+[p.round_to_half() for p in points_doors_discrete]
+[p.round_to_half() for p in points_doors_opposite_discrete]
+# Doing the same for the room nodes
+#[p.round_to_half() for p in points_rooms]
+#points_all = points_doors+points_rooms+ points_doors_opposite #+points_corners
+#Plotting the points
+
+
+# Making a spatial datastructure for the points
+#idx_nodes = index.Index(interleaved=False)
+# i = 0
+# for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
+#     for y in np.linspace(y_min,y_max,(y_max-y_min)*2+1):
+#         i = i+1
+#         p = Point(x,y)
+#         idx_nodes.insert(i,(p.x,p.x,p.y,p.y))
+
+#print(Dic_all_unhashed)
+#temp= list(idx.nearest((1.0000001, 1.0000001, 2.0, 2.0),300))
+
+#for i in temp:
+#    print(Dic_all_unhashed[i])
+
+
+# grid_height = len(np.linspace(y_min,y_max,(y_max-y_min)*2+1))
+# G_grid = nx.Graph()
+# i = 0
+# counter_room = 0 
+# print("PART 3")
+# for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
+#     for y in np.linspace(y_min,y_max,(y_max-y_min)*2+1):
+#         i = i+1
+#         p = Point(x,y)
+#         k = list(idx.nearest((p.x,p.x, p.y, p.y),1))
+#         # if p.x == -1.5 and p.y==-0.5:
+#         #     print("k",k)
+#         #     print(Dic_all_unhashed.get(k[0]))
+#         #     print(Dic_all_unhashed.get(k[1]))
+#         #     print(Dic_all_unhashed.get(k[2]))
+#             #print("line",line)
+#         idx_nodes.insert(i,(p.x,p.x,p.y,p.y)) # Making spatial datastructure for the nodes
+#         dist_list = []
+#         # Finding the wall with the shortest distance
+#         for idx_ in k:
+#             line = Dic_all_unhashed.get(idx_)
+#             p1 = line[0][0]
+#             p2 = line[0][1]
+#             dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p.x,p.y)
+#             dist_list.append(dist)
+#         dist = min(dist_list)
+
+#         #k = max(k) #If multiple walls are close we just choose a random wall (the wall with the highest index)
+#         #line = Dic_all_unhashed.get(k)
+#         #p1 = line[0][0]
+#         #p2 = line[0][1]
+#         #dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p.x,p.y)
+        
+#         #Testing bug
+#         # if p.x == -1.5 and p.y==-0.5:
+#         #     print("k",k)
+#         #     print("line",line)
+        
+#         G_grid.add_node(i,att =("grid",p,dist))       
+#         # Not adding edges to and from nodes that are too close to the wall
+#         # This is not possible because then the other nodes will have weird edges to and from eachother
+#         # THe only reliable way is to add the edges and then remove them again.
+
+#         # Vertical and horizontal neighbours
+#         if x>x_min:
+#             G_grid.add_edge(i,i-grid_height,weight=10)
+#         if y>y_min:
+#             G_grid.add_edge(i,i-1,weight=10)
+#         # Diagonal neighbours
+#         # Diagonal down left which is the same as up right
+#         if x>x_min and y>y_min:
+#             G_grid.add_edge(i,i-grid_height-1,weight=14)
+#         # Diagonal up left which is the same as right down
+#         if x>x_min and y<y_max: 
+#            G_grid.add_edge(i,i-grid_height+1,weight=14)
+
+
+# Adding the door nodes
+G_grid = nx.Graph()
+idx_doors = index.Index(interleaved=False)
+for idx_d in range(1,len(points_doors)):
+    # The distance will be a dummy number, since it is only needed as a place holder
+    dist = 2
+    p_float= points_doors[idx_d]
+    G_grid.add_node(idx_d,att =("door",p_float,dist,idx_d))
+    idx_doors.insert(idx_d,(p_float.x,p_float.x,p_float.y,p_float.y)) 
+number_of_nodes = len(G_grid.nodes)
+
+for idx_d in range(1,len(points_doors)):
+    dist = 2
+    p_float = points_doors_opposite[idx_d]
+    G_grid.add_node(idx_d,att =("door",p_float,dist,idx_d))
+    idx_doors.insert(idx_d,(p_float.x,p_float.x,p_float.y,p_float.y))
+
+
+#number_of_nodes = len(G_grid.nodes)
+
+
+
+#temp_dic = Dic_all.deepcopy()
+# Removin all one line walls, since these do not represent real walls and therefore obstruct the path.
+temp_dic = copy.deepcopy(Dic_all)
+for key1,line1 in temp_dic.items():
+    for key2,line2 in temp_dic.items():
+        if key1==key2:
+            #print("same key")
+            continue
+        #print(key1)
+        #print(line1)
+        p1 = Point(line1[0][0][0],line1[0][0][1])
+        p2 = Point(line1[0][1][0],line1[0][1][1])
+        p3 = Point(line2[0][0][0],line2[0][0][1])
+        p4 = Point(line2[0][1][0],line2[0][1][1])
+        # If the two points that make up the line is in the same order or opposite order
+        if ((p1 == p3 and p2==p4) or (p1==p4 and p2==p3)):
+        #if (line1[0][0] == line2[0][0] and line1[0][1]== line2[0][1]) or (line1[0][0] == line2[0][1] and line1[0][1]== line2[0][0]):
+            #print("testen virker")
+            #print("key1", key1)
+            #print(Dic_all[key1])
+            del Dic_all[key1]
+            break
+        # Checking if the two lines (or the four points they are made of) 
+        # are colinear, by checking the slope of three or more points are the same.
+        slope_lines = []
+        if (p2.x-p1.x) == 0:
+            slope_lines.append(1000)
+        else:
+            slope_lines.append((p2.y-p1.y)/((p2.x-p1.x)))
+        if (p4.x-p3.x) == 0:
+            slope_lines.append(1000)
+        else:
+            slope_lines.append((p4.y-p3.y)/((p4.x-p3.x)))
+        if (p4.x-p1.x) == 0:
+            slope_lines.append(1000)
+        else:
+            slope_lines.append((p4.y-p1.y)/((p4.x-p1.x)))
+        #print(slope_lines)
+        # They are coolinear now we check if they overlap by looking at their projections on the x axis
+        if all(x==slope_lines[0] for x in slope_lines):
+            #if slope_lines[0]==1000:
+            #    del Dic_all[key1]
+            #    break  
+            #for p in [p1,p2,p3,p4]:
+            #    if 123.9< p.x <124 and 60.9 <p.y < 61.2:
+            #        print([p1,p2,p3,p4])
+            #print("VI ER HER")
+            # We project on the x axis and y axis due to the cases where we have perfectly vertical or horizontal lines.
+            if(p3.x < p1.x < p4.x or p4.x < p1.x < p3.x) or \
+            (p3.x < p2.x < p4.x or p4.x < p2.x < p3.x) or \
+            (p1.x < p3.x < p2.x or p1.x < p3.x < p2.x) or \
+            (p1.x < p4.x < p2.x or p1.x < p4.x < p2.x) or \
+            (p3.y < p1.y < p4.y or p4.y < p1.y < p3.y) or \
+            (p3.y < p2.y < p4.y or p4.y < p2.y < p3.y) or \
+            (p1.y < p3.y < p2.y or p1.y < p3.y < p2.y) or \
+            (p1.y < p4.y < p2.y or p1.y < p4.y < p2.y):
+                # We check if there are doors near the wall, if that is the case we don't remove the walls.
+                if p1.x < p2.x:
+                    if p1.y<=p2.y:
+                        k = list(idx_doors.nearest((p1.x,p2.x, p1.y, p2.y),1))
+                    else:
+                        k = list(idx_doors.nearest((p1.x,p2.x, p2.y, p1.y),1))
+                else:
+                    if p1.y<=p2.y:
+                        k = list(idx_doors.nearest((p2.x,p1.x, p1.y, p2.y),1))
+                    else:
+                        k = list(idx_doors.nearest((p2.x,p1.x, p2.y, p1.y),1))
+                dist_list = []
+                for idx_ in k:
+                    door_p = G_grid.nodes[idx_]['att'][1]
+                    dist = point_line_dist(p1.x,p1.y,p2.x,p2.y,door_p.x,door_p.y)
+                    dist_list.append(dist)
+
+                dist = min(dist_list)
+                #print(dist_list)
+                if dist<=0.5:
+                    #print("dør for tæt på")
+                    continue
+                #print("vi er her")                
+                del Dic_all[key1]
+                break  
 p = index.Property()
 idx = index.Index(interleaved=False)
 # Making a dictionary for the rectangles, such that they can later be retrieved when wanting to branch out
@@ -643,42 +856,15 @@ for id in idx.intersection(((x_max+x_min)/2,x_max,(y_max+y_min)/2,y_max)):
     right_branch.insert(id,(left,right,bottom,top))
 
 
-# Grid height is used when making the grid nodes
-grid_height = len(np.linspace(y_min,y_max,(y_max-y_min)*2+1))
-# Keeping the original door coordinates
-points_doors_discrete = copy.deepcopy(points_doors)
-points_doors_opposite_discrete = copy.deepcopy(points_doors_opposite)
-#print(points_doors_discrete)
-# Rounding the discrete doors to nearest 0.5 since that is the resolution of the grid.
-[p.round_to_half() for p in points_doors_discrete]
-[p.round_to_half() for p in points_doors_opposite_discrete]
-# Doing the same for the room nodes
-#[p.round_to_half() for p in points_rooms]
-#points_all = points_doors+points_rooms+ points_doors_opposite #+points_corners
-#Plotting the points
-
-
-# Making a spatial datastructure for the points
-idx_nodes = index.Index(interleaved=False)
-# i = 0
-# for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
-#     for y in np.linspace(y_min,y_max,(y_max-y_min)*2+1):
-#         i = i+1
-#         p = Point(x,y)
-#         idx_nodes.insert(i,(p.x,p.x,p.y,p.y))
-
-#print(Dic_all_unhashed)
-#temp= list(idx.nearest((1.0000001, 1.0000001, 2.0, 2.0),300))
-
-#for i in temp:
-#    print(Dic_all_unhashed[i])
-
 
 grid_height = len(np.linspace(y_min,y_max,(y_max-y_min)*2+1))
 G_grid = nx.Graph()
 i = 0
 counter_room = 0 
 print("PART 3")
+#number_of_nodes = len(G_grid.nodes)
+#i = number_of_nodes 
+idx_nodes = index.Index(interleaved=False)
 for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
     for y in np.linspace(y_min,y_max,(y_max-y_min)*2+1):
         i = i+1
@@ -712,23 +898,6 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
         #     print("k",k)
         #     print("line",line)
         
-
-
-        #Removing floating doors by removing all doors that are far away from the nearest wall
-        # We use the information that length of the lists are the same and each index corresponds to opposite points.
-        # if p in points_doors_discrete:# and dist<1.1: 
-        #     idx_d = points_doors_discrete.index(p)
-        #     p_float = points_doors[idx_d]
-        #     dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p_float.x,p_float.y)
-        #     G_grid.add_node(i,att =("door",p_float,dist,idx_d))
-        # elif p in points_doors_opposite_discrete: # and dist<1.1:
-        #     idx_d = points_doors_opposite_discrete.index(p)
-        #     p_float = points_doors_opposite[idx_d]
-        #     dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p_float.x,p_float.y)
-        #     G_grid.add_node(i,att = ("door",p_float,dist,idx_d))
-        # elif p in points_rooms:
-        #    G_grid.add_node(i,att=("room",p,dist))
-        # else:
         G_grid.add_node(i,att =("grid",p,dist))       
         # Not adding edges to and from nodes that are too close to the wall
         # This is not possible because then the other nodes will have weird edges to and from eachother
@@ -749,19 +918,22 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
 
 
 # Adding the door nodes
+#G_grid = nx.Graph()
 number_of_nodes = len(G_grid.nodes)
+idx_doors = index.Index(interleaved=False)
 for idx_d in range(1,len(points_doors)):
     # The distance will be a dummy number, since it is only needed as a place holder
     dist = 2
     p_float= points_doors[idx_d]
     G_grid.add_node(number_of_nodes+idx_d,att =("door",p_float,dist,idx_d))
+    idx_doors.insert(number_of_nodes+idx_d,(p_float.x,p_float.x,p_float.y,p_float.y)) 
 number_of_nodes = len(G_grid.nodes)
 
 for idx_d in range(1,len(points_doors)):
     dist = 2
     p_float = points_doors_opposite[idx_d]
     G_grid.add_node(number_of_nodes+idx_d,att =("door",p_float,dist,idx_d))
-
+    idx_doors.insert(number_of_nodes+idx_d,(p_float.x,p_float.x,p_float.y,p_float.y))
 
 # Changing all door nodes that are floating to regular grid nodes.
 # This might not be important after all since the program doesn't care if a point in the middle of the room is a door node or a grid node

@@ -236,7 +236,7 @@ for i,ele in enumerate(array_elevation):
 # Choosing random clipping height, by taking avg of a floor min and max height
 random_floor = random.randint(0, len(elevation_combos)-1)
 clippingHeight = (elevation_combos[random_floor][0]+elevation_combos[random_floor][1])/2 
-clippingHeight = -7.7
+#clippingHeight = -1.56
 print(clippingHeight)
 #print(elevation_combos)
 # # Choosing random floor
@@ -305,14 +305,14 @@ for i,room in enumerate(array_tri):
                 visited_lines.append(line)
                 break
     Dic_all.update(Dic)
-    # if array_number[i][0] == 102 or array_number[i][0] == 107:
-    #     fig, ax = plt.subplots()
-    #     #plot_grid(ax,x_min,x_max,y_min,y_max)
+    #if array_number[i][0] == 102 or array_number[i][0] == 107:
+    # fig, ax = plt.subplots()
+    # #plot_grid(ax,x_min,x_max,y_min,y_max)
 
-    #     for line in Dic.values():
-    #         ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')  
-    #         ax.set_title(array_number[i][0])  
-    #     plt.show()
+    # for line in Dic_all.values():
+    #     ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')  
+    #     ax.set_title(array_number[i][0])  
+    # plt.show()
 
     #### Making a dictionary containing all the rooms and their lines.
     p_x_max = 0
@@ -506,11 +506,14 @@ facing_doors = []
 
 # If the first doors x coordinates are out of bounds it means we should 
 # use the translation to translate the coordinates
+
+# Here what you can do instead is to take the median value and see if it is within the boundaries
 translation_usage = False
 if list_points_doors[0][0][0]>x_max or list_points_doors[0][0][0]<x_min:
     translation_usage = True
     clippingHeight = clippingHeight+translation_height
-
+print("array2 len", len(array2))
+#print("doors")
 
 if translation_usage:
     for i,elev in enumerate(array2):
@@ -574,6 +577,18 @@ for i,door in enumerate(points_doors):
 points_doors = temp_points.copy()
 #print("length points doors",len(points_doors))
 
+
+# fig, ax = plt.subplots()
+# #plot_grid(ax,x_min,x_max,y_min,y_max)
+
+# for line in Dic_all.values():
+#     ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')  
+#     #ax.set_title(array_number[i][0])  
+
+# for i,points in enumerate(points_doors):
+#     plot_point(points)
+#     plot_point(points_doors_opposite[i])
+# plt.show()
 # # Both ways have been depreciated!
 # # Making the room points
 # # First I do it manually
@@ -741,8 +756,8 @@ number_of_nodes = len(G_grid.nodes)
 for idx_d in range(1,len(points_doors)):
     dist = 2
     p_float = points_doors_opposite[idx_d]
-    G_grid.add_node(idx_d,att =("door",p_float,dist,idx_d))
-    idx_doors.insert(idx_d,(p_float.x,p_float.x,p_float.y,p_float.y))
+    G_grid.add_node(number_of_nodes+idx_d,att =("door",p_float,dist,idx_d))
+    idx_doors.insert(number_of_nodes+idx_d,(p_float.x,p_float.x,p_float.y,p_float.y))
 
 
 #number_of_nodes = len(G_grid.nodes)
@@ -764,48 +779,70 @@ for key1,line1 in temp_dic.items():
         p3 = Point(line2[0][0][0],line2[0][0][1])
         p4 = Point(line2[0][1][0],line2[0][1][1])
         # If the two points that make up the line is in the same order or opposite order
-        if ((p1 == p3 and p2==p4) or (p1==p4 and p2==p3)):
+        #if ((p1 == p3 and p2==p4) or (p1==p4 and p2==p3)):
         #if (line1[0][0] == line2[0][0] and line1[0][1]== line2[0][1]) or (line1[0][0] == line2[0][1] and line1[0][1]== line2[0][0]):
             #print("testen virker")
-            #print("key1", key1)
-            #print(Dic_all[key1])
-            del Dic_all[key1]
-            break
+            ##print("key1", key1)
+            ##print(Dic_all[key1])
+        #    del Dic_all[key1]
+        #    break
         # Checking if the two lines (or the four points they are made of) 
         # are colinear, by checking the slope of three or more points are the same.
         slope_lines = []
         if (p2.x-p1.x) == 0:
             slope_lines.append(1000)
         else:
-            slope_lines.append((p2.y-p1.y)/((p2.x-p1.x)))
+            slope_lines.append(abs((p2.y-p1.y))/(abs((p2.x-p1.x))))
         if (p4.x-p3.x) == 0:
             slope_lines.append(1000)
         else:
-            slope_lines.append((p4.y-p3.y)/((p4.x-p3.x)))
+            slope_lines.append(abs((p4.y-p3.y))/(abs((p4.x-p3.x))))
         if (p4.x-p1.x) == 0:
             slope_lines.append(1000)
         else:
-            slope_lines.append((p4.y-p1.y)/((p4.x-p1.x)))
-        #print(slope_lines)
+            slope_lines.append(abs((p4.y-p1.y))/(abs((p4.x-p1.x))))
         # They are coolinear now we check if they overlap by looking at their projections on the x axis
+        intersecting = False
         if all(x==slope_lines[0] for x in slope_lines):
-            #if slope_lines[0]==1000:
+            # We have complete vertical and colinear which are a special exception
+            # We now check if they intersect by looking at their y values. 
+            
+            if slope_lines[0]==1000:
+                # If the lines are inbetween eachother
+                if (p3.y < p1.y < p4.y or p4.y < p1.y < p3.y) or \
+                (p3.y < p2.y < p4.y or p4.y < p2.y < p3.y) or \
+                (p1.y < p3.y < p2.y or p2.y < p3.y < p1.y) or \
+                (p1.y < p4.y < p2.y or p2.y < p4.y < p1.y):
+                    intersecting = True
+                # If the lines are exactly the same
+                elif ((p1 == p3 and p2==p4) or (p1==p4 and p2==p3)):
+                    intersecting = True
+
             #    del Dic_all[key1]
             #    break  
             #for p in [p1,p2,p3,p4]:
             #    if 123.9< p.x <124 and 60.9 <p.y < 61.2:
             #        print([p1,p2,p3,p4])
             #print("VI ER HER")
-            # We project on the x axis and y axis due to the cases where we have perfectly vertical or horizontal lines.
-            if(p3.x < p1.x < p4.x or p4.x < p1.x < p3.x) or \
+
+            # If not we check by projection on the x axis
+            elif(p3.x < p1.x < p4.x or p4.x < p1.x < p3.x) or \
             (p3.x < p2.x < p4.x or p4.x < p2.x < p3.x) or \
-            (p1.x < p3.x < p2.x or p1.x < p3.x < p2.x) or \
-            (p1.x < p4.x < p2.x or p1.x < p4.x < p2.x) or \
-            (p3.y < p1.y < p4.y or p4.y < p1.y < p3.y) or \
-            (p3.y < p2.y < p4.y or p4.y < p2.y < p3.y) or \
-            (p1.y < p3.y < p2.y or p1.y < p3.y < p2.y) or \
-            (p1.y < p4.y < p2.y or p1.y < p4.y < p2.y):
+            (p1.x < p3.x < p2.x or p2.x < p3.x < p1.x) or \
+            (p1.x < p4.x < p2.x or p2.x < p4.x < p1.x):
+                intersecting = True
+
                 # We check if there are doors near the wall, if that is the case we don't remove the walls.
+                # We have to index the points properly
+                # Checking the order of the points in the lines
+                # if p1.x<p2.x:
+                #     if p1.y<
+
+            # This is the special scenario where the lines are exactly the same
+            elif ((p1 == p3 and p2==p4) or (p1==p4 and p2==p3)):
+                intersecting = True
+
+            if intersecting:
                 if p1.x < p2.x:
                     if p1.y<=p2.y:
                         k = list(idx_doors.nearest((p1.x,p2.x, p1.y, p2.y),1))
@@ -816,6 +853,7 @@ for key1,line1 in temp_dic.items():
                         k = list(idx_doors.nearest((p2.x,p1.x, p1.y, p2.y),1))
                     else:
                         k = list(idx_doors.nearest((p2.x,p1.x, p2.y, p1.y),1))
+
                 dist_list = []
                 for idx_ in k:
                     door_p = G_grid.nodes[idx_]['att'][1]
@@ -825,11 +863,22 @@ for key1,line1 in temp_dic.items():
                 dist = min(dist_list)
                 #print(dist_list)
                 if dist<=0.5:
-                    #print("dør for tæt på")
+                #    print("dør for tæt på")
                     continue
                 #print("vi er her")                
                 del Dic_all[key1]
-                break  
+                break
+
+            # If the two points that make up the line is in the same order or opposite order
+            # This is the special scenario where all points are exactly the same
+            # elif ((p1 == p3 and p2==p4) or (p1==p4 and p2==p3)):
+            # #if (line1[0][0] == line2[0][0] and line1[0][1]== line2[0][1]) or (line1[0][0] == line2[0][1] and line1[0][1]== line2[0][0]):
+            #     #print("testen virker")
+            #     ##print("key1", key1)
+            #     ##print(Dic_all[key1])
+            #     del Dic_all[key1]
+            #     break  
+
 p = index.Property()
 idx = index.Index(interleaved=False)
 # Making a dictionary for the rectangles, such that they can later be retrieved when wanting to branch out
@@ -1125,9 +1174,10 @@ for i in range(len(room_indexes)-1):
                 points_temp_idx = random.randint(0,len(points_temp)-1)
                 #print("points_temp_idx",points_temp_idx)
                 #print("len points temp",len(points_temp))
-                centroids_new.append(points_temp[points_temp_idx])
+                avg_point = points_temp[points_temp_idx]
+                #centroids_new.append(points_temp[points_temp_idx])
                 #print("hej")
-                continue
+                #continue
             # If the centroid is not in the room we find the nearest node in the room and append the centroid value to that node
             # if avg_point not in points_temp:
             #     k = list(idx.nearest((p.x,p.x, p.y, p.y), len(G_grid.nodes)))

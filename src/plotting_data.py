@@ -236,7 +236,7 @@ for i,ele in enumerate(array_elevation):
 # Choosing random clipping height, by taking avg of a floor min and max height
 random_floor = random.randint(0, len(elevation_combos)-1)
 clippingHeight = (elevation_combos[random_floor][0]+elevation_combos[random_floor][1])/2 
-#clippingHeight = -1.56
+clippingHeight = 7.885
 print(clippingHeight)
 #print(elevation_combos)
 # # Choosing random floor
@@ -512,7 +512,7 @@ translation_usage = False
 if list_points_doors[0][0][0]>x_max or list_points_doors[0][0][0]<x_min:
     translation_usage = True
     clippingHeight = clippingHeight+translation_height
-print("array2 len", len(array2))
+#print("array2 len", len(array2))
 #print("doors")
 
 if translation_usage:
@@ -760,6 +760,17 @@ for idx_d in range(1,len(points_doors)):
     idx_doors.insert(number_of_nodes+idx_d,(p_float.x,p_float.x,p_float.y,p_float.y))
 
 
+
+
+# Debugging
+# for node,at in sorted(G_grid.nodes(data=True)):
+#     p = at['att'][1]
+#     if 65.72<p.x<65.74:
+#         idx_d = at['att'][3]
+#         print(idx_d)
+#     if 66.69<p.x<66.7:
+#         idx_d = at['att'][3]
+#         print(idx_d)
 #number_of_nodes = len(G_grid.nodes)
 
 
@@ -984,6 +995,18 @@ for idx_d in range(1,len(points_doors)):
     G_grid.add_node(number_of_nodes+idx_d,att =("door",p_float,dist,idx_d))
     idx_doors.insert(number_of_nodes+idx_d,(p_float.x,p_float.x,p_float.y,p_float.y))
 
+
+# Debugging
+for node,at in sorted(G_grid.nodes(data=True)):
+    p = at['att'][1]
+    if 65.72<p.x<65.74:
+        idx_d = at['att'][3]
+        print(idx_d)
+    if 66.69<p.x<66.7:
+        idx_d = at['att'][3]
+        print(idx_d)
+
+
 # Changing all door nodes that are floating to regular grid nodes.
 # This might not be important after all since the program doesn't care if a point in the middle of the room is a door node or a grid node
 # This is only visible when plotting.
@@ -1093,6 +1116,7 @@ for node,at in sorted(G_grid_cpy.nodes(data=True)):
             # This is used when doing k means. It is usefull to have a list of all room indexes
             if room_index not in room_indexes:
                 room_indexes.append(room_index)
+
             # We add a room label to the node
             if node_type == 'door':
                 idx_d = at['att'][3]
@@ -1104,7 +1128,8 @@ for node,at in sorted(G_grid_cpy.nodes(data=True)):
         if j==len(k_new)-1:
             G_grid.remove_node(node)
 
-test = [at['att'] for node,at in G_grid.nodes(data=True)]# if at['att'][3]==1]
+#print(room_indexes)
+#test = [at['att'] for node,at in G_grid.nodes(data=True)]# if at['att'][3]==1]
 
 #print("test", test)
 #print("len dic rooms", len(Dic_rooms))
@@ -1118,14 +1143,22 @@ cent_ratio = 50 # For every 100 nodes we have 1 room node
 points_rooms = []
 points_rooms_dic = collections.defaultdict(list)
 #print("Dic_rooms",len(Dic_rooms))
-
-
 # Iterating over all labeled rooms. We are not iterating over all rooms since some
 # of the rooms might not be labeled. 
 #print(len(Dic_rooms))
 #print(len(room_indexes))
-for i in range(len(room_indexes)-1):
+#print(range(len(room_indexes)-1))
+#for i in range(13):
+    #print(i)
+
+#print(len(room_indexes))
+for i in range(len(room_indexes)):
+    #print(room_indexes[i])
+    #print(len(room_indexes))
+    #print(i)
     points_temp = [at['att'][1] for node,at in G_grid.nodes(data=True) if at['att'][3]==room_indexes[i]]
+    #if room_indexes[i] == 8:
+        #print("hej")
     #points_temp = nodes_temp[:][1]['att'][1]
     num_of_nodes = len(points_temp)
     # If there are no nodes in the room
@@ -1136,7 +1169,7 @@ for i in range(len(room_indexes)-1):
     num_cent = math.ceil(len(points_temp)/cent_ratio)
     centroids = []
     centroid_dict = collections.defaultdict(list)
-    # Generating random integer to indicate which node should be centroids
+    # Generating random integer to indicaƒte which node should be centroids
     for j in range(num_cent):
         cent_idx = random.randint(0,num_of_nodes-1)
         centroids.append(points_temp[cent_idx])
@@ -1241,6 +1274,8 @@ for node,at in sorted(G_grid.nodes(data=True)):
                 idx1 = at1['att'][4]
                 if node == node1 or idx1 != idx:
                     continue
+                #if idx == 57:
+                #    print ("hej")
                 G_grid.add_edge(node,node1, weight = 10)
                 break
 t1_stop = process_time() 
@@ -1253,13 +1288,18 @@ for node,at in sorted(G_grid.nodes(data=True)):
     if node_type != "door":
         continue
     num_edges = G_grid.edges(node)
+    #print("num edges", len(num_edges))
     # This is the case when the door is only connected to its opposite door, and to no other nodes in the room
     # In this case we find the room it belongs to and connect it to one of the room nodes of the room.
     if len(num_edges) <=1:
+        #print("hej")
         room_num_door = at['att'][3]
+        door_idx = at['att'][4]
+
         p = at['att'][1]
         # Find the nearest nodes to the door
         nearest_nodes= list(idx_nodes.nearest((p.x,p.x, p.y, p.y), 30))
+
         # For all the nearest node the first one that is in the same room as the door will be connected to the door
         for node1 in nearest_nodes:
             # The nearest node will be itself, and therefore we skip this node
@@ -1269,23 +1309,18 @@ for node,at in sorted(G_grid.nodes(data=True)):
             # removed from the grid graph
             if not G_grid.has_node(node1):
                 continue
-
-
-
-
             room_num_node = G_grid.nodes[node1]['att'][3]
             # If the grid node is not in the same room as the door node find another node
             if room_num_door != room_num_node:
                 continue
-
             # Doing a line intersection check here, 
             # such that if it is a node in the same room but the node is obstructed by a wall
             # we find another node
             p1 = G_grid.nodes[node1]['att'][1]
+
             if not is_traversable(p,p1,Dic_rooms[room_num_door]):
                 #print("hej")
                 continue
-
             # If there is a wall find a new node.
             #if not connection_to_room:
             #    continue
@@ -1295,8 +1330,23 @@ for node,at in sorted(G_grid.nodes(data=True)):
             point_node = G_grid.nodes[node1]['att'][1]
             break
 
+# Debugging
+for node, at in G_grid.nodes(data=True):
+    node_type = at['att'][0]
+    if node_type == 'door':
+        idx_d = at['att'][4]
+        if idx_d == 57:
+            node_edges = G_grid.edges(node)
+            print(node_edges)
+            node2 = 4511
+            point2 = G_grid.nodes[node2]['att'][1]
+            room_label = G_grid.nodes[node2]['att'][3]
+            print("room_label",room_label)
+            print("point", point2)
 
 
+#node_edges = G_grid.edges(4511)
+#print(node_edges)
 
 
 

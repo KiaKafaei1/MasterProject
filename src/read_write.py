@@ -7,8 +7,10 @@ import csv
 bd127 = '127/641299'
 bdBig = 'rac' 
 bdHospital = 'NNH/Hospital'
-bdNy = 'Ny_byg'
+#bdNy = 'Ny_byg'
 bdNy2 = 'Ny_byg2'
+bdNy3 = 'Ny_byg3'
+bdNy5 = 'Ny_byg5'
 path ='WayFinding/'+bdBig
 #path = bdHospital
 room_path = path+'/rooms.xml'

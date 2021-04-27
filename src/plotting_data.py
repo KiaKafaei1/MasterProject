@@ -235,18 +235,23 @@ for i,ele in enumerate(array_elevation):
 
 # Choosing random clipping height, by taking avg of a floor min and max height
 random_floor = random.randint(0, len(elevation_combos)-1)
-clippingHeight = (elevation_combos[random_floor][0]+elevation_combos[random_floor][1])/2 
-clippingHeight = 7.885
-print(clippingHeight)
+#clippingHeight = (elevation_combos[random_floor][0]+elevation_combos[random_floor][1])/2 
+#clippingHeight = 0.965
+#print(clippingHeight)
+
+
 #print(elevation_combos)
 # # Choosing random floor
 # random_floor = random.randint(0, len(elevation_combos)-1)
-# min_elevation = elevation_combos[random_floor][0]
-# max_elevation = elevation_combos[random_floor][1]
+min_elevation = elevation_combos[random_floor][0]
+max_elevation = elevation_combos[random_floor][1]
+#min_elevation = 0.31
+print(min_elevation)
+print(elevation_combos)
 
 # Choosing deliberate floor
-min_elevation = elevation_combos[0][0]
-max_elevation = elevation_combos[0][1]
+#min_elevation = elevation_combos[0][0]
+#max_elevation = elevation_combos[0][1]
 
 #topClipPlaneHeight = 7.599+0.1-9.753599609375
 
@@ -258,14 +263,14 @@ for i,room in enumerate(array_tri):
     #print(i)
     # if array_number[i][0] not in floor_number:
     #     continue
-    #if array_elevation[i][0]!=min_elevation:
-    #   continue
+    if array_elevation[i][0]!=min_elevation:
+       continue
 
     #if array_elevation[i][0]!=min_elevation or array_elevation[i][1]!=max_elevation:
     #    continue
     
-    if (clippingHeight <= array_elevation[i][0] or clippingHeight >= array_elevation[i][1]): 
-        continue
+    #if (clippingHeight <= array_elevation[i][0] or clippingHeight >= array_elevation[i][1]): 
+    #    continue
     #print(i)
 
     for tri in room:
@@ -509,20 +514,41 @@ facing_doors = []
 
 # Here what you can do instead is to take the median value and see if it is within the boundaries
 translation_usage = False
-if list_points_doors[0][0][0]>x_max or list_points_doors[0][0][0]<x_min:
+print(list_points_doors[0])
+#num_door_coord = 3:
+#if len(list_points_doors[0])== 2:
+#    num_door_coord = 2
+if list_points_doors[0][0][0]>x_max or list_points_doors[0][0][0]<x_min or list_points_doors[0][0][1]>y_max or list_points_doors[0][0][1]<y_min :
     translation_usage = True
-    clippingHeight = clippingHeight+translation_height
+    #clippingHeight = clippingHeight+translation_height
+    min_elevation = min_elevation+translation_height#+0.0001
+    #min_elevation = min_elevation-translation_height
 #print("array2 len", len(array2))
 #print("doors")
-
+#print(translation_usage)
+clippingHeight = min_elevation
+print(min_elevation)
+#print(array2)
+print("new")
 if translation_usage:
     for i,elev in enumerate(array2):
-        points_doors.append(Point(list_points_doors[i][0][0]-translation[0][0],list_points_doors[i][1][0]+translation[1][0]))
-        facing_doors.append([list_facing_doors[i][0][0],list_facing_doors[i][1][0]])
+ 
+        #if (clippingHeight < elev[0]):# or clippingHeight >= elev[1]): 
+        #    continue
+        #if (elev[0] <= clippingHeight < elev[1]):
+
+        if (clippingHeight-0.01<=elev[0]<=clippingHeight+0.01):
+            print(elev)
+            points_doors.append(Point(list_points_doors[i][0][0]-translation[0][0],list_points_doors[i][1][0]+translation[1][0]))
+            facing_doors.append([list_facing_doors[i][0][0],list_facing_doors[i][1][0]])
+        #print("hej")
 else:
     for i,elev in enumerate(array2):
-        points_doors.append(Point(list_points_doors[i][0][0],list_points_doors[i][1][0]))
-        facing_doors.append([list_facing_doors[i][0][0],list_facing_doors[i][1][0]])
+        #if (clippingHeight < elev[0]):# or clippingHeight >= elev[1]): 
+            #continue
+        if (clippingHeight-0.01<=elev[0]<=clippingHeight+0.01):
+            points_doors.append(Point(list_points_doors[i][0][0],list_points_doors[i][1][0]))
+            facing_doors.append([list_facing_doors[i][0][0],list_facing_doors[i][1][0]])
 
 
 #for i,elev in enumerate(array2):
@@ -996,15 +1022,15 @@ for idx_d in range(1,len(points_doors)):
     idx_doors.insert(number_of_nodes+idx_d,(p_float.x,p_float.x,p_float.y,p_float.y))
 
 
-# Debugging
-for node,at in sorted(G_grid.nodes(data=True)):
-    p = at['att'][1]
-    if 65.72<p.x<65.74:
-        idx_d = at['att'][3]
-        print(idx_d)
-    if 66.69<p.x<66.7:
-        idx_d = at['att'][3]
-        print(idx_d)
+# # Debugging
+# for node,at in sorted(G_grid.nodes(data=True)):
+#     p = at['att'][1] 
+#     if 65.72<p.x<65.74:
+#         idx_d = at['att'][3]
+#         print(idx_d)
+#     if 66.69<p.x<66.7:
+#         idx_d = at['att'][3]
+#         print(idx_d)
 
 
 # Changing all door nodes that are floating to regular grid nodes.
@@ -1330,19 +1356,19 @@ for node,at in sorted(G_grid.nodes(data=True)):
             point_node = G_grid.nodes[node1]['att'][1]
             break
 
-# Debugging
-for node, at in G_grid.nodes(data=True):
-    node_type = at['att'][0]
-    if node_type == 'door':
-        idx_d = at['att'][4]
-        if idx_d == 57:
-            node_edges = G_grid.edges(node)
-            print(node_edges)
-            node2 = 4511
-            point2 = G_grid.nodes[node2]['att'][1]
-            room_label = G_grid.nodes[node2]['att'][3]
-            print("room_label",room_label)
-            print("point", point2)
+# # Debugging
+# for node, at in G_grid.nodes(data=True):
+#     node_type = at['att'][0]
+#     if node_type == 'door':
+#         idx_d = at['att'][4]
+#         if idx_d == 57:
+#             node_edges = G_grid.edges(node)
+#             #print(node_edges)
+#             node2 = 4511
+#             point2 = G_grid.nodes[node2]['att'][1]
+#             room_label = G_grid.nodes[node2]['att'][3]
+#             #print("room_label",room_label)
+#             #print("point", point2)
 
 
 #node_edges = G_grid.edges(4511)

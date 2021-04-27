@@ -142,10 +142,16 @@ def roundUp10(x):
 def roundDown10(x):
     return int(math.floor(x/10.0))*10
 
+# Rounds the limits to nearest 5, to leave a little space in the plot on the sides.
+def roundUp5(x):
+    return int(math.ceil(x/5.0))*5
+def roundDown5(x):
+    return int(math.floor(x/5.0))*5
+
 
 def plot_grid(ax,x_min,x_max,y_min,y_max):
-    ax.set_xlim(roundDown10(x_min),roundUp10(x_max))
-    ax.set_ylim(roundDown10(y_min),roundUp10(y_max))
+    ax.set_xlim(roundDown5(x_min),roundUp5(x_max))
+    ax.set_ylim(roundDown5(y_min),roundUp5(y_max))
     #ax.set_xlim((x_min),(x_max))
     #ax.set_ylim((y_min),(y_max))
     # Change major ticks 
@@ -245,10 +251,14 @@ random_floor = random.randint(0, len(elevation_combos)-1)
 # random_floor = random.randint(0, len(elevation_combos)-1)
 min_elevation = elevation_combos[random_floor][0]
 max_elevation = elevation_combos[random_floor][1]
-min_elevation = -8.311
+min_elevation = -10.49
 print(min_elevation)
-print(elevation_combos)
+#print(elevation_combos)
 
+building_min_height = min([x[0] for x in elevation_combos])
+building_max_height = max([x[1] for x in elevation_combos])
+
+#print([building_min_height,building_max_height])
 # Choosing deliberate floor
 #min_elevation = elevation_combos[0][0]
 #max_elevation = elevation_combos[0][1]
@@ -439,21 +449,23 @@ print("PART 1")
 # for line in Dic_all.values():
 #    ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
 # plt.show()
-
+#print(Dic_all)
 ###### MAKING THE HIGH RESOLUTION GRID #######
 # Finding the keys for the largest and smallest x and y values from each point in each line
 x_max_idx1 = max(Dic_all, key=lambda key: Dic_all[key][0][1][0])
 x_max_idx2 = max(Dic_all, key=lambda key: Dic_all[key][0][0][0])
 x_min_idx1 = min(Dic_all, key=lambda key: Dic_all[key][0][1][0])
 x_min_idx2 = min(Dic_all, key=lambda key: Dic_all[key][0][0][0])
+#print("x_min_idx1",Dic_all[x_min_idx1])
+#print("x_min_idx2",Dic_all[x_min_idx2])
 # y_values
 y_max_idx1 = max(Dic_all, key=lambda key: Dic_all[key][0][0][1])
 y_max_idx2 = max(Dic_all, key=lambda key: Dic_all[key][0][1][1])
 y_min_idx1 = min(Dic_all, key=lambda key: Dic_all[key][0][0][1])
 y_min_idx2 = min(Dic_all, key=lambda key: Dic_all[key][0][1][1])
 # Getting the corresponding max and min values
-x_max = math.ceil(max([Dic_all[x_max_idx1][0][0][0],Dic_all[x_max_idx2][0][1][0]]))
-x_min = math.floor(min([Dic_all[x_min_idx1][0][0][0],Dic_all[x_min_idx2][0][1][0]]))
+x_max = math.ceil(max([Dic_all[x_max_idx1][0][1][0],Dic_all[x_max_idx2][0][0][0]]))
+x_min = math.floor(min([Dic_all[x_min_idx1][0][1][0],Dic_all[x_min_idx2][0][0][0]]))
 y_max = math.ceil(max([Dic_all[y_max_idx1][0][0][1],Dic_all[y_max_idx2][0][1][1]]))
 y_min = math.floor(min([Dic_all[y_min_idx1][0][0][1],Dic_all[y_min_idx2][0][1][1]]))
 
@@ -514,19 +526,30 @@ facing_doors = []
 
 # Here what you can do instead is to take the median value and see if it is within the boundaries
 translation_usage = False
-print(list_points_doors)
-print(list_points_doors[0][0][0])
-print(list_points_doors[0][1][0])
+#print(list_points_doors)
+#print(list_points_doors[0][0][0])
+#print(list_points_doors[0][1][0])
 num_door_coord = 3
 #if len(list_points_doors[0])== 2:
 #    num_door_coord = 2
 
 
-if num_door_coord == 3:
-    if list_points_doors[0][0][0]>x_max or list_points_doors[0][0][0]<x_min or list_points_doors[0][1][0]>y_max or list_points_doors[0][1][0]<y_min :
-        translation_usage = True
-        #clippingHeight = clippingHeight+translation_height
-        min_elevation = min_elevation+translation_height#+0.0001
+#if num_door_coord == 3:
+# Checking if the y and x coordinates needs to be translated.
+print(list_points_doors)
+print("[x_min,x_max]", [x_min,x_max])
+print("[y_min,y_max]", [y_min,y_max])
+if list_points_doors[0][0][0]>x_max or list_points_doors[0][0][0]<x_min or list_points_doors[0][1][0]>y_max or list_points_doors[0][1][0]<y_min :
+    print("The x and y of the doors are translated")
+    translation_usage_xy = True
+    #clippingHeight = clippingHeight+translation_height
+    #min_elevation = min_elevation+translation_height#+0.0001
+
+# Checking if the height needs to be translated
+if array2[0][0]>building_max_height or array2[0][0]<building_min_height:
+    print("The height is translated")
+    min_elevation = min_elevation+translation_height#+0.0001
+
 #if num_door_coord == 2:
 #    if list_points_doors[0][0]>x_max or list_points_doors[0][0]<x_min or list_points_doors[0][1]>y_max or list_points_doors[0][1]<y_min:
 #        translation_usage = True
@@ -540,8 +563,12 @@ if num_door_coord == 3:
 clippingHeight = min_elevation
 print(min_elevation)
 #print(array2)
-print("new")
-if translation_usage:
+#print("new")
+translation_usage_xy = False
+#print(translation)
+#print(translation[0][0])
+#print(translation[1][0])
+if translation_usage_xy:
     for i,elev in enumerate(array2):
  
         #if (clippingHeight < elev[0]):# or clippingHeight >= elev[1]): 
@@ -549,8 +576,10 @@ if translation_usage:
         #if (elev[0] <= clippingHeight < elev[1]):
 
         if (clippingHeight-0.01<=elev[0]<=clippingHeight+0.01):
-            print(elev)
+            #print(elev)
+            # This is the standard
             points_doors.append(Point(list_points_doors[i][0][0]-translation[0][0],list_points_doors[i][1][0]+translation[1][0]))
+            #points_doors.append(Point(list_points_doors[i][0][0]-translation[0][0],list_points_doors[i][1][0]+translation[1][0]))
             facing_doors.append([list_facing_doors[i][0][0],list_facing_doors[i][1][0]])
         #print("hej")
 else:
@@ -561,6 +590,7 @@ else:
             points_doors.append(Point(list_points_doors[i][0][0],list_points_doors[i][1][0]))
             facing_doors.append([list_facing_doors[i][0][0],list_facing_doors[i][1][0]])
 
+print("The door points:",points_doors)
 
 #for i,elev in enumerate(array2):
     #min_elevation_temp = elev[0]
@@ -1434,7 +1464,7 @@ for node,at in sorted(G_rooms.nodes(data=True)):
 
 
 #print(G.nodes)
-print(Dic_connectivity)
+#print(Dic_connectivity)
 max_connection = max(Dic_connectivity.values())
 #print(len(Dic_connectivity))
 
@@ -1474,7 +1504,7 @@ for key,value in Dic_connectivity.items():
 # if the number of nodes are bigger than the number of max connections we remove the n biggest nodes with n being the max connection.
 # Since we have clusters of bigger nodes.
 if number_of_nodes > max_connection+1:
-    print("hej")
+    #print("hej")
     list_of_keys = sorted(list_of_keys)[:len(list_of_keys)-(max_connection+1)]
     for key in list_of_keys:
         G_rooms.remove_node(key)

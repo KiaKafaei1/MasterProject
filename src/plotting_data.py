@@ -150,10 +150,10 @@ def roundDown5(x):
 
 
 def plot_grid(ax,x_min,x_max,y_min,y_max):
-    ax.set_xlim(roundDown5(x_min),roundUp5(x_max))
-    ax.set_ylim(roundDown5(y_min),roundUp5(y_max))
-    #ax.set_xlim((x_min),(x_max))
-    #ax.set_ylim((y_min),(y_max))
+    #ax.set_xlim(roundDown5(x_min),roundUp5(x_max))
+    #ax.set_ylim(roundDown5(y_min),roundUp5(y_max))
+    ax.set_xlim((x_min),(x_max))
+    ax.set_ylim((y_min),(y_max))
     # Change major ticks 
     ax.xaxis.set_major_locator(MultipleLocator(20))
     ax.yaxis.set_major_locator(MultipleLocator(20))
@@ -201,21 +201,6 @@ array_elevation = df_elevation.to_numpy()
 df_number = pd.read_csv('room_number.csv',sep=',', header=None)
 array_number = df_number.to_numpy()
 
-#print(array_number)
-
-# # Dividing the numbers in floors, works up to 10 floors
-# building_floors = collections.defaultdict(list)
-# for num in array_number:
-#     # This is floor zero
-#     if num <100:
-#         building_floors[0].append(num)
-#     if num>100 and num<200:
-#         building_floors[1].append(num)
-#     if num>200 and num <300:
-#         building_floors[2].append(num)
-#     if num>300:
-#         building_floors[3].append(num)
-
 
 
 #print(array_elevation)
@@ -251,38 +236,23 @@ random_floor = random.randint(0, len(elevation_combos)-1)
 # random_floor = random.randint(0, len(elevation_combos)-1)
 min_elevation = elevation_combos[random_floor][0]
 max_elevation = elevation_combos[random_floor][1]
-min_elevation = -10.49
+min_elevation = -13.65
 print(min_elevation)
 #print(elevation_combos)
 
 building_min_height = min([x[0] for x in elevation_combos])
 building_max_height = max([x[1] for x in elevation_combos])
 
-#print([building_min_height,building_max_height])
-# Choosing deliberate floor
-#min_elevation = elevation_combos[0][0]
-#max_elevation = elevation_combos[0][1]
-
-#topClipPlaneHeight = 7.599+0.1-9.753599609375
-
-#if (topClipPlaneHeight < room.MinElevation || topClipPlaneHeight > room.MaxElevation) 
-#    continue;
 
 
 for i,room in enumerate(array_tri):
-    #print(i)
-    # if array_number[i][0] not in floor_number:
-    #     continue
     if array_elevation[i][0]!=min_elevation:
        continue
-
     #if array_elevation[i][0]!=min_elevation or array_elevation[i][1]!=max_elevation:
     #    continue
-    
     #if (clippingHeight <= array_elevation[i][0] or clippingHeight >= array_elevation[i][1]): 
     #    continue
     #print(i)
-
     for tri in room:
         for cor in tri:
             tempx.append(cor[0])
@@ -295,19 +265,6 @@ for i,room in enumerate(array_tri):
     for x in list(Dic):
         if len(Dic[x])>1:
             Dic.pop(x)            
-#8        
-    # # Manually removing lines    
-    # for x in list(Dic):
-    #     coord1 = Dic[x][0][0]
-    #     coord2 = Dic[x][0][1]
-    #     if (123.82<coord1[0]<123.86 and 95.6<coord1[1]<95.75) or (123.82<coord2[0]<123.86 and 95.6<coord2[1]<95.75): 
-    #         Dic.pop(x) 
-    #     if (117<coord1[0]<118 and 95<coord1[1]<95.5) or (117<coord2[0]<118 and 95<coord2[1]<95.5): 
-    #         Dic.pop(x)
-    #     if (114<coord1[0]<115 and 98.5<coord1[1]<99) or (114<coord2[0]<115 and 98.5<coord2[1]<99):
-    #         Dic.pop(x)
-    #     if (123.75<coord1[0]<123.95 and 63.6<coord1[1]<63.67) or (123.75<coord2[0]<123.95 and 63.6<coord2[1]<63.67): 
-    #         Dic.pop(x)     
 #9
     # All lines are plotted twice due to the way we are hashing, it is more appropriate to remove replicate values that are in more than 1 hash.
     # Remove replicate lines  
@@ -328,7 +285,6 @@ for i,room in enumerate(array_tri):
     #     ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')  
     #     ax.set_title(array_number[i][0])  
     # plt.show()
-
     #### Making a dictionary containing all the rooms and their lines.
     p_x_max = 0
     p_y_max = 0
@@ -362,102 +318,14 @@ for i,room in enumerate(array_tri):
     Dic = collections.defaultdict(list)
 
 
-# #temp_dic = Dic_all.deepcopy()
-# # Removin all one line walls, since these do not represent real walls and therefore obstruct the path.
-# temp_dic = copy.deepcopy(Dic_all)
-# for key1,line1 in temp_dic.items():
-#     for key2,line2 in temp_dic.items():
-#         if key1==key2:
-#             #print("same key")
-#             continue
-#         #print(key1)
-#         #print(line1)
-#         p1 = Point(line1[0][0][0],line1[0][0][1])
-#         p2 = Point(line1[0][1][0],line1[0][1][1])
-#         p3 = Point(line2[0][0][0],line2[0][0][1])
-#         p4 = Point(line2[0][1][0],line2[0][1][1])
-#         # If the two points that make up the line is in the same order or opposite order
-#         if ((p1 == p3 and p2==p4) or (p1==p4 and p2==p3)):
-#         #if (line1[0][0] == line2[0][0] and line1[0][1]== line2[0][1]) or (line1[0][0] == line2[0][1] and line1[0][1]== line2[0][0]):
-#             #print("testen virker")
-#             #print("key1", key1)
-#             #print(Dic_all[key1])
-#             del Dic_all[key1]
-#             break
-#         # Checking if the two lines (or the four points they are made of) 
-#         # are colinear, by checking the slope of three or more points are the same.
-#         slope_lines = []
-#         if (p2.x-p1.x) == 0:
-#             slope_lines.append(1000)
-#         else:
-#             slope_lines.append((p2.y-p1.y)/((p2.x-p1.x)))
-#         if (p4.x-p3.x) == 0:
-#             slope_lines.append(1000)
-#         else:
-#             slope_lines.append((p4.y-p3.y)/((p4.x-p3.x)))
-#         if (p4.x-p1.x) == 0:
-#             slope_lines.append(1000)
-#         else:
-#             slope_lines.append((p4.y-p1.y)/((p4.x-p1.x)))
-#         #print(slope_lines)
-#         # They are coolinear now we check if they overlap by looking at their projections on the x axis
-#         if all(x==slope_lines[0] for x in slope_lines):
-#             #if slope_lines[0]==1000:
-#             #    del Dic_all[key1]
-#             #    break  
-#             #for p in [p1,p2,p3,p4]:
-#             #    if 123.9< p.x <124 and 60.9 <p.y < 61.2:
-#             #        print([p1,p2,p3,p4])
-#             #print("VI ER HER")
-#             if(p3.x < p1.x < p4.x or p4.x < p1.x < p3.x) or \
-#             (p3.x < p2.x < p4.x or p4.x < p2.x < p3.x) or \
-#             (p1.x < p3.x < p2.x or p1.x < p3.x < p2.x) or \
-#             (p1.x < p4.x < p2.x or p1.x < p4.x < p2.x):
-#                 print("vi er her")                
-#                 del Dic_all[key1]
-#                 break  
-
-#             # In case of vertical line we project also on y direction
-#             if(p3.y < p1.y < p4.y or p4.y < p1.y < p3.y) or \
-#             (p3.y < p2.y < p4.y or p4.y < p2.y < p3.y) or \
-#             (p1.y < p3.y < p2.y or p1.y < p3.y < p2.y) or \
-#             (p1.y < p4.y < p2.y or p1.y < p4.y < p2.y):
-#                 print("vi er her y")                
-#                 del Dic_all[key1]
-#                 break
-
-
-
-
-#print(list(Dic_all.keys())[0])
-
-    #print(Dic_all[key])
 
 print("PART 1")
-#print(len(Dic_rooms))
-
-### Plotting the rooms from the R tree datastructure
-# fig, ax = plt.subplots()
-# for room in rectangles_rooms.values():
-#     plt.plot([room[0],room[0],room[1],room[1],room[0]],[room[2],room[3],room[3],room[2],room[2]])
-
-#plt.show()   
-
-# fig, ax = plt.subplots()
-# #plot_grid(ax,x_min,x_max,y_min,y_max)
-
-# for line in Dic_all.values():
-#    ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
-# plt.show()
-#print(Dic_all)
 ###### MAKING THE HIGH RESOLUTION GRID #######
 # Finding the keys for the largest and smallest x and y values from each point in each line
 x_max_idx1 = max(Dic_all, key=lambda key: Dic_all[key][0][1][0])
 x_max_idx2 = max(Dic_all, key=lambda key: Dic_all[key][0][0][0])
 x_min_idx1 = min(Dic_all, key=lambda key: Dic_all[key][0][1][0])
 x_min_idx2 = min(Dic_all, key=lambda key: Dic_all[key][0][0][0])
-#print("x_min_idx1",Dic_all[x_min_idx1])
-#print("x_min_idx2",Dic_all[x_min_idx2])
 # y_values
 y_max_idx1 = max(Dic_all, key=lambda key: Dic_all[key][0][0][1])
 y_max_idx2 = max(Dic_all, key=lambda key: Dic_all[key][0][1][1])
@@ -476,19 +344,11 @@ df = pd.read_csv('door_coordinates.csv',sep=',', header=None)
 array = df.to_numpy()
 array = [item for sublist in array for item in sublist]
 array = cop.cor_processing(array,room=0)
-#print(array)
-
 
 #Checking if there are 2 door coordinates or 3 door coordinates
 #This is the translation needed to make doors align with floorplan
 translation =  [array[-1][i] for i in (0,-1)]
-
- 
 translation_height = array[-1][1][0]
-
-
-
-#print(translation)
 # Remove the translation from the array of door coordinates
 array = array[:-1]
 # Split the doors in two lists: the points of the doors and the facing of the doors.
@@ -507,131 +367,40 @@ for i,ele in enumerate(array2):
 points_doors = []
 facing_doors = []
 
-
-# #Choosing the height levels for the doors corresponding to the floor chosen
-# min_elevation = array2[0][0]
-# max_elevation = array2[0][1]
-#print(list_points_doors)
-#print(list_points_doors[0][1][0])
-#print(elevation_combos)
-#clippingHeight = 
-#print(list_facing_doors)
-#print(list_facing_doors[1][0])
-# Making a list of the needed doors and their facing direction
-#print(translation)
-#print(translation[0][0])
-
-# If the first doors x coordinates are out of bounds it means we should 
-# use the translation to translate the coordinates
-
 # Here what you can do instead is to take the median value and see if it is within the boundaries
 translation_usage = False
-#print(list_points_doors)
-#print(list_points_doors[0][0][0])
-#print(list_points_doors[0][1][0])
 num_door_coord = 3
-#if len(list_points_doors[0])== 2:
-#    num_door_coord = 2
-
-
-#if num_door_coord == 3:
-# Checking if the y and x coordinates needs to be translated.
-print(list_points_doors)
-print("[x_min,x_max]", [x_min,x_max])
-print("[y_min,y_max]", [y_min,y_max])
+#print("[x_min,x_max]", [x_min,x_max])
+#print("[y_min,y_max]", [y_min,y_max])
 if list_points_doors[0][0][0]>x_max or list_points_doors[0][0][0]<x_min or list_points_doors[0][1][0]>y_max or list_points_doors[0][1][0]<y_min :
     print("The x and y of the doors are translated")
     translation_usage_xy = True
-    #clippingHeight = clippingHeight+translation_height
-    #min_elevation = min_elevation+translation_height#+0.0001
 
 # Checking if the height needs to be translated
 if array2[0][0]>building_max_height or array2[0][0]<building_min_height:
     print("The height is translated")
     min_elevation = min_elevation+translation_height#+0.0001
 
-#if num_door_coord == 2:
-#    if list_points_doors[0][0]>x_max or list_points_doors[0][0]<x_min or list_points_doors[0][1]>y_max or list_points_doors[0][1]<y_min:
-#        translation_usage = True
-#        #clippingHeight = clippingHeight+translation_height
-#        min_elevation = min_elevation+translation_height#+0.0001
 
-    #min_elevation = min_elevation-translation_height
-#print("array2 len", len(array2))
-#print("doors")
-#print(translation_usage)
 clippingHeight = min_elevation
 print(min_elevation)
-#print(array2)
-#print("new")
 translation_usage_xy = False
 #print(translation)
 #print(translation[0][0])
 #print(translation[1][0])
 if translation_usage_xy:
     for i,elev in enumerate(array2):
- 
-        #if (clippingHeight < elev[0]):# or clippingHeight >= elev[1]): 
-        #    continue
-        #if (elev[0] <= clippingHeight < elev[1]):
-
         if (clippingHeight-0.01<=elev[0]<=clippingHeight+0.01):
             #print(elev)
             # This is the standard
             points_doors.append(Point(list_points_doors[i][0][0]-translation[0][0],list_points_doors[i][1][0]+translation[1][0]))
             #points_doors.append(Point(list_points_doors[i][0][0]-translation[0][0],list_points_doors[i][1][0]+translation[1][0]))
             facing_doors.append([list_facing_doors[i][0][0],list_facing_doors[i][1][0]])
-        #print("hej")
 else:
     for i,elev in enumerate(array2):
-        #if (clippingHeight < elev[0]):# or clippingHeight >= elev[1]): 
-            #continue
         if (clippingHeight-0.01<=elev[0]<=clippingHeight+0.01):
             points_doors.append(Point(list_points_doors[i][0][0],list_points_doors[i][1][0]))
             facing_doors.append([list_facing_doors[i][0][0],list_facing_doors[i][1][0]])
-
-print("The door points:",points_doors)
-
-#for i,elev in enumerate(array2):
-    #min_elevation_temp = elev[0]
-    #max_elevation_temp = elev[1]
-    #if (topClipPlaneHeight < array_elevation[i][0] || topClipPlaneHeight - 0.8 * levelHeight > array_elevation[i][1]):
-    #if (topClipPlaneHeight < array_elevation[i][0] or topClipPlaneHeight > array_elevation[i][1]): 
-    #    continue
-    #if min_elevation == min_elevation_temp:
-    # For one building you have to subtract and for one you have to add
-    # Building RAC
-    #points_doors.append(Point(list_points_doors[i][0][0]-translation[0][0],list_points_doors[i][1][0]+translation[1][0]))
-    # Building Ny2
-    #if (clippingHeight <= elev[0] or clippingHeight >= elev[1]): 
-    #    continue
-
-    #points_doors.append(Point(list_points_doors[i][0][0],list_points_doors[i][1][0]))
-    #facing_doors.append([list_facing_doors[i][0][0],list_facing_doors[i][1][0]])
-
-#print(elevation_combos)
-#print(points_doors)
-#print(facing_doors)
-# print(facing_doors[0][0])
-# # Placing a door on the other side of the wall
-# temp_points = []#points_doors.copy()
-# points_doors_opposite = []
-# print(facing_doors)
-# for i,door in enumerate(points_doors):
-#     if facing_doors[i][0] < 0:
-#         temp_points.append(Point(door.x-0.5,door.y))
-#         points_doors_opposite.append(Point(door.x+0.5,door.y))
-#     if facing_doors[i][0] > 0:
-#         temp_points.append(Point(door.x+0.5,door.y))
-#         points_doors_opposite.append(Point(door.x-0.5,door.y)) 
-#     if facing_doors[i][1] < 0:
-#         temp_points.append(Point(door.x,door.y-0.5))
-#         points_doors_opposite.append(Point(door.x,door.y+0.5))
-#     if facing_doors[i][1] > 0:
-#         temp_points.append(Point(door.x,door.y+0.5))
-#         points_doors_opposite.append(Point(door.x,door.y-0.5))
-# points_doors = temp_points.copy()
-# #print(points_doors)
 
 # The new way to append opposite doors
 temp_points = []#points_doors.copy()
@@ -644,83 +413,7 @@ for i,door in enumerate(points_doors):
 points_doors = temp_points.copy()
 #print("length points doors",len(points_doors))
 
-
-# fig, ax = plt.subplots()
-# #plot_grid(ax,x_min,x_max,y_min,y_max)
-
-# for line in Dic_all.values():
-#     ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')  
-#     #ax.set_title(array_number[i][0])  
-
-# for i,points in enumerate(points_doors):
-#     plot_point(points)
-#     plot_point(points_doors_opposite[i])
-# plt.show()
-# # Both ways have been depreciated!
-# # Making the room points
-# # First I do it manually
-# points_rooms = [Point(165,56),Point(154,63),Point(168,54),Point(110,56),Point(120,72),Point(110,85),Point(110,104),Point(120,93),Point(110,84),Point(135,103),Point(126,60),Point(118,92),Point(141,57)]
-# # Now I try to autogenerate them
-# points_rooms = []
-# for edges in Dic_rooms_edges.values():
-#     p_x_min = edges[0]
-#     p_y_min = edges[1]
-#     p_x_max = edges[2]
-#     p_y_max = edges[3]
-#     room_node = Point((p_x_max-p_x_min)/2+p_x_min,(p_y_max-p_y_min)/2+p_y_min)
-#     room_node.round_to_half()
-#     points_rooms.append(room_node)
-
-# #points_corners = [Point(170.3,61),Point(170.3,60.14),Point(173.15,61.1),\
-# #Point(129.3,61),Point(124,61),Point(117.9,61.1),Point(123.9,63.7),Point(123.2,69.2),\
-# #Point(123.1,75.2),Point(123.1,85.8),Point(123.1,93.6),Point(123.9,95.7),Point(141.3,98.2),\
-# #Point(137.8,100.8),Point(115.1,98.4),Point(120.5,58.7)]#,Point(124,61),Point(124,61),\
-# #Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61),Point(124,61)]
-# points_all = points_doors+points_rooms #+points_corners
-
-
-
-            
-
-
-
-
 print("PART 2")
-
-# print("x_min", x_min)
-# print("x_max", x_max)
-# print("y_min", y_min)
-# print("y_max", y_max)
-
-
-
-######## IMPLEMENTING THE DATASTRUCTURE FOR THE WALLS ########
-#p = index.Property()
-# idx = index.Index(interleaved=False)
-# # Making a dictionary for the rectangles, such that they can later be retrieved when wanting to branch out
-# rectangles = collections.defaultdict(list)
-# Dic_all_unhashed = collections.defaultdict(list)
-# for i,line in enumerate(Dic_all.values()):
-#     p1 = line[0][0]
-#     p2 = line[0][1]
-#     bottom = min(p1[1],p2[1])
-#     left = min(p1[0],p2[0])
-#     top = max(p1[1],p2[1])
-#     right = max(p1[0],p2[0])
-#     rectangles[i] = [left,right,bottom,top]
-#     Dic_all_unhashed[i] = line
-#     idx.insert(i,(left,right,bottom,top),obj = line)
-# ## Splitting the leaf nodes (indexes) up in branches
-# left_branch = index.Index(interleaved = False)
-# right_branch = index.Index(interleaved= False)
-# for id in idx.intersection((x_min,(x_max+x_min)/2,y_min,(y_max+y_min)/2)):
-#     [left,right,bottom,top] = rectangles[id]
-#     left_branch.insert(id, (left,right,bottom,top))
-# for id in idx.intersection(((x_max+x_min)/2,x_max,(y_max+y_min)/2,y_max)):
-#     [left,right,bottom,top] = rectangles[id]
-#     right_branch.insert(id,(left,right,bottom,top))
-
-
 # Grid height is used when making the grid nodes
 grid_height = len(np.linspace(y_min,y_max,(y_max-y_min)*2+1))
 # Keeping the original door coordinates
@@ -732,82 +425,6 @@ points_doors_opposite_discrete = copy.deepcopy(points_doors_opposite)
 [p.round_to_half() for p in points_doors_opposite_discrete]
 # Doing the same for the room nodes
 #[p.round_to_half() for p in points_rooms]
-#points_all = points_doors+points_rooms+ points_doors_opposite #+points_corners
-#Plotting the points
-
-
-# Making a spatial datastructure for the points
-#idx_nodes = index.Index(interleaved=False)
-# i = 0
-# for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
-#     for y in np.linspace(y_min,y_max,(y_max-y_min)*2+1):
-#         i = i+1
-#         p = Point(x,y)
-#         idx_nodes.insert(i,(p.x,p.x,p.y,p.y))
-
-#print(Dic_all_unhashed)
-#temp= list(idx.nearest((1.0000001, 1.0000001, 2.0, 2.0),300))
-
-#for i in temp:
-#    print(Dic_all_unhashed[i])
-
-
-# grid_height = len(np.linspace(y_min,y_max,(y_max-y_min)*2+1))
-# G_grid = nx.Graph()
-# i = 0
-# counter_room = 0 
-# print("PART 3")
-# for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
-#     for y in np.linspace(y_min,y_max,(y_max-y_min)*2+1):
-#         i = i+1
-#         p = Point(x,y)
-#         k = list(idx.nearest((p.x,p.x, p.y, p.y),1))
-#         # if p.x == -1.5 and p.y==-0.5:
-#         #     print("k",k)
-#         #     print(Dic_all_unhashed.get(k[0]))
-#         #     print(Dic_all_unhashed.get(k[1]))
-#         #     print(Dic_all_unhashed.get(k[2]))
-#             #print("line",line)
-#         idx_nodes.insert(i,(p.x,p.x,p.y,p.y)) # Making spatial datastructure for the nodes
-#         dist_list = []
-#         # Finding the wall with the shortest distance
-#         for idx_ in k:
-#             line = Dic_all_unhashed.get(idx_)
-#             p1 = line[0][0]
-#             p2 = line[0][1]
-#             dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p.x,p.y)
-#             dist_list.append(dist)
-#         dist = min(dist_list)
-
-#         #k = max(k) #If multiple walls are close we just choose a random wall (the wall with the highest index)
-#         #line = Dic_all_unhashed.get(k)
-#         #p1 = line[0][0]
-#         #p2 = line[0][1]
-#         #dist = point_line_dist(p1[0],p1[1],p2[0],p2[1],p.x,p.y)
-        
-#         #Testing bug
-#         # if p.x == -1.5 and p.y==-0.5:
-#         #     print("k",k)
-#         #     print("line",line)
-        
-#         G_grid.add_node(i,att =("grid",p,dist))       
-#         # Not adding edges to and from nodes that are too close to the wall
-#         # This is not possible because then the other nodes will have weird edges to and from eachother
-#         # THe only reliable way is to add the edges and then remove them again.
-
-#         # Vertical and horizontal neighbours
-#         if x>x_min:
-#             G_grid.add_edge(i,i-grid_height,weight=10)
-#         if y>y_min:
-#             G_grid.add_edge(i,i-1,weight=10)
-#         # Diagonal neighbours
-#         # Diagonal down left which is the same as up right
-#         if x>x_min and y>y_min:
-#             G_grid.add_edge(i,i-grid_height-1,weight=14)
-#         # Diagonal up left which is the same as right down
-#         if x>x_min and y<y_max: 
-#            G_grid.add_edge(i,i-grid_height+1,weight=14)
-
 
 # Adding the door nodes
 G_grid = nx.Graph()
@@ -825,21 +442,6 @@ for idx_d in range(1,len(points_doors)):
     p_float = points_doors_opposite[idx_d]
     G_grid.add_node(number_of_nodes+idx_d,att =("door",p_float,dist,idx_d))
     idx_doors.insert(number_of_nodes+idx_d,(p_float.x,p_float.x,p_float.y,p_float.y))
-
-
-
-
-# Debugging
-# for node,at in sorted(G_grid.nodes(data=True)):
-#     p = at['att'][1]
-#     if 65.72<p.x<65.74:
-#         idx_d = at['att'][3]
-#         print(idx_d)
-#     if 66.69<p.x<66.7:
-#         idx_d = at['att'][3]
-#         print(idx_d)
-#number_of_nodes = len(G_grid.nodes)
-
 
 
 #temp_dic = Dic_all.deepcopy()
@@ -957,6 +559,7 @@ for key1,line1 in temp_dic.items():
             #     del Dic_all[key1]
             #     break  
 
+# Making datastructure for the walls
 p = index.Property()
 idx = index.Index(interleaved=False)
 # Making a dictionary for the rectangles, such that they can later be retrieved when wanting to branch out
@@ -1220,13 +823,7 @@ points_rooms_dic = collections.defaultdict(list)
 
 #print(len(room_indexes))
 for i in range(len(room_indexes)):
-    #print(room_indexes[i])
-    #print(len(room_indexes))
-    #print(i)
     points_temp = [at['att'][1] for node,at in G_grid.nodes(data=True) if at['att'][3]==room_indexes[i]]
-    #if room_indexes[i] == 8:
-        #print("hej")
-    #points_temp = nodes_temp[:][1]['att'][1]
     num_of_nodes = len(points_temp)
     # If there are no nodes in the room
     #print("num of nodes",num_of_nodes)
@@ -1275,24 +872,6 @@ for i in range(len(room_indexes)):
                 #print("points_temp_idx",points_temp_idx)
                 #print("len points temp",len(points_temp))
                 avg_point = points_temp[points_temp_idx]
-                #centroids_new.append(points_temp[points_temp_idx])
-                #print("hej")
-                #continue
-            # If the centroid is not in the room we find the nearest node in the room and append the centroid value to that node
-            # if avg_point not in points_temp:
-            #     k = list(idx.nearest((p.x,p.x, p.y, p.y), len(G_grid.nodes)))
-            #     #print("k",k)
-            #     #print("G_grid.nodes", G_grid.nodes)
-            #     for node in k:
-            #         # Check if the node exists in the grid graph, this is because it might be a node that has been
-            #         # removed from the grid graph
-            #         if not G_grid.has_node(node):
-            #             continue
-            #         node_point = G_grid.nodes[node]['att'][1]
-            #         if node_point in points_temp:
-            #             avg_point = node_point
-            #             break
-
             centroids_new.append(avg_point)
         centroids = copy.deepcopy(centroids_new)
         # Resetting which nodes are associated to which centroid
@@ -1362,11 +941,9 @@ for node,at in sorted(G_grid.nodes(data=True)):
         #print("hej")
         room_num_door = at['att'][3]
         door_idx = at['att'][4]
-
         p = at['att'][1]
         # Find the nearest nodes to the door
         nearest_nodes= list(idx_nodes.nearest((p.x,p.x, p.y, p.y), 30))
-
         # For all the nearest node the first one that is in the same room as the door will be connected to the door
         for node1 in nearest_nodes:
             # The nearest node will be itself, and therefore we skip this node
@@ -1384,15 +961,12 @@ for node,at in sorted(G_grid.nodes(data=True)):
             # such that if it is a node in the same room but the node is obstructed by a wall
             # we find another node
             p1 = G_grid.nodes[node1]['att'][1]
-
             if not is_traversable(p,p1,Dic_rooms[room_num_door]):
                 #print("hej")
                 continue
             # If there is a wall find a new node.
             #if not connection_to_room:
             #    continue
-
-
             G_grid.add_edge(node,node1,weight=14)
             point_node = G_grid.nodes[node1]['att'][1]
             break

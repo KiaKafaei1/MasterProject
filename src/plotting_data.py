@@ -245,7 +245,7 @@ random_floor = random.randint(0, len(elevation_combos)-1)
 # random_floor = random.randint(0, len(elevation_combos)-1)
 min_elevation = elevation_combos[random_floor][0]
 max_elevation = elevation_combos[random_floor][1]
-#min_elevation = 0.31
+min_elevation = -8.311
 print(min_elevation)
 print(elevation_combos)
 
@@ -514,14 +514,25 @@ facing_doors = []
 
 # Here what you can do instead is to take the median value and see if it is within the boundaries
 translation_usage = False
-print(list_points_doors[0])
-#num_door_coord = 3:
+print(list_points_doors)
+print(list_points_doors[0][0][0])
+print(list_points_doors[0][1][0])
+num_door_coord = 3
 #if len(list_points_doors[0])== 2:
 #    num_door_coord = 2
-if list_points_doors[0][0][0]>x_max or list_points_doors[0][0][0]<x_min or list_points_doors[0][0][1]>y_max or list_points_doors[0][0][1]<y_min :
-    translation_usage = True
-    #clippingHeight = clippingHeight+translation_height
-    min_elevation = min_elevation+translation_height#+0.0001
+
+
+if num_door_coord == 3:
+    if list_points_doors[0][0][0]>x_max or list_points_doors[0][0][0]<x_min or list_points_doors[0][1][0]>y_max or list_points_doors[0][1][0]<y_min :
+        translation_usage = True
+        #clippingHeight = clippingHeight+translation_height
+        min_elevation = min_elevation+translation_height#+0.0001
+#if num_door_coord == 2:
+#    if list_points_doors[0][0]>x_max or list_points_doors[0][0]<x_min or list_points_doors[0][1]>y_max or list_points_doors[0][1]<y_min:
+#        translation_usage = True
+#        #clippingHeight = clippingHeight+translation_height
+#        min_elevation = min_elevation+translation_height#+0.0001
+
     #min_elevation = min_elevation-translation_height
 #print("array2 len", len(array2))
 #print("doors")
@@ -1422,10 +1433,59 @@ for node,at in sorted(G_rooms.nodes(data=True)):
 # Removing room nodes that are not connected to other room nodes, also change its description from roon node to grid node in G
 
 
-
+#print(G.nodes)
+print(Dic_connectivity)
 max_connection = max(Dic_connectivity.values())
 #print(len(Dic_connectivity))
 
+
+
+
+#### TESTING
+# fig, ax = plt.subplots()
+# plot_grid(ax,x_min,x_max,y_min,y_max)
+
+# for line in Dic_all.values():
+#    ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
+
+
+# for node,at in sorted(G_rooms.nodes(data=True)):
+#     p = at['att'][1]
+#     node_type = at['att'][0]
+#     print(node,p)
+#     if node_type == "room":
+#         plt.plot(p.x,p.y,marker='o',color='red',markerfacecolor='red')
+
+# plt.show()
+
+    #elif node_type == 'door':
+    #    plt.plot(p.x,p.y,marker='o',color='black',markerfacecolor='black')
+
+
+
+
+# This section is for the rare case that there are 2 identical max connections, for example two isolated rooms of the same size.
+number_of_nodes = 0
+list_of_keys = []
+for key,value in Dic_connectivity.items():
+    if value == max_connection:
+        number_of_nodes += 1
+        list_of_keys.append(key)
+# if the number of nodes are bigger than the number of max connections we remove the n biggest nodes with n being the max connection.
+# Since we have clusters of bigger nodes.
+if number_of_nodes > max_connection+1:
+    print("hej")
+    list_of_keys = sorted(list_of_keys)[:len(list_of_keys)-(max_connection+1)]
+    for key in list_of_keys:
+        G_rooms.remove_node(key)
+        p = G.nodes[key]['att'][1]
+        dist = G.nodes[key]['att'][2]
+        room_label = G.nodes[key]['att'][3]
+        G.remove_node(key)
+        G.add_node(key,att=("grid",p,dist,room_label))
+
+# This is the normal case where we dont have to large clusters of equal size nodes that are unconnected.
+# This is performed no matter the case.
 for key,value in Dic_connectivity.items():
     if value == max_connection:
         continue

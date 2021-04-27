@@ -592,6 +592,7 @@ G_grid = nx.Graph()
 i = 0
 counter_room = 0 
 print("PART 3")
+#Making the grid nodes
 #number_of_nodes = len(G_grid.nodes)
 #i = number_of_nodes 
 idx_nodes = index.Index(interleaved=False)
@@ -647,7 +648,8 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
            G_grid.add_edge(i,i-grid_height+1,weight=14)
 
 
-# Adding the door nodes
+# Adding the door nodes again, the first time they were used to check for walls that werent supposed to be there.
+# now they are made again to fit into the grid.
 #G_grid = nx.Graph()
 number_of_nodes = len(G_grid.nodes)
 idx_doors = index.Index(interleaved=False)
@@ -926,9 +928,10 @@ for node,at in sorted(G_grid.nodes(data=True)):
                 break
 t1_stop = process_time() 
 
+#print("len grid", len(G_grid.nodes))
 
 
-# For all doors connect them to a node in the room if not already connected to more than one other node
+# For all doors connect them to a node in their respective room.
 for node,at in sorted(G_grid.nodes(data=True)):
     node_type = at['att'][0]
     if node_type != "door":
@@ -937,53 +940,67 @@ for node,at in sorted(G_grid.nodes(data=True)):
     #print("num edges", len(num_edges))
     # This is the case when the door is only connected to its opposite door, and to no other nodes in the room
     # In this case we find the room it belongs to and connect it to one of the room nodes of the room.
-    if len(num_edges) <=1:
-        #print("hej")
-        room_num_door = at['att'][3]
-        door_idx = at['att'][4]
-        p = at['att'][1]
-        # Find the nearest nodes to the door
-        nearest_nodes= list(idx_nodes.nearest((p.x,p.x, p.y, p.y), 30))
-        # For all the nearest node the first one that is in the same room as the door will be connected to the door
-        for node1 in nearest_nodes:
-            # The nearest node will be itself, and therefore we skip this node
-            if node == node1:
-                continue
-            # Check if the node exists in the grid graph, this is because it might be a node that has been
-            # removed from the grid graph
-            if not G_grid.has_node(node1):
-                continue
-            room_num_node = G_grid.nodes[node1]['att'][3]
-            # If the grid node is not in the same room as the door node find another node
-            if room_num_door != room_num_node:
-                continue
-            # Doing a line intersection check here, 
-            # such that if it is a node in the same room but the node is obstructed by a wall
-            # we find another node
-            p1 = G_grid.nodes[node1]['att'][1]
-            if not is_traversable(p,p1,Dic_rooms[room_num_door]):
-                #print("hej")
-                continue
-            # If there is a wall find a new node.
-            #if not connection_to_room:
-            #    continue
-            G_grid.add_edge(node,node1,weight=14)
-            point_node = G_grid.nodes[node1]['att'][1]
-            break
+    #if len(num_edges) <=1:
+    #print("hej")
+    #print("len idx nodes", len(list(idx_nodes)))
+    room_num_door = at['att'][3]
+    door_idx = at['att'][4]
+    p = at['att'][1]
+    # Find the nearest nodes to the door
+    nearest_nodes= list(idx_nodes.nearest((p.x,p.x, p.y, p.y), 1000000))#en(G_grid.nodes)))
+    print("nearest nodes",len(nearest_nodes))
+    # For all the nearest node the first one that is in the same room as the door will be connected to the door
+    for node1 in nearest_nodes:
+        #if node == 5471:
+            
+            #print(node1)
+        # The nearest node will be itself, and therefore we skip this node
+        if node == node1:
+            continue
+        # Check if the node exists in the grid graph, this is because it might be a node that has been
+        # removed from the grid graph
+        if not G_grid.has_node(node1):
+            # if node == 5471:
+            #     print(node1)
+            continue
+        room_num_node = G_grid.nodes[node1]['att'][3]
+        # If the grid node is not in the same room as the door node find another node
+        if room_num_door != room_num_node:
+            continue
+        # Doing a line intersection check here, 
+        # such that if it is a node in the same room but the node is obstructed by a wall
+        # we find another node
+        if node == 5471:
+            print(node1)
+        p1 = G_grid.nodes[node1]['att'][1]
+        if not is_traversable(p,p1,Dic_rooms[room_num_door]):
+            #print("hej")
+            continue
+        # If there is a wall find a new node.
+        #if not connection_to_room:
+        #    continue
+        G_grid.add_edge(node,node1,weight=14)
+        point_node = G_grid.nodes[node1]['att'][1]
+        break
 
-# # Debugging
-# for node, at in G_grid.nodes(data=True):
-#     node_type = at['att'][0]
-#     if node_type == 'door':
-#         idx_d = at['att'][4]
-#         if idx_d == 57:
-#             node_edges = G_grid.edges(node)
-#             #print(node_edges)
-#             node2 = 4511
-#             point2 = G_grid.nodes[node2]['att'][1]
-#             room_label = G_grid.nodes[node2]['att'][3]
-#             #print("room_label",room_label)
-#             #print("point", point2)
+# Debugging
+for node, at in G_grid.nodes(data=True):
+    node_type = at['att'][0]
+    if node_type == 'door':
+        p_door = at['att'][1]
+        idx_d = at['att'][4]
+        #if 47 < p_door.x <48:  
+        #if node == 5485:
+        if node == 5471:
+        #if idx_d == 57:
+            node_edges = G_grid.edges(node)
+            print("node_edges",node_edges)
+            print("node", node)
+            #node2 = 4511
+            #point2 = G_grid.nodes[node2]['att'][1]
+            #room_label = G_grid.nodes[node2]['att'][3]
+            #print("room_label",room_label)
+            #print("point", point2)
 
 
 #node_edges = G_grid.edges(4511)

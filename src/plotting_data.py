@@ -250,7 +250,7 @@ random_floor = random.randint(0, len(elevation_combos)-1)
 # random_floor = random.randint(0, len(elevation_combos)-1)
 min_elevation = elevation_combos[random_floor][0]
 max_elevation = elevation_combos[random_floor][1]
-min_elevation = -8.311
+#min_elevation = -8.311
 print(min_elevation)
 #print(elevation_combos)
 
@@ -398,12 +398,14 @@ if array2[0][0]>building_max_height or array2[0][0]<building_min_height:
 
 clippingHeight = min_elevation
 print(min_elevation)
-translation_usage_xy = False
+#translation_usage_xy = False
 #print(translation)
 #print(translation[0][0])
 #print(translation[1][0])
+print("door heights",array2)
 if translation_usage_xy:
     for i,elev in enumerate(array2):
+        #print("elev",elev[0])
         if (clippingHeight-0.01<=elev[0]<=clippingHeight+0.01):
             #print(elev)
             # This is the standard
@@ -615,7 +617,7 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
         i = i+1
         p = Point(x,y)
         k = list(idx.nearest((p.x,p.x, p.y, p.y),30))
-        print("len(k)", len(k))
+
         # if p.x == -1.5 and p.y==-0.5:
         #     print("k",k)
         #     print(Dic_all_unhashed.get(k[0]))

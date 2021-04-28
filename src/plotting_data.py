@@ -905,7 +905,8 @@ for i in range(len(room_indexes)):
             counter = 6
     # Adding the centroids to the correct room
     #points_rooms.extend(centroids)
-    points_rooms_dic[i] = centroids
+    #points_rooms_dic[i] = centroids
+    points_rooms_dic[room_indexes[i]]=centroids
     if room_indexes[i]==8:
         print("centroid room 8", points_rooms_dic[i])
 
@@ -959,7 +960,7 @@ for node,at in sorted(G_grid.nodes(data=True)):
     node_type = at['att'][0]
     if node_type != "door":
         continue
-    num_edges = G_grid.edges(node)
+    #num_edges = G_grid.edges(node)
     #print("num edges", len(num_edges))
     # This is the case when the door is only connected to its opposite door, and to no other nodes in the room
     # In this case we find the room it belongs to and connect it to one of the room nodes of the room.
@@ -976,21 +977,28 @@ for node,at in sorted(G_grid.nodes(data=True)):
     # For all the nearest node the first one that is in the same room as the door will be connected to the door
     for node1 in nearest_nodes:
         #if node == 5471:
+
             
             #print(node1)
         # The nearest node will be itself, and therefore we skip this node
         if node == node1:
             continue
+
         # Check if the node exists in the grid graph, this is because it might be a node that has been
         # removed from the grid graph
         if not G_grid.has_node(node1):
             # if node == 5471:
             #     print(node1)
             continue
+
         room_num_node = G_grid.nodes[node1]['att'][3]
+        if node1 ==1001:
+            print("hej")
+            print("room number node", room_num_node)
         # If the grid node is not in the same room as the door node find another node
         if room_num_door != room_num_node:
             continue
+
         # Doing a line intersection check here, 
         # such that if it is a node in the same room but the node is obstructed by a wall
         # we find another node
@@ -1007,7 +1015,13 @@ for node,at in sorted(G_grid.nodes(data=True)):
         point_node = G_grid.nodes[node1]['att'][1]
         break
 
+
+
 # Debugging
+for node, at in G_grid.nodes(data=True):
+    if at['att'][1] == Point(2.5,0.5):
+        print("node point", node)
+
 for node, at in G_grid.nodes(data=True):
     node_type = at['att'][0]
     if node == 3740:

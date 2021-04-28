@@ -150,16 +150,30 @@ def roundDown5(x):
 
 
 def plot_grid(ax,x_min,x_max,y_min,y_max):
+    #major_ticks = np.arange(x_min, y_max, 20)
+    #minor_ticks = np.arange(, y, 5)
+
+    #ax.set_xticks(major_ticks)
+    #ax.set_xticks(minor_ticks, minor=True)
+    #ax.set_yticks(major_ticks)
+    #ax.set_yticks(minor_ticks, minor=True)
+
+
     #ax.set_xlim(roundDown5(x_min),roundUp5(x_max))
     #ax.set_ylim(roundDown5(y_min),roundUp5(y_max))
     ax.set_xlim((x_min),(x_max))
     ax.set_ylim((y_min),(y_max))
-    # Change major ticks 
+    ## Change major ticks 
     ax.xaxis.set_major_locator(MultipleLocator(20))
     ax.yaxis.set_major_locator(MultipleLocator(20))
-    # Change minor ticks to show every 5 (20/4 = 5)
+    ## Minor locator at every 0.5 (20/40)
     ax.xaxis.set_minor_locator(AutoMinorLocator(40))
     ax.yaxis.set_minor_locator(AutoMinorLocator(40))
+    ## Minor locator at every 0.2 (20/100)
+    #ax.xaxis.set_minor_locator(AutoMinorLocator(100))
+    #ax.yaxis.set_minor_locator(AutoMinorLocator(100))
+
+
     ax.grid(which = 'minor')
     plt.grid()
 

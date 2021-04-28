@@ -252,7 +252,7 @@ min_elevation = elevation_combos[random_floor][0]
 max_elevation = elevation_combos[random_floor][1]
 min_elevation = -8.311
 print(min_elevation)
-print(elevation_combos)
+#print(elevation_combos)
 
 building_min_height = min([x[0] for x in elevation_combos])
 building_max_height = max([x[1] for x in elevation_combos])
@@ -614,7 +614,8 @@ for x in np.linspace(x_min,x_max,(x_max-x_min)*2+1):
     for y in np.linspace(y_min,y_max,(y_max-y_min)*2+1):
         i = i+1
         p = Point(x,y)
-        k = list(idx.nearest((p.x,p.x, p.y, p.y),1))
+        k = list(idx.nearest((p.x,p.x, p.y, p.y),30))
+        print("len(k)", len(k))
         # if p.x == -1.5 and p.y==-0.5:
         #     print("k",k)
         #     print(Dic_all_unhashed.get(k[0]))
@@ -844,8 +845,8 @@ for i in range(len(room_indexes)):
     num_of_nodes = len(points_temp)
     # If there are no nodes in the room
     #print("num of nodes",num_of_nodes)
-    if room_indexes[i]==8:
-        print("points_temp",points_temp)
+    # if room_indexes[i]==8:
+    #     print("points_temp",points_temp)
     if num_of_nodes == 0:
         continue
     # Number of centroids, 1 in every cent_ratio
@@ -907,8 +908,8 @@ for i in range(len(room_indexes)):
     #points_rooms.extend(centroids)
     #points_rooms_dic[i] = centroids
     points_rooms_dic[room_indexes[i]]=centroids
-    if room_indexes[i]==8:
-        print("centroid room 8", points_rooms_dic[i])
+    # if room_indexes[i]==8:
+    #     print("centroid room 8", points_rooms_dic[i])
 
 #print("points_rooms_dic",points_rooms_dic)
 print("PART 6")
@@ -972,8 +973,8 @@ for node,at in sorted(G_grid.nodes(data=True)):
     p = at['att'][1]
     # Find the nearest nodes to the door
     nearest_nodes= list(idx_nodes.nearest((p.x,p.x, p.y, p.y), 1000000))#en(G_grid.nodes)))
-    if node == 2071:
-        print("nearest nodes",len(nearest_nodes))
+    # if node == 2071:
+    #     print("nearest nodes",len(nearest_nodes))
     # For all the nearest node the first one that is in the same room as the door will be connected to the door
     for node1 in nearest_nodes:
         #if node == 5471:
@@ -992,9 +993,9 @@ for node,at in sorted(G_grid.nodes(data=True)):
             continue
 
         room_num_node = G_grid.nodes[node1]['att'][3]
-        if node1 ==1001:
-            print("hej")
-            print("room number node", room_num_node)
+        #if node1 ==1001:
+            #print("hej")
+            #print("room number node", room_num_node)
         # If the grid node is not in the same room as the door node find another node
         if room_num_door != room_num_node:
             continue
@@ -1018,30 +1019,30 @@ for node,at in sorted(G_grid.nodes(data=True)):
 
 
 # Debugging
-for node, at in G_grid.nodes(data=True):
-    if at['att'][1] == Point(2.5,0.5):
-        print("node point", node)
+# for node, at in G_grid.nodes(data=True):
+#     if at['att'][1] == Point(2.5,0.5):
+#         print("node point", node)
 
-for node, at in G_grid.nodes(data=True):
-    node_type = at['att'][0]
-    if node == 3740:
-        print("point 3740", at['att'][1])
-    if node_type == 'door':
-        p_door = at['att'][1]
-        idx_d = at['att'][4]
-        #if 1.9 < p_door.x <2:# and 16<p_door.y<17:  
-        #if node == 5485:
-        if node == 2071:
-        #if idx_d == 57:
-            node_edges = G_grid.edges(node)
-            print("node_edges",node_edges)
-            print("node", node)
-            print("room_label", at['att'][3])
-            #node2 = 4511
-            #point2 = G_grid.nodes[node2]['att'][1]
-            #room_label = G_grid.nodes[node2]['att'][3]
-            #print("room_label",room_label)
-            #print("point", point2)
+# for node, at in G_grid.nodes(data=True):
+#     node_type = at['att'][0]
+#     if node == 3740:
+#         print("point 3740", at['att'][1])
+#     if node_type == 'door':
+#         p_door = at['att'][1]
+#         idx_d = at['att'][4]
+#         #if 1.9 < p_door.x <2:# and 16<p_door.y<17:  
+#         #if node == 5485:
+#         if node == 2071:
+#         #if idx_d == 57:
+#             node_edges = G_grid.edges(node)
+#             print("node_edges",node_edges)
+#             print("node", node)
+#             print("room_label", at['att'][3])
+#             #node2 = 4511
+#             #point2 = G_grid.nodes[node2]['att'][1]
+#             #room_label = G_grid.nodes[node2]['att'][3]
+#             #print("room_label",room_label)
+#             #print("point", point2)
 
 
 #node_edges = G_grid.edges(4511)

@@ -1210,7 +1210,8 @@ fig, ax = plt.subplots()
 plot_grid(ax,x_min,x_max,y_min,y_max)
 
 for line in Dic_all.values():
-   ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')    
+   ax.plot([line[0][0][0], line[0][1][0]],[line[0][0][1], line[0][1][1]],'b')
+   #ax.arrow(line[0][0][0], line[0][1][0],line[0][0][1]-line[0][0][0], line[0][1][1]-line[0][1][0])    
 
 #Plotting all the nodes of the graph on the map
 for node,at in sorted(G.nodes(data=True)):
@@ -1258,6 +1259,7 @@ for edge in tsp_edges:
         node_prev = pred[count-1]
         p = G.nodes(data=True)[node_new]['att'][1]
         q = G.nodes(data=True)[node_prev]['att'][1]
-        plt.plot([p.x,q.x],[p.y,q.y],'g')
+        #plt.plot([p.x,q.x],[p.y,q.y],'g')
+        ax.arrow(p.x, p.y,q.x-p.x, q.y-p.y,shape='full', length_includes_head=True, head_width=.1)
         count = count-1
 plt.show()

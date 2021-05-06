@@ -103,9 +103,17 @@ The function returns true if there is a traversable connection between 2 points 
     if (math.sqrt((p1.x-q1.x)**2+(p1.y-q1.y)**2)<epsilon) and (-0.01<p1.x-q1.x<0.01 or -0.01<p1.y-q1.y<0.01):
         return True
     for line in Dic_lines.values():
+
         p2 = Point(line[0][0][0],line[0][0][1])
         q2 = Point(line[0][1][0],line[0][1][1])
         val= intersect(p1,q1,p2,q2)
+        # Debugging
+        # if 17.57 < p.x <17.59 and 0.5<p.y<1:
+        #    print("q1",q1)
+        #    print("p2",p2)
+        #    print("q2",q2)
+        #    print("val",val)
+
         if val:
             #They do intersect
             return False
@@ -250,7 +258,7 @@ random_floor = random.randint(0, len(elevation_combos)-1)
 # random_floor = random.randint(0, len(elevation_combos)-1)
 min_elevation = elevation_combos[random_floor][0]
 max_elevation = elevation_combos[random_floor][1]
-#min_elevation = -8.311
+min_elevation = 2.97
 print(min_elevation)
 #print(elevation_combos)
 
@@ -382,7 +390,7 @@ points_doors = []
 facing_doors = []
 
 # Here what you can do instead is to take the median value and see if it is within the boundaries
-translation_usage = False
+translation_usage_xy = False
 num_door_coord = 3
 #print("[x_min,x_max]", [x_min,x_max])
 #print("[y_min,y_max]", [y_min,y_max])
@@ -402,7 +410,7 @@ print(min_elevation)
 #print(translation)
 #print(translation[0][0])
 #print(translation[1][0])
-print("door heights",array2)
+#print("door heights",array2)
 if translation_usage_xy:
     for i,elev in enumerate(array2):
         #print("elev",elev[0])
@@ -975,10 +983,13 @@ for node,at in sorted(G_grid.nodes(data=True)):
     p = at['att'][1]
     # Find the nearest nodes to the door
     nearest_nodes= list(idx_nodes.nearest((p.x,p.x, p.y, p.y), 1000000))#en(G_grid.nodes)))
-    # if node == 2071:
-    #     print("nearest nodes",len(nearest_nodes))
+    # if node == 1349:
+    #      print("nearest nodes len",len(nearest_nodes))
+    #      print("nearest nodes", nearest_nodes )
+    #      print("len G_grid", len(G_grid.nodes))
     # For all the nearest node the first one that is in the same room as the door will be connected to the door
-    for node1 in nearest_nodes:
+    traversable = False
+    for i,node1 in enumerate(nearest_nodes):
         #if node == 5471:
 
             
@@ -1008,15 +1019,26 @@ for node,at in sorted(G_grid.nodes(data=True)):
         #if node == 5471:
         #    print(node1)
         p1 = G_grid.nodes[node1]['att'][1]
-        if not is_traversable(p,p1,Dic_rooms[room_num_door]):
+        if is_traversable(p,p1,Dic_rooms[room_num_door]):
+            traversable = True
             #print("hej")
-            continue
+            #continue
+        # if 17.57 < p.x <17.59 and 0.5<p.y<1:
+        #     #print("node", node)
+        #     print("node1", node1)
+        #     print(traversable)
+        #     print("p1",p1)
         # If there is a wall find a new node.
         #if not connection_to_room:
         #    continue
-        G_grid.add_edge(node,node1,weight=14)
-        point_node = G_grid.nodes[node1]['att'][1]
-        break
+        # We only connect the door to its node if there is no walls between it 
+        if traversable:
+            G_grid.add_edge(node,node1,weight=14)
+            point_node = G_grid.nodes[node1]['att'][1]
+            #traversable = False
+            break    
+        #continue
+        #break
 
 
 
@@ -1027,19 +1049,20 @@ for node,at in sorted(G_grid.nodes(data=True)):
 
 # for node, at in G_grid.nodes(data=True):
 #     node_type = at['att'][0]
-#     if node == 3740:
-#         print("point 3740", at['att'][1])
-#     if node_type == 'door':
-#         p_door = at['att'][1]
-#         idx_d = at['att'][4]
-#         #if 1.9 < p_door.x <2:# and 16<p_door.y<17:  
-#         #if node == 5485:
-#         if node == 2071:
+#     if node == 5133:
+#     #    print("point 3740", at['att'][1])
+#     #if node_type == 'door':
+#         #p_door = at['att'][1]
+#         #idx_d = at['att'][4]
+#         #if 48.2 < p_door.x <48.4:# and 16<p_door.y<17:  
+#         #if node == 5133:
+#         #if node == 2071:
 #         #if idx_d == 57:
 #             node_edges = G_grid.edges(node)
 #             print("node_edges",node_edges)
 #             print("node", node)
 #             print("room_label", at['att'][3])
+#             print("point", at['att'][1])
 #             #node2 = 4511
 #             #point2 = G_grid.nodes[node2]['att'][1]
 #             #room_label = G_grid.nodes[node2]['att'][3]

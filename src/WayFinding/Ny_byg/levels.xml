@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Application="ARCHICAD-64" ElevationOffset="0">
+  <Building name="Bygningens navn" guid="082Xyhjmf_dsJzUFukDW6M" unitscale="0.001" areaunitscale="1" elevation="0">
+    <Floor name="3. Etasje" guid="1973F$RMb6Oxofw$WCwpEo" elevation="45300" />
+    <Floor name="Kjeller" guid="2DawB2hxr7jfNYr5GvXyE2" elevation="35300" />
+    <Floor name="4. Etasje" guid="2xDUokPYH7hOtlnfLDRMrs" elevation="48500" />
+    <Floor name="Hav" guid="3BVHKja1j4APB$7fKdiX7g" elevation="0" />
+    <Floor name="2. Etasje" guid="3g3e_e$kX1eRfoZhqVzZKJ" elevation="42100" />
+    <Floor name="1. Etasje" guid="3nqYE$WMTCYvCJyd0SdEhP" elevation="38900" />
+    <Floor name="5. Takplan" guid="3tXqVSi1LCa9nXqwp1ljIk" elevation="51600" />
+    <Floor name="Dummy" guid="0" elevation="0" />
+  </Building>
+</Project>

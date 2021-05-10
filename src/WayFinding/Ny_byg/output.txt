@@ -1,0 +1,8 @@
+Application: ARCHICAD-64
+Schema: IFC2X3
+Scale: 0,001
+Area scale: 1
+#elements: 6721
+#polygons: 927484
+Translation: 70.965865048 45.3 -107.929210665
+Bounding box: <boundingbox center="76.00 27.00 -82.18" size="153.00 56.00 165.36" rotation="0"/>

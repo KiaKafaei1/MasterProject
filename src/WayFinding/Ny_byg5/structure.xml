@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Scene>
+  <Shape name="Style251516">
+    <Material name="Style251516">
+      <MaterialParams diffuse="0 146 37" ambient="0 83 21" emmision="0 0 0" specular="255 255 255" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="0" entries="1584" format="1i16" />
+      <PolygonIds offset="3168" entries="528" format="1i32" />
+      <Coordinates offset="5280" entries="352" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="DefaultIfcStairFlight">
+    <Material name="DefaultIfcStairFlight">
+      <MaterialParams diffuse="16 25 74" ambient="9 14 42" emmision="0 0 0" specular="32 32 32" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="9504" entries="15900" format="1i16" />
+      <PolygonIds offset="41304" entries="5300" format="1i32" />
+      <Coordinates offset="62504" entries="1447" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="Style14044">
+    <Material name="Style14044">
+      <MaterialParams diffuse="35 35 35" ambient="20 20 20" emmision="0 0 0" specular="255 255 255" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="79868" entries="30864" format="1i16" />
+      <PolygonIds offset="141596" entries="10288" format="1i32" />
+      <Coordinates offset="182748" entries="5280" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="Style1105139">
+    <Material name="Style1105139">
+      <MaterialParams diffuse="83 83 83" ambient="47 47 47" emmision="0 0 0" specular="255 255 255" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="246108" entries="1524" format="1i16" />
+      <PolygonIds offset="249156" entries="508" format="1i32" />
+      <Coordinates offset="251188" entries="258" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="Style12016">
+    <Material name="Style12016">
+      <MaterialParams diffuse="89 89 89" ambient="51 51 51" emmision="0 0 0" specular="255 255 255" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="254284" entries="2520" format="1i16" />
+      <PolygonIds offset="259324" entries="840" format="1i32" />
+      <Coordinates offset="262684" entries="420" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="Style17237">
+    <Material name="Style17237">
+      <MaterialParams diffuse="107 107 107" ambient="61 61 61" emmision="0 0 0" specular="255 255 255" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="267724" entries="1008" format="1i16" />
+      <PolygonIds offset="269740" entries="336" format="1i32" />
+      <Coordinates offset="271084" entries="172" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="ColorMapIfcRailing">
+    <Material name="ColorMapIfcRailing">
+      <MaterialParams diffuse="107 142 178" ambient="61 81 102" emmision="0 0 0" specular="32 32 32" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="273148" entries="4824" format="1i16" />
+      <PolygonIds offset="282796" entries="1608" format="1i32" />
+      <Coordinates offset="289228" entries="480" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="ColorMapIfcSlab">
+    <Material name="ColorMapIfcSlab">
+      <MaterialParams diffuse="142 178 178" ambient="81 102 102" emmision="0 0 0" specular="32 32 32" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="294988" entries="4074" format="1i16" />
+      <PolygonIds offset="303136" entries="1358" format="1i32" />
+      <Coordinates offset="308568" entries="353" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="Style9365">
+    <Material name="Style9365">
+      <MaterialParams diffuse="144 161 161" ambient="82 92 92" emmision="0 0 0" specular="255 255 255" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="312804" entries="7392" format="1i16" />
+      <PolygonIds offset="327588" entries="2464" format="1i32" />
+      <Coordinates offset="337444" entries="912" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="Style1125053">
+    <Material name="Style1125053">
+      <MaterialParams diffuse="148 178 178" ambient="84 102 102" emmision="0 0 0" specular="255 255 255" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="348388" entries="4056" format="1i16" />
+      <PolygonIds offset="356500" entries="1352" format="1i32" />
+      <Coordinates offset="361908" entries="798" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="Style8929">
+    <Material name="Style8929">
+      <MaterialParams diffuse="153 161 161" ambient="87 92 92" emmision="0 0 0" specular="255 255 255" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="371484" entries="135912" format="1i16" />
+      <PolygonIds offset="643308" entries="45304" format="1i32" />
+      <Coordinates offset="824524" entries="24679" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="Material2597772">
+    <Material name="Material2597772">
+      <MaterialParams diffuse="161 157 154" ambient="92 90 88" emmision="0 0 0" specular="255 255 255" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="1120672" entries="784848" format="1i32" />
+      <PolygonIds offset="4260064" entries="261616" format="1i32" />
+      <Coordinates offset="5306528" entries="73056" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="Style17140">
+    <Material name="Style17140">
+      <MaterialParams diffuse="170 106 178" ambient="97 60 102" emmision="0 0 0" specular="255 255 255" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="6183200" entries="1020" format="1i16" />
+      <PolygonIds offset="6185240" entries="340" format="1i32" />
+      <Coordinates offset="6186600" entries="158" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="Style38051">
+    <Material name="Style38051">
+      <MaterialParams diffuse="170 170 170" ambient="97 97 97" emmision="0 0 0" specular="255 255 255" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="6188496" entries="7956" format="1i16" />
+      <PolygonIds offset="6204408" entries="2652" format="1i32" />
+      <Coordinates offset="6215016" entries="1264" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="Style17673">
+    <Material name="Style17673">
+      <MaterialParams diffuse="178 178 178" ambient="102 102 102" emmision="0 0 0" specular="255 255 255" power="100" transparency="0" is_transparent="False" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="6230184" entries="1515804" format="1i32" />
+      <PolygonIds offset="12293400" entries="505268" format="1i32" />
+      <Coordinates offset="14314472" entries="180633" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Shape name="ColorMapIfcWindow">
+    <Material name="ColorMapIfcWindow">
+      <MaterialParams diffuse="142 142 178" ambient="81 81 102" emmision="0 0 0" specular="32 32 32" power="100" transparency="0.4" is_transparent="True" is_wireframe="False" />
+    </Material>
+    <Geometry>
+      <TriangleIndices offset="16482068" entries="564" format="1i16" />
+      <PolygonIds offset="16483196" entries="188" format="1i32" />
+      <Coordinates offset="16483948" entries="120" format="3f32" />
+    </Geometry>
+  </Shape>
+  <Stream file="data.b00" />
+</Scene>

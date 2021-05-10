@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root version="2" origin="IFC">
+  <elements>
+    <door mid="8" guid="0lntrd6l1AGwfcnKJK5qjQ" minheight="-5.31118" maxheight="-3.13118">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.8" origin="-0.700457 -1.085367" facing="0.798636 0.601815" />
+      <footprint>
+        <Arc start="-0.122151055850798 -1.65340809206815" end="0.0644825495770337 -0.571549906797085" center="-0.604621018017071 -1.01314882718801" rgb="0" />
+        <Line start="-0.5745302 -1.0530806" end="0.0644825 -0.5715499" rgb="0" />
+        <Line start="0.0343918 -0.5316181" end="0.0644825 -0.5715499" rgb="0" />
+        <Line start="-0.604621 -1.0131488" end="0.0343918 -0.5316181" rgb="0" />
+        <Line start="-0.604621 -1.0131488" end="-0.5745302 -1.0530806" rgb="0" />
+      </footprint>
+    </door>
+    <door mid="10" guid="2MWqvKy9535viQk_YsG9Xh" minheight="-5.31118" maxheight="-3.28418">
+      <definition ifctype="DOUBLE_SWING_RIGHT" width="1.89" origin="-2.503047 -7.433476" facing="-0.798636 -0.601815" />
+      <footprint>
+        <Line start="-4.1612935 -5.5652366" end="-4.1293483 -5.5411639" rgb="0" />
+        <Line start="-4.1293483 -5.5411639" end="-3.5816965 -6.2679224" rgb="0" />
+        <Line start="-3.5816965 -6.2679224" end="-3.613642 -6.291995" rgb="0" />
+        <Line start="-3.613642 -6.291995" end="-4.1612935 -5.5652366" rgb="0" />
+      </footprint>
+    </door>
+    <door mid="13" guid="0lntrd6l1AGwfcnKJK5qii" minheight="-5.31118" maxheight="-3.13118">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.8" origin="3.886056 -2.186955" facing="-0.798636 -0.601815" />
+      <footprint>
+        <Arc start="3.30774971182059 -1.61891335498026" end="3.12111610639276 -2.70077154025133" center="3.79021967398686 -2.25917261986041" rgb="0" />
+        <Line start="3.760129 -2.2192409" end="3.1211162 -2.7007716" rgb="0" />
+        <Line start="3.151207 -2.7407033" end="3.1211162 -2.7007716" rgb="0" />
+        <Line start="3.7902198 -2.2591727" end="3.151207 -2.7407033" rgb="0" />
+        <Line start="3.7902198 -2.2591727" end="3.760129 -2.2192409" rgb="0" />
+      </footprint>
+    </door>
+    <door mid="15" guid="0ELdlxJuP1AwzgUXpRT7eB" minheight="-5.31118" maxheight="-3.13118">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.8" origin="-3.866914 -1.768559" facing="-0.798636 -0.601815" />
+      <footprint>
+        <Arc start="-5.05312445525492 -1.72333037050485" end="-3.96173242780978 -1.8421271639893" center="-4.44420238997606 -1.20186789910915" rgb="0" />
+        <Line start="-4.4141116 -1.2417997" end="-5.0531244 -1.7233304" rgb="0" />
+        <Line start="-5.0832152 -1.6833986" end="-5.0531244 -1.7233304" rgb="0" />
+        <Line start="-4.4442024 -1.2018679" end="-5.0832152 -1.6833986" rgb="0" />
+        <Line start="-4.4442024 -1.2018679" end="-4.4141116 -1.2417997" rgb="0" />
+      </footprint>
+    </door>
+    <door mid="17" guid="0lntrd6l1AGwfcnKJK5qoH" minheight="-5.31118" maxheight="-3.13118">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.8" origin="3.353315 3.071249" facing="0.601815 -0.798636" />
+      <footprint>
+        <Arc start="2.78527323046295 2.49294281337305" end="3.86713141573401 2.30630920794522" center="3.42553249534309 2.97541277553932" rgb="0" />
+        <Line start="3.3856008 2.945322" end="3.8671315 2.3063092" rgb="0" />
+        <Line start="3.9070632 2.3364" end="3.8671315 2.3063092" rgb="0" />
+        <Line start="3.4255326 2.9754128" end="3.9070632 2.3364" rgb="0" />
+        <Line start="3.4255326 2.9754128" end="3.3856008 2.945322" rgb="0" />
+      </footprint>
+    </door>
+    <door mid="18" guid="0lntrd6l1AGwfcnKJK5qpS" minheight="-5.31118" maxheight="-3.13118">
+      <definition ifctype="SINGLE_SWING_RIGHT" width="0.8" origin="-2.844097 -1.598836" facing="0.601815 -0.798636" />
+      <footprint>
+        <Arc start="-2.88932499926602 -2.78504588792111" end="-2.77052820578158 -1.69365386047597" center="-3.41078747066172 -2.17612382264224" rgb="0" />
+        <Line start="-3.3708558 -2.146033" end="-2.8893249 -2.7850459" rgb="0" />
+        <Line start="-2.9292567 -2.8151367" end="-2.8893249 -2.7850459" rgb="0" />
+        <Line start="-3.4107876 -2.1761239" end="-2.9292567 -2.8151367" rgb="0" />
+        <Line start="-3.4107876 -2.1761239" end="-3.3708558 -2.146033" rgb="0" />
+      </footprint>
+    </door>
+    <door mid="43" guid="2wm6PO6TX9IxXwLP21HySo" minheight="-5.31118" maxheight="-3.28418">
+      <definition ifctype="DOUBLE_SWING_RIGHT" width="1.89" origin="0.382849 0.983099" facing="0.601815 -0.798636" />
+      <footprint>
+        <Line start="-1.4853908 -0.675148" end="-1.5094634 -0.6432025" rgb="0" />
+        <Line start="-1.5094634 -0.6432025" end="-0.7827051 -0.0955508" rgb="0" />
+        <Line start="-0.7827051 -0.0955508" end="-0.7586325 -0.1274963" rgb="0" />
+        <Line start="-0.7586325 -0.1274963" end="-1.4853908 -0.675148" rgb="0" />
+      </footprint>
+    </door>
+    <door mid="44" guid="2wm6PO6TX9IxXwLP21HyWr" minheight="-5.31118" maxheight="-3.28418">
+      <definition ifctype="DOUBLE_SWING_LEFT" width="1.89" origin="1.437308 1.627435" facing="0.601815 -0.798636" />
+      <footprint>
+        <Line start="1.2099242 1.3559176" end="1.1858516 1.387863" rgb="0" />
+        <Line start="1.1858516 1.387863" end="0.4590933 0.8402113" rgb="0" />
+        <Line start="0.4590933 0.8402113" end="0.4831659 0.8082659" rgb="0" />
+        <Line start="0.4831659 0.8082659" end="1.2099242 1.3559176" rgb="0" />
+      </footprint>
+    </door>
+    <door mid="54" guid="0ELdlxJuP1AwzgUXpRT7je" minheight="-5.31118" maxheight="-3.23118">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.44" origin="-8.750968 -5.273658" facing="0.798636 0.601815" />
+      <footprint>
+        <Arc start="-8.79153831278454 -5.30423002528224" end="-8.93324906334912 -6.31255440918577" center="-8.35823149611507 -5.87924759251629" rgb="0" />
+        <Arc start="-9.79986269668807 -5.16251927471767" end="-8.79153831278455 -5.30423002528224" center="-9.22484512945402 -4.72921245804819" rgb="0" />
+        <Line start="-8.3582315 -5.8792477" end="-8.9332495 -6.3125544" rgb="0" />
+        <Line start="-9.2248449 -4.7292123" end="-9.7998629 -5.1625195" rgb="0" />
+      </footprint>
+    </door>
+    <door mid="119" guid="3Yxgiuz3TDpeHhosGP5aso" minheight="-5.31118" maxheight="-2.65118">
+      <definition ifctype="NOTDEFINED" width="1.44" origin="7.020969 -0.031231" facing="-0.601815 0.798636" />
+      <footprint>
+        <Line start="7.1555662 0.4458361" end="8.0221796 -0.7041991" rgb="0" />
+        <Arc start="7.59598655493562 0.402076043431489" end="7.17585139497581 0.46112218950006" center="7.35639590192143 0.221531536485873" rgb="0" />
+        <Arc start="6.44595142046752 -0.464537589907465" end="8.04246502831477 -0.688912944968038" center="7.35639590192143 0.221531536485873" rgb="0" />
+        <Line start="7.1758513 0.4611222" end="8.0424652 -0.6889129" rgb="0" />
+        <Line start="7.1555662 0.4458361" end="7.1758513 0.4611222" rgb="0" />
+      </footprint>
+    </door>
+    <door mid="175" guid="1$p8tACJ938vr1_lKOJJ9g" minheight="-8.31118" maxheight="-6.13118">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.8" origin="4.637834 1.434762" facing="0.601815 -0.798636" />
+      <footprint>
+        <Arc start="4.09693439207521 0.820436906920924" end="5.17879257734627 0.633803301493091" center="4.73719365695535 1.3029068690872" rgb="0" />
+        <Line start="4.6972618 1.2728161" end="5.1787925 0.6338033" rgb="0" />
+        <Line start="5.2187243 0.6638941" end="5.1787925 0.6338033" rgb="0" />
+        <Line start="4.7371936 1.3029069" end="5.2187243 0.6638941" rgb="0" />
+        <Line start="4.7371936 1.3029069" end="4.6972618 1.2728161" rgb="0" />
+      </footprint>
+    </door>
+    <door mid="176" guid="1PDnLIM013wvkZO9Lb4$i6" minheight="-5.31118" maxheight="-2.65118">
+      <definition ifctype="NOTDEFINED" width="1.44" origin="3.299099 4.83973" facing="-0.601815 0.798636" />
+      <footprint>
+        <Line start="3.794785 4.837616" end="2.9281714 5.9876513" rgb="0" />
+        <Arc start="3.81507026103461 4.85290214411025" end="3.87411640710318 5.27303730407005" center="3.63452575408899 5.09249279712444" rgb="0" />
+        <Arc start="2.94845662769565 6.00293727857835" end="2.72408127263508 4.4064236707311" center="3.63452575408899 5.09249279712444" rgb="0" />
+        <Line start="3.8150702 4.8529019" end="2.9484565 6.0029373" rgb="0" />
+        <Line start="3.794785 4.837616" end="3.8150702 4.8529019" rgb="0" />
+      </footprint>
+    </door>
+    <door mid="192" guid="1PDnLIM013wvkZO9Lb4$s7" minheight="-8.31118" maxheight="-6.13118">
+      <definition ifctype="SINGLE_SWING_LEFT" width="0.8" origin="3.433602 3.032831" facing="0.601815 -0.798636" />
+      <footprint>
+        <Arc start="2.91490950510239 2.38903691220465" end="3.99676769037346 2.20240330677682" center="3.55516876998253 2.87150687437092" rgb="0" />
+        <Line start="3.5152371 2.8414161" end="3.9967678 2.2024033" rgb="0" />
+        <Line start="4.0366993 2.2324941" end="3.9967678 2.2024033" rgb="0" />
+        <Line start="3.5551689 2.8715069" end="4.0366993 2.2324941" rgb="0" />
+        <Line start="3.5551689 2.8715069" end="3.5152371 2.8414161" rgb="0" />
+      </footprint>
+    </door>
+    <door mid="329" guid="00LZh_JJ1AeOvJMuLwXSON" minheight="-8.31118" maxheight="-6.10118">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.73" origin="2.394156 -0.207137" facing="-0.798636 -0.601815" />
+      <footprint>
+        <Line start="1.2223847 1.012205" end="0.5327668 0.4925406" rgb="0" />
+        <Line start="1.1916921 1.0529354" end="0.5008724 0.5323654" rgb="0" />
+        <Line start="1.1916921 1.0529354" end="1.2223847 1.012205" rgb="0" />
+        <Line start="2.2021396 -0.2879736" end="1.5113199 -0.8085436" rgb="0" />
+        <Line start="1.5420125 -0.849274" end="1.5113199 -0.8085436" rgb="0" />
+        <Line start="2.2328322 -0.328704" end="1.5420125 -0.849274" rgb="0" />
+        <Line start="2.2328322 -0.328704" end="2.2021396 -0.2879736" rgb="0" />
+        <Arc start="0.500872413525154 0.532365415003564" end="1.71226212474259 0.362115693839182" center="1.19169212971606 1.05293541003009" rgb="0" />
+        <Arc start="1.71226212474258 0.36211569383918" end="1.54201240357821 -0.849274017378247" center="2.23283211976911 -0.328704022351722" rgb="0" />
+      </footprint>
+    </door>
+    <door mid="346" guid="1LMg1ZkATBJwu7hODVWkYb" minheight="-8.86118" maxheight="-6.78118">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.44" origin="15.352868 -8.696934" facing="-0.601815 0.798636" />
+      <footprint>
+        <Arc start="15.3834399911563 -8.73750445124812" end="16.3917643750598 -8.87921520181269" center="15.9584575583904 -8.30419763457864" rgb="0" />
+        <Arc start="15.2417292405917 -9.74582883515165" end="15.3834399911563 -8.73750445124812" center="14.8084224239223 -9.1708112679176" rgb="0" />
+        <Line start="15.9584579 -8.3041973" end="16.3917637 -8.8792152" rgb="0" />
+        <Line start="14.8084221 -9.1708117" end="15.2417288 -9.7458286" rgb="0" />
+      </footprint>
+    </door>
+    <door mid="352" guid="1LMg1ZkATBJwu7hODVWkYl" minheight="-8.86118" maxheight="-6.78118">
+      <definition ifctype="DOUBLE_DOOR_SINGLE_SWING" width="1.44" origin="11.774981 -11.393065" facing="-0.601815 0.798636" />
+      <footprint>
+        <Arc start="11.8055529061445 -11.4336357549693" end="12.813877290048 -11.5753465055339" center="12.3805704733785 -11.0003289382998" rgb="0" />
+        <Arc start="11.6638421555799 -12.4419601388728" end="11.8055529061445 -11.4336357549693" center="11.2305353389104 -11.8669425716388" rgb="0" />
+        <Line start="12.3805704 -11.000329" end="12.8138771 -11.5753469" rgb="0" />
+        <Line start="11.2305355 -11.8669424" end="11.6638422 -12.4419603" rgb="0" />
+      </footprint>
+    </door>
+  </elements>
+</root>

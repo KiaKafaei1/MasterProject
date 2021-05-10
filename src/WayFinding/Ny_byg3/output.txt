@@ -1,0 +1,8 @@
+Application: Vectorworks Architect 2020 SP2 R1 (Build 530873) (64-Bit) by Vectorworks, Inc.
+Schema: IFC2X3
+Scale: 0,001
+Area scale: 1
+#elements: 2655
+#polygons: 671643
+Translation: 42.176756218 10.49 -44.774878462
+Bounding box: <boundingbox center="76.94 6.04 -41.09" size="96.02 27.51 35.29" rotation="0"/>

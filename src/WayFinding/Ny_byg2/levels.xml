@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Application="Autodesk Revit Architecture 2015 (ENU)" ElevationOffset="0">
+  <Building name="Samuel Macalister sample house design" guid="2jq$iCFr9Av90LExYuVU61" unitscale="0.001" areaunitscale="1" elevation="0">
+    <Floor name="Roof Line" guid="2jq$iCFr9Av90LExX7WHvb" elevation="6000" />
+    <Floor name="Level 2" guid="2jq$iCFr9Av90LExX7WQ3V" elevation="3000" />
+    <Floor name="Ceiling" guid="2jq$iCFr9Av90LExX7WXp6" elevation="2700.00000000008" />
+    <Floor name="Level 1" guid="2jq$iCFr9Av90LExX7WXz7" elevation="0" />
+    <Floor name="Level 1 Living Rm." guid="2jq$iCFr9Av90LExX7XSAs" elevation="-550" />
+    <Floor name="Foundation" guid="2jq$iCFr9Av90LExX7XTBY" elevation="-800" />
+    <Floor name="Dummy" guid="0" elevation="0" />
+  </Building>
+</Project>

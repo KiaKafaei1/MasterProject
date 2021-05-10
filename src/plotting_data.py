@@ -64,17 +64,17 @@ class Point:
 
 
 def ccw(A,B,C):
-''' 
-Checking if 3 points are in counterclockwise order
-Dertimining line intersection 
-Code taken from https://bryceboe.com/2006/10/23/line-segment-intersection-algorithm/
-'''
+    ''' 
+    Checking if 3 points are in counterclockwise order
+    Dertimining line intersection 
+    Code taken from https://bryceboe.com/2006/10/23/line-segment-intersection-algorithm/
+    '''
     return (C.y-A.y)*(B.x-A.x) > (B.y-A.y)*(C.x-A.x)
 
 def intersect(A,B,C,D):
-'''
-Finding if 4 points are intersecting. Se above link for explanation.
-'''
+    '''
+    Finding if 4 points are intersecting. Se above link for explanation.
+    '''
     return ccw(A,C,D) != ccw(B,C,D) and ccw(A,B,C) != ccw(A,B,D)
 
 def plot_point(point,door=True,starting_node=False):
@@ -90,7 +90,7 @@ Function for plotting points
 
 
 def is_traversable(p1,q1,Dic_lines):
-'''
+    '''
 Function for plotting path.
 The function returns true if there is a traversable connection between 2 points else returns False.
 '''

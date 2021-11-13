@@ -1,8 +1,0 @@
-Application: Autodesk Revit Architecture 2015 (ENU)
-Schema: IFC2X3
-Scale: 0,001
-Area scale: 1
-#elements: 417
-#polygons: 135588
-Translation: -16.2031588698501 8.31117979456313 14.8484114515458
-Bounding box: <boundingbox center="-15.57 1.87 17.74" size="34.82 17.94 23.27" rotation="0"/>
